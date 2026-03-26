@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SD0202mAuswahl und Reihenfolge der Diagnosen – V2027D_Teil1</title>
+  <link rel="stylesheet" href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/assets/style.css">
+  <style>
+/* ── BFS Site-Header ── */
+body { flex-direction: column; }
+#site-header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 3px solid #c00;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+#site-topbar {
+  background: #e8e8e8;
+  padding: 0.25rem 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.topbar-sep { opacity: .4; }
+.topbar-office { font-weight: 600; color: #333; }
+.lang-switcher { margin-left: auto; display: flex; gap: 0.5rem; }
+.lang-switcher a {
+  font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600;
+  color: #555; text-decoration: none; padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+.lang-switcher a:hover, .lang-switcher a.active {
+  background: #c00; color: #fff;
+}
+#site-brand {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+  gap: 1rem;
+}
+#site-logo-link { text-decoration: none; flex: 1; }
+.site-logo-dept {
+  display: block;
+  font-family: var(--font-ui); font-size: 0.72rem;
+  color: #888; letter-spacing: .03em;
+}
+.site-logo-title {
+  display: block;
+  font-family: var(--font-ui); font-size: 1.1rem;
+  font-weight: 700; color: #c00;
+}
+#site-search-wrap input {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  width: 220px;
+  outline: none;
+  background: #f8f8f8;
+}
+#site-search-wrap input:focus {
+  border-color: #c00;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(200,0,0,.1);
+}
+#site-nav {
+  display: flex;
+  gap: 0;
+  padding: 0 1.5rem;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+#site-nav a {
+  font-family: var(--font-ui); font-size: 0.85rem;
+  color: #444; text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+#site-nav a:hover { color: #c00; border-bottom-color: #c00; }
+#site-nav a.nav-active { color: #c00; border-bottom-color: #c00; font-weight: 600; }
+
+/* Layout anpassen wenn Header vorhanden */
+.with-header #wrapper {
+  display: flex;
+  flex: 1;
+}
+.with-header #sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  /* Header-Hoehe abziehen – wird per JS gesetzt */
+}
+.with-header #content { padding-top: 1.5rem; }
+
+/* Sidebar-Header ausblenden wenn BFS-Header aktiv */
+.with-header #sidebar-header { display: none; }
+.with-header #search-box { display: none; }
+</style>
+</head>
+<body class="with-header">
+  
+  <header id="site-header">
+    <div id="site-topbar">
+      <span class="topbar-dept">Eidgen&#246;ssisches Departement des Innern EDI</span>
+      <span class="topbar-sep">|</span>
+      <span class="topbar-office">Bundesamt f&#252;r Statistik</span>
+      <nav class="lang-switcher" aria-label="Sprache">
+        <a href="https://rundschreiben-kodierer.github.io/handbuch/de/" class="active">DE</a>
+        <a href="https://rundschreiben-kodierer.github.io/handbuch/fr/">FR</a>
+        <a href="https://rundschreiben-kodierer.github.io/handbuch/it/">IT</a>
+      </nav>
+    </div>
+    <div id="site-brand">
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/" id="site-logo-link">
+        <span class="site-logo-dept">Rundschreiben Kodierer</span>
+        <span class="site-logo-title">V2027D_Teil1</span>
+      </a>
+      <div id="site-search-wrap">
+        <input type="search" id="site-search-input" placeholder="&#128269; Suchen &#8230;"
+          onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='search.html?q='+encodeURIComponent(this.value.trim());}"
+          aria-label="Suche" />
+      </div>
+    </div>
+    <nav id="site-nav" aria-label="Hauptnavigation">
+      <a href="https://rundschreiben-kodierer.github.io/handbuch/de/">Kodierhandbuch BFS</a>
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/index.html">V2027D_Teil1</a>
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/search.html">Suche</a>
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/download.zip" download>&#11015; Download Offline Variante</a>
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/V2027D_Teil1.pdf" target="_blank">&#128196; PDF Version</a>
+    </nav>
+  </header>
+  <div id="wrapper">
+  <nav id="sidebar">
+    <div id="sidebar-header"><a href="toc.html" id="book-title">V2027D_Teil1</a></div>
+    <div id="search-box"><input type="search" placeholder="🔍 Suchen …" onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='search.html?q='+encodeURIComponent(this.value.trim());}" /></div>
+    <div id="nav-toggle-wrap"><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=true)">▼ Alle aufklappen</button><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=false)">▶ Alle zuklappen</button></div>
+    <div id="nav-tree"><ul>
+<li><a href="seite-1.html">Seite 1</a></li>
+<li><a href="seite-2.html">Seite 2</a></li>
+<li><a href="seite-3.html">Seite 3</a></li>
+<li><a href="danksagung.html">Danksagung</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="einleitung-version2027.html" onclick="event.stopPropagation()">Einleitung Version2027</a></summary>
+<ul>
+<li><a href="abkuerzungen-des-kodierungshandbuches.html">Abkürzungen des Kodierungshandbuches</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="grundlagen-g00-g55.html" onclick="event.stopPropagation()">Grundlagen G00 –G55</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html" onclick="event.stopPropagation()">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a></summary>
+<ul>
+<li><a href="g01ngeschichte.html">G01nGeschichte</a></li>
+<li><a href="g02morganisation.html">G02mOrganisation</a></li>
+<li><a href="g03m-gesetzliche-grundlagen.html">G03m	Gesetzliche Grundlagen</a></li>
+<li><a href="g04mziele-der-erhebung-spitalstationaere-gesundheitsversorgung-spiges.html">G04mZiele der Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes)</a></li>
+<li><a href="g05manonymisierung-der-daten.html">G05mAnonymisierung der Daten</a></li>
+<li><a href="g06mder-medizinische-datensatz-definitionen-und-variablen.html">G06mDer medizinische Datensatz,Definitionen und Variablen</a></li>
+</ul>
+</details>
+</li>
+<li><a href="g10p-erhebung-spitalstationaere-gesundheitsversorgung-spiges-die-patientenklassi.html">G10p	Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes), die Patientenklassifikationssysteme SwissDRG, TARPSY und ST Reha</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html" onclick="event.stopPropagation()">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a></summary>
+<ul>
+<li><a href="g21p-icd-10-gm.html">G21p	ICD-10-GM</a></li>
+<li><a href="g22o-schweizerische-operationsklassifikation-chop.html">G22o	Schweizerische Operationsklassifikation (CHOP)</a></li>
+</ul>
+</details>
+</li>
+<li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a></li>
+<li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g50definitionen.html" onclick="event.stopPropagation()">G50Definitionen</a></summary>
+<ul>
+<li><a href="g51o-derbehandlungsfall.html">G51o	DerBehandlungsfall</a></li>
+<li><a href="g52h-diehauptdiagnose.html">G52h	DieHauptdiagnose</a></li>
+<li><a href="g53m-derzusatz-zur-hauptdiagnose.html">G53m	DerZusatz zur Hauptdiagnose</a></li>
+<li><a href="g54p-dienebendiagnosen.html">G54p	DieNebendiagnosen</a></li>
+<li><a href="g55mdiebehandlung.html">G55mDieBehandlung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html" onclick="event.stopPropagation()">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a></summary>
+<ul>
+<li><a href="d00mabnormebefunde.html">D00mAbnormeBefunde</a></li>
+<li><a href="d01gsymptome.html">D01gSymptome</a></li>
+<li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a></li>
+<li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a></li>
+<li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a></li>
+<li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a></li>
+<li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a></li>
+<li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a></li>
+<li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a></li>
+<li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a></li>
+<li><a href="d10gchronische-krankheiten-mit-akutem-schub.html">D10gChronische Krankheiten mit akutem Schub</a></li>
+<li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a></li>
+<li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a></li>
+<li><a href="d13asyndrome.html">D13aSyndrome</a></li>
+<li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a></li>
+<li><a href="d15o-verlegungen.html">D15o	Verlegungen</a></li>
+<li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html" onclick="event.stopPropagation()">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a></summary>
+<ul>
+<li><a href="p00n-erfassung-der-prozedur-im-medizinischen-datensatz.html">P00n	Erfassung der Prozedur im medizinischen Datensatz</a></li>
+<li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a></li>
+<li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a></li>
+<li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a></li>
+<li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a></li>
+<li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a></li>
+<li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a></li>
+<li><a href="p07obilaterale-operationen.html">P07oBilaterale Operationen</a></li>
+<li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a></li>
+<li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a></li>
+<li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a></li>
+<li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details open>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0100-bestimmteinfektioese-und-parasitaere-krankheiten.html" onclick="event.stopPropagation()">SD0100	Bestimmteinfektiöse und parasitäre Krankheiten</a></summary>
+<ul>
+<li><a href="sd0101abakteriaemie.html">SD0101aBakteriämie</a></li>
+<li><a href="sd0102psepsis.html">SD0102pSepsis</a></li>
+<li><a href="sd0103lsirs.html">SD0103lSIRS</a></li>
+<li><a href="sd0104nhiv-aids.html">SD0104nHIV/AIDS</a></li>
+<li><a href="u61-laborkategorie-im-aktuellen-aufenthaltu61-1-kategorie-1500-und-mehr-cd4-t-he.html">U61.–! Laborkategorie im aktuellen AufenthaltU61.1!	Kategorie 1500 und mehr CD4+-T-Helferzellen pro Mikroliter Blut</a></li>
+<li><a href="sd0105aechter-krupp-pseudokrupp-kruppsyndrom.html">SD0105aEchter Krupp – Pseudokrupp –Kruppsyndrom</a></li>
+<li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details open>
+<summary class="nav-summary"><a href="sd0200nneubildungen.html" onclick="event.stopPropagation()">SD0200nNeubildungen</a></summary>
+<ul>
+<li><a href="sd0202mauswahl-und-reihenfolge-der-diagnosen.html" class="active">SD0202mAuswahl und Reihenfolge der Diagnosen</a></li>
+<li><a href="sd0203nnachresektion-im-tumorgebiet.html">SD0203nNachresektion im Tumorgebiet</a></li>
+<li><a href="sd0204ktumornachweis-nur-in-der-biopsie.html">SD0204kTumornachweis nur in der Biopsie</a></li>
+<li><a href="sd0205n-akute-chronische-erkrankungen-stoerungen-nach-und-oder-folgen-von-medizi.html">SD0205n(Akute, chronische) Erkrankungen, Störungen nach und/oder Folgen von medizinischen Massnahmen im Kontext von Behandlungen maligner Neubildungen (solide, hämatologisch)</a></li>
+<li><a href="sd0206averdacht-auf-tumor-oder-metastasen.html">SD0206aVerdacht auf Tumor oder Metastasen</a></li>
+<li><a href="sd0207a-nachuntersuchung.html">SD0207a	Nachuntersuchung</a></li>
+<li><a href="sd0208nrezidive.html">SD0208nRezidive</a></li>
+<li><a href="sd0209a-tumoremit-endokriner-aktivitaet.html">SD0209a	Tumoremit endokriner Aktivität</a></li>
+<li><a href="sd0210n-multiple-lokalisationen.html">SD0210n	Multiple Lokalisationen</a></li>
+<li><a href="sd0211aueberlappende-lokalisation.html">SD0211aÜberlappende Lokalisation</a></li>
+<li><a href="sd0212aremission-bei-malignen-immunoproliferativen-erkrankungen-undleukaemie.html">SD0212aRemission bei malignen immunoproliferativen Erkrankungen undLeukämie</a></li>
+<li><a href="sd0213a-lymphangiosis-carcinomatosa.html">SD0213a 	Lymphangiosis carcinomatosa</a></li>
+<li><a href="sd0214nlymphom.html">SD0214nLymphom</a></li>
+<li><a href="sd0215achemo-undradiotherapie.html">SD0215aChemo- undRadiotherapie</a></li>
+<li><a href="sd0216nprophylaktische-operationen-wegen-risikofaktoren.html">SD0216nProphylaktische Operationen wegen Risikofaktoren</a></li>
+<li><a href="sd0217opalliativbehandlung.html">SD0217oPalliativbehandlung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html" onclick="event.stopPropagation()">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a></summary>
+<ul>
+<li><a href="sd0401nallgemeines.html">SD0401nAllgemeines</a></li>
+<li><a href="sd0402nregeln-zur-kodierung-des-diabetes-mellitus.html">SD0402nRegeln zur Kodierung des Diabetes mellitus</a></li>
+<li><a href="sd0403nspezifische-komplikationen-des-diabetes-mellitus.html">SD0403nSpezifische Komplikationen des Diabetes mellitus</a></li>
+<li><a href="sd0404a-metabolisches-syndrom.html">SD0404a	Metabolisches Syndrom</a></li>
+<li><a href="sd0405nstoerungender-inneren-sekretion-des-pankreas.html">SD0405nStörungender inneren Sekretion des Pankreas</a></li>
+<li><a href="sd0406azystische-fibrose.html">SD0406aZystische Fibrose</a></li>
+<li><a href="sd0407nmangelernaehrungbei-erwachsenen.html">SD0407nMangelernährungbei Erwachsenen</a></li>
+<li><a href="sd0408nmangelernaehrungbei-kindern.html">SD0408nMangelernährungbei Kindern</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0500-psychische-und-verhaltensstoerungen.html" onclick="event.stopPropagation()">SD0500	Psychische und Verhaltensstörungen</a></summary>
+<ul>
+<li><a href="sd0501o-psychische-und-verhaltensstoerungendurch-psychotrope-substanzen-alkohol-.html">SD0501o	Psychische und Verhaltensstörungendurch psychotrope Substanzen(Alkohol, Drogen, Medikamente, Nikotin)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0600-krankheitendesnervensystems.html" onclick="event.stopPropagation()">SD0600	KrankheitendesNervensystems</a></summary>
+<ul>
+<li><a href="sd0601p-akuter-schlaganfall-etc-subarachnoidalblutung-und-sonstige-intrakraniell.html">SD0601p	Akuter «Schlaganfall etc.», Subarachnoidalblutung und sonstige intrakranielle Blutungen traumatischer und nichttraumatischer Genese</a></li>
+<li><a href="sd0602nfolgen-eines-status-nach-schlaganfall-etc-einer-nichttraumatischen-subara.html">SD0602nFolgen eines/Status nach: «Schlaganfall etc.», einer nichttraumatischen Subarachnoidalblutung oder sonstigen nichttraumatischen intrakraniellen Blutung</a></li>
+<li><a href="sd0603oparaplegie-und-tetraplegie-nicht-traumatisch.html">SD0603oParaplegie und Tetraplegie, nicht traumatisch</a></li>
+<li><a href="sd0604mbewusstseinsstoerungen.html">SD0604mBewusstseinsstörungen</a></li>
+<li><a href="sd0605e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden.html">SD0605e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden</a></li>
+<li><a href="sd0606e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden.html">SD0606e 	Aufnahme zurEntfernung eines Neurostimulators /(Test) Elektroden</a></li>
+<li><a href="sd0607o-kodierung-derparkinsonstadien-g20.html">SD0607o 	Kodierung derParkinsonstadien (G20.-)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html" onclick="event.stopPropagation()">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a></summary>
+<ul>
+<li><a href="sd0801aschwerhoerigkeit-undtaubheit.html">SD0801aSchwerhörigkeit undTaubheit</a></li>
+<li><a href="sd0802danpassung-handhabung-eines-implantiertenhoergeraetes.html">SD0802dAnpassung/Handhabung eines implantiertenHörgerätes</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0900-krankheitendeskreislaufsystems.html" onclick="event.stopPropagation()">SD0900	KrankheitendesKreislaufsystems</a></summary>
+<ul>
+<li><a href="sd0901a-hypertonie-und-krankheiten-bei-hypertonie.html">SD0901a 	Hypertonie und Krankheiten bei Hypertonie</a></li>
+<li><a href="sd0902eischaemische-herzkrankheit.html">SD0902eIschämische Herzkrankheit</a></li>
+<li><a href="sd0903n-thrombose-resp-verschlussvon-koronarem-stent-resp-bypass.html">SD0903n	Thrombose resp. Verschlussvon koronarem Stent resp. Bypass</a></li>
+<li><a href="sd0904d-erkrankungenderherzklappen.html">SD0904d 	ErkrankungenderHerzklappen</a></li>
+<li><a href="sd0905aschrittmacher-defibrillator.html">SD0905aSchrittmacher/Defibrillator</a></li>
+<li><a href="sd0906anachuntersuchung-nachherztransplantation.html">SD0906aNachuntersuchung nachHerztransplantation</a></li>
+<li><a href="sd0907a-akutes-lungenoedem.html">SD0907a	Akutes Lungenödem</a></li>
+<li><a href="sd0908kherzstillstand.html">SD0908kHerzstillstand</a></li>
+<li><a href="sd0910o-erfassung-derbehandlungsdauer-mit-einem-herzunterstuetzungssystem-oder-e.html">SD0910o	Erfassung derBehandlungsdauer mit einem Herzunterstützungssystem oder einem herzkreislauf- und lungenunterstützenden System</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1000-krankheitendesatmungssystems.html" onclick="event.stopPropagation()">SD1000	KrankheitendesAtmungssystems</a></summary>
+<ul>
+<li><a href="sd1001p-maschinelle-beatmung.html">SD1001p	Maschinelle Beatmung</a></li>
+<li><a href="sd1002orespiratorische-insuffizienz.html">SD1002oRespiratorische Insuffizienz</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1100-krankheitendesverdauungssystems.html" onclick="event.stopPropagation()">SD1100	KrankheitendesVerdauungssystems</a></summary>
+<ul>
+<li><a href="sd1101jappendizitis-als-klinische-diagnose.html">SD1101jAppendizitis als klinische Diagnose</a></li>
+<li><a href="sd1103a-magenulkusmitgastritis.html">SD1103a	MagenulkusmitGastritis</a></li>
+<li><a href="sd1104igastrointestinale-blutung.html">SD1104iGastrointestinale Blutung</a></li>
+<li><a href="sd1105a-dehydratationbei-gastroenteritis.html">SD1105a 	Dehydratationbei Gastroenteritis</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html" onclick="event.stopPropagation()">SD1200	KrankheitenderHaut und der Unterhaut</a></summary>
+<ul>
+<li><a href="sd1201gplastische-chirurgie.html">SD1201gPlastische Chirurgie</a></li>
+<li><a href="sd1202jspannungsblasen.html">SD1202jSpannungsblasen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1400-krankheitendesurogenitalsystems.html" onclick="event.stopPropagation()">SD1400	KrankheitendesUrogenitalsystems</a></summary>
+<ul>
+<li><a href="sd1401o-dialyse.html">SD1401o	Dialyse</a></li>
+<li><a href="sd1402manogenitale-warzen-anogenitaler-herpes.html">SD1402mAnogenitale Warzen/anogenitaler Herpes</a></li>
+<li><a href="sd1404oniereninsuffizienz.html">SD1404oNiereninsuffizienz</a></li>
+<li><a href="sd1405l-aufnahme-zuranlage-einesperitonealkatheters-zur-dialyse.html">SD1405l	Aufnahme zurAnlage einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1406d-aufnahme-zurentfernung-einesperitonealkatheters-zur-dialyse.html">SD1406d 	Aufnahme zurEntfernung einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1407l-aufnahme-zur-anlage-einerav-fistel-oder-einesav-shunts-zur-dialyse.html">SD1407l 	Aufnahme zur Anlage einerAV-Fistel oder einesAV-Shunts zur Dialyse</a></li>
+<li><a href="sd1408a-aufnahme-zum-verschluss-einerav-fistel-oder-zumentfernen-eines-av-shunts.html">SD1408a 	Aufnahme zum Verschluss einerAV-Fistel oder zumEntfernen eines AV-Shunts</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1500geburtshilfe.html" onclick="event.stopPropagation()">SD1500Geburtshilfe</a></summary>
+<ul>
+<li><a href="sd1501ndefinitionen.html">SD1501nDefinitionen</a></li>
+<li><a href="sd1502pvorzeitige-beendigung-einer-schwangerschaft.html">SD1502pVorzeitige Beendigung einer Schwangerschaft</a></li>
+<li><a href="sd1503p-krankheitenin-der-schwangerschaft.html">SD1503p	Krankheitenin der Schwangerschaft</a></li>
+<li><a href="sd1504pkomplikationen-der-schwangerschaft-mutter-oder-kind-betreffend.html">SD1504pKomplikationen der Schwangerschaft, Mutter oder Kind betreffend</a></li>
+<li><a href="sd1505pspezielle-kodierregeln-fuer-die-geburt.html">SD1505pSpezielle Kodierregeln für die Geburt</a></li>
+<li><a href="sd1506p-krankheiten-im-wochenbett-puerperium.html">SD1506p	Krankheiten im Wochenbett (Puerperium)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html" onclick="event.stopPropagation()">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a></summary>
+<ul>
+<li><a href="sd1601nmedizinischer-datensatz.html">SD1601nMedizinischer Datensatz</a></li>
+<li><a href="sd1602adefinitionen.html">SD1602aDefinitionen</a></li>
+<li><a href="sd1603ineugeborene.html">SD1603iNeugeborene</a></li>
+<li><a href="sd1604gzustaende-die-ihren-ursprung-in-der-perinatalperiode-haben.html">SD1604gZustände, die ihren Ursprung in der Perinatalperiode haben</a></li>
+<li><a href="sd1605atotgeborene.html">SD1605aTotgeborene</a></li>
+<li><a href="sd1606j-besondere-massnahmen-fuer-das-kranke-neugeborene.html">SD1606j 	Besondere Massnahmen für das (kranke) Neugeborene</a></li>
+<li><a href="sd1607c-atemnotsyndrombeihyaliner-membranenkrankheit-surfactantmangel.html">SD1607c 	Atemnotsyndrombeihyaliner Membranenkrankheit/Surfactantmangel</a></li>
+<li><a href="sd1608c-atemnotsyndrombeimassivemaspirationssyndrom-wet-lung-odertransitorische-.html">SD1608c 	AtemnotsyndrombeimassivemAspirationssyndrom,Wet lung odertransitorische Tachypnoe beim Neugeborenen</a></li>
+<li><a href="sd1609jhypoxisch-ischaemische-enzephalopathie-hie.html">SD1609jHypoxisch-ischämische Enzephalopathie (HIE)</a></li>
+<li><a href="sd1610h-asphyxie-unter-der-geburt.html">SD1610h	Asphyxie unter der Geburt</a></li>
+<li><a href="sd1611orespiratorisches-versagenbeim-neugeborenen.html">SD1611oRespiratorisches Versagenbeim Neugeborenen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html" onclick="event.stopPropagation()">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a></summary>
+<ul>
+<li><a href="sd1801ainkontinenz.html">SD1801aInkontinenz</a></li>
+<li><a href="sd1802mdysphagie.html">SD1802mDysphagie</a></li>
+<li><a href="sd1803afieberkraempfe.html">SD1803aFieberkrämpfe</a></li>
+<li><a href="sd1804o-schmerzdiagnosen-undschmerzbehandlungsverfahren.html">SD1804o	Schmerzdiagnosen undSchmerzbehandlungsverfahren</a></li>
+<li><a href="sd1805e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden-bei-schm.html">SD1805e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1806e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden-bei-schmer.html">SD1806e 	Aufnahme zurEntfernung eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1807lschock.html">SD1807lSchock</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html" onclick="event.stopPropagation()">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a></summary>
+<ul>
+<li><a href="sd1901aoberflaechliche-verletzungen.html">SD1901aOberflächliche Verletzungen</a></li>
+<li><a href="sd1902nfraktur-und-luxation.html">SD1902nFraktur und Luxation</a></li>
+<li><a href="sd1903poffene-wunden-verletzungen.html">SD1903pOffene Wunden/Verletzungen</a></li>
+<li><a href="sd1905cverletzung-desrueckenmarks-mit-traumatischer-paraplegie-und-tetraplegie.html">SD1905cVerletzung desRückenmarks (mit traumatischer Paraplegie und Tetraplegie)</a></li>
+<li><a href="sd1906nmehrfachverletzungen.html">SD1906nMehrfachverletzungen</a></li>
+<li><a href="sd1907jverbrennungen-undveraetzungen.html">SD1907jVerbrennungen undVerätzungen</a></li>
+<li><a href="sd1908nvergiftungdurch-arzneimittel-drogen-und-biologisch-aktive-substanzen.html">SD1908nVergiftungdurch Arzneimittel, Drogen und biologisch aktive Substanzen</a></li>
+<li><a href="sd1909o-unerwuenschte-nebenwirkungen-von-arzneimitteln-bei-einnahme-gemaess-vero.html">SD1909o 	Unerwünschte Nebenwirkungen von Arzneimitteln (bei Einnahme gemäss Verordnung)</a></li>
+<li><a href="sd1910b-unerwuenschte-nebenwirkungen-vergiftung-von-zwei-oder-mehr-in-verbindung.html">SD1910b	Unerwünschte Nebenwirkungen/Vergiftung von zwei oder mehr in Verbindung eingenommenen Substanzen (bei Einnahme entgegen einer Verordnung)</a></li>
+</ul>
+</details>
+</li>
+<li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a></li>
+<li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a></li>
+<li><a href="sd2200oschluesselnummern-fuer-besondere-zwecke.html">SD2200oSchlüsselnummern für besondere Zwecke</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0200fruehrehabilitation-paraplegiologische-rehabilitation-akutrehabilitation.html" onclick="event.stopPropagation()">SP0200Frührehabilitation, paraplegiologische Rehabilitation, Akutrehabilitation</a></summary>
+<ul>
+<li><a href="sp0201nfruehrehabilitation.html">SP0201nFrührehabilitation</a></li>
+<li><a href="sp0202pparaplegiologische-rehabilitation.html">SP0202pParaplegiologische Rehabilitation</a></li>
+<li><a href="sp0203oakutrehabilitation.html">SP0203oAkutrehabilitation</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0300-kodierrichtlinien-zu-chop-kapitel-9-operationen-am-verdauungstrakt.html" onclick="event.stopPropagation()">SP0300	Kodierrichtlinien zu CHOP Kapitel 9 «Operationen am Verdauungstrakt»</a></summary>
+<ul>
+<li><a href="sp0301khiatushernie-fundoplicatio.html">SP0301kHiatushernie – Fundoplicatio:</a></li>
+<li><a href="zusaetzliche-erfassung-chop-kode-44-92-intraoperative-manipulation-am-magen.html">Zusätzliche Erfassung CHOP-Kode 44.92 Intraoperative Manipulation am Magen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0400-kodierrichtlinien-zu-chop-kapitel-11-operationen-an-den-maennlichen-gesch.html" onclick="event.stopPropagation()">SP0400	Kodierrichtlinien zu CHOP Kapitel 11«Operationen an den männlichen Geschlechtsorganen»</a></summary>
+<ul>
+<li><a href="sp0401mgeschlechtsangleichung.html">SP0401mGeschlechtsangleichung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="kodierrichtlinienrehabilitation.html" onclick="event.stopPropagation()">KodierrichtlinienRehabilitation</a></summary>
+<ul>
+<li><a href="allgemeine-informationen.html">Allgemeine Informationen</a></li>
+<li><a href="diagnosen-icd-10-gm.html">Diagnosen - ICD-10-GM</a></li>
+<li><a href="prozeduren.html">Prozeduren</a></li>
+<li><a href="beispiele-und-erlaeuterungen.html">Beispiele und Erläuterungen</a></li>
+<li><a href="beispiele.html">Beispiele</a></li>
+</ul>
+</details>
+</li>
+<li><a href="alphabetisches-verzeichnis.html">Alphabetisches Verzeichnis</a></li>
+<li><a href="a.html">A</a></li>
+<li><a href="b.html">B</a></li>
+<li><a href="c.html">C</a></li>
+<li><a href="d.html">D</a></li>
+<li><a href="e.html">E</a></li>
+<li><a href="f.html">F</a></li>
+<li><a href="g.html">G</a></li>
+<li><a href="h.html">H</a></li>
+<li><a href="i.html">I</a></li>
+<li><a href="k.html">K</a></li>
+<li><a href="l.html">L</a></li>
+<li><a href="m.html">M</a></li>
+<li><a href="n.html">N</a></li>
+<li><a href="o.html">O</a></li>
+<li><a href="p.html">P</a></li>
+<li><a href="r.html">R</a></li>
+<li><a href="s.html">S</a></li>
+<li><a href="t.html">T</a></li>
+<li><a href="u.html">U</a></li>
+<li><a href="v.html">V</a></li>
+<li><a href="w.html">W</a></li>
+<li><a href="z.html">Z</a></li>
+<li><a href="seite-214.html">Seite 214</a></li>
+<li><a href="seite-215.html">Seite 215</a></li>
+</ul>
+</div>
+  </nav>
+  <main id="content">
+    <nav class="breadcrumb"><a class="crumb" href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a><span class="sep">›</span><a class="crumb" href="sd0200nneubildungen.html">SD0200nNeubildungen</a><span class="sep">›</span><span class="crumb current">SD0202mAuswahl und Reihenfolge der Diagnosen</span></nav>
+    <article><h4 class="Untertitel-2-fett" id="_idParaDest-91"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor103"></a>SD0202m</span> <span class="Fett CharOverride-1"><a id="_idIndexMarker190"></a><a id="_idIndexMarker191"></a></span><span class="Fett _idGenCharOverride-1">Auswahl und Reihenfolge der Diagnosen</span></h4><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die unter SD0202 aufgeführten Regeln</span> betreffend die Wahl der Hauptdiagnose <span class="Light _idGenCharOverride-2">im Kontext von Tumorerkrankungen</span> gelten nur, wenn <span class="Fett _idGenCharOverride-1">keine andere eigenständige,</span><span class="Light _idGenCharOverride-2"> tumorunabhängige</span> <span class="Fett _idGenCharOverride-1">Erkrankung</span> (z.B. Herzinfarkt) die Definition der Hauptdiagnose <span class="Light _idGenCharOverride-2">erfüllt</span>.</p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Bei Vorliegen einer tumorunabhängigen Erkrankung / Zustand / Manifestation</span> wird die <span class="Light _idGenCharOverride-2">Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">G</span>52 «Die Hauptdiagnose» angewendet.</p><p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 1</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Eintritt zur beidseitigen Operation von Inguinalhernien (inkarzeriert, kein Rezidiv).</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Bei gleichzeitigem Vorliegen eines lymphogen (Becken) metastasierten Prostatakarzinoms erfolgt im stationären Setting am vorletzten Hospitalisierungstag die Verabreichung einer Chemotherapie im Zyklus.</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Die Behandlung der beidseitigen Inguinalhernien wird in der medizinischen Dokumentation als Hauptaufwand des Aufenthaltes deklariert.</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD	</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">K</span></span><span class="Kursiv _idGenCharOverride-2">40.00</span> <span class="Kursiv _idGenCharOverride-2">Doppelseitige Hernia inguinalis mit Einklemmung, ohne Gangrän, nicht als Rezidivhernie bezeichnet</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">L		0</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">61</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung der Prostata</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">77.5</span> <span class="Kursiv _idGenCharOverride-2">Sekundäre und nicht näher bezeichnete bösartige Neubildung der Lymphknoten, intrapelvine Lymphknoten</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B	</span> <span class="Kursiv _idGenCharOverride-2">Operation Hernia inguinalis gemäss medizinischer Dokumentation</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">L</span> <span class="Kursiv _idGenCharOverride-2">0</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B	</span> <span class="Kursiv _idGenCharOverride-2">Chemotherapie gemäss medizinischer Dokumentation</span></p><p class="Grundtext-D- ParaOverride-11"><span class="Fett _idGenCharOverride-1"> </span></p><div aria-label="102" epub:type="pagebreak" id="page104" role="doc-pagebreak"></div><p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 2</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Notfalleintritt aufgrund Herzinfarkt (Vorderwand) bei koronarer 3-Gefässerkrankung. Notfallkoronarintervention und folgende Bypassoperation.</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Aufgrund eines zusätzlich vorliegenden Rektumkarzinoms erhält der Patient Chemo- und Immuntherapie im Zyklus zur besseren Überwachung im letzten Drittel des stationären Aufenthaltes. Es treten Komplikationen der Tumortherapie (Mukositis Verdauungstrakt n.n.bez. und Neutropenie) auf, </span><span class="Light _idGenCharOverride-2">die</span><span class="Kursiv _idGenCharOverride-2"> die Hospitalisierungszeit weiter verlängern.</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">In der Gesamtschau aller Befunde übersteigen die Aufwände hinsichtlich der Herzerkrankung dennoch die Aufwände der Tumorbehandlung und ihrer Folgen.</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD	</span> <span class="Kursiv _idGenCharOverride-2">I21.0</span> <span class="Kursiv _idGenCharOverride-2">Akuter transmuraler Myokardinfarkt der Vorderwand </span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="Kursiv _idGenCharOverride-2">I25.13</span> <span class="Kursiv _idGenCharOverride-2">Atherosklerotische Herzkrankheit, Drei-Gefäss-Erkrankung </span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">20</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung des Rektums </span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">K</span></span><span class="Kursiv _idGenCharOverride-2">92.8</span> <span class="Kursiv _idGenCharOverride-2">Sonstige näher bezeichnete Krankheiten des Verdauungssystems</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!</span> <span class="Kursiv _idGenCharOverride-2">Komplikationen durch Arzneimittel oder Drogen</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="Kursiv _idGenCharOverride-2">D70.19</span> <span class="Kursiv _idGenCharOverride-2">Arzneimittelinduzierte Agranulozytose und Neutropenie, nicht näher bezeichnet</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B	</span> <span class="Kursiv _idGenCharOverride-2">Bypassoperation gemäss medizinischer Dokumentation</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B	</span> <span class="Kursiv _idGenCharOverride-2">Koronarintervention gemäss medizinischer Dokumentation</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B	</span> <span class="Kursiv _idGenCharOverride-2">Chemotherapie und Immuntherapie gemäss medizinischer Dokumentation</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Obwohl in den Beispielen 1 und 2 eine systemische Tumortherapie verabreicht wurde, gelangt dennoch die Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52 «Die Hauptdiagnose» zur Anwendung, da zwei voneinander unabhängige Erkrankungen gleichzeitig bestehen.</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Siehe dazu auch unter Absatz «Systemische Therapie».</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Hinwei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">s</span></span><span class="Fett _idGenCharOverride-1">:</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Auch wenn die Behandlung einer malignen Neubildung in einem Fall nur die Bedingungen der Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54 «Die Nebendiagnosen» erfüllt, sind zusätzlich vorhandene (beschriebene) Metastasen und vorhandenes Carcinoma in situ ebenfalls als Nebendiagnose anzugeben (entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert).</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Das gleiche gilt für die Behandlung von Metastasen, die die Nebendiagnosenregel bei Vorliegen eines anderen Zustandes als Haupt-</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">diagnose erfüllt. Dann wird der entsprechende Primarius gemäss Vorgaben und entgegen der KR </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54 ebenfalls erfasst. Das «Beachte» zu «vorhanden» (beschrieben) ist zu berücksichtigen.</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 3</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Aufnahme einer Patientin zur Entfernung eines Uterus myomatosus (vorwiegend intramurale, auch submuköse Myome) bei anhaltenden Blutungsstörungen (ätiologisch den Myomen zugeordnet). Während des Aufenthaltes erleidet die Patientin erstmals einen epileptischen Anfall. Eine chronische Eisenmangelanämie (aufgrund Hypermenorrhoe) wird diagnostiziert und Eisen i.v. substituiert.</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Die Diagnostik mittels MRI zeigt den hochgradigen Verdacht auf ein Meningeom. Nach Etablierung antiepileptischer Medikamente Entlassung nach Hause und Planung der weiteren Meningeom-bezogenen Behandlungen.</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Die operative Sanierung des Uterus myomatosus wird als Hauptaufwand des Falles deklariert.</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD	</span> <span class="Kursiv _idGenCharOverride-2">D25.1</span> <span class="Kursiv _idGenCharOverride-2">Intramurales Leiomyom des Uterus</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="Kursiv _idGenCharOverride-2">D25.0</span> <span class="Kursiv _idGenCharOverride-2">Submuköses Leiomyom des Uterus</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="Kursiv _idGenCharOverride-2">D50.0</span> <span class="Kursiv _idGenCharOverride-2">Eisenmangelanämie nach Blutverlust (chronisch)</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="Kursiv _idGenCharOverride-2">D32.0</span> <span class="Kursiv _idGenCharOverride-2">Gutartige Neubildung der Meningen, Hirnhäute</span></p><p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B	</span> <span class="Kursiv _idGenCharOverride-2">Hysterektomie gemäss medizinischer Dokumentation</span></p><p class="Grundtext-D- ParaOverride-11"><span class="Kursiv _idGenCharOverride-2">B	</span> <span class="Kursiv _idGenCharOverride-2">MRI Neurokranium	</span></p><div aria-label="103" epub:type="pagebreak" id="page105" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Kursiv CharOverride-16">Maligne Neubildungen/Carcinoma in situ</span></p><p class="Grundtext-D-">Der <span class="Light _idGenCharOverride-2">Kode für die maligne Neubildung und/oder das Carcinoma in situ</span> ist als Hauptdiagnose für <span class="Fett _idGenCharOverride-1">jeden</span> Spitalaufenthalt zur Behandlung der <span class="Light _idGenCharOverride-2">malignen Neubildung und/oder des Carcinoma in situ </span>oder zu notwendigen Folgebehandlungen (z.B. Operationen, Chemo-/Strahlentherapie, sonstige Therapie<span class="Light _idGenCharOverride-2">n</span>) sowie zur Diagnostik (z.B. Staging) anzugeben, bis die Behandlung endgültig abgeschlossen ist, also auch bei den stationären Aufenthalten, die beispielsweise auf die chirurgische Entfernung eines Malignom<span class="Light _idGenCharOverride-2">s/eines Carcinoma in situ </span>folgen. Denn obwohl das Malignom<span class="Light _idGenCharOverride-2">/Carcinoma in situ</span> operativ entfernt worden ist, wird der Patient nach wie vor wegen notwendigen Folgebehandlungen <span class="Light _idGenCharOverride-2">und/oder Folgediagnostik</span> des Malignoms <span class="Light _idGenCharOverride-2">und/oder Carcinoma in situ</span> hospitalisiert.</p><p class="Grundtext-D-">Sofern eine Patientin/ein Patient eine auf mehrere Eingriffe verteilte chirurgische Behandlung eines Malignoms,<span class="Light _idGenCharOverride-2"> eines Carcinoma in situ</span> und<span class="Light _idGenCharOverride-2">/oder</span> von Metastasen benötigt, ist bei jedem weiteren Spitalaufenthalt, bei dem eine <span class="Light _idGenCharOverride-2">(geplante)</span> Folgeoperation durchgeführt wird, das Malignom<span class="Light _idGenCharOverride-2">/Carcinoma in situ</span>/die Metastasen ebenfalls als Hauptdiagnose-Kode zuzuweisen. Obwohl das Malignom<span class="Light _idGenCharOverride-2">/das Carcinoma in situ</span>/die Metastasen möglicherweise durch die erste Operation entfernt worden ist/sind, wird während des darauffolgenden Spitalaufenthaltes <span class="Fett _idGenCharOverride-1">nach wie vor wegen des Malignoms</span><span class="Light _idGenCharOverride-2">/des Carcinoma in situ/</span><span class="Fett _idGenCharOverride-1">der Metastasen</span> behandelt, d.h. das Malignom<span class="Light _idGenCharOverride-2">/das Carcinoma</span> in situ/die Metastasen ist/sind auch der Anlass <span class="Light _idGenCharOverride-2">für (geplante)</span> Folge-Operation<span class="Light _idGenCharOverride-2">en</span>.</p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Der Terminus «Folgen» in dieser Kodierregel ist auch gemäss Kodierregel D07 «Geplante Folgeeingriffe» zu betrachten.</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Für stationäre Aufenthalte aufgrund Störungen nach medizinischen Massnahmen, therapiebedingten Folgen/Erkrankungen im Kontext von Tumorerkrankungen wird auf die Kodierregel SD0205 verwiesen.</span></p><p class="Beispiel-Text"><span class="Fett _idGenCharOverride-1">Beispiel 4</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Patientin mit Mastektomie und Axilladissektion bei Mammakarzinom und lobulärem CIS vor 2 Jahren und postoperativer adjuvanter Chemotherapie. Sie wird aktuell für einen Mamma-Aufbau mittels Expander und Musculus latissimus dorsi-Lappen aufgenommen. Andere therapeutische oder diagnostische Massnahmen bezüglich der malignen Grunderkrankung erfolgen nicht.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">50.– 	Bösartige Neubildung der Brustdrüse [Mamma] (4. Stelle entsprechend der Lokalisation)</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">D05.0</span> <span class="Kursiv _idGenCharOverride-2">Lobuläres Carcinoma in situ der Brustdrüse</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	0</span></p><p class="Beispiel-Text ParaOverride-6"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span><span class="Light _idGenCharOverride-2"> Bei gleichzeitigem Vorliegen von einem Karzinom (z.B.  auf Boden eines ausgedehnten CIS) und Carcinoma in situ ist der bösartige Tumor </span><span class="Fett _idGenCharOverride-1">vor</span><span class="Light _idGenCharOverride-2"> dem Carcinoma in situ zu erfassen.</span></p><p class="Beispiel-Text"><span class="Fett _idGenCharOverride-1">Beispiel 5</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eintritt zur bilateralen Mastektomie bei beidseitigem Carcinoma in situ (stanzbioptisch gesichert).</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Im postoperativen histopathologischen Bericht wird ein ausgedehntes, beidseitiges duktales Carcinoma in situ und ein kleiner Anteil eines invasiven Karzinoms (Grösse 0.4 x 0.3 mm, rechts 9-Uhr-Achse) dokumentiert.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">50.8</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung der Brustdrüse [Mamma], mehrere Teilbereiche überlappend</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span> <span class="Kursiv _idGenCharOverride-2">1</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">D05.1</span> <span class="Kursiv _idGenCharOverride-2">Carcinoma in situ der Milchgänge</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span> <span class="Kursiv _idGenCharOverride-2">0</span></p><p class="Beispiel-Text"><span class="Fett _idGenCharOverride-1">Beispiel 6</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eintritt zur geplanten Re-TUR-B bei Harnblasenkarzinom (beide Seitenwände) und Instillation von zytotoxischen Medikamenten.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">67.2</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung der Harnblase, laterale Harnblasenwand</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span> <span class="Kursiv _idGenCharOverride-2">0</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">TUR-B</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">Reoperation</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">Instillation zytotoxischer Medikamente</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Die Reihenfolge </span>der anzugebenden Kodes hängt von der Behandlung während des betreffenden Spitalaufenthaltes ab.</p><div aria-label="104" epub:type="pagebreak" id="page106" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Bei gleichzeitiger Behandlung/Diagnostik von malignen Tumoren/Neubildungen UND Metastasen UND systemischer Therapie gelangt die Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52 «Die Hauptdiagnose» zur Anwendung.</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">•	</span><span class="Fett CharOverride-1"><a id="_idIndexMarker192"></a></span><span class="Fett _idGenCharOverride-1">Diagnostik/</span><span class="Fett CharOverride-1"><a id="_idIndexMarker193"></a><a id="_idIndexMarker194"></a></span><span class="Fett _idGenCharOverride-1">Behandlung des primären Tumor</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">s</span></span><span class="Fett _idGenCharOverride-1">: </span><span class="Light _idGenCharOverride-2">Der Primarius, (lokale) Rezidivprimarius </span>ist als Hauptdiagnose zu kodieren. <span class="Light _idGenCharOverride-2">Zusätzlich vorhandene (beschriebene) </span>Metastasen <span class="Light _idGenCharOverride-2">und vorhandenes Carcinoma in situ</span> werden als Nebendiagnose angegeben<span class="Light _idGenCharOverride-2"> (entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert)</span>. Primärtumoren mit unbekannter Lokalisation <span class="Light _idGenCharOverride-2">(CUP) </span>werden mit <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">80.– Bösartige Neubildung ohne Angabe der Lokalisation</span> kodiert.</p><p class="Beispiel-Titel">Beispiel <span class="Fett _idGenCharOverride-1">7</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient wird zur Teilresektion der Lunge wegen eines Bronchialkarzinoms des Oberlappens eingewiesen.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">34.1	Bösartige Neubildung des Oberlappen (-Bronchus)</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">•	Diagnostik/Behandlung von Metastase(n</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">)</span></span><span class="Fett _idGenCharOverride-1">:</span><span class="Light _idGenCharOverride-2"> Die Metastase(n) wird/werden als Hauptdiagnose und der Primarius oder (lokale) Rezidivprimarius als Nebendiagnose (entgegen der Definition der Nebendiagnose) angegeben. Zusätzlich andere vorhandene (beschriebene) Metastase(n) und vorhandenes Carcinoma in situ werden als Nebendiagnose angegeben (entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert).</span></p><p class="Beispiel-Titel">Beispiel 8</p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin wird zur Resektion von Lebermetastasen eines resezierten kolorektalen Karzinoms stationär aufgenommen.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">78.7	Sekundäre bösartige Neubildung der Leber</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">19	Bösartige Neubildung am Rektosigmoid, Übergang</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">•	Systemische Therapie </span>(Ganzkörperbestrahlung, iv-Radiotherapie, systemische Chemotherapie <span class="Light _idGenCharOverride-2">oder sonstige systemische Tumortherapien wie z.B. Hormontherapie</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span><span class="Light _idGenCharOverride-2">; siehe Beispiel 10)</span> <span class="Fett _idGenCharOverride-1">des Primärtumors und/oder der Metastase</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">n</span></span><span class="Fett _idGenCharOverride-1">: </span><span class="Light _idGenCharOverride-2">Der Primarius/(lokale) Rezidivprimarius wird</span> als Hauptdiagnose angegeben.</p><div aria-label="104" epub:type="pagebreak" id="page106-1" role="doc-pagebreak"></div><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">Zusätzlich andere vorhandene (beschriebene) Metastase(n) und vorhandenes Carcinoma in situ werden als Nebendiagnose angegeben (entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert).</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">Primärtumoren mit unbekannter Lokalisation (CUP) werden mit </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">80.– Bösartige Neubildung ohne Angabe der Lokalisation</span><span class="Light _idGenCharOverride-2"> kodiert.</span></p><p class="Beispiel-Titel">Beispiel <span class="Fett _idGenCharOverride-1">9</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient wird zur systemischen Chemotherapie bei Lebermetastasen eines resezierten kolorektalen Karzinoms stationär <br/>aufgenommen.</span></p><p class="Beispiel-Text ParaOverride-4"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">19	Bösartige Neubildung am Rektosigmoid, Übergang</span></p><p class="Beispiel-Text ParaOverride-4"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">78.7	Sekundäre bösartige Neubildung der Leber<br/></span></p><p class="Beispiel-Text ParaOverride-4"><span class="Light _idGenCharOverride-2">Bei gleichzeitiger Behandlung einer malignen Erkrankung, die systemisch behandelt wird, und einer von der malignen Neubildung unabhängigen Erkrankung / Zustand / Manifestation im gleichen stationären Aufenthalt gelangt die Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52 «Die Hauptdiagnose» zur Anwendung und die hier befindliche Kodierregel wird ausser Kraft gesetzt.Siehe dazu Beispiele 1 und 2.<br/><br/></span><span class="Fett _idGenCharOverride-1">Beispiel 10</span><span class="Kursiv _idGenCharOverride-2"><br/>Eintritt einer 84-jährigen Patientin mit dekompensierter Herzinsuffizienz NYHA 3-4 zur Rekompensation und Medikamenteneinstellung auf die Abteilung «Innere Medizin». Sie leidet zusätzlich an einem bereits vor 1.5 Jahren operierten, in die axillären Lymphknoten metastasierten Mammakarzinom rechts oberer äusserer Quadrant.<br/>Momentan keine Chemotherapie geplant, stable disease.<br/>Aufgrund eines Östrogen-Rezeptor-positiven Karzinoms erhält sie während des Aufenthaltes eine weitere fällige Injektion eines Östrogenblockers.<br/><br/>HD</span> <span class="Kursiv _idGenCharOverride-2">I50.14</span> <span class="Kursiv _idGenCharOverride-2">Linksherzinsuffizienz mit Beschwerden in Ruhe<br/>ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">50.4</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung der Brustdrüse [Mamma], oberer äusserer Quadrant der Brustdrüse<br/>L</span> <span class="Kursiv _idGenCharOverride-2">1<br/>ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">77.3</span> <span class="Kursiv _idGenCharOverride-2">Sekundäre und nicht näher bezeichnete bösartige Neubildung der Lymphknoten, axilläre Lymphknoten und <br/></span> <span class="Kursiv _idGenCharOverride-2">Lymphknoten der oberen Extremität<br/>L</span> <span class="Kursiv _idGenCharOverride-2">1</span><span class="Fett _idGenCharOverride-1"> </span></p><div aria-label="105" epub:type="pagebreak" id="page107" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">•</span> <span class="Fett _idGenCharOverride-1">Diagnostik/</span><span class="Fett CharOverride-1"><a id="_idIndexMarker195"></a><a id="_idIndexMarker196"></a></span><span class="Fett _idGenCharOverride-1">Behandlung sowohl des Primärtumors als auch der Metastase(n</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">)</span></span><span class="Fett _idGenCharOverride-1">:</span> <span class="Light _idGenCharOverride-2">Diejenige Diagnose, die den grössten Aufwand an medizinischen Mitteln erfordert (gemäss Regel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52), ist als Hauptdiagnose zu wählen. Gemäss dokumentiertem medizinischem Aufwand können sowohl Primarius, (lokaler) Rezidivprimarius oder Metastase(n) als Hauptdiagnose in Frage kommen.<br/></span><span class="Light _idGenCharOverride-2">Zusätzlich vorhandene (beschriebene) Metastase(n) und/oder der Tumor und vorhandenes Carcinoma in situ werden als Nebendiagnose angegeben (entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert).                                        									</span><br/></p><p class="Beispiel-Text ParaOverride-4"><span class="Fett _idGenCharOverride-1">Beispiel 11</span><span class="Light _idGenCharOverride-2"><br/></span><span class="Kursiv _idGenCharOverride-2">Eintritt zur Operation einer Knochenmetastase (Sternum) bei primärem Karzinom im vorderen Mediastinum.<br/>Am Ende des Aufenthaltes erfolgt die Verabreichung einer systemischen Chemotherapie.<br/>Ärztlich deklarierter Hauptaufwand des stationären Falles ist die Behandlung der sekundären Neubildung Sternum.<br/><br/>HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">79.5</span><span class="CharOverride-6"> </span><span class="Kursiv _idGenCharOverride-2">Sekundäre bösartige Neubildung des Knochens und des Knochenmarkes<br/>ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">38.1</span><span class="CharOverride-6"> </span><span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung des Herzens, des Mediastinums und der Pleura, vorderes Mediastinum</span><span class="Light _idGenCharOverride-2"><br/><br/></span><span class="Fett _idGenCharOverride-1">Beispiel 12</span><span class="Light _idGenCharOverride-2"><br/></span><span class="Kursiv _idGenCharOverride-2">Eintritt einer Patientin zur Lymphknotenbiopsie bei Verdacht auf inguinale Lymphknotenmetastasen (rechts) eines malignen Melanoms der rechten Labia majora.<br/>Das Staging bestätigt den Verdacht.<br/>Die Patientin erhält im gleichen Aufenthalt eine systemische Therapie mit Chemotherapeutika und Immuntherapie mit Antikörpern.<br/>Die medizinische Dokumentation lässt erkennen, dass die systemische Behandlung einen höheren Aufwand an Mitteln und Aufwänden im Sinne der Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">52 benötigte als das Staging mittels Lymphknotenbiopsie.<br/><br/>HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">51.0</span><span class="CharOverride-6"> </span><span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung der Vulva, Labium majus<br/>L</span><span class="CharOverride-6"> </span><span class="Kursiv _idGenCharOverride-2">1<br/>ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">77.4</span><span class="CharOverride-6"> </span><span class="Kursiv _idGenCharOverride-2">Sekundäre und nicht näher bezeichnete bösartige Neubildung der Lymphknoten, inguinale Lymphknoten und <br/></span><span class="CharOverride-6"> </span><span class="Kursiv _idGenCharOverride-2">Lymphknoten der unteren Extremität<br/>L</span><span class="CharOverride-6"> </span><span class="Kursiv _idGenCharOverride-2">1<br/><br/></span><span class="Light _idGenCharOverride-2">Bei gleichzeitiger systemischer Therapie und Behandlung Metastase (Beispiel 11) und Diagnostik einer Metastase (Beispiel 12) erfolgt die Bestimmung des Hauptaufwandes gemäss Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52 «Die Hauptdiagnose».<br/></span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">•</span> <span class="Light _idGenCharOverride-2">Bei </span><span class="Fett _idGenCharOverride-1">Palliativbehandlung des Tumorpatiente</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">n</span></span><span class="Fett _idGenCharOverride-1">: </span><span class="Light _idGenCharOverride-2">Der Tumor (Primarius, (lokaler) Rezidivprimarius) ist als Hauptdiagnose, vorhandene </span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">   (beschriebene) Metastasen und/oder ein vorhandenes Carcinoma in situ sind als Nebendiagnosen abzubilden, unabhängig davon, 	   ob dieser/diese direkt behandelt wird/werden oder nicht und entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand </span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">   &gt; 0 für die zulässige Kodierung einer ND postuliert.</span></p><p class="Grundtext-D- ParaOverride-4"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span><span class="Light _idGenCharOverride-2"> In seltenen Fällen sind für die Notwendigkeit einer Palliativbehandlung einer Tumorerkrankung die Metastasen verantwortlich (z.B. zerebral metastasiertes Mammakarzinom, Aufnahme zur Palliativbehandlung aufgrund sämtlicher zerebraler Folgen).<br/>In diesen Fällen ist der Tumor in die HD zu wählen, der für die Palliativbehandlung im Vordergrund stand. Falls eine Metastase  </span></p><p class="Grundtext-D- ParaOverride-4"><span class="Light _idGenCharOverride-2">Hauptdiagnose ist, wird der Primarius/(lokale) Rezidivprimarius als Nebendiagnose angegeben, sowie andere vorhandene (beschriebene) Metastase(n) entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert.</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">•</span> <span class="Fett _idGenCharOverride-1">Symptombehandlun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">g</span></span><span class="Fett _idGenCharOverride-1">:</span> Wenn bei <span class="Light _idGenCharOverride-2">einer Patientin/einem Patienten</span> ausschliesslich ein, resp. mehrere Symptome der Tumorerkrankung behandelt werden und am Tumor keine Massnahme durchgeführt wird, ist der Tumor <span class="Light _idGenCharOverride-2">(Primarius, (lokaler) Rezidivprimarius, Metastasen)</span>, dessen Symptombehandlung den meisten Aufwand (<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">G</span>52) erzeugt hat, als Hauptdiagnose abzubilden. Falls eine Metastase Hauptdiagnose ist, wird der <span class="Light _idGenCharOverride-2">Primarius/(lokale) Rezidivprimarius</span> als Nebendiagnose angegeben, sowie andere vorhandene (beschriebene) Metastase(n) <span class="Light _idGenCharOverride-2">und/oder ein vorhandenes Carcinoma in situ</span> <span class="Light _idGenCharOverride-2">(entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert).</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span><span class="Light _idGenCharOverride-2"> Sämtliche Aufzählungen und Beispiele sind nicht als vollständig für die Kodierung zu betrachten und dienen ausschliesslich als Anhaltspunkte/Hinweise.</span></p><div aria-label="106" epub:type="pagebreak" id="page108" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Als Symptome einer Tumorerkrankung zählen z.B</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">.</span></span><span class="Fett _idGenCharOverride-1">:</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Progrediente, diffuse Schmerzen bei ossärer Metastasierung</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Dyspnoe bei Lungenkarzinom</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Schwindel, Erbrechen bei zerebraler Metastasierung</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Dysphagie bei Ösophaguskarzinom</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Tumorblutung</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">•</span> <span class="Light _idGenCharOverride-2">Bei Auftreten und Behandlungsnotwendigkeit einer/mehrerer mit einem Tumor (Primarius, (lokaler) Rezidivprimarius oder</span> <span class="Light _idGenCharOverride-2">Metastase(n))</span><span class="Fett _idGenCharOverride-1"> ätiologisch verbundener Erkrankung(en)</span><span class="Light _idGenCharOverride-2"> und ohne, dass am Tumor selbst Massnahmen durchgeführt wurden, gilt als Hauptdiagnose der Tumor, mit dem die Erkrankung </span><span class="Fett _idGenCharOverride-1">direkt zusammenhängend</span><span class="Light _idGenCharOverride-2"> ist und die den meisten Aufwand (</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52) erzeugt hat. Falls eine Metastase Hauptdiagnose ist, wird der Primarius/(lokale) Rezidivprimarius als Nebendiagnose angegeben sowie andere vorhandene (beschriebene) Metastase(n) (entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert).</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">Die Erkrankung selbst ist bei Erfüllung der Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54 zusätzlich zu kodieren.</span></p><p class="Grundtext-D-"> </p><div aria-label="106" epub:type="pagebreak" id="page108-1" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Ist der ärztlichen Dokumentation kein eindeutiger Hinweis zu entnehmen, ob eine Erkrankung mit dem Tumor </span><span class="Fett _idGenCharOverride-1">ätiologisch verbunden</span><span class="Light _idGenCharOverride-2"> ist oder unabhängig davon betrachtet werden muss, ist zwingend die behandelnde Ärztin/der behandelnde Arzt zu konsultieren.</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Als mit einem Tumor ätiologisch verbundene Erkrankungen zählen z.B</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">.</span></span><span class="Fett _idGenCharOverride-1">:</span></p><p class="Grundtext-D-"> </p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Epilepsie bei zerebraler Metastasierung</span> <span class="Light _idGenCharOverride-2">oder benignem Meningeom</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Poststenotische Pneumonie bei Bronchuskarzinom</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Wirbelkörperfraktur bei ossären Metastasen</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Anämie bei ossärer Metastasierung</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Leberversagen bei Obstruktion des Ductus choledochus durch ein Pankreaskopfkarzinom</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">–	Mechanischer Ileus bei Kolonkarzinom</span></p><p class="Beispiel-Titel"><span class="Light CharOverride-3">Beispiel 13</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eintritt einer Patientin mit erstmals aufgetretenem tonisch-klonischem Anfall.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Die Diagnostik u.a. mit Schädel-CT ergibt eine strukturelle Epilepsie bei frontaler Raumforderung mit Verdacht auf benignes Falx- </span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Meningeom.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Medikation mit Antiepileptika wird etabliert und die Patientin in mittelfristiger Zukunft für die Behandlung des Meningeoms aufgeboten. </span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="Kursiv _idGenCharOverride-2">D32.0</span> <span class="Kursiv _idGenCharOverride-2">Gutartige Neubildung der Meningen, Hirnhäute</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">40.2</span> <span class="Kursiv _idGenCharOverride-2">Lokalisationsbezogene (fokale) (partielle) symptomatische Epilepsie und epileptische Syndrome mit</span></p><p class="Beispiel-Titel"> <span class="Kursiv _idGenCharOverride-2">komplexen fokalen Anfällen </span></p><div aria-label="106" epub:type="pagebreak" id="page108-2" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Zu den mit einer Tumorerkrankung ätiologisch verbundenen Symptomen/Erkrankungen werden für die Kodierung auch die </span><span class="Fett _idGenCharOverride-1">paraneoplastischen Symptome/Syndrome</span><span class="Light _idGenCharOverride-2"> gezählt.</span></p><div aria-label="106" epub:type="pagebreak" id="page108-3" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Auch in diesen Fällen wird der zugrundeliegende, das paraneoplastische Symptom/Syndrom</span><span class="Fett _idGenCharOverride-1"> direkt </span><span class="Light _idGenCharOverride-2">auslösende Tumor (Primarius, (lokaler) Rezidivprimarius oder Metastase(n)) in die HD gewählt.</span></p><div aria-label="106" epub:type="pagebreak" id="page108-4" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Das Symptom/Syndrom oder einzelne Manifestationen (wenn kein eigenständiger Syndrom-Kode in der ICD-10-GM vorhanden ist) sowie andere vorhandene (beschriebene) Metastase(n) werden in die Nebendiagnose gewählt (entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert).</span></p><div aria-label="106" epub:type="pagebreak" id="page108-5" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Ist der ärztlichen Dokumentation kein eindeutiger Hinweis zu entnehmen, ob bei Vorliegen eines(-er) Symptoms / Syndroms / Manifestation von einer mit dem Tumor ätiologisch verbundenen Paraneoplasie ausgegangen werden kann oder als davon unabhängig betrachtet werden muss, ist zwingend die behandelnde Ärztin/der behandelnde Arzt zu konsultieren.</span></p><p class="Grundtext-D-"> </p><div aria-label="107" epub:type="pagebreak" id="page109" role="doc-pagebreak"></div><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beispiele für Paraneoplasien</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">• 	Paraneoplastische endokrine Manifestatione</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span><span class="Light _idGenCharOverride-2">:</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Bildung von ektopem ACTH oder ACTH-ähnlichen Molekülen</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">(z.B. Bronchialkarzinom), mgl. Folg</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">e</span></span><span class="Light _idGenCharOverride-2">:  </span><span class="Kursiv _idGenCharOverride-2">E24.3</span><span class="Light _idGenCharOverride-2"> </span><span class="Kursiv _idGenCharOverride-2">Ektopisches ACTH-Syndrom</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Bildung von PTH</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">(z.B. Bronchialkarzinom), mgl. Folg</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">e</span></span><span class="Light _idGenCharOverride-2">: </span><span class="Kursiv _idGenCharOverride-2">E21.2 Sonstiger Hyperparathyreodismus</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">• 	Paraneoplastische Gerinnungsstörungen,</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">z.B. paraneoplastische Thrombose</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span><span class="Light _idGenCharOverride-2">:</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Thrombophlebitis migran</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">s</span></span><span class="Light _idGenCharOverride-2">: </span><span class="Kursiv _idGenCharOverride-2">I82.1</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Tiefe Beinvenenthrombos</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">e</span></span><span class="Light _idGenCharOverride-2">: </span><span class="Kursiv _idGenCharOverride-2">I80.28</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Abakterielle thrombotische Endokarditis (mit konsekutiven Erkrankungen wie Herzinfarkt oder Schlaganfall</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">)</span></span><span class="Light _idGenCharOverride-2">: </span><span class="Kursiv _idGenCharOverride-2">I33.9</span></p><p class="Grundtext-D-"><span class="Kursiv _idGenCharOverride-2"> </span><span class="Light _idGenCharOverride-2">• 	Antikörpervermittelte Paraneoplasie</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span><span class="Light _idGenCharOverride-2">:</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Zollinger-Ellison-Syndrom, z.B. bei malignen Tumoren des Gastrointestinaltrakte</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">s</span></span><span class="Light _idGenCharOverride-2">: </span><span class="Kursiv _idGenCharOverride-2">E16.4</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Dermatomyositis/Polymyositis bei Neubildunge</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span><span class="Light _idGenCharOverride-2">: </span><span class="Kursiv _idGenCharOverride-2">M36.0*</span><span class="Light _idGenCharOverride-2"> </span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">	• 	Neurologisch vermittelte Paraneoplasie</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span><span class="Light _idGenCharOverride-2">:</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Guillain-Barré Syndrom z.B. bei Hodgkin-Lympho</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">m</span></span><span class="Light _idGenCharOverride-2">: </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">61.0</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Lambert-Eaton-Syndrom z.B. bei kleinzelligem Bronchialkarzino</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">m</span></span><span class="Light _idGenCharOverride-2">: </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">73.1*</span></p><p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">– Periphere Polyneuropathie (nicht aufgrund Chemotherapie</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">)</span></span><span class="Light _idGenCharOverride-2">: </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">62.88</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">: </span><span class="Light _idGenCharOverride-2">Ein(e) paraneoplastisches Symptom/Syndrom oder Manifestation und/oder eine mit dem Tumor ätiologisch verbundene Erkrankung können weitere Folgeerkrankungen auslösen.</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Steht eine solche Folgeerkrankung in direkter Verbindung mit dem/der paraneoplastischen Symptom/Syndrom/Manifestation oder einer Erkrankung, die ätiologisch mit dem Tumor verbunden ist, gilt sie als </span><span class="Fett _idGenCharOverride-1">nicht mehr direkt mit dem Tumor vergesellschaftet</span><span class="Light _idGenCharOverride-2"> und wird als Hauptdiagnose kodiert (sofern sie Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52 erfüllt).</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die Paraneoplasie und/oder die mit dem Tumor ätiologisch verbundene Erkrankung und der auslösende Tumor (Primarius, (lokaler) Rezidivprimarius und vorhandene (beschriebene) Metastase(n)) werden in die Nebendiagnose gewählt (entgegen der Definition der Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54, die einen Aufwand &gt; 0 für die zulässige Kodierung einer Nebendiagnose postuliert).</span></p><p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-1">Beispiel 14</span></p><p class="Beispiel-Text">Ein Patient tritt mit Herzinfarkt in Folge einer paraneoplastischen abakteriellen thrombotischen Endokarditis bei kleinzelligem Bronchuskarzinom ein.</p><p class="Beispiel-Text">HD 	I21.-	Akuter Myokardinfarkt  </p><p class="Beispiel-Text">ND 	I33.9	Akute Endokarditis, nicht näher bezeichnet</p><p class="Beispiel-Text">ND 	<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">C</span>34.-	Bösartige Neubildung der Bronchien und der Lunge </p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p><p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-1">Beispiel 15</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin tritt ein mit Lungenembolie ohne Cor pulmonale aufgrund einer tiefen Beinvenenthrombose, bei einer paraneoplastischen Gerinnungsstörung bei Pankreaskopfkarzinom.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Aufgrund der Lungenembolie 2 Tage </span><span class="Unterlegen-grün-kursiv _idGenCharOverride-2">IS</span><span class="Kursiv _idGenCharOverride-2">-Aufenthalt. Dazu ist die Patientin während des Aufenthalts 3 Tage heparinisiert und erhält ein Staging-CT.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD </span> <span class="Kursiv _idGenCharOverride-2">I26.9</span> <span class="Kursiv _idGenCharOverride-2">Lungenembolie ohne Angabe eines akuten Cor pulmonale</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND </span> <span class="Kursiv _idGenCharOverride-2">I80.28</span> <span class="Kursiv _idGenCharOverride-2">Thrombose […] sonstiger tiefer Gefässe der unteren Extremitäten</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND </span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">25.0</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung des Pankreaskopfes</span></p><div aria-label="108" epub:type="pagebreak" id="page110" role="doc-pagebreak"></div><p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-1">Beispiel 16</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient tritt mit plötzlich zunehmender Aphasie und schlaffer Hemiplegie stationär ein.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Nach endovaskulärer Thrombektomie intrazerebral, Betreuung auf Intensivstation und Stabilisierung auf der Stroke-Unit verhärtet sich der Verdacht auf eine Gerinnungsstörung unklarer Ätiologie bei ansonsten unauffälligem Gesundheitsstatus.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Nach weiteren diagnostischen Massnahmen, einschliesslich Staging -CT, wird die Diagnose eines Pankreaskopfkarzinoms gestellt.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Der betreuende Arzt dokumentiert den hochgradigen Verdacht auf eine paraneoplastische Gerinnungsstörung.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="Kursiv _idGenCharOverride-2">I63.3</span> <span class="Kursiv _idGenCharOverride-2">Hirninfarkt durch Thrombose zerebraler Arterien</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">81.0</span> <span class="Kursiv _idGenCharOverride-2">Schlaffe Hemiparese und Hemiplegie</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">R47.0</span> <span class="Kursiv _idGenCharOverride-2">Dysphasie und Aphasie</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">D68.8</span> <span class="Kursiv _idGenCharOverride-2">Sonstige näher bezeichnete Koagulopathien</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">25.0</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung des Pankreaskopfes</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Hinwei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">s</span></span><span class="Fett _idGenCharOverride-1">: </span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Für alle Fallbeispiele gil</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">t</span></span><span class="Light _idGenCharOverride-2">:</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die Zusatzkodes </span><span class="Kursiv _idGenCharOverride-2">U69.1</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">1</span></span><span class="Kursiv _idGenCharOverride-2">! Dauerhaft erworbene Blutgerinnungsstörung</span><span class="Light _idGenCharOverride-2"> und </span><span class="Kursiv _idGenCharOverride-2">U69.1</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">2</span></span><span class="Kursiv _idGenCharOverride-2">! Temporäre Blutgerinnungsstörung</span><span class="Light _idGenCharOverride-2"> werden, gemäss ärztlicher Dokumentation des Krankheitsverlaufes, der Kodierung hinzugefügt.</span></p><p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">: </span><span class="Light _idGenCharOverride-2">Als</span><span class="Fett _idGenCharOverride-1"> «vorhanden» (beschrieben)</span><span class="Light _idGenCharOverride-2"> (in Bezug auf Primarius, (lokalen) Rezidivprimarius und/oder Metastasen) versteht man das ärztlich dokumentierte, metastasierte Grundleiden, unabhängig davon, ob z.B. die Metastasen makro- oder mikroskopisch (histopathologisch) nachweisbar sind/wären.</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Als valide ärztliche Dokumentation gilt das Vorhandensein einer TNM-Klassifikation in der fallbezogenen Dokumentation und/oder die exakte Beschreibung der Lokalisationen von Primarius, (lokalem) Rezidivprimarius und/oder Metastasen (oder Verdacht auf...) im Fliesstext und/oder der Diagnoseliste der ärztlichen Berichte.</span></p><p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Auch wenn z.B. Metastasen (lokal) entfernt wurden, kann bei metastasiertem Grundleiden nicht davon ausgegangen werden, dass die Betroffenen tumor- und/oder metastasenfrei sind.</span></p><p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-1">Beispiel 17</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin wird aufgenommen zur palliativen Chemotherapie im Zyklus bei Status nach Mastektomie mit Lymphadenektomie bei metastasiertem Mammakarzinom. Die TNM-Klassifikation gemäss ärztlichem Austrittsbericht ist p</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">2N2(7/15) M1(OSS, BRA). Die Lymphknotenmetastasen fanden sich axillär.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">50.9</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung der Brustdrüse, n.n.bez.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">77.3</span> <span class="Kursiv _idGenCharOverride-2">Sekundäre und n.n.bez. bösartige Neubildung der axillären Lymphknoten und Lymphknoten der oberen</span> <span class="Kursiv _idGenCharOverride-2">Extremität</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">79.5</span> <span class="Kursiv _idGenCharOverride-2">Sekundäre bösartige Neubildung des Knochens und des Knochenmarkes</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">79.3</span> <span class="Kursiv _idGenCharOverride-2">Sekundäre bösartige Neubildung des Gehirns und der Hirnhäute</span></p><p class="Beispiel-Text"><span class="Fett _idGenCharOverride-1">Beispiel 18</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient wird aufgenommen mit ärztlich dokumentierter, metastatisch bedingter Wirbelkörperkompression thorakal zur Vertebroplastie bei metastasiertem Nierenzellkarzinom.</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">79.5†</span> <span class="Kursiv _idGenCharOverride-2">Sekundäre bösartige Neubildung des Knochens und des Knochenmarkes</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">M49.54*</span> <span class="Kursiv _idGenCharOverride-2">Wirbelkörperkompression im Thorakalbereich bei anderenorts klassifizierten Krankheiten</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">64</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung der Niere, ausgenommen Nierenbecken</span></p><p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p></article>
+    <nav class="pager"><a class="pager-prev" href="sd0200nneubildungen.html">‹ SD0200nNeubildungen</a><a class="pager-next" href="sd0203nnachresektion-im-tumorgebiet.html">SD0203nNachresektion im Tumorgebiet ›</a></nav>
+  </main>
+  </div>
+  <script src="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/assets/nav.js"></script>
+  <script>
+// Sidebar-Hoehe an Header anpassen
+(function() {
+  function adjustSidebar() {
+    var header = document.getElementById('site-header');
+    var sidebar = document.getElementById('sidebar');
+    if (header && sidebar) {
+      var h = header.offsetHeight;
+      sidebar.style.top = h + 'px';
+      sidebar.style.height = 'calc(100vh - ' + h + 'px)';
+    }
+  }
+  adjustSidebar();
+  window.addEventListener('resize', adjustSidebar);
+})();
+</script>
+</body>
+</html>
