@@ -27,6 +27,11 @@
       "level": 2
     },
     {
+      "slug": "abkuerzungen-des-kodierungshandbuches",
+      "title": "Abkürzungen des Kodierungshandbuches",
+      "level": 3
+    },
+    {
       "slug": "grundlagen-g00-g55",
       "title": "Grundlagen G00 –G55",
       "level": 2
@@ -37,9 +42,54 @@
       "level": 3
     },
     {
+      "slug": "g01ngeschichte",
+      "title": "G01nGeschichte",
+      "level": 4
+    },
+    {
+      "slug": "g02morganisation",
+      "title": "G02mOrganisation",
+      "level": 4
+    },
+    {
+      "slug": "g03m-gesetzliche-grundlagen",
+      "title": "G03m\tGesetzliche Grundlagen",
+      "level": 4
+    },
+    {
+      "slug": "g04mziele-der-erhebung-spitalstationaere-gesundheitsversorgung-spiges",
+      "title": "G04mZiele der Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes)",
+      "level": 4
+    },
+    {
+      "slug": "g05manonymisierung-der-daten",
+      "title": "G05mAnonymisierung der Daten",
+      "level": 4
+    },
+    {
+      "slug": "g06mder-medizinische-datensatz-definitionen-und-variablen",
+      "title": "G06mDer medizinische Datensatz,Definitionen und Variablen",
+      "level": 4
+    },
+    {
+      "slug": "g10p-erhebung-spitalstationaere-gesundheitsversorgung-spiges-die-patientenklassi",
+      "title": "G10p\tErhebung Spitalstationäre Gesundheitsversorgung (SpiGes), die Patientenklassifikationssysteme SwissDRG, TARPSY und ST Reha",
+      "level": 3
+    },
+    {
       "slug": "g20-die-klassifikationen-icd-10-gm-und-chop",
       "title": "G20\tDie Klassifikationen (ICD-10-GM und CHOP)",
       "level": 3
+    },
+    {
+      "slug": "g21p-icd-10-gm",
+      "title": "G21p\tICD-10-GM",
+      "level": 4
+    },
+    {
+      "slug": "g22o-schweizerische-operationsklassifikation-chop",
+      "title": "G22o\tSchweizerische Operationsklassifikation (CHOP)",
+      "level": 4
     },
     {
       "slug": "g30a-derweg-zur-korrekten-kodierung",
@@ -57,9 +107,39 @@
       "level": 3
     },
     {
+      "slug": "g51o-derbehandlungsfall",
+      "title": "G51o\tDerBehandlungsfall",
+      "level": 4
+    },
+    {
+      "slug": "g52h-diehauptdiagnose",
+      "title": "G52h\tDieHauptdiagnose",
+      "level": 4
+    },
+    {
+      "slug": "g53m-derzusatz-zur-hauptdiagnose",
+      "title": "G53m\tDerZusatz zur Hauptdiagnose",
+      "level": 4
+    },
+    {
+      "slug": "g54p-dienebendiagnosen",
+      "title": "G54p\tDieNebendiagnosen",
+      "level": 4
+    },
+    {
+      "slug": "g55mdiebehandlung",
+      "title": "G55mDieBehandlung",
+      "level": 4
+    },
+    {
       "slug": "allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16",
       "title": "Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16",
       "level": 2
+    },
+    {
+      "slug": "d00mabnormebefunde",
+      "title": "D00mAbnormeBefunde",
+      "level": 3
     },
     {
       "slug": "d01gsymptome",
@@ -107,6 +187,11 @@
       "level": 3
     },
     {
+      "slug": "d10gchronische-krankheiten-mit-akutem-schub",
+      "title": "D10gChronische Krankheiten mit akutem Schub",
+      "level": 3
+    },
+    {
       "slug": "d11nkombinationskodes",
       "title": "D11nKombinationskodes",
       "level": 3
@@ -142,6 +227,11 @@
       "level": 2
     },
     {
+      "slug": "p00n-erfassung-der-prozedur-im-medizinischen-datensatz",
+      "title": "P00n\tErfassung der Prozedur im medizinischen Datensatz",
+      "level": 3
+    },
+    {
       "slug": "p01p-prozeduren-die-kodiert-werden-muessen",
       "title": "P01p\tProzeduren,die kodiert werden müssen",
       "level": 3
@@ -172,6 +262,11 @@
       "level": 3
     },
     {
+      "slug": "p07obilaterale-operationen",
+      "title": "P07oBilaterale Operationen",
+      "level": 3
+    },
+    {
       "slug": "p08o-revisioneneines-operationsgebietes-reoperationen",
       "title": "P08o\tRevisioneneines Operationsgebietes/Reoperationen",
       "level": 3
@@ -197,6 +292,41 @@
       "level": 2
     },
     {
+      "slug": "sd0100-bestimmteinfektioese-und-parasitaere-krankheiten",
+      "title": "SD0100\tBestimmteinfektiöse und parasitäre Krankheiten",
+      "level": 3
+    },
+    {
+      "slug": "sd0101abakteriaemie",
+      "title": "SD0101aBakteriämie",
+      "level": 4
+    },
+    {
+      "slug": "sd0102psepsis",
+      "title": "SD0102pSepsis",
+      "level": 4
+    },
+    {
+      "slug": "sd0103lsirs",
+      "title": "SD0103lSIRS",
+      "level": 4
+    },
+    {
+      "slug": "sd0104nhiv-aids",
+      "title": "SD0104nHIV/AIDS",
+      "level": 4
+    },
+    {
+      "slug": "u61-laborkategorie-im-aktuellen-aufenthaltu61-1-kategorie-1500-und-mehr-cd4-t-he",
+      "title": "U61.–! Laborkategorie im aktuellen AufenthaltU61.1!\tKategorie 1500 und mehr CD4+-T-Helferzellen pro Mikroliter Blut",
+      "level": 4
+    },
+    {
+      "slug": "sd0105aechter-krupp-pseudokrupp-kruppsyndrom",
+      "title": "SD0105aEchter Krupp – Pseudokrupp –Kruppsyndrom",
+      "level": 4
+    },
+    {
       "slug": "sd0106ncovid-19",
       "title": "SD0106nCOVID-19",
       "level": 4
@@ -207,9 +337,129 @@
       "level": 3
     },
     {
+      "slug": "sd0202mauswahl-und-reihenfolge-der-diagnosen",
+      "title": "SD0202mAuswahl und Reihenfolge der Diagnosen",
+      "level": 4
+    },
+    {
+      "slug": "sd0203nnachresektion-im-tumorgebiet",
+      "title": "SD0203nNachresektion im Tumorgebiet",
+      "level": 4
+    },
+    {
+      "slug": "sd0204ktumornachweis-nur-in-der-biopsie",
+      "title": "SD0204kTumornachweis nur in der Biopsie",
+      "level": 4
+    },
+    {
+      "slug": "sd0205n-akute-chronische-erkrankungen-stoerungen-nach-und-oder-folgen-von-medizi",
+      "title": "SD0205n(Akute, chronische) Erkrankungen, Störungen nach und/oder Folgen von medizinischen Massnahmen im Kontext von Behandlungen maligner Neubildungen (solide, hämatologisch)",
+      "level": 4
+    },
+    {
+      "slug": "sd0206averdacht-auf-tumor-oder-metastasen",
+      "title": "SD0206aVerdacht auf Tumor oder Metastasen",
+      "level": 4
+    },
+    {
+      "slug": "sd0207a-nachuntersuchung",
+      "title": "SD0207a\tNachuntersuchung",
+      "level": 4
+    },
+    {
+      "slug": "sd0208nrezidive",
+      "title": "SD0208nRezidive",
+      "level": 4
+    },
+    {
+      "slug": "sd0209a-tumoremit-endokriner-aktivitaet",
+      "title": "SD0209a\tTumoremit endokriner Aktivität",
+      "level": 4
+    },
+    {
+      "slug": "sd0210n-multiple-lokalisationen",
+      "title": "SD0210n\tMultiple Lokalisationen",
+      "level": 4
+    },
+    {
+      "slug": "sd0211aueberlappende-lokalisation",
+      "title": "SD0211aÜberlappende Lokalisation",
+      "level": 4
+    },
+    {
+      "slug": "sd0212aremission-bei-malignen-immunoproliferativen-erkrankungen-undleukaemie",
+      "title": "SD0212aRemission bei malignen immunoproliferativen Erkrankungen undLeukämie",
+      "level": 4
+    },
+    {
+      "slug": "sd0213a-lymphangiosis-carcinomatosa",
+      "title": "SD0213a \tLymphangiosis carcinomatosa",
+      "level": 4
+    },
+    {
+      "slug": "sd0214nlymphom",
+      "title": "SD0214nLymphom",
+      "level": 4
+    },
+    {
+      "slug": "sd0215achemo-undradiotherapie",
+      "title": "SD0215aChemo- undRadiotherapie",
+      "level": 4
+    },
+    {
+      "slug": "sd0216nprophylaktische-operationen-wegen-risikofaktoren",
+      "title": "SD0216nProphylaktische Operationen wegen Risikofaktoren",
+      "level": 4
+    },
+    {
+      "slug": "sd0217opalliativbehandlung",
+      "title": "SD0217oPalliativbehandlung",
+      "level": 4
+    },
+    {
       "slug": "sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten",
       "title": "SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten",
       "level": 3
+    },
+    {
+      "slug": "sd0401nallgemeines",
+      "title": "SD0401nAllgemeines",
+      "level": 4
+    },
+    {
+      "slug": "sd0402nregeln-zur-kodierung-des-diabetes-mellitus",
+      "title": "SD0402nRegeln zur Kodierung des Diabetes mellitus",
+      "level": 4
+    },
+    {
+      "slug": "sd0403nspezifische-komplikationen-des-diabetes-mellitus",
+      "title": "SD0403nSpezifische Komplikationen des Diabetes mellitus",
+      "level": 4
+    },
+    {
+      "slug": "sd0404a-metabolisches-syndrom",
+      "title": "SD0404a\tMetabolisches Syndrom",
+      "level": 4
+    },
+    {
+      "slug": "sd0405nstoerungender-inneren-sekretion-des-pankreas",
+      "title": "SD0405nStörungender inneren Sekretion des Pankreas",
+      "level": 4
+    },
+    {
+      "slug": "sd0406azystische-fibrose",
+      "title": "SD0406aZystische Fibrose",
+      "level": 4
+    },
+    {
+      "slug": "sd0407nmangelernaehrungbei-erwachsenen",
+      "title": "SD0407nMangelernährungbei Erwachsenen",
+      "level": 4
+    },
+    {
+      "slug": "sd0408nmangelernaehrungbei-kindern",
+      "title": "SD0408nMangelernährungbei Kindern",
+      "level": 4
     },
     {
       "slug": "sd0500-psychische-und-verhaltensstoerungen",
@@ -217,9 +467,49 @@
       "level": 3
     },
     {
+      "slug": "sd0501o-psychische-und-verhaltensstoerungendurch-psychotrope-substanzen-alkohol-",
+      "title": "SD0501o\tPsychische und Verhaltensstörungendurch psychotrope Substanzen(Alkohol, Drogen, Medikamente, Nikotin)",
+      "level": 4
+    },
+    {
       "slug": "sd0600-krankheitendesnervensystems",
       "title": "SD0600\tKrankheitendesNervensystems",
       "level": 3
+    },
+    {
+      "slug": "sd0601p-akuter-schlaganfall-etc-subarachnoidalblutung-und-sonstige-intrakraniell",
+      "title": "SD0601p\tAkuter «Schlaganfall etc.», Subarachnoidalblutung und sonstige intrakranielle Blutungen traumatischer und nichttraumatischer Genese",
+      "level": 4
+    },
+    {
+      "slug": "sd0602nfolgen-eines-status-nach-schlaganfall-etc-einer-nichttraumatischen-subara",
+      "title": "SD0602nFolgen eines/Status nach: «Schlaganfall etc.», einer nichttraumatischen Subarachnoidalblutung oder sonstigen nichttraumatischen intrakraniellen Blutung",
+      "level": 4
+    },
+    {
+      "slug": "sd0603oparaplegie-und-tetraplegie-nicht-traumatisch",
+      "title": "SD0603oParaplegie und Tetraplegie, nicht traumatisch",
+      "level": 4
+    },
+    {
+      "slug": "sd0604mbewusstseinsstoerungen",
+      "title": "SD0604mBewusstseinsstörungen",
+      "level": 4
+    },
+    {
+      "slug": "sd0605e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden",
+      "title": "SD0605e \tAufnahme zurImplantation eines Neurostimulators/(Test) Elektroden",
+      "level": 4
+    },
+    {
+      "slug": "sd0606e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden",
+      "title": "SD0606e \tAufnahme zurEntfernung eines Neurostimulators /(Test) Elektroden",
+      "level": 4
+    },
+    {
+      "slug": "sd0607o-kodierung-derparkinsonstadien-g20",
+      "title": "SD0607o \tKodierung derParkinsonstadien (G20.-)",
+      "level": 4
     },
     {
       "slug": "sd0800-krankheitendesohres-und-des-warzenfortsatzes",
@@ -227,9 +517,64 @@
       "level": 3
     },
     {
+      "slug": "sd0801aschwerhoerigkeit-undtaubheit",
+      "title": "SD0801aSchwerhörigkeit undTaubheit",
+      "level": 4
+    },
+    {
+      "slug": "sd0802danpassung-handhabung-eines-implantiertenhoergeraetes",
+      "title": "SD0802dAnpassung/Handhabung eines implantiertenHörgerätes",
+      "level": 4
+    },
+    {
       "slug": "sd0900-krankheitendeskreislaufsystems",
       "title": "SD0900\tKrankheitendesKreislaufsystems",
       "level": 3
+    },
+    {
+      "slug": "sd0901a-hypertonie-und-krankheiten-bei-hypertonie",
+      "title": "SD0901a \tHypertonie und Krankheiten bei Hypertonie",
+      "level": 4
+    },
+    {
+      "slug": "sd0902eischaemische-herzkrankheit",
+      "title": "SD0902eIschämische Herzkrankheit",
+      "level": 4
+    },
+    {
+      "slug": "sd0903n-thrombose-resp-verschlussvon-koronarem-stent-resp-bypass",
+      "title": "SD0903n\tThrombose resp. Verschlussvon koronarem Stent resp. Bypass",
+      "level": 4
+    },
+    {
+      "slug": "sd0904d-erkrankungenderherzklappen",
+      "title": "SD0904d \tErkrankungenderHerzklappen",
+      "level": 4
+    },
+    {
+      "slug": "sd0905aschrittmacher-defibrillator",
+      "title": "SD0905aSchrittmacher/Defibrillator",
+      "level": 4
+    },
+    {
+      "slug": "sd0906anachuntersuchung-nachherztransplantation",
+      "title": "SD0906aNachuntersuchung nachHerztransplantation",
+      "level": 4
+    },
+    {
+      "slug": "sd0907a-akutes-lungenoedem",
+      "title": "SD0907a\tAkutes Lungenödem",
+      "level": 4
+    },
+    {
+      "slug": "sd0908kherzstillstand",
+      "title": "SD0908kHerzstillstand",
+      "level": 4
+    },
+    {
+      "slug": "sd0910o-erfassung-derbehandlungsdauer-mit-einem-herzunterstuetzungssystem-oder-e",
+      "title": "SD0910o\tErfassung derBehandlungsdauer mit einem Herzunterstützungssystem oder einem herzkreislauf- und lungenunterstützenden System",
+      "level": 4
     },
     {
       "slug": "sd1000-krankheitendesatmungssystems",
@@ -237,9 +582,39 @@
       "level": 3
     },
     {
+      "slug": "sd1001p-maschinelle-beatmung",
+      "title": "SD1001p\tMaschinelle Beatmung",
+      "level": 4
+    },
+    {
+      "slug": "sd1002orespiratorische-insuffizienz",
+      "title": "SD1002oRespiratorische Insuffizienz",
+      "level": 4
+    },
+    {
       "slug": "sd1100-krankheitendesverdauungssystems",
       "title": "SD1100\tKrankheitendesVerdauungssystems",
       "level": 3
+    },
+    {
+      "slug": "sd1101jappendizitis-als-klinische-diagnose",
+      "title": "SD1101jAppendizitis als klinische Diagnose",
+      "level": 4
+    },
+    {
+      "slug": "sd1103a-magenulkusmitgastritis",
+      "title": "SD1103a\tMagenulkusmitGastritis",
+      "level": 4
+    },
+    {
+      "slug": "sd1104igastrointestinale-blutung",
+      "title": "SD1104iGastrointestinale Blutung",
+      "level": 4
+    },
+    {
+      "slug": "sd1105a-dehydratationbei-gastroenteritis",
+      "title": "SD1105a \tDehydratationbei Gastroenteritis",
+      "level": 4
     },
     {
       "slug": "sd1200-krankheitenderhaut-und-der-unterhaut",
@@ -247,9 +622,54 @@
       "level": 3
     },
     {
+      "slug": "sd1201gplastische-chirurgie",
+      "title": "SD1201gPlastische Chirurgie",
+      "level": 4
+    },
+    {
+      "slug": "sd1202jspannungsblasen",
+      "title": "SD1202jSpannungsblasen",
+      "level": 4
+    },
+    {
       "slug": "sd1400-krankheitendesurogenitalsystems",
       "title": "SD1400\tKrankheitendesUrogenitalsystems",
       "level": 3
+    },
+    {
+      "slug": "sd1401o-dialyse",
+      "title": "SD1401o\tDialyse",
+      "level": 4
+    },
+    {
+      "slug": "sd1402manogenitale-warzen-anogenitaler-herpes",
+      "title": "SD1402mAnogenitale Warzen/anogenitaler Herpes",
+      "level": 4
+    },
+    {
+      "slug": "sd1404oniereninsuffizienz",
+      "title": "SD1404oNiereninsuffizienz",
+      "level": 4
+    },
+    {
+      "slug": "sd1405l-aufnahme-zuranlage-einesperitonealkatheters-zur-dialyse",
+      "title": "SD1405l\tAufnahme zurAnlage einesPeritonealkatheters zur Dialyse",
+      "level": 4
+    },
+    {
+      "slug": "sd1406d-aufnahme-zurentfernung-einesperitonealkatheters-zur-dialyse",
+      "title": "SD1406d \tAufnahme zurEntfernung einesPeritonealkatheters zur Dialyse",
+      "level": 4
+    },
+    {
+      "slug": "sd1407l-aufnahme-zur-anlage-einerav-fistel-oder-einesav-shunts-zur-dialyse",
+      "title": "SD1407l \tAufnahme zur Anlage einerAV-Fistel oder einesAV-Shunts zur Dialyse",
+      "level": 4
+    },
+    {
+      "slug": "sd1408a-aufnahme-zum-verschluss-einerav-fistel-oder-zumentfernen-eines-av-shunts",
+      "title": "SD1408a \tAufnahme zum Verschluss einerAV-Fistel oder zumEntfernen eines AV-Shunts",
+      "level": 4
     },
     {
       "slug": "sd1500geburtshilfe",
@@ -257,9 +677,94 @@
       "level": 3
     },
     {
+      "slug": "sd1501ndefinitionen",
+      "title": "SD1501nDefinitionen",
+      "level": 4
+    },
+    {
+      "slug": "sd1502pvorzeitige-beendigung-einer-schwangerschaft",
+      "title": "SD1502pVorzeitige Beendigung einer Schwangerschaft",
+      "level": 4
+    },
+    {
+      "slug": "sd1503p-krankheitenin-der-schwangerschaft",
+      "title": "SD1503p\tKrankheitenin der Schwangerschaft",
+      "level": 4
+    },
+    {
+      "slug": "sd1504pkomplikationen-der-schwangerschaft-mutter-oder-kind-betreffend",
+      "title": "SD1504pKomplikationen der Schwangerschaft, Mutter oder Kind betreffend",
+      "level": 4
+    },
+    {
+      "slug": "sd1505pspezielle-kodierregeln-fuer-die-geburt",
+      "title": "SD1505pSpezielle Kodierregeln für die Geburt",
+      "level": 4
+    },
+    {
+      "slug": "sd1506p-krankheiten-im-wochenbett-puerperium",
+      "title": "SD1506p\tKrankheiten im Wochenbett (Puerperium)",
+      "level": 4
+    },
+    {
       "slug": "sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben",
       "title": "SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben",
       "level": 3
+    },
+    {
+      "slug": "sd1601nmedizinischer-datensatz",
+      "title": "SD1601nMedizinischer Datensatz",
+      "level": 4
+    },
+    {
+      "slug": "sd1602adefinitionen",
+      "title": "SD1602aDefinitionen",
+      "level": 4
+    },
+    {
+      "slug": "sd1603ineugeborene",
+      "title": "SD1603iNeugeborene",
+      "level": 4
+    },
+    {
+      "slug": "sd1604gzustaende-die-ihren-ursprung-in-der-perinatalperiode-haben",
+      "title": "SD1604gZustände, die ihren Ursprung in der Perinatalperiode haben",
+      "level": 4
+    },
+    {
+      "slug": "sd1605atotgeborene",
+      "title": "SD1605aTotgeborene",
+      "level": 4
+    },
+    {
+      "slug": "sd1606j-besondere-massnahmen-fuer-das-kranke-neugeborene",
+      "title": "SD1606j \tBesondere Massnahmen für das (kranke) Neugeborene",
+      "level": 4
+    },
+    {
+      "slug": "sd1607c-atemnotsyndrombeihyaliner-membranenkrankheit-surfactantmangel",
+      "title": "SD1607c \tAtemnotsyndrombeihyaliner Membranenkrankheit/Surfactantmangel",
+      "level": 4
+    },
+    {
+      "slug": "sd1608c-atemnotsyndrombeimassivemaspirationssyndrom-wet-lung-odertransitorische-",
+      "title": "SD1608c \tAtemnotsyndrombeimassivemAspirationssyndrom,Wet lung odertransitorische Tachypnoe beim Neugeborenen",
+      "level": 4
+    },
+    {
+      "slug": "sd1609jhypoxisch-ischaemische-enzephalopathie-hie",
+      "title": "SD1609jHypoxisch-ischämische Enzephalopathie (HIE)",
+      "level": 4
+    },
+    {
+      "slug": "sd1610h-asphyxie-unter-der-geburt",
+      "title": "SD1610h\tAsphyxie unter der Geburt",
+      "level": 4
+    },
+    {
+      "slug": "sd1611orespiratorisches-versagenbeim-neugeborenen",
+      "title": "SD1611oRespiratorisches Versagenbeim Neugeborenen",
+      "level": 4
     },
     {
       "slug": "sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas",
@@ -267,9 +772,89 @@
       "level": 3
     },
     {
+      "slug": "sd1801ainkontinenz",
+      "title": "SD1801aInkontinenz",
+      "level": 4
+    },
+    {
+      "slug": "sd1802mdysphagie",
+      "title": "SD1802mDysphagie",
+      "level": 4
+    },
+    {
+      "slug": "sd1803afieberkraempfe",
+      "title": "SD1803aFieberkrämpfe",
+      "level": 4
+    },
+    {
+      "slug": "sd1804o-schmerzdiagnosen-undschmerzbehandlungsverfahren",
+      "title": "SD1804o\tSchmerzdiagnosen undSchmerzbehandlungsverfahren",
+      "level": 4
+    },
+    {
+      "slug": "sd1805e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden-bei-schm",
+      "title": "SD1805e \tAufnahme zurImplantation eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung",
+      "level": 4
+    },
+    {
+      "slug": "sd1806e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden-bei-schmer",
+      "title": "SD1806e \tAufnahme zurEntfernung eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung",
+      "level": 4
+    },
+    {
+      "slug": "sd1807lschock",
+      "title": "SD1807lSchock",
+      "level": 4
+    },
+    {
       "slug": "sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen",
       "title": "SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen",
       "level": 3
+    },
+    {
+      "slug": "sd1901aoberflaechliche-verletzungen",
+      "title": "SD1901aOberflächliche Verletzungen",
+      "level": 4
+    },
+    {
+      "slug": "sd1902nfraktur-und-luxation",
+      "title": "SD1902nFraktur und Luxation",
+      "level": 4
+    },
+    {
+      "slug": "sd1903poffene-wunden-verletzungen",
+      "title": "SD1903pOffene Wunden/Verletzungen",
+      "level": 4
+    },
+    {
+      "slug": "sd1905cverletzung-desrueckenmarks-mit-traumatischer-paraplegie-und-tetraplegie",
+      "title": "SD1905cVerletzung desRückenmarks (mit traumatischer Paraplegie und Tetraplegie)",
+      "level": 4
+    },
+    {
+      "slug": "sd1906nmehrfachverletzungen",
+      "title": "SD1906nMehrfachverletzungen",
+      "level": 4
+    },
+    {
+      "slug": "sd1907jverbrennungen-undveraetzungen",
+      "title": "SD1907jVerbrennungen undVerätzungen",
+      "level": 4
+    },
+    {
+      "slug": "sd1908nvergiftungdurch-arzneimittel-drogen-und-biologisch-aktive-substanzen",
+      "title": "SD1908nVergiftungdurch Arzneimittel, Drogen und biologisch aktive Substanzen",
+      "level": 4
+    },
+    {
+      "slug": "sd1909o-unerwuenschte-nebenwirkungen-von-arzneimitteln-bei-einnahme-gemaess-vero",
+      "title": "SD1909o \tUnerwünschte Nebenwirkungen von Arzneimitteln (bei Einnahme gemäss Verordnung)",
+      "level": 4
+    },
+    {
+      "slug": "sd1910b-unerwuenschte-nebenwirkungen-vergiftung-von-zwei-oder-mehr-in-verbindung",
+      "title": "SD1910b\tUnerwünschte Nebenwirkungen/Vergiftung von zwei oder mehr in Verbindung eingenommenen Substanzen (bei Einnahme entgegen einer Verordnung)",
+      "level": 4
     },
     {
       "slug": "sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet",
@@ -282,9 +867,59 @@
       "level": 3
     },
     {
+      "slug": "sd2200oschluesselnummern-fuer-besondere-zwecke",
+      "title": "SD2200oSchlüsselnummern für besondere Zwecke",
+      "level": 3
+    },
+    {
       "slug": "spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400",
       "title": "Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400",
       "level": 2
+    },
+    {
+      "slug": "sp0200fruehrehabilitation-paraplegiologische-rehabilitation-akutrehabilitation",
+      "title": "SP0200Frührehabilitation, paraplegiologische Rehabilitation, Akutrehabilitation",
+      "level": 3
+    },
+    {
+      "slug": "sp0201nfruehrehabilitation",
+      "title": "SP0201nFrührehabilitation",
+      "level": 4
+    },
+    {
+      "slug": "sp0202pparaplegiologische-rehabilitation",
+      "title": "SP0202pParaplegiologische Rehabilitation",
+      "level": 4
+    },
+    {
+      "slug": "sp0203oakutrehabilitation",
+      "title": "SP0203oAkutrehabilitation",
+      "level": 4
+    },
+    {
+      "slug": "sp0300-kodierrichtlinien-zu-chop-kapitel-9-operationen-am-verdauungstrakt",
+      "title": "SP0300\tKodierrichtlinien zu CHOP Kapitel 9 «Operationen am Verdauungstrakt»",
+      "level": 3
+    },
+    {
+      "slug": "sp0301khiatushernie-fundoplicatio",
+      "title": "SP0301kHiatushernie – Fundoplicatio:",
+      "level": 4
+    },
+    {
+      "slug": "zusaetzliche-erfassung-chop-kode-44-92-intraoperative-manipulation-am-magen",
+      "title": "Zusätzliche Erfassung CHOP-Kode 44.92 Intraoperative Manipulation am Magen",
+      "level": 4
+    },
+    {
+      "slug": "sp0400-kodierrichtlinien-zu-chop-kapitel-11-operationen-an-den-maennlichen-gesch",
+      "title": "SP0400\tKodierrichtlinien zu CHOP Kapitel 11«Operationen an den männlichen Geschlechtsorganen»",
+      "level": 3
+    },
+    {
+      "slug": "sp0401mgeschlechtsangleichung",
+      "title": "SP0401mGeschlechtsangleichung",
+      "level": 4
     },
     {
       "slug": "kodierrichtlinienrehabilitation",
@@ -292,18 +927,153 @@
       "level": 2
     },
     {
-      "slug": "seite-59",
-      "title": "Seite 59",
+      "slug": "allgemeine-informationen",
+      "title": "Allgemeine Informationen",
+      "level": 4
+    },
+    {
+      "slug": "diagnosen-icd-10-gm",
+      "title": "Diagnosen - ICD-10-GM",
+      "level": 4
+    },
+    {
+      "slug": "prozeduren",
+      "title": "Prozeduren",
+      "level": 4
+    },
+    {
+      "slug": "beispiele-und-erlaeuterungen",
+      "title": "Beispiele und Erläuterungen",
+      "level": 4
+    },
+    {
+      "slug": "beispiele",
+      "title": "Beispiele",
+      "level": 4
+    },
+    {
+      "slug": "alphabetisches-verzeichnis",
+      "title": "Alphabetisches Verzeichnis",
       "level": 2
     },
     {
-      "slug": "seite-60",
-      "title": "Seite 60",
+      "slug": "a",
+      "title": "A",
       "level": 2
     },
     {
-      "slug": "seite-61",
-      "title": "Seite 61",
+      "slug": "b",
+      "title": "B",
+      "level": 2
+    },
+    {
+      "slug": "c",
+      "title": "C",
+      "level": 2
+    },
+    {
+      "slug": "d",
+      "title": "D",
+      "level": 2
+    },
+    {
+      "slug": "e",
+      "title": "E",
+      "level": 2
+    },
+    {
+      "slug": "f",
+      "title": "F",
+      "level": 2
+    },
+    {
+      "slug": "g",
+      "title": "G",
+      "level": 2
+    },
+    {
+      "slug": "h",
+      "title": "H",
+      "level": 2
+    },
+    {
+      "slug": "i",
+      "title": "I",
+      "level": 2
+    },
+    {
+      "slug": "k",
+      "title": "K",
+      "level": 2
+    },
+    {
+      "slug": "l",
+      "title": "L",
+      "level": 2
+    },
+    {
+      "slug": "m",
+      "title": "M",
+      "level": 2
+    },
+    {
+      "slug": "n",
+      "title": "N",
+      "level": 2
+    },
+    {
+      "slug": "o",
+      "title": "O",
+      "level": 2
+    },
+    {
+      "slug": "p",
+      "title": "P",
+      "level": 2
+    },
+    {
+      "slug": "r",
+      "title": "R",
+      "level": 2
+    },
+    {
+      "slug": "s",
+      "title": "S",
+      "level": 2
+    },
+    {
+      "slug": "t",
+      "title": "T",
+      "level": 2
+    },
+    {
+      "slug": "u",
+      "title": "U",
+      "level": 2
+    },
+    {
+      "slug": "v",
+      "title": "V",
+      "level": 2
+    },
+    {
+      "slug": "w",
+      "title": "W",
+      "level": 2
+    },
+    {
+      "slug": "z",
+      "title": "Z",
+      "level": 2
+    },
+    {
+      "slug": "seite-214",
+      "title": "Seite 214",
+      "level": 2
+    },
+    {
+      "slug": "seite-215",
+      "title": "Seite 215",
       "level": 2
     }
   ],
@@ -336,7 +1106,14 @@
       "slug": "einleitung-version2027",
       "title": "Einleitung Version2027",
       "level": 1,
-      "children": []
+      "children": [
+        {
+          "slug": "abkuerzungen-des-kodierungshandbuches",
+          "title": "Abkürzungen des Kodierungshandbuches",
+          "level": 2,
+          "children": []
+        }
+      ]
     },
     {
       "slug": "grundlagen-g00-g55",
@@ -347,13 +1124,69 @@
           "slug": "g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi",
           "title": "G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung",
           "level": 2,
+          "children": [
+            {
+              "slug": "g01ngeschichte",
+              "title": "G01nGeschichte",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g02morganisation",
+              "title": "G02mOrganisation",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g03m-gesetzliche-grundlagen",
+              "title": "G03m\tGesetzliche Grundlagen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g04mziele-der-erhebung-spitalstationaere-gesundheitsversorgung-spiges",
+              "title": "G04mZiele der Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes)",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g05manonymisierung-der-daten",
+              "title": "G05mAnonymisierung der Daten",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g06mder-medizinische-datensatz-definitionen-und-variablen",
+              "title": "G06mDer medizinische Datensatz,Definitionen und Variablen",
+              "level": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "slug": "g10p-erhebung-spitalstationaere-gesundheitsversorgung-spiges-die-patientenklassi",
+          "title": "G10p\tErhebung Spitalstationäre Gesundheitsversorgung (SpiGes), die Patientenklassifikationssysteme SwissDRG, TARPSY und ST Reha",
+          "level": 2,
           "children": []
         },
         {
           "slug": "g20-die-klassifikationen-icd-10-gm-und-chop",
           "title": "G20\tDie Klassifikationen (ICD-10-GM und CHOP)",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "g21p-icd-10-gm",
+              "title": "G21p\tICD-10-GM",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g22o-schweizerische-operationsklassifikation-chop",
+              "title": "G22o\tSchweizerische Operationsklassifikation (CHOP)",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "g30a-derweg-zur-korrekten-kodierung",
@@ -371,7 +1204,38 @@
           "slug": "g50definitionen",
           "title": "G50Definitionen",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "g51o-derbehandlungsfall",
+              "title": "G51o\tDerBehandlungsfall",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g52h-diehauptdiagnose",
+              "title": "G52h\tDieHauptdiagnose",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g53m-derzusatz-zur-hauptdiagnose",
+              "title": "G53m\tDerZusatz zur Hauptdiagnose",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g54p-dienebendiagnosen",
+              "title": "G54p\tDieNebendiagnosen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "g55mdiebehandlung",
+              "title": "G55mDieBehandlung",
+              "level": 3,
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -380,6 +1244,12 @@
       "title": "Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16",
       "level": 1,
       "children": [
+        {
+          "slug": "d00mabnormebefunde",
+          "title": "D00mAbnormeBefunde",
+          "level": 2,
+          "children": []
+        },
         {
           "slug": "d01gsymptome",
           "title": "D01gSymptome",
@@ -435,6 +1305,12 @@
           "children": []
         },
         {
+          "slug": "d10gchronische-krankheiten-mit-akutem-schub",
+          "title": "D10gChronische Krankheiten mit akutem Schub",
+          "level": 2,
+          "children": []
+        },
+        {
           "slug": "d11nkombinationskodes",
           "title": "D11nKombinationskodes",
           "level": 2,
@@ -478,6 +1354,12 @@
       "level": 1,
       "children": [
         {
+          "slug": "p00n-erfassung-der-prozedur-im-medizinischen-datensatz",
+          "title": "P00n\tErfassung der Prozedur im medizinischen Datensatz",
+          "level": 2,
+          "children": []
+        },
+        {
           "slug": "p01p-prozeduren-die-kodiert-werden-muessen",
           "title": "P01p\tProzeduren,die kodiert werden müssen",
           "level": 2,
@@ -514,6 +1396,12 @@
           "children": []
         },
         {
+          "slug": "p07obilaterale-operationen",
+          "title": "P07oBilaterale Operationen",
+          "level": 2,
+          "children": []
+        },
+        {
           "slug": "p08o-revisioneneines-operationsgebietes-reoperationen",
           "title": "P08o\tRevisioneneines Operationsgebietes/Reoperationen",
           "level": 2,
@@ -545,94 +1433,697 @@
       "level": 1,
       "children": [
         {
-          "slug": "sd0106ncovid-19",
-          "title": "SD0106nCOVID-19",
-          "level": 3,
-          "children": []
+          "slug": "sd0100-bestimmteinfektioese-und-parasitaere-krankheiten",
+          "title": "SD0100\tBestimmteinfektiöse und parasitäre Krankheiten",
+          "level": 2,
+          "children": [
+            {
+              "slug": "sd0101abakteriaemie",
+              "title": "SD0101aBakteriämie",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0102psepsis",
+              "title": "SD0102pSepsis",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0103lsirs",
+              "title": "SD0103lSIRS",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0104nhiv-aids",
+              "title": "SD0104nHIV/AIDS",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "u61-laborkategorie-im-aktuellen-aufenthaltu61-1-kategorie-1500-und-mehr-cd4-t-he",
+              "title": "U61.–! Laborkategorie im aktuellen AufenthaltU61.1!\tKategorie 1500 und mehr CD4+-T-Helferzellen pro Mikroliter Blut",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0105aechter-krupp-pseudokrupp-kruppsyndrom",
+              "title": "SD0105aEchter Krupp – Pseudokrupp –Kruppsyndrom",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0106ncovid-19",
+              "title": "SD0106nCOVID-19",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd0200nneubildungen",
           "title": "SD0200nNeubildungen",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd0202mauswahl-und-reihenfolge-der-diagnosen",
+              "title": "SD0202mAuswahl und Reihenfolge der Diagnosen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0203nnachresektion-im-tumorgebiet",
+              "title": "SD0203nNachresektion im Tumorgebiet",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0204ktumornachweis-nur-in-der-biopsie",
+              "title": "SD0204kTumornachweis nur in der Biopsie",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0205n-akute-chronische-erkrankungen-stoerungen-nach-und-oder-folgen-von-medizi",
+              "title": "SD0205n(Akute, chronische) Erkrankungen, Störungen nach und/oder Folgen von medizinischen Massnahmen im Kontext von Behandlungen maligner Neubildungen (solide, hämatologisch)",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0206averdacht-auf-tumor-oder-metastasen",
+              "title": "SD0206aVerdacht auf Tumor oder Metastasen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0207a-nachuntersuchung",
+              "title": "SD0207a\tNachuntersuchung",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0208nrezidive",
+              "title": "SD0208nRezidive",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0209a-tumoremit-endokriner-aktivitaet",
+              "title": "SD0209a\tTumoremit endokriner Aktivität",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0210n-multiple-lokalisationen",
+              "title": "SD0210n\tMultiple Lokalisationen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0211aueberlappende-lokalisation",
+              "title": "SD0211aÜberlappende Lokalisation",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0212aremission-bei-malignen-immunoproliferativen-erkrankungen-undleukaemie",
+              "title": "SD0212aRemission bei malignen immunoproliferativen Erkrankungen undLeukämie",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0213a-lymphangiosis-carcinomatosa",
+              "title": "SD0213a \tLymphangiosis carcinomatosa",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0214nlymphom",
+              "title": "SD0214nLymphom",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0215achemo-undradiotherapie",
+              "title": "SD0215aChemo- undRadiotherapie",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0216nprophylaktische-operationen-wegen-risikofaktoren",
+              "title": "SD0216nProphylaktische Operationen wegen Risikofaktoren",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0217opalliativbehandlung",
+              "title": "SD0217oPalliativbehandlung",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten",
           "title": "SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd0401nallgemeines",
+              "title": "SD0401nAllgemeines",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0402nregeln-zur-kodierung-des-diabetes-mellitus",
+              "title": "SD0402nRegeln zur Kodierung des Diabetes mellitus",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0403nspezifische-komplikationen-des-diabetes-mellitus",
+              "title": "SD0403nSpezifische Komplikationen des Diabetes mellitus",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0404a-metabolisches-syndrom",
+              "title": "SD0404a\tMetabolisches Syndrom",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0405nstoerungender-inneren-sekretion-des-pankreas",
+              "title": "SD0405nStörungender inneren Sekretion des Pankreas",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0406azystische-fibrose",
+              "title": "SD0406aZystische Fibrose",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0407nmangelernaehrungbei-erwachsenen",
+              "title": "SD0407nMangelernährungbei Erwachsenen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0408nmangelernaehrungbei-kindern",
+              "title": "SD0408nMangelernährungbei Kindern",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd0500-psychische-und-verhaltensstoerungen",
           "title": "SD0500\tPsychische und Verhaltensstörungen",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd0501o-psychische-und-verhaltensstoerungendurch-psychotrope-substanzen-alkohol-",
+              "title": "SD0501o\tPsychische und Verhaltensstörungendurch psychotrope Substanzen(Alkohol, Drogen, Medikamente, Nikotin)",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd0600-krankheitendesnervensystems",
           "title": "SD0600\tKrankheitendesNervensystems",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd0601p-akuter-schlaganfall-etc-subarachnoidalblutung-und-sonstige-intrakraniell",
+              "title": "SD0601p\tAkuter «Schlaganfall etc.», Subarachnoidalblutung und sonstige intrakranielle Blutungen traumatischer und nichttraumatischer Genese",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0602nfolgen-eines-status-nach-schlaganfall-etc-einer-nichttraumatischen-subara",
+              "title": "SD0602nFolgen eines/Status nach: «Schlaganfall etc.», einer nichttraumatischen Subarachnoidalblutung oder sonstigen nichttraumatischen intrakraniellen Blutung",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0603oparaplegie-und-tetraplegie-nicht-traumatisch",
+              "title": "SD0603oParaplegie und Tetraplegie, nicht traumatisch",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0604mbewusstseinsstoerungen",
+              "title": "SD0604mBewusstseinsstörungen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0605e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden",
+              "title": "SD0605e \tAufnahme zurImplantation eines Neurostimulators/(Test) Elektroden",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0606e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden",
+              "title": "SD0606e \tAufnahme zurEntfernung eines Neurostimulators /(Test) Elektroden",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0607o-kodierung-derparkinsonstadien-g20",
+              "title": "SD0607o \tKodierung derParkinsonstadien (G20.-)",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd0800-krankheitendesohres-und-des-warzenfortsatzes",
           "title": "SD0800\tKrankheitendesOhres und des Warzenfortsatzes",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd0801aschwerhoerigkeit-undtaubheit",
+              "title": "SD0801aSchwerhörigkeit undTaubheit",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0802danpassung-handhabung-eines-implantiertenhoergeraetes",
+              "title": "SD0802dAnpassung/Handhabung eines implantiertenHörgerätes",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd0900-krankheitendeskreislaufsystems",
           "title": "SD0900\tKrankheitendesKreislaufsystems",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd0901a-hypertonie-und-krankheiten-bei-hypertonie",
+              "title": "SD0901a \tHypertonie und Krankheiten bei Hypertonie",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0902eischaemische-herzkrankheit",
+              "title": "SD0902eIschämische Herzkrankheit",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0903n-thrombose-resp-verschlussvon-koronarem-stent-resp-bypass",
+              "title": "SD0903n\tThrombose resp. Verschlussvon koronarem Stent resp. Bypass",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0904d-erkrankungenderherzklappen",
+              "title": "SD0904d \tErkrankungenderHerzklappen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0905aschrittmacher-defibrillator",
+              "title": "SD0905aSchrittmacher/Defibrillator",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0906anachuntersuchung-nachherztransplantation",
+              "title": "SD0906aNachuntersuchung nachHerztransplantation",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0907a-akutes-lungenoedem",
+              "title": "SD0907a\tAkutes Lungenödem",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0908kherzstillstand",
+              "title": "SD0908kHerzstillstand",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd0910o-erfassung-derbehandlungsdauer-mit-einem-herzunterstuetzungssystem-oder-e",
+              "title": "SD0910o\tErfassung derBehandlungsdauer mit einem Herzunterstützungssystem oder einem herzkreislauf- und lungenunterstützenden System",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd1000-krankheitendesatmungssystems",
           "title": "SD1000\tKrankheitendesAtmungssystems",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd1001p-maschinelle-beatmung",
+              "title": "SD1001p\tMaschinelle Beatmung",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1002orespiratorische-insuffizienz",
+              "title": "SD1002oRespiratorische Insuffizienz",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd1100-krankheitendesverdauungssystems",
           "title": "SD1100\tKrankheitendesVerdauungssystems",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd1101jappendizitis-als-klinische-diagnose",
+              "title": "SD1101jAppendizitis als klinische Diagnose",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1103a-magenulkusmitgastritis",
+              "title": "SD1103a\tMagenulkusmitGastritis",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1104igastrointestinale-blutung",
+              "title": "SD1104iGastrointestinale Blutung",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1105a-dehydratationbei-gastroenteritis",
+              "title": "SD1105a \tDehydratationbei Gastroenteritis",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd1200-krankheitenderhaut-und-der-unterhaut",
           "title": "SD1200\tKrankheitenderHaut und der Unterhaut",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd1201gplastische-chirurgie",
+              "title": "SD1201gPlastische Chirurgie",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1202jspannungsblasen",
+              "title": "SD1202jSpannungsblasen",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd1400-krankheitendesurogenitalsystems",
           "title": "SD1400\tKrankheitendesUrogenitalsystems",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd1401o-dialyse",
+              "title": "SD1401o\tDialyse",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1402manogenitale-warzen-anogenitaler-herpes",
+              "title": "SD1402mAnogenitale Warzen/anogenitaler Herpes",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1404oniereninsuffizienz",
+              "title": "SD1404oNiereninsuffizienz",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1405l-aufnahme-zuranlage-einesperitonealkatheters-zur-dialyse",
+              "title": "SD1405l\tAufnahme zurAnlage einesPeritonealkatheters zur Dialyse",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1406d-aufnahme-zurentfernung-einesperitonealkatheters-zur-dialyse",
+              "title": "SD1406d \tAufnahme zurEntfernung einesPeritonealkatheters zur Dialyse",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1407l-aufnahme-zur-anlage-einerav-fistel-oder-einesav-shunts-zur-dialyse",
+              "title": "SD1407l \tAufnahme zur Anlage einerAV-Fistel oder einesAV-Shunts zur Dialyse",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1408a-aufnahme-zum-verschluss-einerav-fistel-oder-zumentfernen-eines-av-shunts",
+              "title": "SD1408a \tAufnahme zum Verschluss einerAV-Fistel oder zumEntfernen eines AV-Shunts",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd1500geburtshilfe",
           "title": "SD1500Geburtshilfe",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd1501ndefinitionen",
+              "title": "SD1501nDefinitionen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1502pvorzeitige-beendigung-einer-schwangerschaft",
+              "title": "SD1502pVorzeitige Beendigung einer Schwangerschaft",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1503p-krankheitenin-der-schwangerschaft",
+              "title": "SD1503p\tKrankheitenin der Schwangerschaft",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1504pkomplikationen-der-schwangerschaft-mutter-oder-kind-betreffend",
+              "title": "SD1504pKomplikationen der Schwangerschaft, Mutter oder Kind betreffend",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1505pspezielle-kodierregeln-fuer-die-geburt",
+              "title": "SD1505pSpezielle Kodierregeln für die Geburt",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1506p-krankheiten-im-wochenbett-puerperium",
+              "title": "SD1506p\tKrankheiten im Wochenbett (Puerperium)",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben",
           "title": "SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd1601nmedizinischer-datensatz",
+              "title": "SD1601nMedizinischer Datensatz",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1602adefinitionen",
+              "title": "SD1602aDefinitionen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1603ineugeborene",
+              "title": "SD1603iNeugeborene",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1604gzustaende-die-ihren-ursprung-in-der-perinatalperiode-haben",
+              "title": "SD1604gZustände, die ihren Ursprung in der Perinatalperiode haben",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1605atotgeborene",
+              "title": "SD1605aTotgeborene",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1606j-besondere-massnahmen-fuer-das-kranke-neugeborene",
+              "title": "SD1606j \tBesondere Massnahmen für das (kranke) Neugeborene",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1607c-atemnotsyndrombeihyaliner-membranenkrankheit-surfactantmangel",
+              "title": "SD1607c \tAtemnotsyndrombeihyaliner Membranenkrankheit/Surfactantmangel",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1608c-atemnotsyndrombeimassivemaspirationssyndrom-wet-lung-odertransitorische-",
+              "title": "SD1608c \tAtemnotsyndrombeimassivemAspirationssyndrom,Wet lung odertransitorische Tachypnoe beim Neugeborenen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1609jhypoxisch-ischaemische-enzephalopathie-hie",
+              "title": "SD1609jHypoxisch-ischämische Enzephalopathie (HIE)",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1610h-asphyxie-unter-der-geburt",
+              "title": "SD1610h\tAsphyxie unter der Geburt",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1611orespiratorisches-versagenbeim-neugeborenen",
+              "title": "SD1611oRespiratorisches Versagenbeim Neugeborenen",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas",
           "title": "SD1800\tSymptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd1801ainkontinenz",
+              "title": "SD1801aInkontinenz",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1802mdysphagie",
+              "title": "SD1802mDysphagie",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1803afieberkraempfe",
+              "title": "SD1803aFieberkrämpfe",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1804o-schmerzdiagnosen-undschmerzbehandlungsverfahren",
+              "title": "SD1804o\tSchmerzdiagnosen undSchmerzbehandlungsverfahren",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1805e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden-bei-schm",
+              "title": "SD1805e \tAufnahme zurImplantation eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1806e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden-bei-schmer",
+              "title": "SD1806e \tAufnahme zurEntfernung eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1807lschock",
+              "title": "SD1807lSchock",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen",
           "title": "SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "slug": "sd1901aoberflaechliche-verletzungen",
+              "title": "SD1901aOberflächliche Verletzungen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1902nfraktur-und-luxation",
+              "title": "SD1902nFraktur und Luxation",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1903poffene-wunden-verletzungen",
+              "title": "SD1903pOffene Wunden/Verletzungen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1905cverletzung-desrueckenmarks-mit-traumatischer-paraplegie-und-tetraplegie",
+              "title": "SD1905cVerletzung desRückenmarks (mit traumatischer Paraplegie und Tetraplegie)",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1906nmehrfachverletzungen",
+              "title": "SD1906nMehrfachverletzungen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1907jverbrennungen-undveraetzungen",
+              "title": "SD1907jVerbrennungen undVerätzungen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1908nvergiftungdurch-arzneimittel-drogen-und-biologisch-aktive-substanzen",
+              "title": "SD1908nVergiftungdurch Arzneimittel, Drogen und biologisch aktive Substanzen",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1909o-unerwuenschte-nebenwirkungen-von-arzneimitteln-bei-einnahme-gemaess-vero",
+              "title": "SD1909o \tUnerwünschte Nebenwirkungen von Arzneimitteln (bei Einnahme gemäss Verordnung)",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sd1910b-unerwuenschte-nebenwirkungen-vergiftung-von-zwei-oder-mehr-in-verbindung",
+              "title": "SD1910b\tUnerwünschte Nebenwirkungen/Vergiftung von zwei oder mehr in Verbindung eingenommenen Substanzen (bei Einnahme entgegen einer Verordnung)",
+              "level": 3,
+              "children": []
+            }
+          ]
         },
         {
           "slug": "sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet",
@@ -645,6 +2136,12 @@
           "title": "SD2100\tFaktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen",
           "level": 2,
           "children": []
+        },
+        {
+          "slug": "sd2200oschluesselnummern-fuer-besondere-zwecke",
+          "title": "SD2200oSchlüsselnummern für besondere Zwecke",
+          "level": 2,
+          "children": []
         }
       ]
     },
@@ -652,29 +2149,250 @@
       "slug": "spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400",
       "title": "Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400",
       "level": 1,
-      "children": []
+      "children": [
+        {
+          "slug": "sp0200fruehrehabilitation-paraplegiologische-rehabilitation-akutrehabilitation",
+          "title": "SP0200Frührehabilitation, paraplegiologische Rehabilitation, Akutrehabilitation",
+          "level": 2,
+          "children": [
+            {
+              "slug": "sp0201nfruehrehabilitation",
+              "title": "SP0201nFrührehabilitation",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sp0202pparaplegiologische-rehabilitation",
+              "title": "SP0202pParaplegiologische Rehabilitation",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "sp0203oakutrehabilitation",
+              "title": "SP0203oAkutrehabilitation",
+              "level": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "slug": "sp0300-kodierrichtlinien-zu-chop-kapitel-9-operationen-am-verdauungstrakt",
+          "title": "SP0300\tKodierrichtlinien zu CHOP Kapitel 9 «Operationen am Verdauungstrakt»",
+          "level": 2,
+          "children": [
+            {
+              "slug": "sp0301khiatushernie-fundoplicatio",
+              "title": "SP0301kHiatushernie – Fundoplicatio:",
+              "level": 3,
+              "children": []
+            },
+            {
+              "slug": "zusaetzliche-erfassung-chop-kode-44-92-intraoperative-manipulation-am-magen",
+              "title": "Zusätzliche Erfassung CHOP-Kode 44.92 Intraoperative Manipulation am Magen",
+              "level": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "slug": "sp0400-kodierrichtlinien-zu-chop-kapitel-11-operationen-an-den-maennlichen-gesch",
+          "title": "SP0400\tKodierrichtlinien zu CHOP Kapitel 11«Operationen an den männlichen Geschlechtsorganen»",
+          "level": 2,
+          "children": [
+            {
+              "slug": "sp0401mgeschlechtsangleichung",
+              "title": "SP0401mGeschlechtsangleichung",
+              "level": 3,
+              "children": []
+            }
+          ]
+        }
+      ]
     },
     {
       "slug": "kodierrichtlinienrehabilitation",
       "title": "KodierrichtlinienRehabilitation",
       "level": 1,
-      "children": []
+      "children": [
+        {
+          "slug": "allgemeine-informationen",
+          "title": "Allgemeine Informationen",
+          "level": 3,
+          "children": []
+        },
+        {
+          "slug": "diagnosen-icd-10-gm",
+          "title": "Diagnosen - ICD-10-GM",
+          "level": 3,
+          "children": []
+        },
+        {
+          "slug": "prozeduren",
+          "title": "Prozeduren",
+          "level": 3,
+          "children": []
+        },
+        {
+          "slug": "beispiele-und-erlaeuterungen",
+          "title": "Beispiele und Erläuterungen",
+          "level": 3,
+          "children": []
+        },
+        {
+          "slug": "beispiele",
+          "title": "Beispiele",
+          "level": 3,
+          "children": []
+        }
+      ]
     },
     {
-      "slug": "seite-59",
-      "title": "Seite 59",
+      "slug": "alphabetisches-verzeichnis",
+      "title": "Alphabetisches Verzeichnis",
       "level": 1,
       "children": []
     },
     {
-      "slug": "seite-60",
-      "title": "Seite 60",
+      "slug": "a",
+      "title": "A",
       "level": 1,
       "children": []
     },
     {
-      "slug": "seite-61",
-      "title": "Seite 61",
+      "slug": "b",
+      "title": "B",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "c",
+      "title": "C",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "d",
+      "title": "D",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "e",
+      "title": "E",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "f",
+      "title": "F",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "g",
+      "title": "G",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "h",
+      "title": "H",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "i",
+      "title": "I",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "k",
+      "title": "K",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "l",
+      "title": "L",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "m",
+      "title": "M",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "n",
+      "title": "N",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "o",
+      "title": "O",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "p",
+      "title": "P",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "r",
+      "title": "R",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "s",
+      "title": "S",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "t",
+      "title": "T",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "u",
+      "title": "U",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "v",
+      "title": "V",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "w",
+      "title": "W",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "z",
+      "title": "Z",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "seite-214",
+      "title": "Seite 214",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "seite-215",
+      "title": "Seite 215",
       "level": 1,
       "children": []
     }

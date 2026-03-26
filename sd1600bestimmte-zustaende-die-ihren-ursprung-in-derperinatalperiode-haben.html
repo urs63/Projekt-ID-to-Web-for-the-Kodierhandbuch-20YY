@@ -141,309 +141,398 @@ body { flex-direction: column; }
   <nav id="sidebar">
     <div id="sidebar-header"><a href="toc.html" id="book-title">V2027D_Teil1</a></div>
     <div id="search-box"><input type="search" placeholder="🔍 Suchen …" onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='search.html?q='+encodeURIComponent(this.value.trim());}" /></div>
+    <div id="nav-toggle-wrap"><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=true)">▼ Alle aufklappen</button><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=false)">▶ Alle zuklappen</button></div>
     <div id="nav-tree"><ul>
-  <li><a href="seite-1.html">Seite 1</a>
-  </li>
-  <li><a href="seite-2.html">Seite 2</a>
-  </li>
-  <li><a href="seite-3.html">Seite 3</a>
-  </li>
-  <li><a href="danksagung.html">Danksagung</a>
-  </li>
-  <li><a href="einleitung-version2027.html">Einleitung Version2027</a>
-  </li>
-  <li><a href="grundlagen-g00-g55.html">Grundlagen G00 –G55</a>
+<li><a href="seite-1.html">Seite 1</a></li>
+<li><a href="seite-2.html">Seite 2</a></li>
+<li><a href="seite-3.html">Seite 3</a></li>
+<li><a href="danksagung.html">Danksagung</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="einleitung-version2027.html" onclick="event.stopPropagation()">Einleitung Version2027</a></summary>
 <ul>
-  <li><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a>
-  </li>
-  <li><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a>
-  </li>
-  <li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a>
-  </li>
-  <li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a>
-  </li>
-  <li><a href="g50definitionen.html">G50Definitionen</a>
-  </li>
+<li><a href="abkuerzungen-des-kodierungshandbuches.html">Abkürzungen des Kodierungshandbuches</a></li>
 </ul>
-  </li>
-  <li><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="grundlagen-g00-g55.html" onclick="event.stopPropagation()">Grundlagen G00 –G55</a></summary>
 <ul>
-  <li><a href="d01gsymptome.html">D01gSymptome</a>
-  </li>
-  <li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a>
-  </li>
-  <li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a>
-  </li>
-  <li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a>
-  </li>
-  <li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a>
-  </li>
-  <li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a>
-  </li>
-  <li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a>
-  </li>
-  <li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a>
-  </li>
-  <li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a>
-  </li>
-  <li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a>
-  </li>
-  <li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a>
-  </li>
-  <li><a href="d13asyndrome.html">D13aSyndrome</a>
-  </li>
-  <li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a>
-  </li>
-  <li><a href="d15o-verlegungen.html">D15o	Verlegungen</a>
-  </li>
-  <li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a>
-  </li>
-</ul>
-  </li>
-  <li><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html" onclick="event.stopPropagation()">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a></summary>
 <ul>
-  <li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a>
-  </li>
-  <li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a>
-  </li>
-  <li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a>
-  </li>
-  <li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a>
-  </li>
-  <li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a>
-  </li>
-  <li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a>
-  </li>
-  <li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a>
-  </li>
-  <li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a>
-  </li>
-  <li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a>
-  </li>
-  <li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a>
-  </li>
+<li><a href="g01ngeschichte.html">G01nGeschichte</a></li>
+<li><a href="g02morganisation.html">G02mOrganisation</a></li>
+<li><a href="g03m-gesetzliche-grundlagen.html">G03m	Gesetzliche Grundlagen</a></li>
+<li><a href="g04mziele-der-erhebung-spitalstationaere-gesundheitsversorgung-spiges.html">G04mZiele der Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes)</a></li>
+<li><a href="g05manonymisierung-der-daten.html">G05mAnonymisierung der Daten</a></li>
+<li><a href="g06mder-medizinische-datensatz-definitionen-und-variablen.html">G06mDer medizinische Datensatz,Definitionen und Variablen</a></li>
 </ul>
-  </li>
-  <li><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a>
+</details>
+</li>
+<li><a href="g10p-erhebung-spitalstationaere-gesundheitsversorgung-spiges-die-patientenklassi.html">G10p	Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes), die Patientenklassifikationssysteme SwissDRG, TARPSY und ST Reha</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html" onclick="event.stopPropagation()">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a></summary>
 <ul>
-  <li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a>
-  </li>
-  <li><a href="sd0200nneubildungen.html">SD0200nNeubildungen</a>
-  </li>
-  <li><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a>
-  </li>
-  <li><a href="sd0500-psychische-und-verhaltensstoerungen.html">SD0500	Psychische und Verhaltensstörungen</a>
-  </li>
-  <li><a href="sd0600-krankheitendesnervensystems.html">SD0600	KrankheitendesNervensystems</a>
-  </li>
-  <li><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a>
-  </li>
-  <li><a href="sd0900-krankheitendeskreislaufsystems.html">SD0900	KrankheitendesKreislaufsystems</a>
-  </li>
-  <li><a href="sd1000-krankheitendesatmungssystems.html">SD1000	KrankheitendesAtmungssystems</a>
-  </li>
-  <li><a href="sd1100-krankheitendesverdauungssystems.html">SD1100	KrankheitendesVerdauungssystems</a>
-  </li>
-  <li><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html">SD1200	KrankheitenderHaut und der Unterhaut</a>
-  </li>
-  <li><a href="sd1400-krankheitendesurogenitalsystems.html">SD1400	KrankheitendesUrogenitalsystems</a>
-  </li>
-  <li><a href="sd1500geburtshilfe.html">SD1500Geburtshilfe</a>
-  </li>
-  <li><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html" class="active">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a>
-  </li>
-  <li><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a>
-  </li>
-  <li><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a>
-  </li>
-  <li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a>
-  </li>
-  <li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a>
-  </li>
+<li><a href="g21p-icd-10-gm.html">G21p	ICD-10-GM</a></li>
+<li><a href="g22o-schweizerische-operationsklassifikation-chop.html">G22o	Schweizerische Operationsklassifikation (CHOP)</a></li>
 </ul>
-  </li>
-  <li><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a>
-  </li>
-  <li><a href="kodierrichtlinienrehabilitation.html">KodierrichtlinienRehabilitation</a>
-  </li>
-  <li><a href="seite-59.html">Seite 59</a>
-  </li>
-  <li><a href="seite-60.html">Seite 60</a>
-  </li>
-  <li><a href="seite-61.html">Seite 61</a>
-  </li>
+</details>
+</li>
+<li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a></li>
+<li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g50definitionen.html" onclick="event.stopPropagation()">G50Definitionen</a></summary>
+<ul>
+<li><a href="g51o-derbehandlungsfall.html">G51o	DerBehandlungsfall</a></li>
+<li><a href="g52h-diehauptdiagnose.html">G52h	DieHauptdiagnose</a></li>
+<li><a href="g53m-derzusatz-zur-hauptdiagnose.html">G53m	DerZusatz zur Hauptdiagnose</a></li>
+<li><a href="g54p-dienebendiagnosen.html">G54p	DieNebendiagnosen</a></li>
+<li><a href="g55mdiebehandlung.html">G55mDieBehandlung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html" onclick="event.stopPropagation()">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a></summary>
+<ul>
+<li><a href="d00mabnormebefunde.html">D00mAbnormeBefunde</a></li>
+<li><a href="d01gsymptome.html">D01gSymptome</a></li>
+<li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a></li>
+<li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a></li>
+<li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a></li>
+<li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a></li>
+<li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a></li>
+<li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a></li>
+<li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a></li>
+<li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a></li>
+<li><a href="d10gchronische-krankheiten-mit-akutem-schub.html">D10gChronische Krankheiten mit akutem Schub</a></li>
+<li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a></li>
+<li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a></li>
+<li><a href="d13asyndrome.html">D13aSyndrome</a></li>
+<li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a></li>
+<li><a href="d15o-verlegungen.html">D15o	Verlegungen</a></li>
+<li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html" onclick="event.stopPropagation()">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a></summary>
+<ul>
+<li><a href="p00n-erfassung-der-prozedur-im-medizinischen-datensatz.html">P00n	Erfassung der Prozedur im medizinischen Datensatz</a></li>
+<li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a></li>
+<li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a></li>
+<li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a></li>
+<li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a></li>
+<li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a></li>
+<li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a></li>
+<li><a href="p07obilaterale-operationen.html">P07oBilaterale Operationen</a></li>
+<li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a></li>
+<li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a></li>
+<li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a></li>
+<li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details open>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0100-bestimmteinfektioese-und-parasitaere-krankheiten.html" onclick="event.stopPropagation()">SD0100	Bestimmteinfektiöse und parasitäre Krankheiten</a></summary>
+<ul>
+<li><a href="sd0101abakteriaemie.html">SD0101aBakteriämie</a></li>
+<li><a href="sd0102psepsis.html">SD0102pSepsis</a></li>
+<li><a href="sd0103lsirs.html">SD0103lSIRS</a></li>
+<li><a href="sd0104nhiv-aids.html">SD0104nHIV/AIDS</a></li>
+<li><a href="u61-laborkategorie-im-aktuellen-aufenthaltu61-1-kategorie-1500-und-mehr-cd4-t-he.html">U61.–! Laborkategorie im aktuellen AufenthaltU61.1!	Kategorie 1500 und mehr CD4+-T-Helferzellen pro Mikroliter Blut</a></li>
+<li><a href="sd0105aechter-krupp-pseudokrupp-kruppsyndrom.html">SD0105aEchter Krupp – Pseudokrupp –Kruppsyndrom</a></li>
+<li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0200nneubildungen.html" onclick="event.stopPropagation()">SD0200nNeubildungen</a></summary>
+<ul>
+<li><a href="sd0202mauswahl-und-reihenfolge-der-diagnosen.html">SD0202mAuswahl und Reihenfolge der Diagnosen</a></li>
+<li><a href="sd0203nnachresektion-im-tumorgebiet.html">SD0203nNachresektion im Tumorgebiet</a></li>
+<li><a href="sd0204ktumornachweis-nur-in-der-biopsie.html">SD0204kTumornachweis nur in der Biopsie</a></li>
+<li><a href="sd0205n-akute-chronische-erkrankungen-stoerungen-nach-und-oder-folgen-von-medizi.html">SD0205n(Akute, chronische) Erkrankungen, Störungen nach und/oder Folgen von medizinischen Massnahmen im Kontext von Behandlungen maligner Neubildungen (solide, hämatologisch)</a></li>
+<li><a href="sd0206averdacht-auf-tumor-oder-metastasen.html">SD0206aVerdacht auf Tumor oder Metastasen</a></li>
+<li><a href="sd0207a-nachuntersuchung.html">SD0207a	Nachuntersuchung</a></li>
+<li><a href="sd0208nrezidive.html">SD0208nRezidive</a></li>
+<li><a href="sd0209a-tumoremit-endokriner-aktivitaet.html">SD0209a	Tumoremit endokriner Aktivität</a></li>
+<li><a href="sd0210n-multiple-lokalisationen.html">SD0210n	Multiple Lokalisationen</a></li>
+<li><a href="sd0211aueberlappende-lokalisation.html">SD0211aÜberlappende Lokalisation</a></li>
+<li><a href="sd0212aremission-bei-malignen-immunoproliferativen-erkrankungen-undleukaemie.html">SD0212aRemission bei malignen immunoproliferativen Erkrankungen undLeukämie</a></li>
+<li><a href="sd0213a-lymphangiosis-carcinomatosa.html">SD0213a 	Lymphangiosis carcinomatosa</a></li>
+<li><a href="sd0214nlymphom.html">SD0214nLymphom</a></li>
+<li><a href="sd0215achemo-undradiotherapie.html">SD0215aChemo- undRadiotherapie</a></li>
+<li><a href="sd0216nprophylaktische-operationen-wegen-risikofaktoren.html">SD0216nProphylaktische Operationen wegen Risikofaktoren</a></li>
+<li><a href="sd0217opalliativbehandlung.html">SD0217oPalliativbehandlung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html" onclick="event.stopPropagation()">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a></summary>
+<ul>
+<li><a href="sd0401nallgemeines.html">SD0401nAllgemeines</a></li>
+<li><a href="sd0402nregeln-zur-kodierung-des-diabetes-mellitus.html">SD0402nRegeln zur Kodierung des Diabetes mellitus</a></li>
+<li><a href="sd0403nspezifische-komplikationen-des-diabetes-mellitus.html">SD0403nSpezifische Komplikationen des Diabetes mellitus</a></li>
+<li><a href="sd0404a-metabolisches-syndrom.html">SD0404a	Metabolisches Syndrom</a></li>
+<li><a href="sd0405nstoerungender-inneren-sekretion-des-pankreas.html">SD0405nStörungender inneren Sekretion des Pankreas</a></li>
+<li><a href="sd0406azystische-fibrose.html">SD0406aZystische Fibrose</a></li>
+<li><a href="sd0407nmangelernaehrungbei-erwachsenen.html">SD0407nMangelernährungbei Erwachsenen</a></li>
+<li><a href="sd0408nmangelernaehrungbei-kindern.html">SD0408nMangelernährungbei Kindern</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0500-psychische-und-verhaltensstoerungen.html" onclick="event.stopPropagation()">SD0500	Psychische und Verhaltensstörungen</a></summary>
+<ul>
+<li><a href="sd0501o-psychische-und-verhaltensstoerungendurch-psychotrope-substanzen-alkohol-.html">SD0501o	Psychische und Verhaltensstörungendurch psychotrope Substanzen(Alkohol, Drogen, Medikamente, Nikotin)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0600-krankheitendesnervensystems.html" onclick="event.stopPropagation()">SD0600	KrankheitendesNervensystems</a></summary>
+<ul>
+<li><a href="sd0601p-akuter-schlaganfall-etc-subarachnoidalblutung-und-sonstige-intrakraniell.html">SD0601p	Akuter «Schlaganfall etc.», Subarachnoidalblutung und sonstige intrakranielle Blutungen traumatischer und nichttraumatischer Genese</a></li>
+<li><a href="sd0602nfolgen-eines-status-nach-schlaganfall-etc-einer-nichttraumatischen-subara.html">SD0602nFolgen eines/Status nach: «Schlaganfall etc.», einer nichttraumatischen Subarachnoidalblutung oder sonstigen nichttraumatischen intrakraniellen Blutung</a></li>
+<li><a href="sd0603oparaplegie-und-tetraplegie-nicht-traumatisch.html">SD0603oParaplegie und Tetraplegie, nicht traumatisch</a></li>
+<li><a href="sd0604mbewusstseinsstoerungen.html">SD0604mBewusstseinsstörungen</a></li>
+<li><a href="sd0605e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden.html">SD0605e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden</a></li>
+<li><a href="sd0606e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden.html">SD0606e 	Aufnahme zurEntfernung eines Neurostimulators /(Test) Elektroden</a></li>
+<li><a href="sd0607o-kodierung-derparkinsonstadien-g20.html">SD0607o 	Kodierung derParkinsonstadien (G20.-)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html" onclick="event.stopPropagation()">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a></summary>
+<ul>
+<li><a href="sd0801aschwerhoerigkeit-undtaubheit.html">SD0801aSchwerhörigkeit undTaubheit</a></li>
+<li><a href="sd0802danpassung-handhabung-eines-implantiertenhoergeraetes.html">SD0802dAnpassung/Handhabung eines implantiertenHörgerätes</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0900-krankheitendeskreislaufsystems.html" onclick="event.stopPropagation()">SD0900	KrankheitendesKreislaufsystems</a></summary>
+<ul>
+<li><a href="sd0901a-hypertonie-und-krankheiten-bei-hypertonie.html">SD0901a 	Hypertonie und Krankheiten bei Hypertonie</a></li>
+<li><a href="sd0902eischaemische-herzkrankheit.html">SD0902eIschämische Herzkrankheit</a></li>
+<li><a href="sd0903n-thrombose-resp-verschlussvon-koronarem-stent-resp-bypass.html">SD0903n	Thrombose resp. Verschlussvon koronarem Stent resp. Bypass</a></li>
+<li><a href="sd0904d-erkrankungenderherzklappen.html">SD0904d 	ErkrankungenderHerzklappen</a></li>
+<li><a href="sd0905aschrittmacher-defibrillator.html">SD0905aSchrittmacher/Defibrillator</a></li>
+<li><a href="sd0906anachuntersuchung-nachherztransplantation.html">SD0906aNachuntersuchung nachHerztransplantation</a></li>
+<li><a href="sd0907a-akutes-lungenoedem.html">SD0907a	Akutes Lungenödem</a></li>
+<li><a href="sd0908kherzstillstand.html">SD0908kHerzstillstand</a></li>
+<li><a href="sd0910o-erfassung-derbehandlungsdauer-mit-einem-herzunterstuetzungssystem-oder-e.html">SD0910o	Erfassung derBehandlungsdauer mit einem Herzunterstützungssystem oder einem herzkreislauf- und lungenunterstützenden System</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1000-krankheitendesatmungssystems.html" onclick="event.stopPropagation()">SD1000	KrankheitendesAtmungssystems</a></summary>
+<ul>
+<li><a href="sd1001p-maschinelle-beatmung.html">SD1001p	Maschinelle Beatmung</a></li>
+<li><a href="sd1002orespiratorische-insuffizienz.html">SD1002oRespiratorische Insuffizienz</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1100-krankheitendesverdauungssystems.html" onclick="event.stopPropagation()">SD1100	KrankheitendesVerdauungssystems</a></summary>
+<ul>
+<li><a href="sd1101jappendizitis-als-klinische-diagnose.html">SD1101jAppendizitis als klinische Diagnose</a></li>
+<li><a href="sd1103a-magenulkusmitgastritis.html">SD1103a	MagenulkusmitGastritis</a></li>
+<li><a href="sd1104igastrointestinale-blutung.html">SD1104iGastrointestinale Blutung</a></li>
+<li><a href="sd1105a-dehydratationbei-gastroenteritis.html">SD1105a 	Dehydratationbei Gastroenteritis</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html" onclick="event.stopPropagation()">SD1200	KrankheitenderHaut und der Unterhaut</a></summary>
+<ul>
+<li><a href="sd1201gplastische-chirurgie.html">SD1201gPlastische Chirurgie</a></li>
+<li><a href="sd1202jspannungsblasen.html">SD1202jSpannungsblasen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1400-krankheitendesurogenitalsystems.html" onclick="event.stopPropagation()">SD1400	KrankheitendesUrogenitalsystems</a></summary>
+<ul>
+<li><a href="sd1401o-dialyse.html">SD1401o	Dialyse</a></li>
+<li><a href="sd1402manogenitale-warzen-anogenitaler-herpes.html">SD1402mAnogenitale Warzen/anogenitaler Herpes</a></li>
+<li><a href="sd1404oniereninsuffizienz.html">SD1404oNiereninsuffizienz</a></li>
+<li><a href="sd1405l-aufnahme-zuranlage-einesperitonealkatheters-zur-dialyse.html">SD1405l	Aufnahme zurAnlage einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1406d-aufnahme-zurentfernung-einesperitonealkatheters-zur-dialyse.html">SD1406d 	Aufnahme zurEntfernung einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1407l-aufnahme-zur-anlage-einerav-fistel-oder-einesav-shunts-zur-dialyse.html">SD1407l 	Aufnahme zur Anlage einerAV-Fistel oder einesAV-Shunts zur Dialyse</a></li>
+<li><a href="sd1408a-aufnahme-zum-verschluss-einerav-fistel-oder-zumentfernen-eines-av-shunts.html">SD1408a 	Aufnahme zum Verschluss einerAV-Fistel oder zumEntfernen eines AV-Shunts</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1500geburtshilfe.html" onclick="event.stopPropagation()">SD1500Geburtshilfe</a></summary>
+<ul>
+<li><a href="sd1501ndefinitionen.html">SD1501nDefinitionen</a></li>
+<li><a href="sd1502pvorzeitige-beendigung-einer-schwangerschaft.html">SD1502pVorzeitige Beendigung einer Schwangerschaft</a></li>
+<li><a href="sd1503p-krankheitenin-der-schwangerschaft.html">SD1503p	Krankheitenin der Schwangerschaft</a></li>
+<li><a href="sd1504pkomplikationen-der-schwangerschaft-mutter-oder-kind-betreffend.html">SD1504pKomplikationen der Schwangerschaft, Mutter oder Kind betreffend</a></li>
+<li><a href="sd1505pspezielle-kodierregeln-fuer-die-geburt.html">SD1505pSpezielle Kodierregeln für die Geburt</a></li>
+<li><a href="sd1506p-krankheiten-im-wochenbett-puerperium.html">SD1506p	Krankheiten im Wochenbett (Puerperium)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details open>
+<summary class="nav-summary active"><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html" onclick="event.stopPropagation()">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a></summary>
+<ul>
+<li><a href="sd1601nmedizinischer-datensatz.html">SD1601nMedizinischer Datensatz</a></li>
+<li><a href="sd1602adefinitionen.html">SD1602aDefinitionen</a></li>
+<li><a href="sd1603ineugeborene.html">SD1603iNeugeborene</a></li>
+<li><a href="sd1604gzustaende-die-ihren-ursprung-in-der-perinatalperiode-haben.html">SD1604gZustände, die ihren Ursprung in der Perinatalperiode haben</a></li>
+<li><a href="sd1605atotgeborene.html">SD1605aTotgeborene</a></li>
+<li><a href="sd1606j-besondere-massnahmen-fuer-das-kranke-neugeborene.html">SD1606j 	Besondere Massnahmen für das (kranke) Neugeborene</a></li>
+<li><a href="sd1607c-atemnotsyndrombeihyaliner-membranenkrankheit-surfactantmangel.html">SD1607c 	Atemnotsyndrombeihyaliner Membranenkrankheit/Surfactantmangel</a></li>
+<li><a href="sd1608c-atemnotsyndrombeimassivemaspirationssyndrom-wet-lung-odertransitorische-.html">SD1608c 	AtemnotsyndrombeimassivemAspirationssyndrom,Wet lung odertransitorische Tachypnoe beim Neugeborenen</a></li>
+<li><a href="sd1609jhypoxisch-ischaemische-enzephalopathie-hie.html">SD1609jHypoxisch-ischämische Enzephalopathie (HIE)</a></li>
+<li><a href="sd1610h-asphyxie-unter-der-geburt.html">SD1610h	Asphyxie unter der Geburt</a></li>
+<li><a href="sd1611orespiratorisches-versagenbeim-neugeborenen.html">SD1611oRespiratorisches Versagenbeim Neugeborenen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html" onclick="event.stopPropagation()">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a></summary>
+<ul>
+<li><a href="sd1801ainkontinenz.html">SD1801aInkontinenz</a></li>
+<li><a href="sd1802mdysphagie.html">SD1802mDysphagie</a></li>
+<li><a href="sd1803afieberkraempfe.html">SD1803aFieberkrämpfe</a></li>
+<li><a href="sd1804o-schmerzdiagnosen-undschmerzbehandlungsverfahren.html">SD1804o	Schmerzdiagnosen undSchmerzbehandlungsverfahren</a></li>
+<li><a href="sd1805e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden-bei-schm.html">SD1805e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1806e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden-bei-schmer.html">SD1806e 	Aufnahme zurEntfernung eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1807lschock.html">SD1807lSchock</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html" onclick="event.stopPropagation()">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a></summary>
+<ul>
+<li><a href="sd1901aoberflaechliche-verletzungen.html">SD1901aOberflächliche Verletzungen</a></li>
+<li><a href="sd1902nfraktur-und-luxation.html">SD1902nFraktur und Luxation</a></li>
+<li><a href="sd1903poffene-wunden-verletzungen.html">SD1903pOffene Wunden/Verletzungen</a></li>
+<li><a href="sd1905cverletzung-desrueckenmarks-mit-traumatischer-paraplegie-und-tetraplegie.html">SD1905cVerletzung desRückenmarks (mit traumatischer Paraplegie und Tetraplegie)</a></li>
+<li><a href="sd1906nmehrfachverletzungen.html">SD1906nMehrfachverletzungen</a></li>
+<li><a href="sd1907jverbrennungen-undveraetzungen.html">SD1907jVerbrennungen undVerätzungen</a></li>
+<li><a href="sd1908nvergiftungdurch-arzneimittel-drogen-und-biologisch-aktive-substanzen.html">SD1908nVergiftungdurch Arzneimittel, Drogen und biologisch aktive Substanzen</a></li>
+<li><a href="sd1909o-unerwuenschte-nebenwirkungen-von-arzneimitteln-bei-einnahme-gemaess-vero.html">SD1909o 	Unerwünschte Nebenwirkungen von Arzneimitteln (bei Einnahme gemäss Verordnung)</a></li>
+<li><a href="sd1910b-unerwuenschte-nebenwirkungen-vergiftung-von-zwei-oder-mehr-in-verbindung.html">SD1910b	Unerwünschte Nebenwirkungen/Vergiftung von zwei oder mehr in Verbindung eingenommenen Substanzen (bei Einnahme entgegen einer Verordnung)</a></li>
+</ul>
+</details>
+</li>
+<li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a></li>
+<li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a></li>
+<li><a href="sd2200oschluesselnummern-fuer-besondere-zwecke.html">SD2200oSchlüsselnummern für besondere Zwecke</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0200fruehrehabilitation-paraplegiologische-rehabilitation-akutrehabilitation.html" onclick="event.stopPropagation()">SP0200Frührehabilitation, paraplegiologische Rehabilitation, Akutrehabilitation</a></summary>
+<ul>
+<li><a href="sp0201nfruehrehabilitation.html">SP0201nFrührehabilitation</a></li>
+<li><a href="sp0202pparaplegiologische-rehabilitation.html">SP0202pParaplegiologische Rehabilitation</a></li>
+<li><a href="sp0203oakutrehabilitation.html">SP0203oAkutrehabilitation</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0300-kodierrichtlinien-zu-chop-kapitel-9-operationen-am-verdauungstrakt.html" onclick="event.stopPropagation()">SP0300	Kodierrichtlinien zu CHOP Kapitel 9 «Operationen am Verdauungstrakt»</a></summary>
+<ul>
+<li><a href="sp0301khiatushernie-fundoplicatio.html">SP0301kHiatushernie – Fundoplicatio:</a></li>
+<li><a href="zusaetzliche-erfassung-chop-kode-44-92-intraoperative-manipulation-am-magen.html">Zusätzliche Erfassung CHOP-Kode 44.92 Intraoperative Manipulation am Magen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0400-kodierrichtlinien-zu-chop-kapitel-11-operationen-an-den-maennlichen-gesch.html" onclick="event.stopPropagation()">SP0400	Kodierrichtlinien zu CHOP Kapitel 11«Operationen an den männlichen Geschlechtsorganen»</a></summary>
+<ul>
+<li><a href="sp0401mgeschlechtsangleichung.html">SP0401mGeschlechtsangleichung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="kodierrichtlinienrehabilitation.html" onclick="event.stopPropagation()">KodierrichtlinienRehabilitation</a></summary>
+<ul>
+<li><a href="allgemeine-informationen.html">Allgemeine Informationen</a></li>
+<li><a href="diagnosen-icd-10-gm.html">Diagnosen - ICD-10-GM</a></li>
+<li><a href="prozeduren.html">Prozeduren</a></li>
+<li><a href="beispiele-und-erlaeuterungen.html">Beispiele und Erläuterungen</a></li>
+<li><a href="beispiele.html">Beispiele</a></li>
+</ul>
+</details>
+</li>
+<li><a href="alphabetisches-verzeichnis.html">Alphabetisches Verzeichnis</a></li>
+<li><a href="a.html">A</a></li>
+<li><a href="b.html">B</a></li>
+<li><a href="c.html">C</a></li>
+<li><a href="d.html">D</a></li>
+<li><a href="e.html">E</a></li>
+<li><a href="f.html">F</a></li>
+<li><a href="g.html">G</a></li>
+<li><a href="h.html">H</a></li>
+<li><a href="i.html">I</a></li>
+<li><a href="k.html">K</a></li>
+<li><a href="l.html">L</a></li>
+<li><a href="m.html">M</a></li>
+<li><a href="n.html">N</a></li>
+<li><a href="o.html">O</a></li>
+<li><a href="p.html">P</a></li>
+<li><a href="r.html">R</a></li>
+<li><a href="s.html">S</a></li>
+<li><a href="t.html">T</a></li>
+<li><a href="u.html">U</a></li>
+<li><a href="v.html">V</a></li>
+<li><a href="w.html">W</a></li>
+<li><a href="z.html">Z</a></li>
+<li><a href="seite-214.html">Seite 214</a></li>
+<li><a href="seite-215.html">Seite 215</a></li>
 </ul>
 </div>
   </nav>
   <main id="content">
     <nav class="breadcrumb"><a class="crumb" href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a><span class="sep">›</span><span class="crumb current">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</span></nav>
-    <article><div aria-labelledby="_idParaDest-233" class="_idGenObjectStyleOverride-1" id="_idContainer238">
-<h3 class="Untertitel-1-farbig" id="_idParaDest-233"><a id="_idTextAnchor254"></a>S<span class="Fett _idGenCharOverride-1">D</span>1600	<a id="_idIndexMarker445"></a>Bestimmte Zustände, die ihren Ursprung in der <a id="_idIndexMarker446"></a>Perinatalperiode haben</h3>
-<h4 class="Untertitel-2-fett" id="_idParaDest-234"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor255"></a>SD1601n</span> <span class="Fett CharOverride-1"><a id="_idIndexMarker447"></a></span><span class="Fett _idGenCharOverride-1">Medizinischer Datensatz</span></h4>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Für jedes Neugeborene sind bei Geburt im selben Spital im Datensatz zwingend das Geburtsgewicht und das Gestationsalter zu erfassen. </span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Bei stationärer Aufnahme eines Neugeborenen oder Säuglings nach der Geburt (bis Vollendung des ersten Lebensjahres) sind zwingend das Aufnahmegewicht (Variable «aufnahmegewicht») und das Gestationsalter (Variable «gestationsalter») zu erfassen.</span></p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-235"><a id="_idTextAnchor256"></a>S<span class="Fett _idGenCharOverride-1">D</span>1602a 	<a id="_idIndexMarker448"></a><a id="_idIndexMarker449"></a><a id="_idIndexMarker450"></a>Definitionen</h4>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-236"><a id="_idTextAnchor257"></a><a id="_idIndexMarker451"></a><a id="_idIndexMarker452"></a>Perinatale und <a id="_idIndexMarker453"></a>neonatale Periode</h5>
-<p class="Grundtext-D-">Gemäss der Definition der WHO gil<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">t</span>:</p>
-<p class="Grundtext-D- ParaOverride-1">•	Die perinatale Periode beginnt 22 Wochen nach dem Beginn der Gestation und endet mit der Vollendung des siebten Tages nach der Geburt.</p>
-<p class="Grundtext-D-">•	Die Neonatalperiode beginnt mit der Geburt und endet mit Vollendung des 28. Tages nach der Geburt.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-237"><a id="_idTextAnchor258"></a>S<span class="Fett _idGenCharOverride-1">D</span>1603i 	<a id="_idIndexMarker454"></a>Neugeborene</h4>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-238"><a id="_idTextAnchor259"></a>Kategorie Z38.- Lebendgeborene nach dem Geburtsort</h5>
-<p class="Grundtext-D-">Diese Kategorie <span class="Kursiv _idGenCharOverride-2">Z38.-</span> beinhaltet Kinder, die</p>
-<p class="Grundtext-D-">•	im Spital/Geburtshaus geboren wurden.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">	Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span> im medizinischen Datensatz wird bezüglich Eintrittsart (<span class="Light _idGenCharOverride-2">Variable «eintrittsart»</span>) die Ziffer 3 (Geburt) angegeben.</p>
-<p class="Grundtext-D-">•	ausserhalb des Spitals/Geburtshauses geboren und unmittelbar nach der Geburt aufgenommen wurden.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">	Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span> im medizinischen Datensatz wird bezüglich Eintrittsart (<span class="Light _idGenCharOverride-2">Variable «eintrittsart»</span>) die Ziffer 1 (Notfall) oder 2 (angemeldet, geplant) angegeben. Es wird kein Neugeborenendatensatz ausgefüllt.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1"> </span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">: </span>Bei einer <span class="Light _idGenCharOverride-2">komplikationslosen</span> Geburt zu Hause oder auf dem Weg ins Spital/Geburtshaus ist bei der Mutter als HD <span class="Kursiv _idGenCharOverride-2">Z39.- Postpartale Betreuung und Untersuchung der Mutter</span> zu kodieren, auch wenn die komplikationslose Nachgeburt erst im Spital stattfindet.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">: </span>im medizinischen Datensatz wird bezüglich Eintrittsart (<span class="Light _idGenCharOverride-2">Variable «eintrittsart»</span>) die Ziffer 1 (Notfall) oder 2 (angemeldet, geplant) angegeben.</p>
-<p class="Grundtext-D-">Für ein Neugeborenes ist als Hauptdiagnose ein Kode der Kategorie <span class="Kursiv _idGenCharOverride-2">Z38.- Lebendgeborene nach dem Geburtsort</span> anzugeben, wenn das Neugeborene <span class="Fett _idGenCharOverride-1">gesund</span> ist (einschliesslich der Kinder, bei denen eine Beschneidung vorgenommen wurde).</p>
-<p class="Grundtext-D-">Für <span class="Fett _idGenCharOverride-1">Frühgeborene</span> und bereits bei Geburt oder während des stationären Aufenthaltes <span class="Fett _idGenCharOverride-1">erkrankte</span> Neugeborene werden die Kodes für die krankhaften Zustände <span class="Fett _idGenCharOverride-1">vor</span> einem Kode aus <span class="Kursiv _idGenCharOverride-2">Z38.- Lebendgeborene nach dem Geburtsort</span> kodiert.</p>
-<p class="Beispiel-Titel">Beispiel 1</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Neugeborenes, zu Hause geboren, wird aufgenommen. Es liegt keine Erkrankung vor.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	Z38.1	Einling, Geburt ausserhalb des Krankenhauses</span></p>
-<p class="Beispiel-Titel">Beispiel 2</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Neugeborenes, im Spital gesund geboren (vaginale Entbindung), wird wegen auftretenden Krampfanfällen drei Tage nach der Geburt behandelt.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	P90	Krämpfe beim Neugeborenen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	Z38.0	Einling, Geburt im Krankenhaus</span></p>
-<p class="Beispiel-Titel">Beispiel 3</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Frühgeborenes mit Entbindung in der 27. Schwangerschaftswoche mit einem Geburtsgewicht von 1520 g.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	P07.12	Neugeborenes mit sonstigem niedrigem Geburtsgewicht, Geburtsgewicht 1500 bis unter 2500 Gramm</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	P07.2	Neugeborenes mit extremer Unreife</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	Z38.0	Einling, Geburt im Krankenhaus</span></p>
-<div aria-label="183" epub:type="pagebreak" id="page185" role="doc-pagebreak"></div>
-<p class="Grundtext-D-">Kodes aus <span class="Kursiv _idGenCharOverride-2">Z38.-</span> sind nicht mehr zu verwenden, wenn die Behandlung während einer zweiten oder nachfolgenden stationären Aufnahme erfolgt.</p>
-<p class="Beispiel-Titel">Beispiel 4</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Neugeborenes wird am 2. Tag nach Geburt mit hyaliner Membranenkrankheit und Pneumothorax aus dem Spital A in das Spital B verlegt.</span></p>
-<p class="Beispiel-Text"><span class="Fett-Kursiv _idGenCharOverride-1">Spital </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett-Kursiv _idGenCharOverride-1">A</span></span><span class="Fett-Kursiv _idGenCharOverride-1">:</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD		P22.0	Atemnotsyndrom [Respiratory distress] des Neugeborenen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND		P25.1	Pneumothorax mit Ursprung in der Perinatalperiode</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND		Z38.0	Einling, Geburt im Krankenhaus</span></p>
-<p class="Beispiel-Text"><span class="fett-kursiv">Spital </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="fett-kursiv">B</span></span><span class="fett-kursiv">:</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD		P22.0	Atemnotsyndrom [Respiratory distress] des Neugeborenen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND		P25.1	Pneumothorax </span><span class="Kursiv CharOverride-4"><a id="_idIndexMarker455"></a></span><span class="Kursiv _idGenCharOverride-2">mit Ursprung in der Perinatalperiode</span></p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-239"><a id="_idTextAnchor260"></a>S<span class="Fett _idGenCharOverride-1">D</span>1604g	<a id="_idIndexMarker456"></a>Zustände, die ihren Ursprung in der Perinatalperiode haben</h4>
-<p class="Grundtext-D-">Zur Verschlüsselung von Zuständen, die ihren Ursprung in der Perinatalperiode haben, steht das Kapitel XVI <span class="Light _idGenCharOverride-2">«</span>Bestimmte Zustände, die ihren Ursprung in der Perinatalperiode haben<span class="Light _idGenCharOverride-2">»</span> der ICD-10-GM zur Verfügung. Es sind auch die Erläuterungen im Kapitel XVI zu beachten.</p>
-<p class="Beispiel-Titel">Beispiel 1</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Frühgeborenes wird mit Lungenhypoplasie in die Kinderklinik eines anderen Spitals verlegt. Die Mutter hatte in der 25. SSW einen vorzeitigen Blasensprung. Die Schwangerschaft wurde durch Tokolyse bis zur 29. SSW hinausgezögert. Wegen V.a. Amnioninfektionssyndrom und pathologischem CTG erfolgte eine Schnittentbindung in der 29. SSW. Die Lungenhypoplasie wird auf die Frühgeburtlichkeit infolge des Blasensprungs zurückgeführt. Die aufnehmende Kinderklinik kodiert wie folg</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">t</span></span><span class="Kursiv _idGenCharOverride-2">:</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	P28.0	Primäre Atelektase beim Neugeborenen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	P01.1	Schädigung des Fetus und Neugeborenen durch vorzeitigen Blasensprung</span></p>
-<p class="Grundtext-D-">Es ist auch zu berücksichtigen, dass einige Zustände (wie z.B. Stoffwechselstörungen), die während der Perinatalperiode auftreten können, nicht im Kapitel XVI klassifiziert sind. Wenn solch ein Zustand beim Neugeborenen auftritt, ist ein Kode aus dem entsprechenden Kapitel der ICD-10-GM <span class="Fett _idGenCharOverride-1">ohne</span> einen Kode aus Kapitel XVI zuzuordnen.</p>
-<p class="Beispiel-Titel">Beispiel 2</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Neugeborenes wird wegen Rotavirenenteritis aus der Geburtshilfe in die Pädiatrie desselben Spitals verlegt.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	A08.0	Enteritis durch Rotaviren</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	Z38.0	Einling, Geburt im Krankenhaus</span></p>
-<p class="Grundtext-D-">Die Definition der Perinatalperiode ist wörtlich zu nehmen. Wenn die Erkrankung nach dem 7. Tag auftritt oder behandelt wird, aber ihren Ursprung in der Perinatalperiode hat, darf z.B. <span class="Kursiv _idGenCharOverride-2">P27.1 Bronchopulmonale Dysplasie mit Ursprung in der Perinatalperiode</span> das ganze Leben lang verschlüsselt werden. Die Festlegung des zeitlichen Ursprungs bedarf der fachlichen Einschätzung im Einzelfall.</p>
-<h5 class="Untertitel-3-kursiv _idGenParaOverride-1"><a id="_idIndexMarker457"></a><a id="_idIndexMarker458"></a></h5>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-240"><a id="_idTextAnchor261"></a><span aria-label="184" epub:type="pagebreak" id="page186" role="doc-pagebreak"></span>Postexpositionsprophylaxe beim gesunden Neugeborenen</h5>
-<p class="Grundtext-D-">Wenn ein gesundes Neugeborenes nach der Geburt eine medikamentöse Prophylaxe erhält, wird gemäss Indikation der entsprechende <span class="Kursiv _idGenCharOverride-2">Z20.- Kontakt mit und Exposition gegenüber übertragbaren Krankheiten</span> abgebildet.</p>
-<p class="Grundtext-D-">D.h. medizinischer Aufwand &gt; 0 wird kodiert. Bei einem Neugeborenen ohne Prophylaxe wird nichts abgebildet.</p>
-<p class="Beispiel-Titel">Beispiel<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">e</span>:</p>
-<p class="Beispiel-Text">Kodierung des Neugeborenen bei Streptokokken-B-Positivität der Mutte<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">r</span>:</p>
-<p class="Beispiel-Text">1. ohne Aufwand &gt; <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">0</span>:  nichts kodieren</p>
-<p class="Beispiel-Text">Eine mehr oder weniger engmaschige Überwachung ist hier in der Routine des Z38.- Lebendgeborene nach dem Geburtsort inbegriffen.</p>
-<p class="Beispiel-Text">2. mit Aufwand &gt; 0</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">–	</span>Postexpositions-Prophylaxe (Antibiotika<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">)</span>: Z20.8 + B95.<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">1</span>!</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">–	</span>Kind mit infektiöser Pathologi<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">e</span>: die Pathologie + der Kode P00.8 Schädigung des Fetus und Neugeborenen durch sonstige Zustände der Mutter, der besagt, dass die zuvor kodierte Pathologie durch einen Zustand der Mutter hervorgerufen wurde.</p>
-<p class="Beispiel-Text">Zur Erinnerung, Kodierung der Mutter als Streptokokken-B-Trägeri<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>:</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">–	</span>Streptokokken-B ohne Aufwand &gt; <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">0</span>: nichts kodieren</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">–	</span>Streptokokken-B mit Aufwand &gt; 0 (Antibiotika<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">)</span>: Z22.3 + B95.<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">1</span>!</p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-241"><a id="_idTextAnchor262"></a><a id="_idIndexMarker459"></a>Gesundes Neugeborenes einer Diabetikerin</h5>
-<p class="Grundtext-D-">Falls ein <span class="Fett _idGenCharOverride-1">gesundes</span> Neugeborenes einer Diabetikerin eine wiederholte Blutzuckerüberwachung benötigt, wird dies mit dem Kode <span class="Kursiv _idGenCharOverride-2">Z83.3 Diabetes mellitus in der Familienanamnese</span> abgebildet (und nicht mit <span class="Kursiv _idGenCharOverride-2">P70.- Transitorische Störungen des Kohlenhydratstoffwechsels, die für den Fetus und das Neugeborene spezifisch sind</span>).</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-242"><a id="_idTextAnchor263"></a>S<span class="Fett _idGenCharOverride-1">D</span>1605a 	<a id="_idIndexMarker460"></a>Totgeborene</h4>
-<p class="Grundtext-D-">Obgleich die Information «Totgeborenes» (z.B. <span class="Kursiv _idGenCharOverride-2">Z37.1 Totgeborener Einling</span>) bereits im Datensatz der Mutter erscheint, muss auch ein Minimaldatensatz (d.h. ein Fall) und ein Neugeborenen-Zusatzdatensatz für das Kind angelegt werden. Es wird aber für das Kind <span class="Fett _idGenCharOverride-1">keine</span> Kodierung vorgenommen, MedPlaus ist in diesem Sinne adaptiert.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-243"><a id="_idTextAnchor264"></a>S<span class="Fett _idGenCharOverride-1">D</span>1606j 	Besondere Massnahmen für das (kranke) Neugeborene</h4>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-244"><a id="_idTextAnchor265"></a><a id="_idIndexMarker461"></a><a id="_idIndexMarker462"></a>Parenterale Therapie</h5>
-<p class="Grundtext-D-">Der Kode <span class="Kursiv _idGenCharOverride-2">99.1.- Injektion oder Infusion einer therapeutischen oder prophylaktischen Substanz</span> wird z.B. zugewiesen, wenn eine parenterale Flüssigkeitszufuhr zur Behandlung mit Kohlenhydraten, zur Hydratation oder bei Elektrolytstörungen eingesetzt wird.</p>
-<p class="Grundtext-D-">Gleiches gilt für die präventive parenterale Flüssigkeitszufuhr bei Frühgeborenen unter 2000 Gramm, die erfolgt, um einer Hypoglykämie oder Elektrolytentgleisung vorzubeugen.</p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-245"><a id="_idTextAnchor266"></a><a id="_idIndexMarker463"></a><a id="_idIndexMarker464"></a>Lichttherapie</h5>
-<p class="Grundtext-D-">Bei der Diagnose Neugeborenengelbsucht wird der Kode für die Lichttherapie  </p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">99.83	Sonstige Phototherapie</span></p>
-<p class="Grundtext-D-">nur erfasst, wenn diese <span class="Fett _idGenCharOverride-1">mindestens während zwölf Stunden</span> durchgeführt wurde.</p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-246"><a id="_idTextAnchor267"></a><a id="_idIndexMarker465"></a><span class="Kursiv _idGenCharOverride-2">Primäre Reanimation</span></h5>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Hinwei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">s</span></span><span class="Fett _idGenCharOverride-1">: </span><span class="Light _idGenCharOverride-2">Für die Abbildung des CHOP-Kodes </span><span class="Kursiv _idGenCharOverride-2">99.65 Akute Behandlung einer Adaptationsstörung beim Neugeborenen (sog. Primäre Reanimation)</span><span class="Light _idGenCharOverride-2"> müssen alle unter dem «Beachte» aufgeführten Bedingungen erfüllt sein.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Sind die Bedingungen nicht vollständig erfüllt, darf der Kode nicht erfasst werden.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Für die Beurteilung des Kriteriums «[…] - Unterstützende Massnahmen der Atmung (CPAP, Beatmung) […]» wird ebenfalls auf die Kodierregel SD1001i «</span><span class="Kursiv CharOverride-6">Maschinelle Beatmun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv CharOverride-6">g</span></span><span class="Kursiv CharOverride-6">; Kontinuierlicher positiver Atemwegsdruck (CPAP)</span><span class="Kursiv _idGenCharOverride-2">»</span><span class="Light _idGenCharOverride-2"> verwiesen.</span></p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-247"><a id="_idTextAnchor268"></a><span aria-label="185" epub:type="pagebreak" id="page187" role="doc-pagebreak"></span>S<span class="Fett _idGenCharOverride-1">D</span>1607c 	Atemnotsyndrom <a id="_idIndexMarker466"></a>bei <a id="_idIndexMarker467"></a>hyaliner Membranenkrankheit/<a id="_idIndexMarker468"></a><a id="_idIndexMarker469"></a>Surfactantmangel</h4>
-<p class="Grundtext-D-">Der Kode für das Atemnotsyndrom bei Frühgeborenen/Neugeborenen</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">P22.0	Atemnotsyndrom [Respiratory distress syndrom] des Neugeborenen</span></p>
-<p class="Grundtext-D-">ist der Kodierung folgender Zustände vorbehalte<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>:</p>
-<p class="Grundtext-D-">•	<a id="_idIndexMarker470"></a>Hyaline Membranenkrankheit</p>
-<p class="Grundtext-D-">•	Surfactant-Mangel</p>
-<p class="Grundtext-D-">Die Applikation von Surfactant bei Neugeborenen wird nur durch die Liste der hochteuren Medikamente mit dem ATC-Kode eingetragen, <span class="Light _idGenCharOverride-2">der</span> auch die Applikationsart beinhaltet. Ein CHOP-Kode wird nicht abgebildet.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span> <span class="Kursiv _idGenCharOverride-2">P22.0</span> setzt voraus, dass ein spezifisch definiertes Krankheitsbild vorliegt und ist von vorübergehenden Anpassungsstörungen, wie z.B. <a id="_idIndexMarker471"></a><a id="_idIndexMarker472"></a>transitorische Tachypnoe (<span class="Kursiv _idGenCharOverride-2">P22.1</span>), abzugrenze<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>!</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-248"><a id="_idTextAnchor269"></a>S<span class="Fett _idGenCharOverride-1">D</span>1608c 	Atemnotsyndrom <a id="_idIndexMarker473"></a>bei <a id="_idIndexMarker474"></a>massivem <a id="_idIndexMarker475"></a>Aspirationssyndrom, <a id="_idIndexMarker476"></a><a id="_idIndexMarker477"></a><a id="_idIndexMarker478"></a>Wet lung oder <a id="_idIndexMarker479"></a>transitorische Tachypnoe beim Neugeborenen</h4>
-<p class="Grundtext-D-">Die Kategorie</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">P24.-	Aspirationssyndrome beim Neugeborenen</span></p>
-<p class="Grundtext-D-">ist zu verwenden, wenn die Atemstörung – bedingt durch das Aspirationssyndrom – eine Sauerstoffzufuhr von <span class="Fett _idGenCharOverride-1">über</span> 24 Stunden Dauer erforderte.</p>
-<p class="Grundtext-D-">Der Kode</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">P22.1	Transitorische Tachypnoe beim Neugeborenen</span></p>
-<p class="Grundtext-D-">ist für folgende Diagnosen zu verwende<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>:</p>
-<p class="Grundtext-D-">•	Transitorische Tachypnoe beim Neugeborenen (ungeachtet der Dauer der Sauerstofftherapie)</p>
-<p class="Grundtext-D-">•	Aspirationssyndrom beim Neugeborenen, wenn die Atemstörung eine Sauerstoffzufuhr von <span class="Fett _idGenCharOverride-1">weniger</span> als 24 Stunden Dauer erforderte</p>
-<p class="Grundtext-D-">•	wet lung</p>
-<div aria-label="185" epub:type="pagebreak" id="page187-1" role="doc-pagebreak"></div>
-<h4 class="Untertitel-2-fett" id="_idParaDest-249"><a id="_idTextAnchor270"></a>S<span class="Fett _idGenCharOverride-1">D</span>1609j	<a id="_idIndexMarker480"></a><a id="_idIndexMarker481"></a>Hypoxisch-ischämische Enzephalopathie (HIE)</h4>
-<p class="Grundtext-D-">Die hypoxisch-ischämische Enzephalopathie wird klinisch, nach Sarnat-Stadien<span class="Hochgestellt _idGenCharOverride-3"><span><a class="_idFootnoteLink" epub:type="noteref" href="U08_Spez_Kodierrichtlinien_S0100-S2100_Kodierungshandbuch_2027.xhtml#footnote-007" id="footnote-007-backlink" role="doc-noteref">1</a></span></span> <span class="Light _idGenCharOverride-2">und/oder nach Thompson Score</span><span class="Hochgestellt _idGenCharOverride-3">2</span>, wie folgt eingestuf<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">t</span>:</p>
-<p class="Grundtext-D-">1. Stadium <span class="Light _idGenCharOverride-2">nach Sarnat</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Hochgestellt _idGenCharOverride-3">1</span></span><span class="Light _idGenCharOverride-2">:</span> Übererregbarkeit, Hyperreflexie, erweiterte Pupillen, Tachykardie, aber keine Krampfanfälle</p>
-<p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">(entspricht Thompson Score</span><span class="Hochgestellt _idGenCharOverride-3">2</span><span class="Light _idGenCharOverride-2"> 1-6 Punkte)</span></p>
-<p class="Grundtext-D-">2. Stadium <span class="Light _idGenCharOverride-2">nach Sarnat</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Hochgestellt _idGenCharOverride-3">1</span></span>: Lethargie, Miosis, Bradykardie, verminderte Reflexe (z.B. Moro-Reflex), Hypotonie und Krampfanfälle</p>
-<p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">(entspricht Thompson Score</span><span class="Hochgestellt _idGenCharOverride-3">2</span><span class="Light _idGenCharOverride-2"> 7-12 Punkte)</span></p>
-<p class="Grundtext-D-">3. Stadium <span class="Light _idGenCharOverride-2">nach Sarnat</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Hochgestellt _idGenCharOverride-3">1</span></span>: Stupor, Schlaffheit, Krampfanfälle, fehlende Moro- und bulbäre Reflexe</p>
-<p class="Grundtext-D-"> <span class="Light _idGenCharOverride-2">(entspricht Thompson Score</span><span class="Hochgestellt _idGenCharOverride-3">2</span><span class="Light _idGenCharOverride-2"> &gt; 12 Punkte).</span></p>
-<p class="Grundtext-D-">Die ICD-10-GM sieht für die Kodierung einer hypoxisch-ischämischen Enzephalopathie den Kode <span class="Kursiv _idGenCharOverride-2">P91.6 Hypoxisch-ischämische Enzephalopathie beim Neugeborenen [HIE]</span> vor.</p>
-<div aria-label="186" epub:type="pagebreak" id="page188" role="doc-pagebreak"></div>
-<p class="Grundtext-D-">Die Kodes für den jeweiligen Schweregrad der HIE sind wie folgt aufgelistet <span class="Fett _idGenCharOverride-1">zusätzlich</span> zu kodieren. Die oben aufgeführten Symptome sind, mit Ausnahme von Konvulsionen (<span class="Kursiv _idGenCharOverride-2">P90 Krämpfe beim Neugeborenen</span>), nicht separat zu kodieren.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Kodierung HIE 1. Stadium	</span><span class="Kursiv _idGenCharOverride-2">P91.3	Zerebrale Übererregbarkeit des Neugeborenen</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Kodierung HIE 2. Stadium</span> <span class="Kursiv _idGenCharOverride-2">P91.4	Zerebraler Depressionszustand des Neugeborenen</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Kodierung HIE 3. Stadium</span> <span class="Kursiv _idGenCharOverride-2">P91.5	Koma beim Neugeborenen</span></p>
-<p class="Grundtext-D-">Zusätzlich vorhandene Störungen/Diagnosen (z.B. <span class="Kursiv _idGenCharOverride-2">P21.0 Schwere </span><span class="Kursiv CharOverride-4"><a id="_idIndexMarker482"></a><a id="_idIndexMarker483"></a></span><span class="Kursiv _idGenCharOverride-2">Asphyxie unter der Geburt)</span> werden separat kodiert.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-250"><a id="_idTextAnchor271"></a>S<span class="Fett _idGenCharOverride-1">D</span>1610h	Asphyxie unter der Geburt</h4>
-<p class="Grundtext-D-">Wenn eine Diagnose aus dem Problembereich intrauterine Asphyxie oder Asphyxie unter der Geburt gestellt wird, kommen folgende Punkte zur Anwendun<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">g</span>:</p>
-<p class="Grundtext-I-" lang="it-IT" xml:lang="it-IT"><span class="Kursiv CharOverride-16">P21.0 Schwere Asphyxie unter der Geburt</span></p>
-<p class="Grundtext-D-">Bedingunge<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>: Mindestens drei der untenstehenden Kriterien müssen erfüllt sei<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>:</p>
-<p class="Grundtext-D-">•	APGAR ≤ 5 im Alter von 5 Minuten</p>
-<p class="Grundtext-D- ParaOverride-1">•	Schwere Azidose in der ersten Lebensstund<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">e</span>: pH ≤ 7.00 (in Nabelarterie, Nabelvene oder mittels arterieller oder kapillärer Blutentnahme)</p>
-<p class="Grundtext-D-">•	Basendefizit ≤ –16 mmol/l im Nabelschnurblut oder während der ersten Lebensstunde</p>
-<p class="Grundtext-D-">•	Laktat ≥ 12 mmol/l im Nabelschnurblut oder während der ersten Lebensstunde</p>
-<p class="Grundtext-D-">•	Mittelschwere oder schwere Enzephalopathie (Sarnat Stadium II oder III)</p>
-<p class="Grundtext-D-">Kinder, die ohne Werte ins Spital kommen, werden mit <span class="Kursiv _idGenCharOverride-2">P20.9</span> kodiert.</p>
-<p class="Grundtext-I-" lang="it-IT" xml:lang="it-IT"><span class="Kursiv CharOverride-16">P21.1 Mässige Asphyxie unter der Geburt (statt P21.1 Leichte oder mässige Asphyxie unter der Geburt)</span></p>
-<p class="Grundtext-D-">Bedingunge<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>: Mindestens <span class="Fett _idGenCharOverride-1">zwei</span> der untenstehenden Kriterien müssen erfüllt sei<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>:</p>
-<p class="Grundtext-D-">•	APGAR ≤ 7 im Alter von 5 Minuten</p>
-<p class="Grundtext-D- ParaOverride-1">•	Mittelschwere Azidose in der ersten Lebensstund<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">e</span>: pH &lt; 7.15 (in Nabelarterie, Nabelvene oder mittels arterieller oder kapillärer Blutentnahme)</p>
-<p class="Grundtext-D-">•	Leichte oder mittelschwere Enzephalopathie (Sarnat Stadium I oder II)</p>
-<p class="Grundtext-D-">Kinder, die ohne Werte ins Spital kommen, werden mit <span class="Kursiv _idGenCharOverride-2">P20.9</span> kodiert.</p>
-<p class="Grundtext-I- ParaOverride-4" lang="it-IT" xml:lang="it-IT"><span class="Kursiv CharOverride-16">P21.9 Leichte Asphyxie unter der Geburt ohne metabolische Korrelation (statt P21.9 Asphyxie unter der Geburt,<br/>nicht näher bezeichnet)</span></p>
-<p class="Grundtext-D-">Bedingunge<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>: Beide Kriterien müssen zutreffen.</p>
-<p class="Grundtext-D-">•	APGAR ≤ 7 im Alter von 5 Minuten</p>
-<p class="Grundtext-D- ParaOverride-1">•	Tiefster pH-Wert in der ersten Lebensstunde ≥ 7.15 (in Nabelarterie, Nabelvene oder mittels arterieller oder kapillärer Blutentnahme)</p>
-<p class="Grundtext-I-" lang="it-IT" xml:lang="it-IT"><span class="Kursiv CharOverride-16">P20.- Intrauterine Hypoxie</span></p>
-<p class="Grundtext-D-">Eine metabolische Azidose ohne klinische Korrelation (Asphyxie) beim Neugeborenen wird unter der Kategorie <span class="Kursiv _idGenCharOverride-2">P20.- Intrauterine Hypoxie</span> kodiert.</p>
-<p class="Grundtext-D-">Die metabolische Azidose wird folgendermassen definier<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">t</span>:</p>
-<p class="Grundtext-D-">Beide Kriterien müssen zutreffen.</p>
-<p class="Grundtext-D-">•	APGAR &gt; 7 im Alter von 5 Minuten</p>
-<p class="Grundtext-D- ParaOverride-1">•	Mittelschwere Azidose in der ersten Lebensstund<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">e</span>: pH &lt; 7.15 (in Nabelarterie, Nabelvene oder mittels arterieller oder kapillärer Blutentnahme)</p>
-<p class="Grundtext-D- _idGenParaOverride-1"><a id="_idTextAnchor272"></a></p>
-<div aria-label="187" epub:type="pagebreak" id="page189-1" role="doc-pagebreak"></div>
-<p class="Grundtext-I-" lang="it-IT" xml:lang="it-IT"><span class="CharOverride-8">Definition der Norm gemäss folgenden Werte</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert CharOverride-8">n</span><span class="CharOverride-8">:</span></p>
-<p class="Grundtext-D-">•	APGAR &gt; 7 im Alter von 5 Minuten</p>
-<p class="Grundtext-D-">•	pH ≥ 7.15 (in Nabelarterie, Nabelvene oder mittels arterieller oder kapillärer Blutentnahme)</p>
-<p class="Grundtext-D-">Die unter <span class="Kursiv _idGenCharOverride-2">P20.-</span> aufgeführten Befunde wie z.B. «Distress», «Gefahrenzustand», «Mekonium im Fruchtwasser» oder «Mekoniumabgang» sind als Beobachtungen ohne Krankheitswert zu verstehen und werden nicht kodiert.</p>
-<p class="Grundtext-D-">Die Adaptationsstörungen werden unter <span class="Kursiv _idGenCharOverride-2">P22.8</span> kodiert.</p>
-<p class="Grundtext-D-">Gemäss Regel <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">G</span>40 ist der <span class="Fett _idGenCharOverride-1">behandelnde Arzt</span> für die <span class="Fett _idGenCharOverride-1">Diagnosestellung</span> und die Dokumentation aller Diagnosen während des gesamten Spitalaufenthaltes zuständig. Eine direkte Kodierung durch Kodierer/Innen mit diesen Kriterien ist nicht erlaubt.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-251"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor273"></a>SD1611o	</span><span class="Fett CharOverride-1"><a id="_idIndexMarker484"></a></span><span class="Fett _idGenCharOverride-1">Respiratorisches Versagen </span><span class="Fett CharOverride-1"><a id="_idIndexMarker485"></a></span><span class="Fett _idGenCharOverride-1">beim Neugeborenen</span></h4>
-<p class="Grundtext-D-">Ein respiratorisches Versagen <span class="Light _idGenCharOverride-2">des Neugeborenen entspricht</span> einer <span class="Light _idGenCharOverride-2">partiellen resp. globalen respiratorischen Insuffizienz und</span> wird mit <span class="Kursiv _idGenCharOverride-2">P28.5 Respiratorisches Versagen beim Neugeborenen</span> kodiert, wenn ein Neugeborenes/Frühgeborenes zur weiteren Betreuung auf eine von der SGN/SGI anerkannten neonatologischen <span class="Unterlegen-grün">IMCU/IS</span> verlegt wird, sowie in Folge eine invasive, eine nichtinvasive Beatmung oder eine Atemunterstützung mit CPAP <span class="Light _idGenCharOverride-2">oder High-Flow</span> stattfindet.</p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die Diagnose einer partiellen resp. globalen respiratorischen Insuffizienz muss in der ärztlichen Dokumentation vorhanden sein (siehe Kodierregel SD1002).</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Bei Vorliegen weiterer Zustände, die das Atmungssystem betreffen (z.B. </span><span class="Kursiv _idGenCharOverride-2">P20.-, P21.-, P22.-, P23.-, P24.-, P25.- etc.</span><span class="Light _idGenCharOverride-2">) werden diese unter Berücksichtigung der bestehenden Kodierregeln zusätzlich kodiert.</span></p>
-<hr class="HorizontalRule-1"/>
-<section class="_idFootnotes" epub:type="endnotes" role="doc-endnotes">
-<ol class="_listStyleNone">
-<li class="_idFootnote" id="footnote-007"><p class="Fussnote"><a class="_idFootnoteAnchor" href="U08_Spez_Kodierrichtlinien_S0100-S2100_Kodierungshandbuch_2027.xhtml#footnote-007-backlink" role="doc-backlink">1</a> <span class="CharOverride-26" lang="en-US" xml:lang="en-US">htt</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert CharOverride-26" lang="en-US" xml:lang="en-US">p</span><span class="CharOverride-26" lang="en-US" xml:lang="en-US">://www.ncbi.nlm.nih.gov/pubmed/98776</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert CharOverride-26" lang="en-US" xml:lang="en-US">9</span><span class="CharOverride-26" lang="en-US" xml:lang="en-US">; Neonatal encephalopathy following fetal distress. </span><span class="Light CharOverride-27" lang="en-US" xml:lang="en-US">Sarnat HB, Sarnat MS</span><span class="CharOverride-26" lang="en-US" xml:lang="en-US"> </span><span class="CharOverride-26">A clinical and electroencephalographic study. </span><span class="Light CharOverride-27">Arch Neurol. 1976 Oc</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light CharOverride-27">t</span></span><span class="Light CharOverride-27">;33(10</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light CharOverride-27">)</span></span><span class="Light CharOverride-27">:696-705</span></p><p class="Fussnote">2	<span class="Light _idGenCharOverride-2">http</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">s</span></span><span class="Light _idGenCharOverride-2">://doi.org/10.1159/00049072</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">1</span></span><span class="Light _idGenCharOverride-2">; http</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">s</span></span><span class="Light _idGenCharOverride-2">://www.ncbi.nlm.nih.gov/pubmed/27343024</span></p></li>
-</ol>
-</section>
-</div><div aria-label="188" epub:type="pagebreak" id="page190" role="doc-pagebreak"></div></article>
-    <nav class="pager"><a class="pager-prev" href="sd1500geburtshilfe.html">‹ SD1500Geburtshilfe</a><a class="pager-next" href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind ›</a></nav>
+    <article><h3 class="Untertitel-1-farbig" id="_idParaDest-233"><a id="_idTextAnchor254"></a>S<span class="Fett _idGenCharOverride-1">D</span>1600	<a id="_idIndexMarker445"></a>Bestimmte Zustände, die ihren Ursprung in der <a id="_idIndexMarker446"></a>Perinatalperiode haben</h3></article>
+    <nav class="pager"><a class="pager-prev" href="sd1506p-krankheiten-im-wochenbett-puerperium.html">‹ SD1506p	Krankheiten im Wochenbett (Puerperium)</a><a class="pager-next" href="sd1601nmedizinischer-datensatz.html">SD1601nMedizinischer Datensatz ›</a></nav>
   </main>
   </div>
   <script src="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/assets/nav.js"></script>

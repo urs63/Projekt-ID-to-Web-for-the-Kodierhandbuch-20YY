@@ -141,377 +141,398 @@ body { flex-direction: column; }
   <nav id="sidebar">
     <div id="sidebar-header"><a href="toc.html" id="book-title">V2027D_Teil1</a></div>
     <div id="search-box"><input type="search" placeholder="🔍 Suchen …" onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='search.html?q='+encodeURIComponent(this.value.trim());}" /></div>
+    <div id="nav-toggle-wrap"><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=true)">▼ Alle aufklappen</button><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=false)">▶ Alle zuklappen</button></div>
     <div id="nav-tree"><ul>
-  <li><a href="seite-1.html">Seite 1</a>
-  </li>
-  <li><a href="seite-2.html">Seite 2</a>
-  </li>
-  <li><a href="seite-3.html">Seite 3</a>
-  </li>
-  <li><a href="danksagung.html">Danksagung</a>
-  </li>
-  <li><a href="einleitung-version2027.html">Einleitung Version2027</a>
-  </li>
-  <li><a href="grundlagen-g00-g55.html">Grundlagen G00 –G55</a>
+<li><a href="seite-1.html">Seite 1</a></li>
+<li><a href="seite-2.html">Seite 2</a></li>
+<li><a href="seite-3.html">Seite 3</a></li>
+<li><a href="danksagung.html">Danksagung</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="einleitung-version2027.html" onclick="event.stopPropagation()">Einleitung Version2027</a></summary>
 <ul>
-  <li><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a>
-  </li>
-  <li><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a>
-  </li>
-  <li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a>
-  </li>
-  <li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a>
-  </li>
-  <li><a href="g50definitionen.html">G50Definitionen</a>
-  </li>
+<li><a href="abkuerzungen-des-kodierungshandbuches.html">Abkürzungen des Kodierungshandbuches</a></li>
 </ul>
-  </li>
-  <li><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="grundlagen-g00-g55.html" onclick="event.stopPropagation()">Grundlagen G00 –G55</a></summary>
 <ul>
-  <li><a href="d01gsymptome.html">D01gSymptome</a>
-  </li>
-  <li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a>
-  </li>
-  <li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a>
-  </li>
-  <li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a>
-  </li>
-  <li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a>
-  </li>
-  <li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a>
-  </li>
-  <li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a>
-  </li>
-  <li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a>
-  </li>
-  <li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a>
-  </li>
-  <li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a>
-  </li>
-  <li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a>
-  </li>
-  <li><a href="d13asyndrome.html">D13aSyndrome</a>
-  </li>
-  <li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a>
-  </li>
-  <li><a href="d15o-verlegungen.html">D15o	Verlegungen</a>
-  </li>
-  <li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a>
-  </li>
-</ul>
-  </li>
-  <li><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html" onclick="event.stopPropagation()">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a></summary>
 <ul>
-  <li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a>
-  </li>
-  <li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a>
-  </li>
-  <li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a>
-  </li>
-  <li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a>
-  </li>
-  <li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a>
-  </li>
-  <li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a>
-  </li>
-  <li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a>
-  </li>
-  <li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a>
-  </li>
-  <li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a>
-  </li>
-  <li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a>
-  </li>
+<li><a href="g01ngeschichte.html">G01nGeschichte</a></li>
+<li><a href="g02morganisation.html">G02mOrganisation</a></li>
+<li><a href="g03m-gesetzliche-grundlagen.html">G03m	Gesetzliche Grundlagen</a></li>
+<li><a href="g04mziele-der-erhebung-spitalstationaere-gesundheitsversorgung-spiges.html">G04mZiele der Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes)</a></li>
+<li><a href="g05manonymisierung-der-daten.html">G05mAnonymisierung der Daten</a></li>
+<li><a href="g06mder-medizinische-datensatz-definitionen-und-variablen.html">G06mDer medizinische Datensatz,Definitionen und Variablen</a></li>
 </ul>
-  </li>
-  <li><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a>
+</details>
+</li>
+<li><a href="g10p-erhebung-spitalstationaere-gesundheitsversorgung-spiges-die-patientenklassi.html">G10p	Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes), die Patientenklassifikationssysteme SwissDRG, TARPSY und ST Reha</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html" onclick="event.stopPropagation()">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a></summary>
 <ul>
-  <li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a>
-  </li>
-  <li><a href="sd0200nneubildungen.html">SD0200nNeubildungen</a>
-  </li>
-  <li><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a>
-  </li>
-  <li><a href="sd0500-psychische-und-verhaltensstoerungen.html">SD0500	Psychische und Verhaltensstörungen</a>
-  </li>
-  <li><a href="sd0600-krankheitendesnervensystems.html">SD0600	KrankheitendesNervensystems</a>
-  </li>
-  <li><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a>
-  </li>
-  <li><a href="sd0900-krankheitendeskreislaufsystems.html">SD0900	KrankheitendesKreislaufsystems</a>
-  </li>
-  <li><a href="sd1000-krankheitendesatmungssystems.html">SD1000	KrankheitendesAtmungssystems</a>
-  </li>
-  <li><a href="sd1100-krankheitendesverdauungssystems.html">SD1100	KrankheitendesVerdauungssystems</a>
-  </li>
-  <li><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html">SD1200	KrankheitenderHaut und der Unterhaut</a>
-  </li>
-  <li><a href="sd1400-krankheitendesurogenitalsystems.html">SD1400	KrankheitendesUrogenitalsystems</a>
-  </li>
-  <li><a href="sd1500geburtshilfe.html">SD1500Geburtshilfe</a>
-  </li>
-  <li><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a>
-  </li>
-  <li><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html" class="active">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a>
-  </li>
-  <li><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a>
-  </li>
-  <li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a>
-  </li>
-  <li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a>
-  </li>
+<li><a href="g21p-icd-10-gm.html">G21p	ICD-10-GM</a></li>
+<li><a href="g22o-schweizerische-operationsklassifikation-chop.html">G22o	Schweizerische Operationsklassifikation (CHOP)</a></li>
 </ul>
-  </li>
-  <li><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a>
-  </li>
-  <li><a href="kodierrichtlinienrehabilitation.html">KodierrichtlinienRehabilitation</a>
-  </li>
-  <li><a href="seite-59.html">Seite 59</a>
-  </li>
-  <li><a href="seite-60.html">Seite 60</a>
-  </li>
-  <li><a href="seite-61.html">Seite 61</a>
-  </li>
+</details>
+</li>
+<li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a></li>
+<li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g50definitionen.html" onclick="event.stopPropagation()">G50Definitionen</a></summary>
+<ul>
+<li><a href="g51o-derbehandlungsfall.html">G51o	DerBehandlungsfall</a></li>
+<li><a href="g52h-diehauptdiagnose.html">G52h	DieHauptdiagnose</a></li>
+<li><a href="g53m-derzusatz-zur-hauptdiagnose.html">G53m	DerZusatz zur Hauptdiagnose</a></li>
+<li><a href="g54p-dienebendiagnosen.html">G54p	DieNebendiagnosen</a></li>
+<li><a href="g55mdiebehandlung.html">G55mDieBehandlung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html" onclick="event.stopPropagation()">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a></summary>
+<ul>
+<li><a href="d00mabnormebefunde.html">D00mAbnormeBefunde</a></li>
+<li><a href="d01gsymptome.html">D01gSymptome</a></li>
+<li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a></li>
+<li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a></li>
+<li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a></li>
+<li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a></li>
+<li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a></li>
+<li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a></li>
+<li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a></li>
+<li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a></li>
+<li><a href="d10gchronische-krankheiten-mit-akutem-schub.html">D10gChronische Krankheiten mit akutem Schub</a></li>
+<li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a></li>
+<li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a></li>
+<li><a href="d13asyndrome.html">D13aSyndrome</a></li>
+<li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a></li>
+<li><a href="d15o-verlegungen.html">D15o	Verlegungen</a></li>
+<li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html" onclick="event.stopPropagation()">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a></summary>
+<ul>
+<li><a href="p00n-erfassung-der-prozedur-im-medizinischen-datensatz.html">P00n	Erfassung der Prozedur im medizinischen Datensatz</a></li>
+<li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a></li>
+<li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a></li>
+<li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a></li>
+<li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a></li>
+<li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a></li>
+<li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a></li>
+<li><a href="p07obilaterale-operationen.html">P07oBilaterale Operationen</a></li>
+<li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a></li>
+<li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a></li>
+<li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a></li>
+<li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details open>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0100-bestimmteinfektioese-und-parasitaere-krankheiten.html" onclick="event.stopPropagation()">SD0100	Bestimmteinfektiöse und parasitäre Krankheiten</a></summary>
+<ul>
+<li><a href="sd0101abakteriaemie.html">SD0101aBakteriämie</a></li>
+<li><a href="sd0102psepsis.html">SD0102pSepsis</a></li>
+<li><a href="sd0103lsirs.html">SD0103lSIRS</a></li>
+<li><a href="sd0104nhiv-aids.html">SD0104nHIV/AIDS</a></li>
+<li><a href="u61-laborkategorie-im-aktuellen-aufenthaltu61-1-kategorie-1500-und-mehr-cd4-t-he.html">U61.–! Laborkategorie im aktuellen AufenthaltU61.1!	Kategorie 1500 und mehr CD4+-T-Helferzellen pro Mikroliter Blut</a></li>
+<li><a href="sd0105aechter-krupp-pseudokrupp-kruppsyndrom.html">SD0105aEchter Krupp – Pseudokrupp –Kruppsyndrom</a></li>
+<li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0200nneubildungen.html" onclick="event.stopPropagation()">SD0200nNeubildungen</a></summary>
+<ul>
+<li><a href="sd0202mauswahl-und-reihenfolge-der-diagnosen.html">SD0202mAuswahl und Reihenfolge der Diagnosen</a></li>
+<li><a href="sd0203nnachresektion-im-tumorgebiet.html">SD0203nNachresektion im Tumorgebiet</a></li>
+<li><a href="sd0204ktumornachweis-nur-in-der-biopsie.html">SD0204kTumornachweis nur in der Biopsie</a></li>
+<li><a href="sd0205n-akute-chronische-erkrankungen-stoerungen-nach-und-oder-folgen-von-medizi.html">SD0205n(Akute, chronische) Erkrankungen, Störungen nach und/oder Folgen von medizinischen Massnahmen im Kontext von Behandlungen maligner Neubildungen (solide, hämatologisch)</a></li>
+<li><a href="sd0206averdacht-auf-tumor-oder-metastasen.html">SD0206aVerdacht auf Tumor oder Metastasen</a></li>
+<li><a href="sd0207a-nachuntersuchung.html">SD0207a	Nachuntersuchung</a></li>
+<li><a href="sd0208nrezidive.html">SD0208nRezidive</a></li>
+<li><a href="sd0209a-tumoremit-endokriner-aktivitaet.html">SD0209a	Tumoremit endokriner Aktivität</a></li>
+<li><a href="sd0210n-multiple-lokalisationen.html">SD0210n	Multiple Lokalisationen</a></li>
+<li><a href="sd0211aueberlappende-lokalisation.html">SD0211aÜberlappende Lokalisation</a></li>
+<li><a href="sd0212aremission-bei-malignen-immunoproliferativen-erkrankungen-undleukaemie.html">SD0212aRemission bei malignen immunoproliferativen Erkrankungen undLeukämie</a></li>
+<li><a href="sd0213a-lymphangiosis-carcinomatosa.html">SD0213a 	Lymphangiosis carcinomatosa</a></li>
+<li><a href="sd0214nlymphom.html">SD0214nLymphom</a></li>
+<li><a href="sd0215achemo-undradiotherapie.html">SD0215aChemo- undRadiotherapie</a></li>
+<li><a href="sd0216nprophylaktische-operationen-wegen-risikofaktoren.html">SD0216nProphylaktische Operationen wegen Risikofaktoren</a></li>
+<li><a href="sd0217opalliativbehandlung.html">SD0217oPalliativbehandlung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html" onclick="event.stopPropagation()">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a></summary>
+<ul>
+<li><a href="sd0401nallgemeines.html">SD0401nAllgemeines</a></li>
+<li><a href="sd0402nregeln-zur-kodierung-des-diabetes-mellitus.html">SD0402nRegeln zur Kodierung des Diabetes mellitus</a></li>
+<li><a href="sd0403nspezifische-komplikationen-des-diabetes-mellitus.html">SD0403nSpezifische Komplikationen des Diabetes mellitus</a></li>
+<li><a href="sd0404a-metabolisches-syndrom.html">SD0404a	Metabolisches Syndrom</a></li>
+<li><a href="sd0405nstoerungender-inneren-sekretion-des-pankreas.html">SD0405nStörungender inneren Sekretion des Pankreas</a></li>
+<li><a href="sd0406azystische-fibrose.html">SD0406aZystische Fibrose</a></li>
+<li><a href="sd0407nmangelernaehrungbei-erwachsenen.html">SD0407nMangelernährungbei Erwachsenen</a></li>
+<li><a href="sd0408nmangelernaehrungbei-kindern.html">SD0408nMangelernährungbei Kindern</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0500-psychische-und-verhaltensstoerungen.html" onclick="event.stopPropagation()">SD0500	Psychische und Verhaltensstörungen</a></summary>
+<ul>
+<li><a href="sd0501o-psychische-und-verhaltensstoerungendurch-psychotrope-substanzen-alkohol-.html">SD0501o	Psychische und Verhaltensstörungendurch psychotrope Substanzen(Alkohol, Drogen, Medikamente, Nikotin)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0600-krankheitendesnervensystems.html" onclick="event.stopPropagation()">SD0600	KrankheitendesNervensystems</a></summary>
+<ul>
+<li><a href="sd0601p-akuter-schlaganfall-etc-subarachnoidalblutung-und-sonstige-intrakraniell.html">SD0601p	Akuter «Schlaganfall etc.», Subarachnoidalblutung und sonstige intrakranielle Blutungen traumatischer und nichttraumatischer Genese</a></li>
+<li><a href="sd0602nfolgen-eines-status-nach-schlaganfall-etc-einer-nichttraumatischen-subara.html">SD0602nFolgen eines/Status nach: «Schlaganfall etc.», einer nichttraumatischen Subarachnoidalblutung oder sonstigen nichttraumatischen intrakraniellen Blutung</a></li>
+<li><a href="sd0603oparaplegie-und-tetraplegie-nicht-traumatisch.html">SD0603oParaplegie und Tetraplegie, nicht traumatisch</a></li>
+<li><a href="sd0604mbewusstseinsstoerungen.html">SD0604mBewusstseinsstörungen</a></li>
+<li><a href="sd0605e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden.html">SD0605e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden</a></li>
+<li><a href="sd0606e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden.html">SD0606e 	Aufnahme zurEntfernung eines Neurostimulators /(Test) Elektroden</a></li>
+<li><a href="sd0607o-kodierung-derparkinsonstadien-g20.html">SD0607o 	Kodierung derParkinsonstadien (G20.-)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html" onclick="event.stopPropagation()">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a></summary>
+<ul>
+<li><a href="sd0801aschwerhoerigkeit-undtaubheit.html">SD0801aSchwerhörigkeit undTaubheit</a></li>
+<li><a href="sd0802danpassung-handhabung-eines-implantiertenhoergeraetes.html">SD0802dAnpassung/Handhabung eines implantiertenHörgerätes</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0900-krankheitendeskreislaufsystems.html" onclick="event.stopPropagation()">SD0900	KrankheitendesKreislaufsystems</a></summary>
+<ul>
+<li><a href="sd0901a-hypertonie-und-krankheiten-bei-hypertonie.html">SD0901a 	Hypertonie und Krankheiten bei Hypertonie</a></li>
+<li><a href="sd0902eischaemische-herzkrankheit.html">SD0902eIschämische Herzkrankheit</a></li>
+<li><a href="sd0903n-thrombose-resp-verschlussvon-koronarem-stent-resp-bypass.html">SD0903n	Thrombose resp. Verschlussvon koronarem Stent resp. Bypass</a></li>
+<li><a href="sd0904d-erkrankungenderherzklappen.html">SD0904d 	ErkrankungenderHerzklappen</a></li>
+<li><a href="sd0905aschrittmacher-defibrillator.html">SD0905aSchrittmacher/Defibrillator</a></li>
+<li><a href="sd0906anachuntersuchung-nachherztransplantation.html">SD0906aNachuntersuchung nachHerztransplantation</a></li>
+<li><a href="sd0907a-akutes-lungenoedem.html">SD0907a	Akutes Lungenödem</a></li>
+<li><a href="sd0908kherzstillstand.html">SD0908kHerzstillstand</a></li>
+<li><a href="sd0910o-erfassung-derbehandlungsdauer-mit-einem-herzunterstuetzungssystem-oder-e.html">SD0910o	Erfassung derBehandlungsdauer mit einem Herzunterstützungssystem oder einem herzkreislauf- und lungenunterstützenden System</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1000-krankheitendesatmungssystems.html" onclick="event.stopPropagation()">SD1000	KrankheitendesAtmungssystems</a></summary>
+<ul>
+<li><a href="sd1001p-maschinelle-beatmung.html">SD1001p	Maschinelle Beatmung</a></li>
+<li><a href="sd1002orespiratorische-insuffizienz.html">SD1002oRespiratorische Insuffizienz</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1100-krankheitendesverdauungssystems.html" onclick="event.stopPropagation()">SD1100	KrankheitendesVerdauungssystems</a></summary>
+<ul>
+<li><a href="sd1101jappendizitis-als-klinische-diagnose.html">SD1101jAppendizitis als klinische Diagnose</a></li>
+<li><a href="sd1103a-magenulkusmitgastritis.html">SD1103a	MagenulkusmitGastritis</a></li>
+<li><a href="sd1104igastrointestinale-blutung.html">SD1104iGastrointestinale Blutung</a></li>
+<li><a href="sd1105a-dehydratationbei-gastroenteritis.html">SD1105a 	Dehydratationbei Gastroenteritis</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html" onclick="event.stopPropagation()">SD1200	KrankheitenderHaut und der Unterhaut</a></summary>
+<ul>
+<li><a href="sd1201gplastische-chirurgie.html">SD1201gPlastische Chirurgie</a></li>
+<li><a href="sd1202jspannungsblasen.html">SD1202jSpannungsblasen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1400-krankheitendesurogenitalsystems.html" onclick="event.stopPropagation()">SD1400	KrankheitendesUrogenitalsystems</a></summary>
+<ul>
+<li><a href="sd1401o-dialyse.html">SD1401o	Dialyse</a></li>
+<li><a href="sd1402manogenitale-warzen-anogenitaler-herpes.html">SD1402mAnogenitale Warzen/anogenitaler Herpes</a></li>
+<li><a href="sd1404oniereninsuffizienz.html">SD1404oNiereninsuffizienz</a></li>
+<li><a href="sd1405l-aufnahme-zuranlage-einesperitonealkatheters-zur-dialyse.html">SD1405l	Aufnahme zurAnlage einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1406d-aufnahme-zurentfernung-einesperitonealkatheters-zur-dialyse.html">SD1406d 	Aufnahme zurEntfernung einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1407l-aufnahme-zur-anlage-einerav-fistel-oder-einesav-shunts-zur-dialyse.html">SD1407l 	Aufnahme zur Anlage einerAV-Fistel oder einesAV-Shunts zur Dialyse</a></li>
+<li><a href="sd1408a-aufnahme-zum-verschluss-einerav-fistel-oder-zumentfernen-eines-av-shunts.html">SD1408a 	Aufnahme zum Verschluss einerAV-Fistel oder zumEntfernen eines AV-Shunts</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1500geburtshilfe.html" onclick="event.stopPropagation()">SD1500Geburtshilfe</a></summary>
+<ul>
+<li><a href="sd1501ndefinitionen.html">SD1501nDefinitionen</a></li>
+<li><a href="sd1502pvorzeitige-beendigung-einer-schwangerschaft.html">SD1502pVorzeitige Beendigung einer Schwangerschaft</a></li>
+<li><a href="sd1503p-krankheitenin-der-schwangerschaft.html">SD1503p	Krankheitenin der Schwangerschaft</a></li>
+<li><a href="sd1504pkomplikationen-der-schwangerschaft-mutter-oder-kind-betreffend.html">SD1504pKomplikationen der Schwangerschaft, Mutter oder Kind betreffend</a></li>
+<li><a href="sd1505pspezielle-kodierregeln-fuer-die-geburt.html">SD1505pSpezielle Kodierregeln für die Geburt</a></li>
+<li><a href="sd1506p-krankheiten-im-wochenbett-puerperium.html">SD1506p	Krankheiten im Wochenbett (Puerperium)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html" onclick="event.stopPropagation()">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a></summary>
+<ul>
+<li><a href="sd1601nmedizinischer-datensatz.html">SD1601nMedizinischer Datensatz</a></li>
+<li><a href="sd1602adefinitionen.html">SD1602aDefinitionen</a></li>
+<li><a href="sd1603ineugeborene.html">SD1603iNeugeborene</a></li>
+<li><a href="sd1604gzustaende-die-ihren-ursprung-in-der-perinatalperiode-haben.html">SD1604gZustände, die ihren Ursprung in der Perinatalperiode haben</a></li>
+<li><a href="sd1605atotgeborene.html">SD1605aTotgeborene</a></li>
+<li><a href="sd1606j-besondere-massnahmen-fuer-das-kranke-neugeborene.html">SD1606j 	Besondere Massnahmen für das (kranke) Neugeborene</a></li>
+<li><a href="sd1607c-atemnotsyndrombeihyaliner-membranenkrankheit-surfactantmangel.html">SD1607c 	Atemnotsyndrombeihyaliner Membranenkrankheit/Surfactantmangel</a></li>
+<li><a href="sd1608c-atemnotsyndrombeimassivemaspirationssyndrom-wet-lung-odertransitorische-.html">SD1608c 	AtemnotsyndrombeimassivemAspirationssyndrom,Wet lung odertransitorische Tachypnoe beim Neugeborenen</a></li>
+<li><a href="sd1609jhypoxisch-ischaemische-enzephalopathie-hie.html">SD1609jHypoxisch-ischämische Enzephalopathie (HIE)</a></li>
+<li><a href="sd1610h-asphyxie-unter-der-geburt.html">SD1610h	Asphyxie unter der Geburt</a></li>
+<li><a href="sd1611orespiratorisches-versagenbeim-neugeborenen.html">SD1611oRespiratorisches Versagenbeim Neugeborenen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details open>
+<summary class="nav-summary active"><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html" onclick="event.stopPropagation()">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a></summary>
+<ul>
+<li><a href="sd1801ainkontinenz.html">SD1801aInkontinenz</a></li>
+<li><a href="sd1802mdysphagie.html">SD1802mDysphagie</a></li>
+<li><a href="sd1803afieberkraempfe.html">SD1803aFieberkrämpfe</a></li>
+<li><a href="sd1804o-schmerzdiagnosen-undschmerzbehandlungsverfahren.html">SD1804o	Schmerzdiagnosen undSchmerzbehandlungsverfahren</a></li>
+<li><a href="sd1805e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden-bei-schm.html">SD1805e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1806e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden-bei-schmer.html">SD1806e 	Aufnahme zurEntfernung eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1807lschock.html">SD1807lSchock</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html" onclick="event.stopPropagation()">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a></summary>
+<ul>
+<li><a href="sd1901aoberflaechliche-verletzungen.html">SD1901aOberflächliche Verletzungen</a></li>
+<li><a href="sd1902nfraktur-und-luxation.html">SD1902nFraktur und Luxation</a></li>
+<li><a href="sd1903poffene-wunden-verletzungen.html">SD1903pOffene Wunden/Verletzungen</a></li>
+<li><a href="sd1905cverletzung-desrueckenmarks-mit-traumatischer-paraplegie-und-tetraplegie.html">SD1905cVerletzung desRückenmarks (mit traumatischer Paraplegie und Tetraplegie)</a></li>
+<li><a href="sd1906nmehrfachverletzungen.html">SD1906nMehrfachverletzungen</a></li>
+<li><a href="sd1907jverbrennungen-undveraetzungen.html">SD1907jVerbrennungen undVerätzungen</a></li>
+<li><a href="sd1908nvergiftungdurch-arzneimittel-drogen-und-biologisch-aktive-substanzen.html">SD1908nVergiftungdurch Arzneimittel, Drogen und biologisch aktive Substanzen</a></li>
+<li><a href="sd1909o-unerwuenschte-nebenwirkungen-von-arzneimitteln-bei-einnahme-gemaess-vero.html">SD1909o 	Unerwünschte Nebenwirkungen von Arzneimitteln (bei Einnahme gemäss Verordnung)</a></li>
+<li><a href="sd1910b-unerwuenschte-nebenwirkungen-vergiftung-von-zwei-oder-mehr-in-verbindung.html">SD1910b	Unerwünschte Nebenwirkungen/Vergiftung von zwei oder mehr in Verbindung eingenommenen Substanzen (bei Einnahme entgegen einer Verordnung)</a></li>
+</ul>
+</details>
+</li>
+<li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a></li>
+<li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a></li>
+<li><a href="sd2200oschluesselnummern-fuer-besondere-zwecke.html">SD2200oSchlüsselnummern für besondere Zwecke</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0200fruehrehabilitation-paraplegiologische-rehabilitation-akutrehabilitation.html" onclick="event.stopPropagation()">SP0200Frührehabilitation, paraplegiologische Rehabilitation, Akutrehabilitation</a></summary>
+<ul>
+<li><a href="sp0201nfruehrehabilitation.html">SP0201nFrührehabilitation</a></li>
+<li><a href="sp0202pparaplegiologische-rehabilitation.html">SP0202pParaplegiologische Rehabilitation</a></li>
+<li><a href="sp0203oakutrehabilitation.html">SP0203oAkutrehabilitation</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0300-kodierrichtlinien-zu-chop-kapitel-9-operationen-am-verdauungstrakt.html" onclick="event.stopPropagation()">SP0300	Kodierrichtlinien zu CHOP Kapitel 9 «Operationen am Verdauungstrakt»</a></summary>
+<ul>
+<li><a href="sp0301khiatushernie-fundoplicatio.html">SP0301kHiatushernie – Fundoplicatio:</a></li>
+<li><a href="zusaetzliche-erfassung-chop-kode-44-92-intraoperative-manipulation-am-magen.html">Zusätzliche Erfassung CHOP-Kode 44.92 Intraoperative Manipulation am Magen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0400-kodierrichtlinien-zu-chop-kapitel-11-operationen-an-den-maennlichen-gesch.html" onclick="event.stopPropagation()">SP0400	Kodierrichtlinien zu CHOP Kapitel 11«Operationen an den männlichen Geschlechtsorganen»</a></summary>
+<ul>
+<li><a href="sp0401mgeschlechtsangleichung.html">SP0401mGeschlechtsangleichung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="kodierrichtlinienrehabilitation.html" onclick="event.stopPropagation()">KodierrichtlinienRehabilitation</a></summary>
+<ul>
+<li><a href="allgemeine-informationen.html">Allgemeine Informationen</a></li>
+<li><a href="diagnosen-icd-10-gm.html">Diagnosen - ICD-10-GM</a></li>
+<li><a href="prozeduren.html">Prozeduren</a></li>
+<li><a href="beispiele-und-erlaeuterungen.html">Beispiele und Erläuterungen</a></li>
+<li><a href="beispiele.html">Beispiele</a></li>
+</ul>
+</details>
+</li>
+<li><a href="alphabetisches-verzeichnis.html">Alphabetisches Verzeichnis</a></li>
+<li><a href="a.html">A</a></li>
+<li><a href="b.html">B</a></li>
+<li><a href="c.html">C</a></li>
+<li><a href="d.html">D</a></li>
+<li><a href="e.html">E</a></li>
+<li><a href="f.html">F</a></li>
+<li><a href="g.html">G</a></li>
+<li><a href="h.html">H</a></li>
+<li><a href="i.html">I</a></li>
+<li><a href="k.html">K</a></li>
+<li><a href="l.html">L</a></li>
+<li><a href="m.html">M</a></li>
+<li><a href="n.html">N</a></li>
+<li><a href="o.html">O</a></li>
+<li><a href="p.html">P</a></li>
+<li><a href="r.html">R</a></li>
+<li><a href="s.html">S</a></li>
+<li><a href="t.html">T</a></li>
+<li><a href="u.html">U</a></li>
+<li><a href="v.html">V</a></li>
+<li><a href="w.html">W</a></li>
+<li><a href="z.html">Z</a></li>
+<li><a href="seite-214.html">Seite 214</a></li>
+<li><a href="seite-215.html">Seite 215</a></li>
 </ul>
 </div>
   </nav>
   <main id="content">
     <nav class="breadcrumb"><a class="crumb" href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a><span class="sep">›</span><span class="crumb current">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</span></nav>
-    <article><div class="_idGenObjectStyleOverride-1" id="_idContainer239">
-<h3 class="Untertitel-1-farbig" id="_idParaDest-252"><a id="_idTextAnchor274"></a>S<span class="Fett _idGenCharOverride-1">D</span>1800	Symptome und <a id="_idIndexMarker486"></a>abnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</h3>
-<h4 class="Untertitel-2-fett" id="_idParaDest-253"><a id="_idTextAnchor275"></a>S<span class="Fett _idGenCharOverride-1">D</span>1801a	<a id="_idIndexMarker487"></a><a id="_idIndexMarker488"></a>Inkontinenz</h4>
-<p class="Grundtext-D-">Der Befund Inkontinenz ist von klinischer Bedeutung, wenn</p>
-<p class="Grundtext-D-">•	die Inkontinenz nicht im Rahmen einer Behandlung als «normal» angesehen werden kann (z.B. nach bestimmten Operationen und bei bestimmten Zuständen)</p>
-<p class="Grundtext-D-">•	die Inkontinenz nicht als der normalen Entwicklung entsprechend angesehen werden kann (wie z.B. bei Kleinkindern)</p>
-<p class="Grundtext-D-">•	die Inkontinenz bei einem Patienten mit deutlicher Behinderung oder geistiger Retardierung andauert.</p>
-<p class="Grundtext-D-">Die Kodes für Urin- oder Stuhlinkontinen<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">z</span>:</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">N39.3	Belastungsinkontinenz [Stressinkontinenz]</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">N39.4–	Sonstige näher bezeichnete Harninkontinenz</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">R32	Nicht näher bezeichnete Harninkontinenz</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">R15	Stuhlinkontinenz</span></p>
-<p class="Grundtext-D-">sind nur anzugeben, wenn die Inkontinenz ein Grund für eine stationäre Behandlung ist oder eine oben genannte klinische Bedeutung hat. Zu den Inkontinenzen, die im Rahmen einer Behandlung/Operation als <span class="Fett _idGenCharOverride-1">«normal»</span> angesehen werden und deshalb nicht zu kodieren sind, zählen beispielsweise eine postoperativ vorübergehende Harninkontinenz nach Prostataresektion oder die Stuhlinkontinenz nach tiefer Rektumresektion.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-254"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor276"></a>SD1802m</span> <a id="_idIndexMarker489"></a><span class="Fett _idGenCharOverride-1">Dysphagie</span></h4>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die Kodierung einer Dysphagie erfolgt gemäss </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52 «Die Hauptdiagnose» oder Kodierregeln </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54 «Die Nebendiagnosen»</span></p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-255"><a id="_idTextAnchor277"></a>S<span class="Fett _idGenCharOverride-1">D</span>1803a 	<a id="_idIndexMarker490"></a><a id="_idIndexMarker491"></a>Fieberkrämpfe</h4>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">R56.0	Fieberkrämpfe</span></p>
-<p class="Grundtext-D-">wird nur dann als Hauptdiagnosekode angegeben, wenn keine auslösenden Erkrankungen wie Pneumonie oder andere Infektionsherde vorliegen.</p>
-<p class="Grundtext-D-">Ist eine zugrundeliegende Ursache bekannt, wird diese als Hauptdiagnose angegeben und <span class="Kursiv _idGenCharOverride-2">R56.0 Fieberkrämpfe </span>wird als Nebendiagnose zusätzlich kodiert.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-256"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor278"></a><span aria-label="189" epub:type="pagebreak" id="page191" role="doc-pagebreak"></span>SD1804o	Schmerzdiagnosen und </span><span class="Fett CharOverride-1"><a id="_idIndexMarker492"></a></span><span class="Fett _idGenCharOverride-1">Schmerzbehandlungsverfahren</span></h4>
-<p class="Grundtext-I-" lang="it-IT" xml:lang="it-IT"><a id="_idIndexMarker493"></a><span class="Kursiv CharOverride-16">Akuter Schmerz</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Akuter Schmerz geht meistens mit einer Schädigung/Beeinflussung der Gewebestrukturen einher und wird als «Symptom» und/oder als s.g. «Warnfunktion» des Organismus betrachtet.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Wird eine Patientin oder ein Patient wegen akuter postoperativer und/oder im Rahmen eines Traumas auftretender </span><span class="Fett _idGenCharOverride-1">akuter</span><span class="Light _idGenCharOverride-2"> Schmerzen und/oder wegen </span><span class="Fett _idGenCharOverride-1">akuter</span><span class="Light _idGenCharOverride-2"> Schmerzen, die in ätiologischem Zusammenhang mit einer Erkrankung/Zustand/Manifestation stehen, behandelt (z.B. Appendizitis, Peritonitis,</span><span class="Fett _idGenCharOverride-1"> akute</span><span class="Light _idGenCharOverride-2"> Ischämien, Ileus,</span><span class="Fett _idGenCharOverride-1"> akute</span><span class="Light _idGenCharOverride-2"> Schmerzen aufgrund Tumorinfiltrationen (Primarius und/oder Metastasen), Medikamentennebenwirkungen, postoperative Komplikationen und/oder Störungen etc.), ist der ICD-10-GM-Kode </span><span class="fett-kursiv">R52.0 Akuter Schmerz</span><span class="Fett _idGenCharOverride-1"> nicht </span><span class="Light _idGenCharOverride-2">zu erfassen.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Erfasst werde</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span><span class="Light _idGenCharOverride-2">:</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">- Erkrankungen/Traumata (auch intraoperativ und/oder iatrogen ausgelöst)</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">- andere Zustände</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">- andere Manifestationen</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">die den</span><span class="Fett _idGenCharOverride-1"> akuten</span><span class="Light _idGenCharOverride-2"> Schmerz auslösen.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Der ICD-10-GM-Kode </span><span class="Kursiv _idGenCharOverride-2">R52.0 Akuter Schmerz</span><span class="Light _idGenCharOverride-2"> wird nur dann erfasst, wenn die Ursache des Schmerzes nicht bekannt, nicht zu eruieren und nicht zu definieren ist.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Kodes aus anderen Rubriken, die unter dem Exkl. der Kategorie R52.- erfasst sind, z.B. </span><span class="Kursiv _idGenCharOverride-2">R07.1 Brustschmerzen bei der Atmung</span><span class="Light _idGenCharOverride-2">, </span><span class="Kursiv _idGenCharOverride-2">R10.2 Schmerzen im Becken und am Damm</span><span class="Light _idGenCharOverride-2">, </span><span class="Kursiv _idGenCharOverride-2">M25.5- Gelenkschmerz</span><span class="Light _idGenCharOverride-2"> etc. sind ebenfalls nur dann zu erfassen, wenn ihre Ursache nicht erkannt und dokumentiert werden kann.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 1</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Ein 69-jähriger Patient tritt mit heftigen, plötzlich einsetzenden abdominalen Schmerzen über die Notfallstation ein.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Er ist kaltschweissig und hypoton. Das gesamte Abdomen ist druckdolent.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Die Diagnostik zeigt einen akuten (wahrscheinlich thrombotischen) Mesenterialarterienverschluss auf Basis einer generalisierten Arteriosklerose und Ischämiezeichen des Darmes. Es erfolgt eine Notfall-Operation, </span><span class="Light _idGenCharOverride-2">die</span><span class="Kursiv _idGenCharOverride-2"> die Diagnosen bestätigt.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">K</span></span><span class="Kursiv _idGenCharOverride-2">55.0</span> <span class="Kursiv _idGenCharOverride-2">Akute Gefässkrankheiten des Darmes</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">I70.9</span> <span class="Kursiv _idGenCharOverride-2">Generalisierte und nicht näher bezeichnete Atherosklerose</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 2</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Eine Patientin tritt mit akuten Thoraxschmerzen, mit kurzfristigem Punctum maximum über dem Herzen ein.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Es sind keine kardialen oder vaskulären Vorerkrankungen bekannt.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Eine notfallmässig durchgeführte Linksherzuntersuchung (Koronarangiographie und Ventrikulographie) zeigt keine strukturellen Auffälligkeiten am Herzen und an den Koronargefässen und schliesst eine ischämische Herzerkrankung aus.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Eine weiterführende Diagnostik der anderen möglichen beeinträchtigten Organsysteme (z.B. Lunge, Ösophagus, Magen, muskuloskelettales System) bleibt ergebnislos.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Nach 2 Tagen erfolgt die Entlassung.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="Kursiv _idGenCharOverride-2">R07.2</span> <span class="Kursiv _idGenCharOverride-2">Präkordiale Schmerzen</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 3</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Ein Patient tritt mit retrosternalem Schmerz, Engegefühl und Belastungsdyspnoe ein. Er erhält eine elektive Linksherzuntersuchung </span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">(Koronarangiographie und Ventrikulographie), </span><span class="Light _idGenCharOverride-2">die</span><span class="Kursiv _idGenCharOverride-2"> keine strukturellen Auffälligkeiten am Herzen und an den Koronargefässen zeigt, die für die seit einigen Wochen bestehende stabile Angina pectoris ursächlich sein könnten.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Die bei Eintritt routinemässig erhobenen Laborparameter zeigen jedoch eine schwere Anämie unbekannter Ätiologie, die für die kardiale Ischämie verantwortlich gemacht wird.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Der Patient erhält 2 Erythrozytenkonzentrate im gleichen Aufenthalt und wird für eine erweiterte Diagnostik zu einem späteren Zeitpunkt aufgeboten.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="Kursiv _idGenCharOverride-2">I20.8</span> <span class="Kursiv _idGenCharOverride-2">Sonstige Formen der Angina pectoris</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">D64.9</span> <span class="Kursiv _idGenCharOverride-2">Anämie, nicht näher bezeichnet</span></p>
-<div aria-label="190" epub:type="pagebreak" id="page192" role="doc-pagebreak"></div>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Schmerzbehandlungsverfahren können in operative und nichtoperative Verfahren differenziert werden.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Beispiele für </span><span class="Fett _idGenCharOverride-1">operative </span><span class="Light _idGenCharOverride-2">Schmerzbehandlungsverfahren sind (Aufzählung nicht abschliessend</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">)</span></span><span class="Light _idGenCharOverride-2">:</span></p>
-<ul>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Implantation von Neurostimulatoren und/oder (Test) Elektroden</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Implantation von (u.a. subkutanen) Schmerzpumpen</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Durchtrennung von Nerven</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Dekompression von Nerven</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">andere Operationen, die Ursachen für akute Schmerzen beheben (z.B. Operation eines Diskusprolapses)</span></li>
-</ul>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">: Operative Schmerzbehandlungsverfahren</span><span class="Light _idGenCharOverride-2"> sind unter Beachtung der Kodierregeln </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52, </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">55 </span><span class="Fett _idGenCharOverride-1">zwingend</span><span class="Light _idGenCharOverride-2"> zu kodieren.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Beispiele für </span><span class="Fett _idGenCharOverride-1">nichtoperative</span><span class="Light _idGenCharOverride-2"> Schmerzbehandlungsverfahren sind (Aufzählung nicht abschliessend</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">)</span></span><span class="Light _idGenCharOverride-2">:</span></p>
-<ul>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Periduralanästhesie (PDA)</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Spinalanästhesie</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Periduralkatheter (PDK)</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Patient-controlled analgesia (PCA), parenteral und/oder peridural</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Analgosedierung</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">orale oder intravenöse medikamentöse Analgesien</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">physikalische Schmerztherapien</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">periphere Regionalanästhesie, z.B. Plexus- und Pudendusanästhesien</span></li>
-<li class="Grundtext-D- ParaOverride-2"><span class="Light _idGenCharOverride-2">Schmerztherapieschemata</span></li>
-</ul>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Verfahren zur (nichtoperativen) Schmerzausschaltung bei Durchführung einer Operation/Intervention/Diagnostik werden nicht kodiert.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Eine Ausnahme dazu bilden die geburtshilflichen, nichtoperativen Schmerzbehandlungsverfahren.</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Hinwei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">s</span></span><span class="Fett _idGenCharOverride-1">:</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Im Rahmen des geburtshilflichen Settings sind </span><span class="Fett _idGenCharOverride-1">nichtoperative</span><span class="Light _idGenCharOverride-2"> Schmerzbehandlungsverfahren, ausser zur postoperativen Schmerzbe-handlung, zu kodieren.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Hierzu zählen z.B. die Patient-controlled analgesia (PCA) intravenös und/oder peridural, der Periduralkatheter, die (seltene) Spinalanäs-thesie zur Schmerzausschaltung bei nicht möglicher Anlage eines Periduralkatheters oder transvaginale Pudendusanästhesien zur Erleichterung der Austreibungsperiode bei spontanen oder vaginal-operativen Entbindungen (z.B. Vakuumextraktion, Forcepsextraktion).</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die KR SD1505 ist zu beachten.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Wird zur Erleichterung der Austreibungsperiode eine transvaginale Pudendusanästhesie verabreicht, ist nach Entbindungsart wie folgt zu kodiere</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span><span class="Light _idGenCharOverride-2">:</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Spontanpartu</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">s</span></span><span class="Light _idGenCharOverride-2">:</span> <span class="Kursiv _idGenCharOverride-2">04.81.11</span> <span class="Kursiv _idGenCharOverride-2">Injektion von Anästhetikum und Analgetikum an periphere Nerven, zur Schmerztherapie,</span></p>
-<p class="Grundtext-D-"> <span class="Kursiv _idGenCharOverride-2">ohne bildgebende Verfahren [BV]</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Vaginal-operati</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">v</span></span><span class="Light _idGenCharOverride-2">:</span> <span class="Kursiv _idGenCharOverride-2">04.81.42</span> <span class="Kursiv _idGenCharOverride-2">Injektion eines Anästhetikums an periphere Nerven zur Anästhesie bei Untersuchungen und Interventionen</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Nichtoperative</span><span class="Light _idGenCharOverride-2"> Schmerzbehandlungsverfahren im Kontext des </span><span class="Fett _idGenCharOverride-1">akuten</span><span class="Light _idGenCharOverride-2"> Schmerzes werden unter Anwendung anderer in diesem Buch publizierter Kodierregeln nur erfasst, wenn sie als </span><span class="Fett _idGenCharOverride-1">alleinige</span><span class="Light _idGenCharOverride-2"> Massnahme im stationären Fall durchgeführt werden.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Nichtoperative Schmerzbehandlungsverfahren, die für die üblichen postoperativen Schmerztherapien (z.B. Periduralkatheter nach grosser viszeralchirurgischer Operation) direkt oder verzögert angewendet werden, sind unabhängig vom Zeitpunkt an dem diese erbracht wurden, </span><span class="Fett _idGenCharOverride-1">nicht</span><span class="Light _idGenCharOverride-2"> zu kodieren.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Aufwände hinsichtlich </span><span class="Fett _idGenCharOverride-1">nichtoperativer Schmerzbehandlungsverfahren</span><span class="Light _idGenCharOverride-2">, die im Kontext perioperativer </span><span class="Fett _idGenCharOverride-1">akuter </span><span class="Light _idGenCharOverride-2">Schmerzen erbracht werden, sind durch die Kodes der ICD-10-GM, die den Anlass für den operativen Eingriff und seiner Folgen (z.B. Grund für verstärkte</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">postoperative Schmerzen) bilden, abgegolten.</span></p>
-<div aria-label="191" epub:type="pagebreak" id="page193" role="doc-pagebreak"></div>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Hinwei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">s</span></span><span class="Fett _idGenCharOverride-1">:</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Der CHOP-Kode </span><span class="Kursiv _idGenCharOverride-2">93.A3.3- Komplexe Akutschmerzbehandlung, nach Anzahl Behandlungstage</span><span class="Light _idGenCharOverride-2"> kann bei schweren akuten postoperativen Schmerzzuständen, bei Traumata und/oder exazerbierten (</span><span class="Fett _idGenCharOverride-1">akuten</span><span class="Light _idGenCharOverride-2">) Tumorschmerzen etc. bei dokumentierter Erfüllung der Mindest-merkmale entgegen der o.a. Weisungen jedoch erfasst werden.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Das «Kod. eb.» unter dem CHOP-Kode ist zwingend zu beachten.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 4</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Ein Patient muss sich einer subtotalen Kolektomie bei schwerer ulzeröser Kolitis unterziehen.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Er erhält einen Periduralkatheter für das postoperative Schmerzmanagement.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Light _idGenCharOverride-2">Keine Kodierung des Periduralkatheters.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 5</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Ein Patient muss sich einer offenen subtotalen Kolektomie bei schwerer ulzeröser Kolitis unterziehen.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Er erhält einen Periduralkatheter für das postoperative Schmerzmanagement.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Trotz aller Vorsorge sind die postoperativen Schmerzen so anhaltend stark, dass die erbrachten und dokumentierten Aufwände die Kodierung einer Akutschmerzbehandlung CHOP-Kode 93.A3.3- erlauben.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Der stationäre Aufenthalt verlängert sich durch das komplizierte Schmerzmanagement um 20 Tage.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">K</span></span><span class="Kursiv _idGenCharOverride-2">51.9</span> <span class="Kursiv _idGenCharOverride-2">Colitis ulcerosa, nicht näher bezeichnet</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">45.81.11</span> <span class="Kursiv _idGenCharOverride-2">Kolektomie, offen chirurgisch</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">93.A3.3-</span> <span class="Kursiv _idGenCharOverride-2">Komplexe Akutschmerzbehandlung, nach Anzahl Behandlungstage</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">03.91.11</span> <span class="Kursiv _idGenCharOverride-2">Injektion von Anästhetikum und Analgetikum in den Spinalkanal zur Schmerztherapie</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 6</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">5 Tage nach ausgedehnter Operation einer inkarzerierten abdominellen Narbenhernie verursacht ein ausgedehntes postoperatives Hämatom starke Druckschmerzen bei einer Patientin.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Sie erhält am 5. postoperativen Tag eine parenterale PCA und ab dem Zeitpunkt physikalische Schmerztherapien.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Durch diese Massnahmen kann eine operative Hämatomausräumung vermieden werden.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">K</span></span><span class="Kursiv _idGenCharOverride-2">43.0</span> <span class="Kursiv _idGenCharOverride-2">Narbenhernie, inkarzeriert mit Einklemmung, ohne Gangrän</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">81.0</span> <span class="Kursiv _idGenCharOverride-2">Blutung und Hämatom als Komplikation eines Eingriffes, andernorts nicht klassifiziert</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">Y84.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!</span> <span class="Kursiv _idGenCharOverride-2">Zwischenfälle durch medizinische Massnahmen, nicht näher bezeichnet</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Light _idGenCharOverride-2">Keine Kodierung der PCA und der physikalischen Schmerztherapien.</span></p>
-<p class="Grundtext-D-"><span class="Kursiv CharOverride-16">Chronischer/therapieresistenter Schmerz</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Im Rahmen von chronischen Schmerzen kann es zum Verlust der «Warnfunktion» (siehe unter «akuter Schmerz») kommen. Für die Betrachtung und Behandlung des chronischen Schmerzes sind auch psychologische Faktoren und ihre Behandlung relevant.</span></p>
-<p class="Grundtext-D-"><span class="Light CharOverride-4"><a id="_idIndexMarker494"></a></span><span class="Light _idGenCharOverride-2">Chronischer Schmerz hat einen eigenen Krankheitswert. Eine mögliche vorliegende Entkoppelung von Schmerz und nachweisbarer Gewebeschädigung dient u.a. der Differenzierung des chronischen vom akuten Schmerz.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die den chronischen Schmerz betreffende(n) Diagnose(n) muss/müssen ärztlich dokumentiert sein, damit die folgende Kodierregel angewendet werden kann.</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">1)</span><span class="Light _idGenCharOverride-2"> Wird eine Patientin/ein Patient zur</span><span class="Fett _idGenCharOverride-1"> Schmerzbehandlung</span><span class="Light _idGenCharOverride-2"> aufgenommen und stellt diese den Hauptaufwand des Aufenthaltes dar, ist der Kode für die </span><span class="Fett _idGenCharOverride-1">Lokalisation des Schmerzes als Hauptdiagnose</span><span class="Light _idGenCharOverride-2"> anzugeben. Die dem chronischen Schmerz zugrundeliegende Erkrankung ist entgegen der Kodierregel zur Nebendiagnose (</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54) zusätzlich zu kodieren.</span></p>
-<div aria-label="192" epub:type="pagebreak" id="page194" role="doc-pagebreak"></div>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 7</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Eine Patientin tritt stationär für 7 Tage wegen chronischer atmungsabhängiger Schmerzen thorakal rechts (Thorakal-Syndrom) ein. Die Schmerzen werden von den behandelnden Medizinern als chronisch dokumentiert und u.a. einer vorliegenden postmenopausalen Osteoporose und Fehlbelastung, besonders im zervikalen-thorakalen Bereich der Wirbelsäule, zugeschrieben. Es liegen keine osteoporotischen Frakturen oder Impressionen vor.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Die Patientin ist durch die Schmerzen stark im Alltag limitiert und leidet an psychischen Begleiterscheinungen, insbesondere an einer akuten, reaktiven Depression mittlerer Ausprägung.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Sie erhält eine parenterale PCA für 5 Tage, regelmässige Physiotherapie, ein an die Situation angepasstes Medikamentenschema und Schmerzvisiten.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Zusätzlich erfolgt während des Aufenthalts ein psychiatrisches Konsil mit Etablierung einer antidepressiven Medikation.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="Kursiv _idGenCharOverride-2">M54.6</span> <span class="Kursiv _idGenCharOverride-2">Schmerzen im Bereich der Brustwirbelsäule</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">M81.08</span> <span class="Kursiv _idGenCharOverride-2">Postmenopausale Osteoporose ohne pathologische Fraktur, sonstige Lokalisationen</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">F32.1</span> <span class="Kursiv _idGenCharOverride-2">Mittelgradige depressive Episode</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">PCA</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">Schmerzvisiten</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Ausnahmen zum Absatz «Chronischer/therapieresistenter Schmerz» stellen die folgenden Diagnosen da</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">r</span></span><span class="Light _idGenCharOverride-2">:</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">F45.4-</span> <span class="Light _idGenCharOverride-2">Anhaltende Schmerzstörung</span></p>
-<p class="Grundtext-D-"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">43.-</span> <span class="Light _idGenCharOverride-2">Migräne</span></p>
-<p class="Grundtext-D-"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">44.-</span> <span class="Light _idGenCharOverride-2">Sonstige Kopfschmerzsyndrome</span></p>
-<p class="Grundtext-D-"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54.6</span> <span class="Light _idGenCharOverride-2">Phantomschmerz</span></p>
-<p class="Grundtext-D-"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">90.5-</span> <span class="Light _idGenCharOverride-2">Komplexes regionales Schmerzsyndrom, Typ I</span></p>
-<p class="Grundtext-D-"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">90.6-</span> <span class="Light _idGenCharOverride-2">Komplexes regionales Schmerzsyndrom, Typ II</span></p>
-<p class="Grundtext-D-"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">90.7-</span> <span class="Light _idGenCharOverride-2">Komplexes regionales Schmerzsyndrom, sonstiger und nicht näher bezeichneter Typ</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">und chronische</span><span class="Light _idGenCharOverride-2"> Tumorschmerzen (siehe Kodierregel SD0202).</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Sind o.a. Diagnosen dokumentiert, ist nicht die Lokalisation des Schmerzes, sondern die genannte/dokumentierte Diagnose als Haupt-diagnose zu verschlüsseln, wenn die Definition der Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52 zutrifft.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Bei Vorliegen eines anderen Haupthospitalisationsgrundes gelangt die Kodierregel zur Nebendiagnose </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54 zur Anwendung.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Siehe dazu unter Punkt 3.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Das komplexe regionale Schmerzsyndrom (Complex Regional Pain Syndrome - CRPS) und andere Zustände unter </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">43.-, </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">44.- und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54.6 können sowohl akut als auch chronisch auftreten.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Gemäss ärztlicher Dokumentation zur Dauer des Bestehens der Symptome gelangt entweder die Kodierregel zum akuten oder zum chronischen Schmerz zur Anwendung.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">In den betroffenen Fällen werden das CRPS, die Migräne </span><span class="Light _idGenCharOverride-2">etc. direkt erfasst und nicht die typischen Symptome, wie z.B. anhaltender Schmerz in einer Extremität, Überwärmung, livide oder andere Verfärbungen, Kälteempfindlichkeit, Schwellungen, Funktionseinschrän-kungen, Myoklonien und/oder Atrophie (CRPS) oder Übelkeit, Halbseitenkopfschmerz, Farbflimmerskotome und/oder Aura-Sensatio-nen (Migräne) etc.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Bei (chronisch) vorliegenden Grunderkankungen, die akut exazerbieren (können), wird die Kodierung nach Art der Behandlung ausge-richtet.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Handelt es sich bei der Behandlung z.B. um die Linderung der akuten Schmerzen (z.B. bei </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">44.0 Clusterkopfschmerz</span><span class="Light _idGenCharOverride-2"> oder akut exazer-bierten chronischen Tumorschmerzen) kommt die Kodierregel zum akuten Schmerz zur Anwendung.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Handelt es sich um die Behandlung der chronischen Grunderkrankung (z.B. Entzugs- und/oder Schmerzbehandlung bei medikamentös bedingten chronischen Kopfschmerzen) kommt die Kodierregel zum chronischen Schmerz zur Anwendung.</span></p>
-<div aria-label="193" epub:type="pagebreak" id="page195" role="doc-pagebreak"></div>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 8</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Eintritt zur multimodalen Schmerztherapie einer 76-jährigen Patientin 13 Monate nach operativer Behandlung einer distalen Radiusfraktur links nach Sturz.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Sie leidet an einer Funktionseinschränkung, anhaltenden brennenden Ruheschmerzen mit stark ausgeprägter zusätzlicher Berührungskomponente. Die linke Hand zeigt auch einen Tremor.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Die Anamnese ergab eine vorher gescheiterte Schmerzbehandlung und zunehmenden Schmerzmittelkonsum in Eigenregie mit fehlender Compliance gegenüber ärztlichen Vorgaben.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Nebenbefundlich besteht eine pAVK Stadium 2b nach Fontaine des rechten Beines und eine chronische Linksherzinsuffizienz NYHA-Stadium 2, bei Status nach Herzinfarkt 2 Jahre zuvor.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">In der ärztlichen Dokumentation findet sich die Diagnose «chronisches CRPS Typ 1 der linken Hand», die Mindestmerkmale für die Kodierung der multimodalen Schmerzbehandlung (11 Tage) sind gemäss medizinischer Dokumentation erfüllt. Bezüglich bestehender Nebendiagnosen ist ein Aufwand &gt; 0 erbracht.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Während der Behandlung demaskiert sich eine zusätzliche psychische Komponente als rezidivierende Depression mittelgradiger Episode.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD 	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">90.50 	Komplexes regionales Schmerzsyndrom der oberen Extremität, Typ 1</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">L 		2</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND 	I70.22 	Atherosklerose der Extremitätenarterien, Becken-Bein-Typ, mit belastungsinduziertem Ischämieschmerz,</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">			Gehstrecke weniger als 200 m</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">L 		1</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND 	I50.12 	Linksherzinsuffizienz, mit Beschwerden bei stärkerer Belastung</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND 	I25.22	Alter Myokardinfarkt, 1 Jahr und länger zurückliegend</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND 	F33.1 	Rezidivierende depressive Störung, gegenwärtig mittelgradige Episode</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B 		93.A2.44 	MMST, mindestens 7 bis 13 Behandlungstage</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Nichtoperative</span><span class="Light _idGenCharOverride-2"> Schmerzbehandlungsverfahren im Kontext des </span><span class="Fett _idGenCharOverride-1">chronischen</span><span class="Light _idGenCharOverride-2"> Schmerzes werden unter Anwendung anderer in diesem </span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Buch publizierter Kodierregeln nur erfasst, wenn sie als</span><span class="Fett _idGenCharOverride-1"> alleinige</span><span class="Light _idGenCharOverride-2"> Massnahme im stationären Fall durchgeführt werden.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Bei erfüllten Mindestmerkmalen der CHOP-Kodes </span><span class="Kursiv _idGenCharOverride-2">93.A2.- Multimodale Schmerztherapie [MMST]</span><span class="Light _idGenCharOverride-2"> oder </span><span class="Kursiv _idGenCharOverride-2">93.A1 Multimodale schmerzthera-peutische Kurzzeitbehandlung</span><span class="Light _idGenCharOverride-2"> können diese erfasst werden.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die Kodes </span><span class="Kursiv _idGenCharOverride-2">93.A2.- Multimodale Schmerztherapie [MMST]</span><span class="Light _idGenCharOverride-2"> und </span><span class="Kursiv _idGenCharOverride-2">93.A1 Multimodale schmerztherapeutische Kurzzeitbehandlung</span><span class="Light _idGenCharOverride-2"> können bei Vorliegen anderer Erkrankungen / Zustände / Manifestationen, die den Hauptaufwand des stationären Aufenthaltes darstellen, gemäss Kodierregeln </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">55 erfasst werden.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Es ist zu beachten, dass die Erfassung der CHOP-Kodes für die komplexen Schmerztherapien nicht explizit nur den in dieser Kodierre-gel (SD1804) genannten Indikationen vorbehalten ist.</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">2) </span><span class="Light _idGenCharOverride-2">In den (seltenen) Fällen von stationärer Aufnahme aufgrund chronischer Schmerzen </span><span class="Fett _idGenCharOverride-1">ohne mögliche Lokalisationszuordnung </span><span class="Light _idGenCharOverride-2">(z.B. diffuse Schmerzen) und/oder ohne mögliche Zuordnung zu einer Ursache können die Kodes</span></p>
-<p class="Grundtext-D-"><span class="Kursiv _idGenCharOverride-2">R52.1</span> <span class="Kursiv _idGenCharOverride-2">Chronischer unbeeinflussbarer Schmerz </span><span class="Fett _idGenCharOverride-1">oder</span></p>
-<p class="Grundtext-D-"><span class="Kursiv _idGenCharOverride-2">R52.2</span> <span class="Kursiv _idGenCharOverride-2">Sonstiger chronischer Schmerz</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">kodiert werden, wenn die Definition der Hauptdiagnose (</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52) erfüllt ist.</span></p>
-<div aria-label="194" epub:type="pagebreak" id="page196" role="doc-pagebreak"></div>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 9</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Ein Patient wird stationär für 3 Tage zur Untersuchung eines chronischen, diffusen und therapieresistenten Schmerzes ins Spital aufgenom-men. Der Schmerz besteht seit ca. 8 Monaten und beeinträchtigt zunehmend die Lebensqualität.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Die Ursache des Schmerzes (physisch, psychisch) und eine nähere Zuordnung zu einer bestimmten Lokalisation kann während des </span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Spitalaufenthaltes nicht erfolgen.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Nach Erstellung eines Medikamentenplanes, MRI-Untersuchungen der gesamten Wirbelsäule und einem CT-Thorax-Abdomen erfolgt eine psychiatrische Untersuchung. Alle diagnostischen Massnahmen sind bland.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="Kursiv _idGenCharOverride-2">R52.1</span> <span class="Kursiv _idGenCharOverride-2">Chronischer unbeeinflussbarer Schmerz</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">88.97.14</span> <span class="Kursiv _idGenCharOverride-2">MRI-Übersicht und Teilstücke der Wirbelsäule</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">87.41.09</span> <span class="Kursiv _idGenCharOverride-2">Computertomographie des Thorax, sonstige</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">88.01.10</span> <span class="Kursiv _idGenCharOverride-2">Computertomographie gesamtes Abdomen</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">94.19</span> <span class="Kursiv _idGenCharOverride-2">Psychiatrische Diagnostik, sonstige</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">3) </span><span class="Light _idGenCharOverride-2">In allen anderen Fällen aufgrund stationärer Aufnahme wegen chronischem Schmerz muss die Erkrankung, die den Schmerz verur-sacht, analog zu den Kodieranweisungen unter «Akuter Schmerz», als Hauptdiagnose angegeben werden.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Bei nicht erfüllten Bedingungen der Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52 gelangt die Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54 zur Anwendung.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Betreffend Behandlungen mit operativen und nichtoperativen Schmerzbehandlungsverfahren bei Patientinnen bzw. Patienten mit chronischem Schmerz gelten die gleichen Bedingungen wie unter Abschnitt «Akuter Schmerz».</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 10</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Ein Patient wird zur Behandlung chronischer Schmerzen steigender Intensität (vorhanden seit ca. 9 Monaten) bei diffusen Knochenmetastasen in der gesamten Wirbelsäule und den Beckenknochen aufgenommen. Gesamtaufenthaltsdauer 15 Tage.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Primärtumor ist ein lymphogen (Becken, Abdomen) metastasiertes Prostatakarzinom.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Implantation einer epiduralen Schmerzpumpe nach initial subkutaner Verabreichung von morphinhaltigen Analgetika.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Während des Aufenthalts wird am Tag vor Austritt noch eine palliative niedrigkomplexe Chemotherapie im Zyklus verabreicht.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">79.5</span> <span class="Kursiv _idGenCharOverride-2">Sekundäre bösartige Neubildung des Knochens und des Knochenmarkes</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">L</span> <span class="Kursiv _idGenCharOverride-2">0</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">61</span> <span class="Kursiv _idGenCharOverride-2">Bösartige Neubildung der Prostata</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND		</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">C</span></span><span class="Kursiv _idGenCharOverride-2">77.8	Sekundäre und n.n.bez. bösartige Neubildung der Lymphknoten mehrerer Regionen</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND		U69.5</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">2</span></span><span class="Kursiv _idGenCharOverride-2">! 	Sekundäre und n.n.bez. bösartige Neubildung der intraabdominalen Lymphknoten bei Angabe mehrerer Regionen</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND		U69.5</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">5</span></span><span class="Kursiv _idGenCharOverride-2">! 	Sekundäre und n.n.bez. bösartige Neubildung der intrapelvinen Lymphknoten bei Angabe mehrerer Regionen</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">03.9B.1-</span> <span class="Kursiv _idGenCharOverride-2">Implantation oder Wechsel einer vollständig implantierbaren Infusionspumpe zur intrathekalen und epiduralen Infusion</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">03.90.11</span> <span class="Kursiv _idGenCharOverride-2">Einsetzen oder Ersetzen eines Katheters zur intrathekalen und epiduralen Infusion, Permanenter Katheter zur</span></p>
-<p class="Grundtext-D- ParaOverride-3"> <span class="Kursiv _idGenCharOverride-2">Dauerinfusion</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">99.25.51</span> <span class="Kursiv _idGenCharOverride-2">Nicht komplexe Chemotherapie</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Fett _idGenCharOverride-1">Beispiel 11</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Ein Patient tritt mit akutem transmuralem Hinterwandinfarkt zur notfallmässigen Bypassoperation ein. In der postoperativen Phase, nach komplikationsloser kardialer Operation, aggraviert ein chronisch bestehender beidseitiger Extremitäten(ruhe)schmerz auf Basis einer diabeti-schen Polyneuropathie (Typ 2, nicht entgleist) und limitiert den Patienten stark (Schlaflosigkeit, erschwerte postoperative Physiotherapie etc.).</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Neben neurologischen Untersuchungen bedside, Anpassung der auf die Grunderkrankung ausgerichteten Medikation erhält er ein Medikamentenschmerzschema, physikalische Schmerzbehandlungsverfahren etc.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">Der gesamten medizinischen Dokumentation ist zu entnehmen, dass die Bedingungen/Mindestmerkmale für die Erfassung einer 93.A1 multimodalen schmerztherapeutischen Kurzzeitbehandlung für 3 Tage erfüllt sind.</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="Kursiv _idGenCharOverride-2">I21.1</span> <span class="Kursiv _idGenCharOverride-2">Akuter transmuraler Myokardinfarkt der Hinterwand</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">E11.40†</span> <span class="Kursiv _idGenCharOverride-2">Diabetes mellitus, Typ2, Mit neurologischen Komplikationen, nicht als entgleist bezeichnet</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">63.2*</span> <span class="Kursiv _idGenCharOverride-2">Diabetische Polyneuropathie</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">Bypassoperation gemäss geltenden Kodierrichtlinien</span></p>
-<p class="Grundtext-D- ParaOverride-3"><span class="Kursiv _idGenCharOverride-2">B</span> <span class="Kursiv _idGenCharOverride-2">93.A1</span> <span class="Kursiv _idGenCharOverride-2">Multimodale schmerztherapeutische Kurzzeitbehandlung</span></p>
-<div aria-label="195" epub:type="pagebreak" id="page197" role="doc-pagebreak"></div>
-<h4 class="Untertitel-2-fett" id="_idParaDest-257"><a id="_idTextAnchor279"></a>S<span class="Fett _idGenCharOverride-1">D</span>1805e 	Aufnahme zur <a id="_idIndexMarker495"></a>Implantation eines Neurostimulators/<br/>(Test) Elektroden bei Schmerzbehandlung</h4>
-<p class="Grundtext-D-">Bei Aufnahme zur Implantation eines Neurostimulators/(Test) Elektroden wird die <span class="Fett _idGenCharOverride-1">Krankheit als Hauptdiagnose</span> angegeben, zusammen mit den passenden Prozedurenkodes.</p>
-<p class="Grundtext-D-">Der Kode</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Z45.80	Anpassung und Handhabung eines Neurostimulators</span></p>
-<p class="Grundtext-D-">wird <span class="Fett _idGenCharOverride-1">nicht</span> abgebildet.</p>
-<p class="Grundtext-D-">(Gleiche Regel unter S<span class="Light _idGenCharOverride-2">D</span>060<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">5</span>: Aufnahme zur Implantation eines Neurostimulators)</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-258"><a id="_idTextAnchor280"></a>S<span class="Fett _idGenCharOverride-1">D</span>1806e 	Aufnahme zur <a id="_idIndexMarker496"></a>Entfernung eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</h4>
-<p class="Grundtext-D-">Bei Aufnahme zur Entfernung eines Neurostimulators/(Test) Elektroden ist als Hauptdiagnosekode</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Z45.80	Anpassung und Handhabung eines Neurostimulators</span></p>
-<p class="Grundtext-D-">zuzuweisen, zusammen mit den passenden Prozedurenkodes. Die Grundkrankheit wird nur als Nebendiagnose kodiert, wenn sie die Nebendiagnosendefinition erfüllt.</p>
-<p class="Grundtext-D-">(Gleiche Regel unter S<span class="Light _idGenCharOverride-2">D</span>060<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">6</span>: Aufnahme zur Entfernung eines Neurostimulators)</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-259"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor281"></a>SD1807l 	</span><span class="Fett CharOverride-1"><a id="_idIndexMarker497"></a></span><span class="Fett _idGenCharOverride-1">Schock</span></h4>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Beim Schock handelt es sich um ein potentiell lebensbedrohliches Zustandsbild, dem unterschiedliche Ursachen zugrunde liegen und das in Diagnostik und Therapie mitunter weit über das Ausmass eines Symptoms einer anderen Erkrankung hinausgeht. Aus diesem Grund sind die unter der Koderubrik </span><span class="Light CharOverride-5">R57.- Schock, anderenorts nicht klassifizier</span><span class="Light _idGenCharOverride-2">t beschriebenen Zustände als </span><span class="Fett _idGenCharOverride-1">eigenständige</span><span class="Light _idGenCharOverride-2"> Diagnosen zu betrachten. </span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Für die Wahl als Haupt- oder Nebendiagnose ist die Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52 zu berücksichtigen.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Bei einem septischen Schock, gilt die Regel SD0102 Sepsis.</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beispiel 1</span></p>
-<p class="Grundtext-D-"><span class="Kursiv _idGenCharOverride-2">Eine Patientin wird aufgrund einer gastrointestinalen Blutung hospitalisiert. Als Ursache findet sich eine Blutung aus einem akut aufgetretenen Ulcus in der Bulbushinterwand des Duodenums. Im weiteren Verlauf kommt es zu einer akuten Blutungsanämie und einem hämorrhagischen Schock, weshalb die Patientin </span><span class="Unterlegen-grün-kursiv _idGenCharOverride-2">IS</span><span class="Kursiv _idGenCharOverride-2">-pflichtig wird und Vasoaktiva erhält. Die behandelnden Ärzte dokumentieren, dass der grösste Aufwand an medizinischen Mitteln durch den hämorrhagischen Schock bedingt war. </span></p>
-<p class="Grundtext-D-"><span class="Kursiv _idGenCharOverride-2">HD </span> <span class="Kursiv _idGenCharOverride-2">R57.1</span> <span class="Kursiv _idGenCharOverride-2">Hypovolämischer Schock</span></p>
-<p class="Grundtext-D-"><span class="Kursiv _idGenCharOverride-2">ND	</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">K</span></span><span class="Kursiv _idGenCharOverride-2">26.0</span> <span class="Kursiv _idGenCharOverride-2">Ulcus duodeni, akut, mit Blutung</span></p>
-<p class="Grundtext-D-"><span class="Kursiv _idGenCharOverride-2">ND </span> <span class="Kursiv _idGenCharOverride-2">D62</span> <span class="Kursiv _idGenCharOverride-2">Akute Blutungsanämie</span></p>
-</div><div aria-label="196" epub:type="pagebreak" id="page198" role="doc-pagebreak"></div></article>
-    <nav class="pager"><a class="pager-prev" href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html">‹ SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a><a class="pager-next" href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen ›</a></nav>
+    <article><h3 class="Untertitel-1-farbig" id="_idParaDest-252"><a id="_idTextAnchor274"></a>S<span class="Fett _idGenCharOverride-1">D</span>1800	Symptome und <a id="_idIndexMarker486"></a>abnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</h3></article>
+    <nav class="pager"><a class="pager-prev" href="sd1611orespiratorisches-versagenbeim-neugeborenen.html">‹ SD1611oRespiratorisches Versagenbeim Neugeborenen</a><a class="pager-next" href="sd1801ainkontinenz.html">SD1801aInkontinenz ›</a></nav>
   </main>
   </div>
   <script src="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/assets/nav.js"></script>

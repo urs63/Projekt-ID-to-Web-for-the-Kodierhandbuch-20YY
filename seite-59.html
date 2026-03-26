@@ -4,274 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seite 59 – V2027D_Teil1</title>
-  <link rel="stylesheet" href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/assets/style.css">
-  <style>
-/* ── BFS Site-Header ── */
-body { flex-direction: column; }
-#site-header {
-  width: 100%;
-  background: #fff;
-  border-bottom: 3px solid #c00;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);
-}
-#site-topbar {
-  background: #e8e8e8;
-  padding: 0.25rem 1.5rem;
-  font-family: var(--font-ui);
-  font-size: 0.72rem;
-  color: #555;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.topbar-sep { opacity: .4; }
-.topbar-office { font-weight: 600; color: #333; }
-.lang-switcher { margin-left: auto; display: flex; gap: 0.5rem; }
-.lang-switcher a {
-  font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600;
-  color: #555; text-decoration: none; padding: 0.1rem 0.35rem;
-  border-radius: 3px;
-}
-.lang-switcher a:hover, .lang-switcher a.active {
-  background: #c00; color: #fff;
-}
-#site-brand {
-  display: flex;
-  align-items: center;
-  padding: 0.6rem 1.5rem;
-  gap: 1rem;
-}
-#site-logo-link { text-decoration: none; flex: 1; }
-.site-logo-dept {
-  display: block;
-  font-family: var(--font-ui); font-size: 0.72rem;
-  color: #888; letter-spacing: .03em;
-}
-.site-logo-title {
-  display: block;
-  font-family: var(--font-ui); font-size: 1.1rem;
-  font-weight: 700; color: #c00;
-}
-#site-search-wrap input {
-  padding: 0.35rem 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  font-family: var(--font-ui);
-  font-size: 0.82rem;
-  width: 220px;
-  outline: none;
-  background: #f8f8f8;
-}
-#site-search-wrap input:focus {
-  border-color: #c00;
-  background: #fff;
-  box-shadow: 0 0 0 2px rgba(200,0,0,.1);
-}
-#site-nav {
-  display: flex;
-  gap: 0;
-  padding: 0 1.5rem;
-  border-top: 1px solid #eee;
-  background: #fff;
-}
-#site-nav a {
-  font-family: var(--font-ui); font-size: 0.85rem;
-  color: #444; text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-bottom: 3px solid transparent;
-  transition: color .15s, border-color .15s;
-}
-#site-nav a:hover { color: #c00; border-bottom-color: #c00; }
-#site-nav a.nav-active { color: #c00; border-bottom-color: #c00; font-weight: 600; }
-
-/* Layout anpassen wenn Header vorhanden */
-.with-header #wrapper {
-  display: flex;
-  flex: 1;
-}
-.with-header #sidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  /* Header-Hoehe abziehen – wird per JS gesetzt */
-}
-.with-header #content { padding-top: 1.5rem; }
-
-/* Sidebar-Header ausblenden wenn BFS-Header aktiv */
-.with-header #sidebar-header { display: none; }
-.with-header #search-box { display: none; }
-</style>
-</head>
-<body class="with-header">
+  <link rel="stylesheet" href="assets/style.css">
   
-  <header id="site-header">
-    <div id="site-topbar">
-      <span class="topbar-dept">Eidgen&#246;ssisches Departement des Innern EDI</span>
-      <span class="topbar-sep">|</span>
-      <span class="topbar-office">Bundesamt f&#252;r Statistik</span>
-      <nav class="lang-switcher" aria-label="Sprache">
-        <a href="https://rundschreiben-kodierer.github.io/handbuch/de/" class="active">DE</a>
-        <a href="https://rundschreiben-kodierer.github.io/handbuch/fr/">FR</a>
-        <a href="https://rundschreiben-kodierer.github.io/handbuch/it/">IT</a>
-      </nav>
-    </div>
-    <div id="site-brand">
-      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/" id="site-logo-link">
-        <span class="site-logo-dept">Rundschreiben Kodierer</span>
-        <span class="site-logo-title">V2027D_Teil1</span>
-      </a>
-      <div id="site-search-wrap">
-        <input type="search" id="site-search-input" placeholder="&#128269; Suchen &#8230;"
-          onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='search.html?q='+encodeURIComponent(this.value.trim());}"
-          aria-label="Suche" />
-      </div>
-    </div>
-    <nav id="site-nav" aria-label="Hauptnavigation">
-      <a href="https://rundschreiben-kodierer.github.io/handbuch/de/">Kodierhandbuch BFS</a>
-      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/index.html">V2027D_Teil1</a>
-      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/search.html">Suche</a>
-      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/download.zip" download>&#11015; Download Offline Variante</a>
-      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/V2027D_Teil1.pdf" target="_blank">&#128196; PDF Version</a>
-    </nav>
-  </header>
-  <div id="wrapper">
+</head>
+<body>
+  
+  
   <nav id="sidebar">
     <div id="sidebar-header"><a href="toc.html" id="book-title">V2027D_Teil1</a></div>
     <div id="search-box"><input type="search" placeholder="🔍 Suchen …" onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='search.html?q='+encodeURIComponent(this.value.trim());}" /></div>
     <div id="nav-tree"><ul>
-  <li><a href="seite-1.html">Seite 1</a>
-  </li>
-  <li><a href="seite-2.html">Seite 2</a>
-  </li>
-  <li><a href="seite-3.html">Seite 3</a>
-  </li>
-  <li><a href="danksagung.html">Danksagung</a>
-  </li>
-  <li><a href="einleitung-version2027.html">Einleitung Version2027</a>
-  </li>
-  <li><a href="grundlagen-g00-g55.html">Grundlagen G00 –G55</a>
+<li><a href="seite-1.html">Seite 1</a></li>
+<li><a href="seite-2.html">Seite 2</a></li>
+<li><a href="seite-3.html">Seite 3</a></li>
+<li><a href="danksagung.html">Danksagung</a></li>
+<li><a href="einleitung-version2027.html">Einleitung Version2027</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="grundlagen-g00-g55.html" onclick="event.stopPropagation()">Grundlagen G00 –G55</a></summary>
 <ul>
-  <li><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a>
-  </li>
-  <li><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a>
-  </li>
-  <li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a>
-  </li>
-  <li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a>
-  </li>
-  <li><a href="g50definitionen.html">G50Definitionen</a>
-  </li>
+<li><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a></li>
+<li><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a></li>
+<li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a></li>
+<li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a></li>
+<li><a href="g50definitionen.html">G50Definitionen</a></li>
 </ul>
-  </li>
-  <li><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html" onclick="event.stopPropagation()">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a></summary>
 <ul>
-  <li><a href="d01gsymptome.html">D01gSymptome</a>
-  </li>
-  <li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a>
-  </li>
-  <li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a>
-  </li>
-  <li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a>
-  </li>
-  <li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a>
-  </li>
-  <li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a>
-  </li>
-  <li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a>
-  </li>
-  <li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a>
-  </li>
-  <li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a>
-  </li>
-  <li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a>
-  </li>
-  <li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a>
-  </li>
-  <li><a href="d13asyndrome.html">D13aSyndrome</a>
-  </li>
-  <li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a>
-  </li>
-  <li><a href="d15o-verlegungen.html">D15o	Verlegungen</a>
-  </li>
-  <li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a>
-  </li>
+<li><a href="d01gsymptome.html">D01gSymptome</a></li>
+<li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a></li>
+<li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a></li>
+<li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a></li>
+<li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a></li>
+<li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a></li>
+<li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a></li>
+<li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a></li>
+<li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a></li>
+<li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a></li>
+<li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a></li>
+<li><a href="d13asyndrome.html">D13aSyndrome</a></li>
+<li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a></li>
+<li><a href="d15o-verlegungen.html">D15o	Verlegungen</a></li>
+<li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a></li>
 </ul>
-  </li>
-  <li><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html" onclick="event.stopPropagation()">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a></summary>
 <ul>
-  <li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a>
-  </li>
-  <li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a>
-  </li>
-  <li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a>
-  </li>
-  <li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a>
-  </li>
-  <li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a>
-  </li>
-  <li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a>
-  </li>
-  <li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a>
-  </li>
-  <li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a>
-  </li>
-  <li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a>
-  </li>
-  <li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a>
-  </li>
+<li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a></li>
+<li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a></li>
+<li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a></li>
+<li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a></li>
+<li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a></li>
+<li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a></li>
+<li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a></li>
+<li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a></li>
+<li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a></li>
+<li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a></li>
 </ul>
-  </li>
-  <li><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a></summary>
 <ul>
-  <li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a>
-  </li>
-  <li><a href="sd0200nneubildungen.html">SD0200nNeubildungen</a>
-  </li>
-  <li><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a>
-  </li>
-  <li><a href="sd0500-psychische-und-verhaltensstoerungen.html">SD0500	Psychische und Verhaltensstörungen</a>
-  </li>
-  <li><a href="sd0600-krankheitendesnervensystems.html">SD0600	KrankheitendesNervensystems</a>
-  </li>
-  <li><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a>
-  </li>
-  <li><a href="sd0900-krankheitendeskreislaufsystems.html">SD0900	KrankheitendesKreislaufsystems</a>
-  </li>
-  <li><a href="sd1000-krankheitendesatmungssystems.html">SD1000	KrankheitendesAtmungssystems</a>
-  </li>
-  <li><a href="sd1100-krankheitendesverdauungssystems.html">SD1100	KrankheitendesVerdauungssystems</a>
-  </li>
-  <li><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html">SD1200	KrankheitenderHaut und der Unterhaut</a>
-  </li>
-  <li><a href="sd1400-krankheitendesurogenitalsystems.html">SD1400	KrankheitendesUrogenitalsystems</a>
-  </li>
-  <li><a href="sd1500geburtshilfe.html">SD1500Geburtshilfe</a>
-  </li>
-  <li><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a>
-  </li>
-  <li><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a>
-  </li>
-  <li><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a>
-  </li>
-  <li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a>
-  </li>
-  <li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a>
-  </li>
+<li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a></li>
+<li><a href="sd0200nneubildungen.html">SD0200nNeubildungen</a></li>
+<li><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a></li>
+<li><a href="sd0500-psychische-und-verhaltensstoerungen.html">SD0500	Psychische und Verhaltensstörungen</a></li>
+<li><a href="sd0600-krankheitendesnervensystems.html">SD0600	KrankheitendesNervensystems</a></li>
+<li><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a></li>
+<li><a href="sd0900-krankheitendeskreislaufsystems.html">SD0900	KrankheitendesKreislaufsystems</a></li>
+<li><a href="sd1000-krankheitendesatmungssystems.html">SD1000	KrankheitendesAtmungssystems</a></li>
+<li><a href="sd1100-krankheitendesverdauungssystems.html">SD1100	KrankheitendesVerdauungssystems</a></li>
+<li><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html">SD1200	KrankheitenderHaut und der Unterhaut</a></li>
+<li><a href="sd1400-krankheitendesurogenitalsystems.html">SD1400	KrankheitendesUrogenitalsystems</a></li>
+<li><a href="sd1500geburtshilfe.html">SD1500Geburtshilfe</a></li>
+<li><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a></li>
+<li><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a></li>
+<li><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a></li>
+<li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a></li>
+<li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a></li>
 </ul>
-  </li>
-  <li><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a>
-  </li>
-  <li><a href="kodierrichtlinienrehabilitation.html">KodierrichtlinienRehabilitation</a>
-  </li>
-  <li><a href="seite-59.html" class="active">Seite 59</a>
-  </li>
-  <li><a href="seite-60.html">Seite 60</a>
-  </li>
-  <li><a href="seite-61.html">Seite 61</a>
-  </li>
+</details>
+</li>
+<li><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a></li>
+<li><a href="kodierrichtlinienrehabilitation.html">KodierrichtlinienRehabilitation</a></li>
+<li><a href="seite-59.html" class="active">Seite 59</a></li>
+<li><a href="seite-60.html">Seite 60</a></li>
+<li><a href="seite-61.html">Seite 61</a></li>
 </ul>
 </div>
   </nav>
@@ -1230,23 +1057,8 @@ body { flex-direction: column; }
 </nav><div aria-label="240" epub:type="pagebreak" id="page242" role="doc-pagebreak"></div></article>
     <nav class="pager"><a class="pager-prev" href="kodierrichtlinienrehabilitation.html">‹ KodierrichtlinienRehabilitation</a><a class="pager-next" href="seite-60.html">Seite 60 ›</a></nav>
   </main>
-  </div>
-  <script src="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/assets/nav.js"></script>
-  <script>
-// Sidebar-Hoehe an Header anpassen
-(function() {
-  function adjustSidebar() {
-    var header = document.getElementById('site-header');
-    var sidebar = document.getElementById('sidebar');
-    if (header && sidebar) {
-      var h = header.offsetHeight;
-      sidebar.style.top = h + 'px';
-      sidebar.style.height = 'calc(100vh - ' + h + 'px)';
-    }
-  }
-  adjustSidebar();
-  window.addEventListener('resize', adjustSidebar);
-})();
-</script>
+  
+  <script src="assets/nav.js"></script>
+  
 </body>
 </html>

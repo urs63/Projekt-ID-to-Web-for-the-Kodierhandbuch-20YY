@@ -141,472 +141,398 @@ body { flex-direction: column; }
   <nav id="sidebar">
     <div id="sidebar-header"><a href="toc.html" id="book-title">V2027D_Teil1</a></div>
     <div id="search-box"><input type="search" placeholder="🔍 Suchen …" onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='search.html?q='+encodeURIComponent(this.value.trim());}" /></div>
+    <div id="nav-toggle-wrap"><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=true)">▼ Alle aufklappen</button><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=false)">▶ Alle zuklappen</button></div>
     <div id="nav-tree"><ul>
-  <li><a href="seite-1.html">Seite 1</a>
-  </li>
-  <li><a href="seite-2.html">Seite 2</a>
-  </li>
-  <li><a href="seite-3.html">Seite 3</a>
-  </li>
-  <li><a href="danksagung.html">Danksagung</a>
-  </li>
-  <li><a href="einleitung-version2027.html">Einleitung Version2027</a>
-  </li>
-  <li><a href="grundlagen-g00-g55.html">Grundlagen G00 –G55</a>
+<li><a href="seite-1.html">Seite 1</a></li>
+<li><a href="seite-2.html">Seite 2</a></li>
+<li><a href="seite-3.html">Seite 3</a></li>
+<li><a href="danksagung.html">Danksagung</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="einleitung-version2027.html" onclick="event.stopPropagation()">Einleitung Version2027</a></summary>
 <ul>
-  <li><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a>
-  </li>
-  <li><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a>
-  </li>
-  <li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a>
-  </li>
-  <li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a>
-  </li>
-  <li><a href="g50definitionen.html">G50Definitionen</a>
-  </li>
+<li><a href="abkuerzungen-des-kodierungshandbuches.html">Abkürzungen des Kodierungshandbuches</a></li>
 </ul>
-  </li>
-  <li><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="grundlagen-g00-g55.html" onclick="event.stopPropagation()">Grundlagen G00 –G55</a></summary>
 <ul>
-  <li><a href="d01gsymptome.html">D01gSymptome</a>
-  </li>
-  <li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a>
-  </li>
-  <li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a>
-  </li>
-  <li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a>
-  </li>
-  <li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a>
-  </li>
-  <li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a>
-  </li>
-  <li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a>
-  </li>
-  <li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a>
-  </li>
-  <li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a>
-  </li>
-  <li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a>
-  </li>
-  <li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a>
-  </li>
-  <li><a href="d13asyndrome.html">D13aSyndrome</a>
-  </li>
-  <li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a>
-  </li>
-  <li><a href="d15o-verlegungen.html">D15o	Verlegungen</a>
-  </li>
-  <li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a>
-  </li>
-</ul>
-  </li>
-  <li><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html" onclick="event.stopPropagation()">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a></summary>
 <ul>
-  <li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a>
-  </li>
-  <li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a>
-  </li>
-  <li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a>
-  </li>
-  <li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a>
-  </li>
-  <li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a>
-  </li>
-  <li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a>
-  </li>
-  <li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a>
-  </li>
-  <li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a>
-  </li>
-  <li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a>
-  </li>
-  <li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a>
-  </li>
+<li><a href="g01ngeschichte.html">G01nGeschichte</a></li>
+<li><a href="g02morganisation.html">G02mOrganisation</a></li>
+<li><a href="g03m-gesetzliche-grundlagen.html">G03m	Gesetzliche Grundlagen</a></li>
+<li><a href="g04mziele-der-erhebung-spitalstationaere-gesundheitsversorgung-spiges.html">G04mZiele der Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes)</a></li>
+<li><a href="g05manonymisierung-der-daten.html">G05mAnonymisierung der Daten</a></li>
+<li><a href="g06mder-medizinische-datensatz-definitionen-und-variablen.html">G06mDer medizinische Datensatz,Definitionen und Variablen</a></li>
 </ul>
-  </li>
-  <li><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a>
+</details>
+</li>
+<li><a href="g10p-erhebung-spitalstationaere-gesundheitsversorgung-spiges-die-patientenklassi.html">G10p	Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes), die Patientenklassifikationssysteme SwissDRG, TARPSY und ST Reha</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html" onclick="event.stopPropagation()">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a></summary>
 <ul>
-  <li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a>
-  </li>
-  <li><a href="sd0200nneubildungen.html">SD0200nNeubildungen</a>
-  </li>
-  <li><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a>
-  </li>
-  <li><a href="sd0500-psychische-und-verhaltensstoerungen.html">SD0500	Psychische und Verhaltensstörungen</a>
-  </li>
-  <li><a href="sd0600-krankheitendesnervensystems.html">SD0600	KrankheitendesNervensystems</a>
-  </li>
-  <li><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a>
-  </li>
-  <li><a href="sd0900-krankheitendeskreislaufsystems.html">SD0900	KrankheitendesKreislaufsystems</a>
-  </li>
-  <li><a href="sd1000-krankheitendesatmungssystems.html">SD1000	KrankheitendesAtmungssystems</a>
-  </li>
-  <li><a href="sd1100-krankheitendesverdauungssystems.html">SD1100	KrankheitendesVerdauungssystems</a>
-  </li>
-  <li><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html">SD1200	KrankheitenderHaut und der Unterhaut</a>
-  </li>
-  <li><a href="sd1400-krankheitendesurogenitalsystems.html">SD1400	KrankheitendesUrogenitalsystems</a>
-  </li>
-  <li><a href="sd1500geburtshilfe.html">SD1500Geburtshilfe</a>
-  </li>
-  <li><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a>
-  </li>
-  <li><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a>
-  </li>
-  <li><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html" class="active">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a>
-  </li>
-  <li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a>
-  </li>
-  <li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a>
-  </li>
+<li><a href="g21p-icd-10-gm.html">G21p	ICD-10-GM</a></li>
+<li><a href="g22o-schweizerische-operationsklassifikation-chop.html">G22o	Schweizerische Operationsklassifikation (CHOP)</a></li>
 </ul>
-  </li>
-  <li><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a>
-  </li>
-  <li><a href="kodierrichtlinienrehabilitation.html">KodierrichtlinienRehabilitation</a>
-  </li>
-  <li><a href="seite-59.html">Seite 59</a>
-  </li>
-  <li><a href="seite-60.html">Seite 60</a>
-  </li>
-  <li><a href="seite-61.html">Seite 61</a>
-  </li>
+</details>
+</li>
+<li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a></li>
+<li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g50definitionen.html" onclick="event.stopPropagation()">G50Definitionen</a></summary>
+<ul>
+<li><a href="g51o-derbehandlungsfall.html">G51o	DerBehandlungsfall</a></li>
+<li><a href="g52h-diehauptdiagnose.html">G52h	DieHauptdiagnose</a></li>
+<li><a href="g53m-derzusatz-zur-hauptdiagnose.html">G53m	DerZusatz zur Hauptdiagnose</a></li>
+<li><a href="g54p-dienebendiagnosen.html">G54p	DieNebendiagnosen</a></li>
+<li><a href="g55mdiebehandlung.html">G55mDieBehandlung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html" onclick="event.stopPropagation()">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a></summary>
+<ul>
+<li><a href="d00mabnormebefunde.html">D00mAbnormeBefunde</a></li>
+<li><a href="d01gsymptome.html">D01gSymptome</a></li>
+<li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a></li>
+<li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a></li>
+<li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a></li>
+<li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a></li>
+<li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a></li>
+<li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a></li>
+<li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a></li>
+<li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a></li>
+<li><a href="d10gchronische-krankheiten-mit-akutem-schub.html">D10gChronische Krankheiten mit akutem Schub</a></li>
+<li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a></li>
+<li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a></li>
+<li><a href="d13asyndrome.html">D13aSyndrome</a></li>
+<li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a></li>
+<li><a href="d15o-verlegungen.html">D15o	Verlegungen</a></li>
+<li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html" onclick="event.stopPropagation()">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a></summary>
+<ul>
+<li><a href="p00n-erfassung-der-prozedur-im-medizinischen-datensatz.html">P00n	Erfassung der Prozedur im medizinischen Datensatz</a></li>
+<li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a></li>
+<li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a></li>
+<li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a></li>
+<li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a></li>
+<li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a></li>
+<li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a></li>
+<li><a href="p07obilaterale-operationen.html">P07oBilaterale Operationen</a></li>
+<li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a></li>
+<li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a></li>
+<li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a></li>
+<li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details open>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0100-bestimmteinfektioese-und-parasitaere-krankheiten.html" onclick="event.stopPropagation()">SD0100	Bestimmteinfektiöse und parasitäre Krankheiten</a></summary>
+<ul>
+<li><a href="sd0101abakteriaemie.html">SD0101aBakteriämie</a></li>
+<li><a href="sd0102psepsis.html">SD0102pSepsis</a></li>
+<li><a href="sd0103lsirs.html">SD0103lSIRS</a></li>
+<li><a href="sd0104nhiv-aids.html">SD0104nHIV/AIDS</a></li>
+<li><a href="u61-laborkategorie-im-aktuellen-aufenthaltu61-1-kategorie-1500-und-mehr-cd4-t-he.html">U61.–! Laborkategorie im aktuellen AufenthaltU61.1!	Kategorie 1500 und mehr CD4+-T-Helferzellen pro Mikroliter Blut</a></li>
+<li><a href="sd0105aechter-krupp-pseudokrupp-kruppsyndrom.html">SD0105aEchter Krupp – Pseudokrupp –Kruppsyndrom</a></li>
+<li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0200nneubildungen.html" onclick="event.stopPropagation()">SD0200nNeubildungen</a></summary>
+<ul>
+<li><a href="sd0202mauswahl-und-reihenfolge-der-diagnosen.html">SD0202mAuswahl und Reihenfolge der Diagnosen</a></li>
+<li><a href="sd0203nnachresektion-im-tumorgebiet.html">SD0203nNachresektion im Tumorgebiet</a></li>
+<li><a href="sd0204ktumornachweis-nur-in-der-biopsie.html">SD0204kTumornachweis nur in der Biopsie</a></li>
+<li><a href="sd0205n-akute-chronische-erkrankungen-stoerungen-nach-und-oder-folgen-von-medizi.html">SD0205n(Akute, chronische) Erkrankungen, Störungen nach und/oder Folgen von medizinischen Massnahmen im Kontext von Behandlungen maligner Neubildungen (solide, hämatologisch)</a></li>
+<li><a href="sd0206averdacht-auf-tumor-oder-metastasen.html">SD0206aVerdacht auf Tumor oder Metastasen</a></li>
+<li><a href="sd0207a-nachuntersuchung.html">SD0207a	Nachuntersuchung</a></li>
+<li><a href="sd0208nrezidive.html">SD0208nRezidive</a></li>
+<li><a href="sd0209a-tumoremit-endokriner-aktivitaet.html">SD0209a	Tumoremit endokriner Aktivität</a></li>
+<li><a href="sd0210n-multiple-lokalisationen.html">SD0210n	Multiple Lokalisationen</a></li>
+<li><a href="sd0211aueberlappende-lokalisation.html">SD0211aÜberlappende Lokalisation</a></li>
+<li><a href="sd0212aremission-bei-malignen-immunoproliferativen-erkrankungen-undleukaemie.html">SD0212aRemission bei malignen immunoproliferativen Erkrankungen undLeukämie</a></li>
+<li><a href="sd0213a-lymphangiosis-carcinomatosa.html">SD0213a 	Lymphangiosis carcinomatosa</a></li>
+<li><a href="sd0214nlymphom.html">SD0214nLymphom</a></li>
+<li><a href="sd0215achemo-undradiotherapie.html">SD0215aChemo- undRadiotherapie</a></li>
+<li><a href="sd0216nprophylaktische-operationen-wegen-risikofaktoren.html">SD0216nProphylaktische Operationen wegen Risikofaktoren</a></li>
+<li><a href="sd0217opalliativbehandlung.html">SD0217oPalliativbehandlung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html" onclick="event.stopPropagation()">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a></summary>
+<ul>
+<li><a href="sd0401nallgemeines.html">SD0401nAllgemeines</a></li>
+<li><a href="sd0402nregeln-zur-kodierung-des-diabetes-mellitus.html">SD0402nRegeln zur Kodierung des Diabetes mellitus</a></li>
+<li><a href="sd0403nspezifische-komplikationen-des-diabetes-mellitus.html">SD0403nSpezifische Komplikationen des Diabetes mellitus</a></li>
+<li><a href="sd0404a-metabolisches-syndrom.html">SD0404a	Metabolisches Syndrom</a></li>
+<li><a href="sd0405nstoerungender-inneren-sekretion-des-pankreas.html">SD0405nStörungender inneren Sekretion des Pankreas</a></li>
+<li><a href="sd0406azystische-fibrose.html">SD0406aZystische Fibrose</a></li>
+<li><a href="sd0407nmangelernaehrungbei-erwachsenen.html">SD0407nMangelernährungbei Erwachsenen</a></li>
+<li><a href="sd0408nmangelernaehrungbei-kindern.html">SD0408nMangelernährungbei Kindern</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0500-psychische-und-verhaltensstoerungen.html" onclick="event.stopPropagation()">SD0500	Psychische und Verhaltensstörungen</a></summary>
+<ul>
+<li><a href="sd0501o-psychische-und-verhaltensstoerungendurch-psychotrope-substanzen-alkohol-.html">SD0501o	Psychische und Verhaltensstörungendurch psychotrope Substanzen(Alkohol, Drogen, Medikamente, Nikotin)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0600-krankheitendesnervensystems.html" onclick="event.stopPropagation()">SD0600	KrankheitendesNervensystems</a></summary>
+<ul>
+<li><a href="sd0601p-akuter-schlaganfall-etc-subarachnoidalblutung-und-sonstige-intrakraniell.html">SD0601p	Akuter «Schlaganfall etc.», Subarachnoidalblutung und sonstige intrakranielle Blutungen traumatischer und nichttraumatischer Genese</a></li>
+<li><a href="sd0602nfolgen-eines-status-nach-schlaganfall-etc-einer-nichttraumatischen-subara.html">SD0602nFolgen eines/Status nach: «Schlaganfall etc.», einer nichttraumatischen Subarachnoidalblutung oder sonstigen nichttraumatischen intrakraniellen Blutung</a></li>
+<li><a href="sd0603oparaplegie-und-tetraplegie-nicht-traumatisch.html">SD0603oParaplegie und Tetraplegie, nicht traumatisch</a></li>
+<li><a href="sd0604mbewusstseinsstoerungen.html">SD0604mBewusstseinsstörungen</a></li>
+<li><a href="sd0605e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden.html">SD0605e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden</a></li>
+<li><a href="sd0606e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden.html">SD0606e 	Aufnahme zurEntfernung eines Neurostimulators /(Test) Elektroden</a></li>
+<li><a href="sd0607o-kodierung-derparkinsonstadien-g20.html">SD0607o 	Kodierung derParkinsonstadien (G20.-)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html" onclick="event.stopPropagation()">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a></summary>
+<ul>
+<li><a href="sd0801aschwerhoerigkeit-undtaubheit.html">SD0801aSchwerhörigkeit undTaubheit</a></li>
+<li><a href="sd0802danpassung-handhabung-eines-implantiertenhoergeraetes.html">SD0802dAnpassung/Handhabung eines implantiertenHörgerätes</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0900-krankheitendeskreislaufsystems.html" onclick="event.stopPropagation()">SD0900	KrankheitendesKreislaufsystems</a></summary>
+<ul>
+<li><a href="sd0901a-hypertonie-und-krankheiten-bei-hypertonie.html">SD0901a 	Hypertonie und Krankheiten bei Hypertonie</a></li>
+<li><a href="sd0902eischaemische-herzkrankheit.html">SD0902eIschämische Herzkrankheit</a></li>
+<li><a href="sd0903n-thrombose-resp-verschlussvon-koronarem-stent-resp-bypass.html">SD0903n	Thrombose resp. Verschlussvon koronarem Stent resp. Bypass</a></li>
+<li><a href="sd0904d-erkrankungenderherzklappen.html">SD0904d 	ErkrankungenderHerzklappen</a></li>
+<li><a href="sd0905aschrittmacher-defibrillator.html">SD0905aSchrittmacher/Defibrillator</a></li>
+<li><a href="sd0906anachuntersuchung-nachherztransplantation.html">SD0906aNachuntersuchung nachHerztransplantation</a></li>
+<li><a href="sd0907a-akutes-lungenoedem.html">SD0907a	Akutes Lungenödem</a></li>
+<li><a href="sd0908kherzstillstand.html">SD0908kHerzstillstand</a></li>
+<li><a href="sd0910o-erfassung-derbehandlungsdauer-mit-einem-herzunterstuetzungssystem-oder-e.html">SD0910o	Erfassung derBehandlungsdauer mit einem Herzunterstützungssystem oder einem herzkreislauf- und lungenunterstützenden System</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1000-krankheitendesatmungssystems.html" onclick="event.stopPropagation()">SD1000	KrankheitendesAtmungssystems</a></summary>
+<ul>
+<li><a href="sd1001p-maschinelle-beatmung.html">SD1001p	Maschinelle Beatmung</a></li>
+<li><a href="sd1002orespiratorische-insuffizienz.html">SD1002oRespiratorische Insuffizienz</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1100-krankheitendesverdauungssystems.html" onclick="event.stopPropagation()">SD1100	KrankheitendesVerdauungssystems</a></summary>
+<ul>
+<li><a href="sd1101jappendizitis-als-klinische-diagnose.html">SD1101jAppendizitis als klinische Diagnose</a></li>
+<li><a href="sd1103a-magenulkusmitgastritis.html">SD1103a	MagenulkusmitGastritis</a></li>
+<li><a href="sd1104igastrointestinale-blutung.html">SD1104iGastrointestinale Blutung</a></li>
+<li><a href="sd1105a-dehydratationbei-gastroenteritis.html">SD1105a 	Dehydratationbei Gastroenteritis</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html" onclick="event.stopPropagation()">SD1200	KrankheitenderHaut und der Unterhaut</a></summary>
+<ul>
+<li><a href="sd1201gplastische-chirurgie.html">SD1201gPlastische Chirurgie</a></li>
+<li><a href="sd1202jspannungsblasen.html">SD1202jSpannungsblasen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1400-krankheitendesurogenitalsystems.html" onclick="event.stopPropagation()">SD1400	KrankheitendesUrogenitalsystems</a></summary>
+<ul>
+<li><a href="sd1401o-dialyse.html">SD1401o	Dialyse</a></li>
+<li><a href="sd1402manogenitale-warzen-anogenitaler-herpes.html">SD1402mAnogenitale Warzen/anogenitaler Herpes</a></li>
+<li><a href="sd1404oniereninsuffizienz.html">SD1404oNiereninsuffizienz</a></li>
+<li><a href="sd1405l-aufnahme-zuranlage-einesperitonealkatheters-zur-dialyse.html">SD1405l	Aufnahme zurAnlage einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1406d-aufnahme-zurentfernung-einesperitonealkatheters-zur-dialyse.html">SD1406d 	Aufnahme zurEntfernung einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1407l-aufnahme-zur-anlage-einerav-fistel-oder-einesav-shunts-zur-dialyse.html">SD1407l 	Aufnahme zur Anlage einerAV-Fistel oder einesAV-Shunts zur Dialyse</a></li>
+<li><a href="sd1408a-aufnahme-zum-verschluss-einerav-fistel-oder-zumentfernen-eines-av-shunts.html">SD1408a 	Aufnahme zum Verschluss einerAV-Fistel oder zumEntfernen eines AV-Shunts</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1500geburtshilfe.html" onclick="event.stopPropagation()">SD1500Geburtshilfe</a></summary>
+<ul>
+<li><a href="sd1501ndefinitionen.html">SD1501nDefinitionen</a></li>
+<li><a href="sd1502pvorzeitige-beendigung-einer-schwangerschaft.html">SD1502pVorzeitige Beendigung einer Schwangerschaft</a></li>
+<li><a href="sd1503p-krankheitenin-der-schwangerschaft.html">SD1503p	Krankheitenin der Schwangerschaft</a></li>
+<li><a href="sd1504pkomplikationen-der-schwangerschaft-mutter-oder-kind-betreffend.html">SD1504pKomplikationen der Schwangerschaft, Mutter oder Kind betreffend</a></li>
+<li><a href="sd1505pspezielle-kodierregeln-fuer-die-geburt.html">SD1505pSpezielle Kodierregeln für die Geburt</a></li>
+<li><a href="sd1506p-krankheiten-im-wochenbett-puerperium.html">SD1506p	Krankheiten im Wochenbett (Puerperium)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html" onclick="event.stopPropagation()">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a></summary>
+<ul>
+<li><a href="sd1601nmedizinischer-datensatz.html">SD1601nMedizinischer Datensatz</a></li>
+<li><a href="sd1602adefinitionen.html">SD1602aDefinitionen</a></li>
+<li><a href="sd1603ineugeborene.html">SD1603iNeugeborene</a></li>
+<li><a href="sd1604gzustaende-die-ihren-ursprung-in-der-perinatalperiode-haben.html">SD1604gZustände, die ihren Ursprung in der Perinatalperiode haben</a></li>
+<li><a href="sd1605atotgeborene.html">SD1605aTotgeborene</a></li>
+<li><a href="sd1606j-besondere-massnahmen-fuer-das-kranke-neugeborene.html">SD1606j 	Besondere Massnahmen für das (kranke) Neugeborene</a></li>
+<li><a href="sd1607c-atemnotsyndrombeihyaliner-membranenkrankheit-surfactantmangel.html">SD1607c 	Atemnotsyndrombeihyaliner Membranenkrankheit/Surfactantmangel</a></li>
+<li><a href="sd1608c-atemnotsyndrombeimassivemaspirationssyndrom-wet-lung-odertransitorische-.html">SD1608c 	AtemnotsyndrombeimassivemAspirationssyndrom,Wet lung odertransitorische Tachypnoe beim Neugeborenen</a></li>
+<li><a href="sd1609jhypoxisch-ischaemische-enzephalopathie-hie.html">SD1609jHypoxisch-ischämische Enzephalopathie (HIE)</a></li>
+<li><a href="sd1610h-asphyxie-unter-der-geburt.html">SD1610h	Asphyxie unter der Geburt</a></li>
+<li><a href="sd1611orespiratorisches-versagenbeim-neugeborenen.html">SD1611oRespiratorisches Versagenbeim Neugeborenen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html" onclick="event.stopPropagation()">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a></summary>
+<ul>
+<li><a href="sd1801ainkontinenz.html">SD1801aInkontinenz</a></li>
+<li><a href="sd1802mdysphagie.html">SD1802mDysphagie</a></li>
+<li><a href="sd1803afieberkraempfe.html">SD1803aFieberkrämpfe</a></li>
+<li><a href="sd1804o-schmerzdiagnosen-undschmerzbehandlungsverfahren.html">SD1804o	Schmerzdiagnosen undSchmerzbehandlungsverfahren</a></li>
+<li><a href="sd1805e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden-bei-schm.html">SD1805e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1806e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden-bei-schmer.html">SD1806e 	Aufnahme zurEntfernung eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1807lschock.html">SD1807lSchock</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details open>
+<summary class="nav-summary active"><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html" onclick="event.stopPropagation()">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a></summary>
+<ul>
+<li><a href="sd1901aoberflaechliche-verletzungen.html">SD1901aOberflächliche Verletzungen</a></li>
+<li><a href="sd1902nfraktur-und-luxation.html">SD1902nFraktur und Luxation</a></li>
+<li><a href="sd1903poffene-wunden-verletzungen.html">SD1903pOffene Wunden/Verletzungen</a></li>
+<li><a href="sd1905cverletzung-desrueckenmarks-mit-traumatischer-paraplegie-und-tetraplegie.html">SD1905cVerletzung desRückenmarks (mit traumatischer Paraplegie und Tetraplegie)</a></li>
+<li><a href="sd1906nmehrfachverletzungen.html">SD1906nMehrfachverletzungen</a></li>
+<li><a href="sd1907jverbrennungen-undveraetzungen.html">SD1907jVerbrennungen undVerätzungen</a></li>
+<li><a href="sd1908nvergiftungdurch-arzneimittel-drogen-und-biologisch-aktive-substanzen.html">SD1908nVergiftungdurch Arzneimittel, Drogen und biologisch aktive Substanzen</a></li>
+<li><a href="sd1909o-unerwuenschte-nebenwirkungen-von-arzneimitteln-bei-einnahme-gemaess-vero.html">SD1909o 	Unerwünschte Nebenwirkungen von Arzneimitteln (bei Einnahme gemäss Verordnung)</a></li>
+<li><a href="sd1910b-unerwuenschte-nebenwirkungen-vergiftung-von-zwei-oder-mehr-in-verbindung.html">SD1910b	Unerwünschte Nebenwirkungen/Vergiftung von zwei oder mehr in Verbindung eingenommenen Substanzen (bei Einnahme entgegen einer Verordnung)</a></li>
+</ul>
+</details>
+</li>
+<li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a></li>
+<li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a></li>
+<li><a href="sd2200oschluesselnummern-fuer-besondere-zwecke.html">SD2200oSchlüsselnummern für besondere Zwecke</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0200fruehrehabilitation-paraplegiologische-rehabilitation-akutrehabilitation.html" onclick="event.stopPropagation()">SP0200Frührehabilitation, paraplegiologische Rehabilitation, Akutrehabilitation</a></summary>
+<ul>
+<li><a href="sp0201nfruehrehabilitation.html">SP0201nFrührehabilitation</a></li>
+<li><a href="sp0202pparaplegiologische-rehabilitation.html">SP0202pParaplegiologische Rehabilitation</a></li>
+<li><a href="sp0203oakutrehabilitation.html">SP0203oAkutrehabilitation</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0300-kodierrichtlinien-zu-chop-kapitel-9-operationen-am-verdauungstrakt.html" onclick="event.stopPropagation()">SP0300	Kodierrichtlinien zu CHOP Kapitel 9 «Operationen am Verdauungstrakt»</a></summary>
+<ul>
+<li><a href="sp0301khiatushernie-fundoplicatio.html">SP0301kHiatushernie – Fundoplicatio:</a></li>
+<li><a href="zusaetzliche-erfassung-chop-kode-44-92-intraoperative-manipulation-am-magen.html">Zusätzliche Erfassung CHOP-Kode 44.92 Intraoperative Manipulation am Magen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0400-kodierrichtlinien-zu-chop-kapitel-11-operationen-an-den-maennlichen-gesch.html" onclick="event.stopPropagation()">SP0400	Kodierrichtlinien zu CHOP Kapitel 11«Operationen an den männlichen Geschlechtsorganen»</a></summary>
+<ul>
+<li><a href="sp0401mgeschlechtsangleichung.html">SP0401mGeschlechtsangleichung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="kodierrichtlinienrehabilitation.html" onclick="event.stopPropagation()">KodierrichtlinienRehabilitation</a></summary>
+<ul>
+<li><a href="allgemeine-informationen.html">Allgemeine Informationen</a></li>
+<li><a href="diagnosen-icd-10-gm.html">Diagnosen - ICD-10-GM</a></li>
+<li><a href="prozeduren.html">Prozeduren</a></li>
+<li><a href="beispiele-und-erlaeuterungen.html">Beispiele und Erläuterungen</a></li>
+<li><a href="beispiele.html">Beispiele</a></li>
+</ul>
+</details>
+</li>
+<li><a href="alphabetisches-verzeichnis.html">Alphabetisches Verzeichnis</a></li>
+<li><a href="a.html">A</a></li>
+<li><a href="b.html">B</a></li>
+<li><a href="c.html">C</a></li>
+<li><a href="d.html">D</a></li>
+<li><a href="e.html">E</a></li>
+<li><a href="f.html">F</a></li>
+<li><a href="g.html">G</a></li>
+<li><a href="h.html">H</a></li>
+<li><a href="i.html">I</a></li>
+<li><a href="k.html">K</a></li>
+<li><a href="l.html">L</a></li>
+<li><a href="m.html">M</a></li>
+<li><a href="n.html">N</a></li>
+<li><a href="o.html">O</a></li>
+<li><a href="p.html">P</a></li>
+<li><a href="r.html">R</a></li>
+<li><a href="s.html">S</a></li>
+<li><a href="t.html">T</a></li>
+<li><a href="u.html">U</a></li>
+<li><a href="v.html">V</a></li>
+<li><a href="w.html">W</a></li>
+<li><a href="z.html">Z</a></li>
+<li><a href="seite-214.html">Seite 214</a></li>
+<li><a href="seite-215.html">Seite 215</a></li>
 </ul>
 </div>
   </nav>
   <main id="content">
     <nav class="breadcrumb"><a class="crumb" href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a><span class="sep">›</span><span class="crumb current">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</span></nav>
-    <article><div class="_idGenObjectStyleOverride-1" id="_idContainer240">
-<h3 class="Untertitel-1-farbig" id="_idParaDest-260"><a id="_idTextAnchor282"></a>SD1900	<a id="_idIndexMarker498"></a>Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</h3>
-<p class="Grundtext-D-">Sofern es in den Kodierrichtlinien nicht anders geregelt ist, folgen die Kodes der äusseren Ursachen (<span class="Kursiv _idGenCharOverride-2">V01 - Y84</span>) zwingend den Kodes <span class="Kursiv _idGenCharOverride-2">S</span> und <span class="Kursiv _idGenCharOverride-2">T</span>.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-261"><a id="_idTextAnchor283"></a>S<span class="Fett _idGenCharOverride-1">D</span>1901a	<a id="_idIndexMarker499"></a>Oberflächliche Verletzungen</h4>
-<p class="Grundtext-D-">Abschürfungen und Prellungen werden nicht kodiert, wenn sie mit schwereren Verletzungen derselben Lokalisation im Zusammenhang stehen, es sei denn, sie erhöhen den Aufwand für die Behandlung der schwereren Verletzung, z.B. durch zeitliche Verzögerung.</p>
-<p class="Beispiel-Titel">Beispiel 1</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient kommt nach einem Sturz zur Behandlung einer suprakondylären Humerusfraktur links und Prellung des Ellbogens sowie einer Fraktur des Skapulakorpus links.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	S42.41	Fraktur des distalen Endes des Humerus, suprakondylär</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	2	</span></p>
-<p class="Beispiel-Text"><span class="Light _idGenCharOverride-2">ND</span><span class="Kursiv _idGenCharOverride-2">	X59.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Sonstiger näher bezeichneter Unfall</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S42.11	Fraktur der Skapula, Korpus</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	2	</span></p>
-<p class="Grundtext-Einzug">In diesem Fall ist die Prellung des Ellbogens nicht zu kodieren.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-262"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor284"></a>SD1902n</span> <span class="Fett _idGenCharOverride-1">Fraktur und Luxation</span></h4>
-<p class="Grundtext-D-">Zur Kodierung von <a id="_idIndexMarker500"></a><a id="_idIndexMarker501"></a>Wirbelfrakturen/Luxationen siehe S<span class="Light _idGenCharOverride-2">D</span>1905.</p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-263"><a id="_idTextAnchor285"></a>Fraktur und Luxation <a id="_idIndexMarker502"></a>mit <a id="_idIndexMarker503"></a>Weichteilschaden</h5>
-<p class="Grundtext-D-">Zum Kodieren einer Fraktur/Luxation mit Weichteilschaden werden zwei Kodes benötig<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">t</span>: zuerst wird der Kode der Fraktur, bzw. der Luxation angegeben, danach der entsprechende Kode für den Schweregrad des Weichteilschadens. Die Zusatzkodes für Weichteilschaden sin<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">d</span>:</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Sx1.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">4</span></span><span class="Kursiv _idGenCharOverride-2">! – Sx1.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">6</span></span><span class="Kursiv _idGenCharOverride-2">!	Weichteilschaden Grad I bis III bei geschlossener Fraktur/Luxation</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">		(x je nach Körperregion)</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Sx1.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">7</span></span><span class="Kursiv _idGenCharOverride-2">! – Sx1.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Weichteilschaden Grad I bis III bei offener Fraktur/Luxation</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">		(x je nach Körperregion)</span></p>
-<p class="Grundtext-D-">In der ICD-10-GM findet sich bei den Kodes jeweils ein begleitender Text, der den Schweregrad umschreibt.</p>
-<p class="Grundtext-D-">Bei Verlegungen zur Weiterbehandlung oder Wiederaufnahmen wird der Weichteilschaden nur noch abgebildet, wenn er die Definition der Nebendiagnose (<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">G</span>54) erfüllt.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Ausnahm</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span> Nur geschlossene Frakturen mit einfacher Bruchform oder Luxationen mit Weichteilschaden Grad 0 oder n.n.b. erhalten diesen zusätzlichen Kode nicht.</p>
-<p class="Beispiel-Titel">Beispiel 1</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Patient mit einer offenen Oberschenkelschaftfraktur rechts II. Grades nach Sturz.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	S72.3	Fraktur des Femurschaftes</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1	</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	X59.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Sonstiger näher bezeichneter Unfall</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S71.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">8</span></span><span class="Kursiv _idGenCharOverride-2">!	Weichteilschaden II. Grades bei offener Fraktur oder Luxation der Hüfte und des Oberschenkels</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1</span></p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-264"><a id="_idTextAnchor286"></a><span aria-label="197" epub:type="pagebreak" id="page199" role="doc-pagebreak"></span>Luxationsfraktur</h5>
-<p class="Grundtext-D-">In diesen Fällen ist sowohl für die Fraktur als auch für die Luxation ein Kode zuzuweise<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>; der <span class="Unterstreichen">erste</span> Kode für die Fraktur.</p>
-<p class="Grundtext-D-">Zu beachten ist, dass die ICD-10-GM in bestimmten Fällen Kombinationskodes vorsieht, z.B<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">.</span>:</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">S52.31	Fraktur des distalen Radiusschaftes mit Luxation des Ulnakopfes</span></p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-265"><a id="_idTextAnchor287"></a>Fraktur und Luxation an gleicher oder <a id="_idIndexMarker504"></a><a id="_idIndexMarker505"></a>unterschiedlicher Lokalisation</h5>
-<p class="Grundtext-D-">Bei Vorliegen einer kombinierten Verletzung an gleicher Lokalisation ist die Angabe eines Zusatzkodes für den Schweregrad des Weichteilschadens <span class="Light _idGenCharOverride-2">(Grad I-III)</span> ausreichend.</p>
-<p class="Beispiel-Titel">Beispiel 2</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin wird nach einem Sturz zur Behandlung einer offenen Humeruskopffraktur rechts I. Grades mit offener Schulterluxation rechts nach vorne </span><span class="Kursiv CharOverride-4"><a id="_idIndexMarker506"></a></span><span class="Kursiv _idGenCharOverride-2">mit Weichteilschaden I. Grades aufgenommen.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	S42.21	Fraktur des proximalen Endes des Humerus, Kopf</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1	</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	X59.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Sonstiger näher bezeichneter Unfall</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S43.01	Luxation des Humerus nach vorne</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1	</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S41.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">7</span></span><span class="Kursiv _idGenCharOverride-2">!	Weichteilschaden I. Grades bei offener Fraktur oder Luxation des Oberarmes</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1	</span></p>
-<p class="Grundtext-D-">Liegen bei einem Patienten mehrere Frakturen/Luxationen unterschiedlicher Lokalisation vor, so muss für jede Lokalisation der Weichteilschaden Grad I – III erfasst werden.</p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-266"><a id="_idTextAnchor288"></a><a id="_idIndexMarker507"></a><a id="_idIndexMarker508"></a>Knochenkontusion</h5>
-<p class="Grundtext-D-">Eine Knochenkontusion mit radiologisch nachgewiesener Fraktur der Spongiosa bei intakter Kortikalis wird wie eine Fraktur kodiert.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-267"><span class="Unterlegen-grün-fett _idGenCharOverride-1"><a id="_idTextAnchor289"></a>SD1903p	</span><span class="Unterlegen-grün-fett CharOverride-1"><a id="_idIndexMarker509"></a><a id="_idIndexMarker510"></a></span><span class="Unterlegen-grün-fett _idGenCharOverride-1">Offene Wunden/Verletzungen</span></h4>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-268"><a id="_idTextAnchor290"></a><a id="_idIndexMarker511"></a>Offene Verletzungen mit <span class="Unterlegen-grün-kursiv _idGenCharOverride-2">Knochen-,</span> Gefäss-, Nerven- und Sehnenbeteiligung <span class="Unterlegen-grün-kursiv _idGenCharOverride-2">werden entsprechend der Regel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Unterlegen-grün-kursiv _idGenCharOverride-2">G</span></span><span class="Unterlegen-grün-kursiv _idGenCharOverride-2">52 kodiert.</span></h5>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-269"><a id="_idTextAnchor291"></a><a id="_idIndexMarker512"></a>Offene intrakranielle / intrathorakale / intraabdominelle Verletzung</h5>
-<p class="Grundtext-D-">Wenn eine offene intrakranielle/intrathorakale/intraabdominelle Verletzung vorliegt, ist zuerst der Kode für die intrakranielle / </p>
-<p class="Grundtext-D-">intrathorakale / intraabdominelle Verletzung anzugeben, gefolgt vom Kode für die offene Wunde.</p>
-<p class="Beispiel-Titel">Beispiel 1</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Patient mit Messerstichverletzung </span><span class="Unterlegen-grün-kursiv _idGenCharOverride-2">nach tätlichem Angriff </span><span class="Kursiv _idGenCharOverride-2">am Thorax mit Hämatothorax.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	S27.1	Traumatischer Hämatothorax</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	Y09.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Tätlicher Angriff</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S21.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">3</span></span><span class="Kursiv _idGenCharOverride-2">!	Offene Wunde (jeder Teil des Thorax) mit Verbindung zu einer intrathorakalen Verletzung</span></p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-270"><a id="_idTextAnchor292"></a><span aria-label="198" epub:type="pagebreak" id="page200" role="doc-pagebreak"></span>Offene Fraktur mit <a id="_idIndexMarker513"></a>intrakranieller / <a id="_idIndexMarker514"></a><a id="_idIndexMarker515"></a>intrathorakaler / <a id="_idIndexMarker516"></a><a id="_idIndexMarker517"></a>intraabdomineller Verletzung</h5>
-<p class="Grundtext-D-">Wenn eine offene Schädelfraktur verbunden mit einer intrakraniellen Verletzung oder offene Fraktur des Rumpfes mit einer </p>
-<p class="Grundtext-D-">intrathorakalen/intraabdominellen Verletzung vorliegt, ist</p>
-<p class="Grundtext-D-">•	ein Kode für die intrakranielle/intrakavitäre Verletzung anzugeben,</p>
-<p class="Grundtext-D-">•	einer der folgenden Kodes</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">S01.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">3</span></span><span class="Kursiv _idGenCharOverride-2">!	Offene Wunde (jeder Teil des Kopfes) mit Verbindung zu einer intrakraniellen Verletzung</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">S21.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">3</span></span><span class="Kursiv _idGenCharOverride-2">!	Offene Wunde (jeder Teil des Thorax) mit Verbindung zu einer intrathorakalen Verletzung</span></p>
-<p class="Beispiel-Text"><span class="Light _idGenCharOverride-2">oder</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">S31.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">3</span></span><span class="Kursiv _idGenCharOverride-2">!	Offene Wunde (jeder Teil des Abdomens, der Lumbosakralgegend und des Beckens) mit Verbindung zu einer intraabdominalen Verletzung</span></p>
-<p class="Grundtext-D-">•	die Kodes für die Fraktur</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">und</span></p>
-<p class="Grundtext-D-">•	ein Kode für den Schweregrad des Weichteilschadens der offenen Fraktur aus</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">S01.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">7</span></span><span class="Kursiv _idGenCharOverride-2">! – S01.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Weichteilschaden I – III. Grades bei offener Fraktur oder Luxation des Kopfes</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">S21.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">7</span></span><span class="Kursiv _idGenCharOverride-2">! – S21.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Weichteilschaden I – III. Grades bei offener Fraktur oder Luxation des Thorax</span></p>
-<p class="Grundtext-D-">	oder</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">S31.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">7</span></span><span class="Kursiv _idGenCharOverride-2">! – S31.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Weichteilschaden I – III. Grades bei offener Fraktur oder Luxation der Lendenwirbelsäule und des Beckens</span></p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-271"><a id="_idTextAnchor293"></a>Komplikationen <a id="_idIndexMarker518"></a>einer <a id="_idIndexMarker519"></a>offenen Wunde</h5>
-<p class="Grundtext-D-">Die Kodierung von Komplikationen offener Wunden ist davon abhängig, ob die Komplikation wie z.B. eine Infektion, mit einem spezifischen Kode näher bezeichnet werden kann. Ist die Kodierung mit einem spezifischen Kode der ICD-10-GM möglich, so ist zuerst der spezifische Kode für die Komplikation (z.B. Infektion wie Erysipel, Phlegmone <span class="Light _idGenCharOverride-2">etc.</span>) gefolgt von dem Kode für die offene Wunde anzugeben.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span> Bei einer Sepsis als Komplikation einer offenen Wunde ist auch Regel S<span class="Light _idGenCharOverride-2">D</span>0102 zu beachten.</p>
-<p class="Beispiel-Titel">Beispiel 2</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin wird mit einer Phlegmone an der linken Hand nach einem Katzenbiss aufgenommen. Das Alter des Bisses ist nicht bekannt. Bei der Aufnahme finden sich am Daumenballen zwei punktförmige Wunden, die Umgebung ist gerötet, die Hand und der Unterarm sind stark geschwollen. Im Abstrich findet sich ein Staphylococcus aureus. Es wird eine intravenöse antibiotische Therapie eingeleitet.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	L03.10	Phlegmone an der oberen Extremität</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	2	</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	B95.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">6</span></span><span class="Kursiv _idGenCharOverride-2">!	Staphylococcus aureus als Ursache von Krankheiten, die in anderen Kapiteln klassifiziert sind</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S61.0	Offene Wunde eines oder mehrerer Finger ohne Schädigung des Nagels</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	2	</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	W64.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Unfall durch Exposition gegenüber mechanischen Kräften belebter Objekte</span></p>
-<p class="Grundtext-D-">Ist eine spezifische Verschlüsselung der Komplikation einer offenen Wunde nicht möglich, ist der Kode für die offene Wunde anzugeben, gefolgt von einem Kode aus</p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">89.0-		Komplikationen einer offenen Wunde</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span> Kodes <a id="_idIndexMarker520"></a>für äussere Ursachen werden nur einmal, beim ersten stationären Aufenthalt, kodiert.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-272"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor294"></a><span aria-label="199" epub:type="pagebreak" id="page201" role="doc-pagebreak"></span>SD1905c</span> <span class="Fett _idGenCharOverride-1">Verletzung des </span><span class="Fett CharOverride-1"><a id="_idIndexMarker521"></a><a id="_idIndexMarker522"></a></span><span class="Fett _idGenCharOverride-1">Rückenmarks (mit traumatischer Paraplegie und Tetraplegie)</span></h4>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-273"><a id="_idTextAnchor295"></a>Die <a id="_idIndexMarker523"></a><a id="_idIndexMarker524"></a>akute Phase – unmittelbar posttraumatisch</h5>
-<p class="Grundtext-D-">Unter der akuten Phase einer Rückenmarksverletzung versteht man den Behandlungszeitraum unmittelbar nach dem Trauma. Sie kann <span class="Fett _idGenCharOverride-1">mehrere</span> Spitalaufenthalte umfassen.</p>
-<p class="Grundtext-D-">Wenn ein Patient mit einer Verletzung des Rückenmarks aufgenommen wird (z.B. mit Kompression des Rückenmarks, Kontusion, Riss, Querschnitt oder Quetschung), sind folgende <span class="Light _idGenCharOverride-2">Kodes zu erfasse</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span>:</p>
-<p class="Grundtext-D-">•	Die Art der Läsion des Rückenmarks ist als erster Kode anzugeben (komplette oder inkomplette Querschnittverletzung)</p>
-<p class="Grundtext-D-">•	Die funktionale Höhe (Ebene) der Rückenmarksläsion ist mit</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">S14.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">!, S24.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">!, S34.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">! Funktionale Höhe der zervikalen / thorakalen / lumbosakralen Rückenmarksverletzung</span></p>
-<div aria-label="199" epub:type="pagebreak" id="page201-1" role="doc-pagebreak"></div>
-<p class="Grundtext-D- ParaOverride-3">zu verschlüsseln.</p>
-<p class="Grundtext-D- ParaOverride-3">Für die Höhenangabe der funktionalen Höhe sind die Hinweise bei <span class="Kursiv _idGenCharOverride-2">S14.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">!, S24.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">! </span>und<span class="Kursiv _idGenCharOverride-2"> S34.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">!</span> in der ICD-10-GM zu beachten.</p>
-<p class="Grundtext-D-">Patienten mit Rückenmarksverletzungen haben mit hoher Wahrscheinlichkeit eine <a id="_idIndexMarker525"></a>Wirbelfraktur oder Wirbelluxation erlitte<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>; demnach sind auch folgende Angaben zu kodiere<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">n</span>:</p>
-<p class="Grundtext-D-">•	Die Bruchstelle, wenn eine Fraktur der Wirbel vorliegt</p>
-<p class="Grundtext-D-">•	Der Ort der Luxation, wenn eine Luxation vorliegt</p>
-<p class="Grundtext-D-">•	Der Schweregrad des Weichteilschadens der Fraktur/Luxation</p>
-<p class="Beispiel-Titel">Beispiel 1</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin wird nach einem Sturz mit einer Kompressionsfraktur an </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">12 aufgenommen. Es liegt eine Kompressionsverletzung des Rückenmarks auf derselben Höhe mit inkompletter Paraplegie auf der funktionalen Höhe L2 vor.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	S24.12	Inkomplette Querschnittverletzung des thorakalen Rückenmarkes</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	X59.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Sonstiger näher bezeichneter Unfall</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S34.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">2</span></span><span class="Kursiv _idGenCharOverride-2">!	Funktionale Höhe einer Verletzung des lumbosakralen Rückenmarkes, L2</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S22.06	Fraktur eines Brustwirbels, </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">11 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">12</span></p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-274"><a id="_idTextAnchor296"></a>Die <a id="_idIndexMarker526"></a><a id="_idIndexMarker527"></a>akute Phase – Verlegung des Patienten</h5>
-<p class="Grundtext-D-">Wenn ein Patient infolge eines Traumas eine Verletzung des Rückenmarks erlitten hat und unmittelbar von einem Akutspital in ein anderes Akutspital verlegt wurde, ist in beiden Häusern der Kode für die Art der Verletzung als Hauptdiagnose anzugeben und der entsprechende Kode für die funktionale Höhe der Rückenmarksverletzung als Nebendiagnose.</p>
-<p class="Beispiel-Titel">Beispiel 2</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient wird nach einem Sturz mit einer schweren Rückenmarksverletzung in Spital A aufgenommen. Eine CT bestätigt eine Luxation des </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">7/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">8 Wirbels mit Verletzung des Rückenmarks auf derselben Höhe. Neurologisch zeigt sich ein inkompletter Querschnitt unterhalb </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">8. Nach Stabilisierung im Spital A wird der Patient ins Spital B verlegt, in dem eine Spondylodese durchgeführt wird.</span></p>
-<p class="Beispiel-Text"><span class="Fett-Kursiv _idGenCharOverride-1">Spital </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett-Kursiv _idGenCharOverride-1">A</span></span><span class="Fett-Kursiv _idGenCharOverride-1">:</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	S24.12	Inkomplette Querschnittverletzung des thorakalen Rückenmarkes</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	X59.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Sonstiger näher bezeichneter Unfall</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S24.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">5</span></span><span class="Kursiv _idGenCharOverride-2">!	Funktionale Höhe einer Verletzung des thorakalen Rückenmarkes, </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">8/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">9</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S23.14	Luxation eines Brustwirbels, Höhe </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">7/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">8 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">8/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">9</span></p>
-<p class="Beispiel-Text"><span class="Fett-Kursiv _idGenCharOverride-1">Spital </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett-Kursiv _idGenCharOverride-1">B</span></span><span class="Fett-Kursiv _idGenCharOverride-1">:</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	S24.12	Inkomplette Querschnittverletzung des thorakalen Rückenmarkes</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S24.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">5</span></span><span class="Kursiv _idGenCharOverride-2">!	Funktionale Höhe einer Verletzung des thorakalen Rückenmarkes, </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">8/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">9</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S23.14	Luxation eines Brustwirbels, Höhe </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">7/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">8 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">8/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">9</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span> Kodes für äussere Ursachen werden nur einmal beim ersten stationären Aufenthalt (im ersten Spital) kodiert.</p>
-<p class="Untertitel-3-kursiv-copie">Rückenmarksverletzung – <a id="_idIndexMarker528"></a><a id="_idIndexMarker529"></a>chronische Phase</p>
-<p class="Grundtext-D-">Von der chronischen Phase einer Paraplegie/Tetraplegie spricht man, wenn die Behandlung der akuten Erkrankung (z.B. einer akuten Rückenmarksverletzung), die die Lähmungen verursachte, abgeschlossen ist.</p>
-<div aria-label="200" epub:type="pagebreak" id="page202" role="doc-pagebreak"></div>
-<p class="Grundtext-D-">Kommt ein Patient in dieser chronischen Phase zur Behandlung der Paraplegie/Tetraplegie, ist ein Kode der Kategorie</p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">82.–	Paraparese und Paraplegie, Tetraparese und Tetraplegie, fünfte Stelle «2» oder «3»</span></p>
-<p class="Grundtext-D-">als Hauptdiagnose anzugeben.</p>
-<p class="Grundtext-D-">Wird ein Patient dagegen zur Behandlung einer anderen Erkrankung wie z.B. Harnwegsinfektion, Fraktur des Femurs usw. aufgenommen, ist die zu behandelnde Erkrankung gefolgt von einem Kode der Kategorie</p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">82.–	Paraparese und Paraplegie, Tetraparese und Tetraplegie, fünfte Stelle «2» oder «3»</span></p>
-<p class="Grundtext-D-">anzugeben sowie andere vorliegende Erkrankungen. Die Reihenfolge dieser Diagnosen muss sich an der Definition der Hauptdiagnose orientieren.</p>
-<p class="Grundtext-D-">Für die funktionale Höhe der Rückenmarksschädigung ist zusätzlich der passende Kode aus</p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">82.6</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">–</span></span><span class="Kursiv _idGenCharOverride-2">!	Funktionale Höhe der Schädigung des Rückenmarks</span></p>
-<p class="Grundtext-D-">anzugeben.</p>
-<p class="Grundtext-D-">Die Kodes für die Verletzung des Rückenmarks sind nicht anzugeben, da diese nur in der akuten Phase zu verwenden sind.</p>
-<p class="Beispiel-Titel">Beispiel 3</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin wird zur Behandlung einer Infektion des Harntraktes aufgenommen. Zusätzlich bestehen eine inkomplette schlaffe Paraplegie auf Höhe von L2, ein inkomplettes Cauda-(equina-)Syndrom und eine neurogene Blasenentleerungsstörung.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	N39.0	Harnwegsinfektion, Lokalisation nicht näher bezeichnet</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">82.03	Schlaffe Paraparese und Paraplegie, chronische inkomplette Querschnittslähmung</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">82.6</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">6</span></span><span class="Kursiv _idGenCharOverride-2">!	Funktionale Höhe der Schädigung des Rückenmarks, L2 – S1</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">83.41	Inkomplettes Cauda-(equina-)Syndrom</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">95.81	Harnblasenlähmung bei Schädigung des unteren motorischen Neurons</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Anmerkun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">g</span></span><span class="Fett _idGenCharOverride-1">:</span> Soll das Vorliegen einer neurogenen Blasenfunktionsstörung angegeben werden, ist wie im Beispiel eine zusätzliche Schlüsselnummer aus <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">G</span></span><span class="Kursiv _idGenCharOverride-2">95.8–</span> zu verwenden.</p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-275"><a id="_idTextAnchor297"></a>Kodierung von <a id="_idIndexMarker530"></a>Wirbelfrakturen und Wirbelluxationen</h5>
-<p class="Grundtext-D-">Siehe auch S<span class="Light _idGenCharOverride-2">D</span>1902 <span class="Kursiv _idGenCharOverride-2">«</span>Fraktur und Luxation<span class="Kursiv _idGenCharOverride-2">»</span>.</p>
-<p class="Grundtext-D-">Bei Mehrfachfrakturen oder -luxationen wird jede Höhe einzeln angegeben.</p>
-<p class="Beispiel-Titel">Beispiel 4</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient wird nach einem Autounfall mit einer komplizierten offenen Fraktur II. Grades des zweiten, dritten und vierten Brustwirbels mit Verschiebung auf Höhe </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">2/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">3 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">3/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">4 und kompletter Durchtrennung des Rückenmarks in Höhe </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">3 aufgenommen. Die neurologische Untersuchung bestätigt einen kompletten Querschnitt unterhalb </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">3.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	S24.11	Komplette Querschnittverletzung des thorakalen Rückenmarkes</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	V9</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Transportmittelunfall</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S24.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">2</span></span><span class="Kursiv _idGenCharOverride-2">!	Funktionale Höhe einer Verletzung des thorakalen Rückenmarkes, </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">2/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">3</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S22.01	Fraktur eines Brustwirbels, Höh</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">e</span></span><span class="Kursiv _idGenCharOverride-2">: </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">1 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">2</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S22.02	Fraktur eines Brustwirbels, Höh</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">e</span></span><span class="Kursiv _idGenCharOverride-2">: </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">3 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">4</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S23.11	Luxation eines Brustwirbels, Höh</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">e</span></span><span class="Kursiv _idGenCharOverride-2">: </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">1/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">2 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">2/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">3</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S23.12	Luxation eines Brustwirbels, Höh</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">e</span></span><span class="Kursiv _idGenCharOverride-2">: </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">3/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">4 und </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">4/</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">5</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S21.8</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">8</span></span><span class="Kursiv _idGenCharOverride-2">!	Weichteilschaden II. Grades bei offener Fraktur oder Luxation des Thorax</span></p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-276"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor298"></a><span aria-label="201" epub:type="pagebreak" id="page203" role="doc-pagebreak"></span>SD1906n</span> <a id="_idIndexMarker531"></a><span class="Fett CharOverride-1"><a id="_idIndexMarker532"></a></span><span class="Fett _idGenCharOverride-1">Mehrfachverletzungen</span></h4>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-277"><a id="_idTextAnchor299"></a>Diagnosen</h5>
-<p class="Grundtext-D-">Die einzelnen Verletzungen werden, wann immer möglich, entsprechend ihrer Lokalisation und ihrer Art so genau wie möglich kodiert.</p>
-<p class="Grundtext-D-">Kombinationskategorien für Mehrfachverletzungen <span class="Kursiv _idGenCharOverride-2">T00 – T07 Verletzungen mit Beteiligung mehrerer Körperregionen</span> und Kodes aus <span class="Kursiv _idGenCharOverride-2">S00 – S99</span>, die mit einer <span class="Kursiv _idGenCharOverride-2">«.7»</span> an vierter Stelle multiple Verletzungen kodieren, sind <span class="Light _idGenCharOverride-2">nicht zu verwenden</span>.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Hinwei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">s</span></span><span class="Fett _idGenCharOverride-1">: </span>Das alphabetische Verzeichnis der ICD-10-GM schlägt für eine «Mehrfachverletzung» oder ein «Polytrauma» den Kode <span class="Kursiv _idGenCharOverride-2">T07 Nicht näher bezeichnete multiple Verletzungen</span> vor. Dieser Kode ist unspezifisch und deshalb nach Möglichkeit <span class="Fett _idGenCharOverride-1">nicht</span> zu verwenden.</p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-278"><a id="_idTextAnchor300"></a>Reihenfolge der Kodes bei multiplen Verletzungen</h5>
-<p class="Grundtext-D-">Die <a id="_idIndexMarker533"></a>Wahl der Hauptdiagnose erfolgt nach Regel <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">G</span>52.</p>
-<p class="Beispiel-Titel">Beispiel 1</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin wird nach einem Autounfall mit fokaler Hirnkontusion, traumatischer Amputation des rechten Ohres, 20-minütiger Bewusstlosigkeit, Prellung von Kehlkopf und rechter Schulter sowie mit Schnittwunden in rechter Wange und rechtem Oberschenkel aufgenommen.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	S06.31	Umschriebene Hirnkontusion</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	V9</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Transportmittelunfall</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S06.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">0</span></span><span class="Kursiv _idGenCharOverride-2">!	Bewusstlosigkeit bei Schädel-Hirn-Trauma, weniger als 30 Minuten</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S08.1	Traumatische Amputation des Ohres</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1	</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S01.41	Offene Wunde der Wange</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1	</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S71.1	Offene Wunde des Oberschenkels</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1	</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S10.0	Prellung des Rachens</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	S40.0	Prellung der Schulter und des Oberarms</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1	</span></p>
-<p class="Grundtext-D-">In diesem Fall werden <span class="Kursiv _idGenCharOverride-2">S09.7 Multiple Verletzungen des Kopfes</span> und <span class="Kursiv _idGenCharOverride-2">T01.8 Offene Wunden an sonstigen Kombinationen von Körperregionen</span> <span class="Fett _idGenCharOverride-1">nicht</span> angegeben, da individuelle Kodes anzugeben sind, wann immer dies möglich ist.</p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-279"><a id="_idTextAnchor301"></a>S<span class="Fett _idGenCharOverride-1">D</span>1907j	<a id="_idIndexMarker534"></a>Verbrennungen und <a id="_idIndexMarker535"></a>Verätzungen</h4>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-280"><a id="_idTextAnchor302"></a>Reihenfolge der Kodes</h5>
-<p class="Grundtext-D-">Das Gebiet mit der schwersten Verbrennung/Verätzung ist zuerst anzugeben. Eine Verbrennung/Verätzung dritten Grades ist demnach vor einer Verbrennung/Verätzung zweiten Grades anzugeben, auch wenn letztere einen grösseren Teil der Körperoberfläche betrifft.</p>
-<p class="Grundtext-D-">Verbrennungen/Verätzungen desselben Gebietes, aber unterschiedlichen Grades, sind als Verbrennungen/Verätzungen des höchsten vorkommenden Grades anzugeben.</p>
-<p class="Beispiel-Titel">Beispiel 1</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Verbrennung 2. und 3. Grades des rechten Knöchels (&lt; 10%) durch heisses Wasser.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">25.3	Verbrennung 3. Grades der Knöchelregion und des Fusses</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L	1	</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	X19.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Verbrennung oder Verbrühung durch Hitze oder heisse Substanzen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">31.0</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">0</span></span><span class="Kursiv _idGenCharOverride-2">!	Verbrennungen von weniger als 10% der Körperoberfläche</span></p>
-<p class="Grundtext-D-">Verbrennungen/Verätzungen, die eine Hauttransplantation erfordern, sind immer vor denjenigen anzugeben, die keine erfordern.</p>
-<p class="Grundtext-D-">Liegen mehrere Verbrennungen/Verätzungen desselben Grades vor, dann wird das Gebiet mit der grössten betroffenen Körperoberfläche zuerst angegeben. Alle weiteren sind − wenn immer möglich − mit ihrer jeweiligen Lokalisation zu kodieren.</p>
-<div aria-label="202" epub:type="pagebreak" id="page204" role="doc-pagebreak"></div>
-<p class="Beispiel-Titel">Beispiel 2</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Verbrennung Grad 2a der Bauchwand (15%) und des Perineums (10%) durch heisses Wasser.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">21.23	Verbrennung Grad 2a des Rumpfes, Bauchdecke</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	X19.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Verbrennung oder Verbrühung durch Hitze oder heisse Substanzen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">21.25	Verbrennung Grad 2a des Rumpfes, (äusseres) Genitale</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">31.20	Verbrennungen von 20</span><span class="Light _idGenCharOverride-2">%</span><span class="Kursiv _idGenCharOverride-2"> bis 29% der Körperoberfläche</span></p>
-<p class="Grundtext-D-">Bei Verbrennungen/Verätzungen dritten Grades sind immer die differenzierten Kodes zu verwenden.</p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-281"><a id="_idTextAnchor303"></a><a id="_idIndexMarker536"></a><a id="_idIndexMarker537"></a>Körperoberfläche (KOF)</h5>
-<p class="Grundtext-D-">Jeder Verbrennungs-/Verätzungsfall ist <span class="Fett _idGenCharOverride-1">zusätzlich</span> mit einem Kode aus</p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">31.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">!	Verbrennungen, klassifiziert nach dem Ausmass der betroffenen Körperoberfläche</span></p>
-<p class="Beispiel-Text"><span class="Light _idGenCharOverride-2">bzw.</span></p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">32.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">!	Verätzungen, klassifiziert nach dem Ausmass der betroffenen Körperoberfläche</span></p>
-<p class="Grundtext-D-">zu versehen, um den Prozentsatz der betroffenen Körperoberfläche anzuzeigen.</p>
-<p class="Grundtext-D-">Die vierte Stelle beschreibt die Summe aller einzelnen Verbrennungen/Verätzungen, angegeben in Prozent der Körperoberfläche. Ein Kode aus <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">31.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">!</span> und <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">32.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">-</span></span><span class="Kursiv _idGenCharOverride-2">!</span> ist nur einmal nach dem letzten Kode für die betroffenen Gebiete anzugeben.</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span><span class="Light _idGenCharOverride-2"> Eine Narbenrevision in Folge von Verbrennungen/Verätzungen wird gemäss Kodierregeln SD1201 «Plastische Chirurgie» und D06 «Folgezustände»</span><span class="Kursiv _idGenCharOverride-2"> </span><span class="Light _idGenCharOverride-2">Beispiel 2 kodiert.</span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die Hauptdiagnose Verbrennung/Verätzung (</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">20 - </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">32)</span><span class="Light _idGenCharOverride-2"> ist nur dann anzugeben, wenn es um die </span><span class="Fett _idGenCharOverride-1">akute Behandlungsphase</span><span class="Light _idGenCharOverride-2"> einer Verbrennung/Verätzung geht.</span></p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-282"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor304"></a>SD1908n</span> <span class="Fett _idGenCharOverride-1">Vergiftung </span><span class="Fett CharOverride-1"><a id="_idIndexMarker538"></a></span><span class="Fett _idGenCharOverride-1">durch Arzneimittel, Drogen und biologisch aktive Substanzen</span></h4>
-<p class="Grundtext-D-">Die Diagnose «Vergiftung durch Arzneimittel/Drogen» wird gestellt bei <span class="Fett _idGenCharOverride-1">irrtümlicher</span> Einnahme oder <span class="Fett _idGenCharOverride-1">unsachgemässer</span> Anwendung, Einnahme zwecks Selbsttötung und Tötung und bei Nebenwirkungen verordneter Medikamente, die in Verbindung mit einer Eigenmedikation eingenommen werden.</p>
-<p class="Grundtext-D-">Vergiftungen sind in den Kategorien</p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">36 – </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">50	Vergiftungen durch Arzneimittel, Drogen und biologisch aktive Substanzen</span></p>
-<p class="Beispiel-Text"><span class="Light _idGenCharOverride-2">und</span></p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">51 – </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">65	Toxische Wirkung von vorwiegend nicht medizinisch verwendeten Substanzen</span></p>
-<p class="Grundtext-D-">klassifiziert.</p>
-<p class="Grundtext-D-">Bei Vergiftungen <span class="Fett CharOverride-1">mit Manifestation(en)</span> (z.B. Koma, Arrhythmie) ist der Kode für die Manifestation als Hauptdiagnose anzugeben. Die Kodes für die Vergiftung durch die beteiligten (Wirk-)Stoffe (Medikamente, Drogen, Alkohol) sind als Nebendiagnose zu verschlüsseln.</p>
-<p class="Beispiel-Titel">Beispiel 1</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient wird im Koma aufgrund einer Kodeinüberdosis aufgenommen.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	R40.2	Koma, nicht näher bezeichnet</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	X49.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Akzidentelle Vergiftung</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">40.2	Vergiftung durch Betäubungsmittel und Psychodysleptika [Halluzinogene], sonstige Opioide</span></p>
-<div aria-label="203" epub:type="pagebreak" id="page205" role="doc-pagebreak"></div>
-<p class="Beispiel-Titel">Beispiel 2</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient wird mit Hämatemesis aufgrund der Einnahme von Cumarin (verordnet) versehentlich in Verbindung mit Acetylsalicylsäure (nicht verordnet) aufgenommen.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">K</span></span><span class="Kursiv _idGenCharOverride-2">92.0	Hämatemesis</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	X49.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Akzidentelle Vergiftung</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">39.0	Vergiftung durch Salizylate</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">45.5	Vergiftung durch primär systemisch und auf das Blut wirkende Mittel, anderenorts nicht klassifiziert, Antikoagulanzien</span></p>
-<p class="Grundtext-D-">Bei Vergiftungen <span class="Fett _idGenCharOverride-1">ohne Manifestation</span> ist als Hauptdiagnose ein Kode aus den Kategorien</p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">36 – </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">50	Vergiftungen durch Arzneimittel, Drogen und biologisch aktive Substanzen</span></p>
-<p class="Beispiel-Text"><span class="Light _idGenCharOverride-2">und</span></p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">51– </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">65	Toxische Wirkung von vorwiegend nicht medizinisch verwendeten Substanzen</span></p>
-<p class="Grundtext-D-">anzugeben.</p>
-<p class="Beispiel-Titel">Beispiel 3</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin stellt sich in der Notaufnahme vor und gibt an, kurz zuvor in einer unüberlegten Kurzschlussreaktion 20 Tabletten Paracetamol eingenommen zu haben. Nach einer Magenspülung zeigen sich im weiteren Verlauf keine Manifestationen.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">39.1	Vergiftung durch nicht-opioidhaltige Analgetika, Antipyretika und Antirheumatika, 4-Aminophenol-Derivate</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	X84.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Absichtliche Selbstbeschädigung</span></p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-283"><a id="_idTextAnchor305"></a><a id="_idIndexMarker539"></a><a id="_idIndexMarker540"></a>Insulinüberdosierung beim Diabetiker</h5>
-<p class="Grundtext-D-">Die <span class="Fett _idGenCharOverride-1">Ausnahme</span> dieser Regel ist die Insulinüberdosierung bei einem Diabetiker, bei der ein Kode aus</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">E10 – E14	vierte Stelle «.6» Diabetes mellitus mit sonstigen näher bezeichneten Komplikationen</span></p>
-<p class="Grundtext-D-">vor dem Kode für die Vergiftung</p>
-<p class="Beispiel-Text"><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">T</span></span><span class="Kursiv _idGenCharOverride-2">38.3		Vergiftung durch Insulin und orale blutzuckersenkende Arzneimittel [Antidiabetika]</span></p>
-<p class="Grundtext-D-">anzugeben ist.</p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Soll der Schweregrad einer Hypoglykämie oder das Vorliegen einer Hypoglykämiewahrnehmungsstörung angegeben werden, ist eine zusätzliche Schlüsselnummer (U69.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">0</span></span><span class="Light _idGenCharOverride-2">!-U69.7</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">4</span></span><span class="Light _idGenCharOverride-2">!) zu benutzen.</span></p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-284"><span class="Fett _idGenCharOverride-1"><a id="_idTextAnchor306"></a>SD1909o 	Unerwünschte Nebenwirkungen von Arzneimitteln (</span><span class="Fett CharOverride-1"><a id="_idIndexMarker541"></a></span><span class="Fett _idGenCharOverride-1">bei Einnahme gemäss Verordnung)</span></h4>
-<p class="Grundtext-D-">Unerwünschte Nebenwirkungen indikationsgerechter Arzneimittel bei Einnahme <span class="Fett _idGenCharOverride-1">gemäss Verordnung</span> werden wie folgt kodier<span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert">t</span>:</p>
-<p class="Grundtext-D-">•	Ein oder mehrere Kodes für den krankhaften Zustand, in dem sich die Nebenwirkungen manifestieren, ergänzt durch <span class="Kursiv _idGenCharOverride-2">Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">! Komplikationen durch Arzneimittel oder Drogen,</span> wenn dies nicht im Diagnosenkode beinhaltet ist.</p>
-<p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-1">Beispiel 1</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin wird mit einer akuten, hämorrhagischen Gastritis aufgrund von ordnungsgemäss eingenommener Acetylsalicylsäure aufgenommen. Eine andere Ursache der Gastritis wird nicht gefunden.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">K</span></span><span class="Kursiv _idGenCharOverride-2">29.0	Akute hämorrhagische Gastritis</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Komplikationen durch Arzneimittel oder Drogen</span></p>
-<p class="Beispiel-Titel">Beispiel 2</p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein HIV-positiver Patient kommt zur Behandlung einer hämolytischen Anämie, die durch die antiretrovirale Therapie induziert ist.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	D59.2	Arzneimittelinduzierte nicht-autoimmunhämolytische Anämie</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	Z21	Asymptomatische HIV-Infektion [Humane Immundefizienz-Virusinfektion]</span></p>
-<p class="Grundtext-D-">• 	<span class="Light _idGenCharOverride-2">Unter Antikoagulation stehende Patientinnen und Patienten </span>mit Blutung bei ordnungsgemäss eingenommenen Antikoagulanzien<br/>werden mit <span class="Light _idGenCharOverride-2">den Kode</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">s</span></span><span class="Light _idGenCharOverride-2">:</span></p>
-<p class="Grundtext-D-"> <span class="Kursiv _idGenCharOverride-2">D68.33	Hämorrhagische Diathese durch Cumarine (Vitamin-K-Antagonisten),</span></p>
-<p class="Grundtext-D-"><span class="Kursiv _idGenCharOverride-2">	D68.34 	Hämorrhagische Diathese durch Heparine,</span></p>
-<p class="Grundtext-D- ParaOverride-4"><span class="Kursiv _idGenCharOverride-2">	D68.35	Hämorrhagische Diathese durch sonstige Antikoagulanzien</span></p>
-<p class="Grundtext-D- ParaOverride-4"><span class="Kursiv _idGenCharOverride-2"> </span><span class="Kursiv CharOverride-3">+</span><span class="Kursiv CharOverride-13"> </span><span class="CharOverride-3">die Blutung</span> abgebildet, ergänzt durch <span class="Kursiv _idGenCharOverride-2">Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!  Komplikationen durch Arzneimittel oder Drogen,</span> wenn dies nicht im Diagnosekode </p>
-<p class="Grundtext-D- ParaOverride-13">	beinhaltet ist.</p>
-<div aria-label="204" epub:type="pagebreak" id="page206" role="doc-pagebreak"></div>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Die Reihenfolge der Kodes richtet sich nach Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52. </span></p>
-<p class="Grundtext-D-"><span class="Light _idGenCharOverride-2">Wird bei einem Patienten, einer Patientin eine Abhängigkeit von verordneten Medikamenten diagnostiziert, soll zusätzlich </span><span class="Kursiv _idGenCharOverride-2">Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">! Unerwünschte Nebenwirkungen bei therapeutischer Anwendung von Arzneimitteln und Drogen</span><span class="Light _idGenCharOverride-2">, erfasst werden, wenn die Nebendiagnosendefinition (siehe Regel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">54) erfüllt wird.</span></p>
-<p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-1">Beispiel 3</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient/eine Patientin mit einer dekompensierten Herzinsuffizienz, zeigt während des Aufenthaltes Entzugssymptome nach langjähriger Opiateinnahme wegen einer anhaltenden somatoformen Schmerzstörung. Es erfolgt eine Medikamentenanpassung und ein psychiatrisches Konsil.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	 I50.- 	Herzinsuffizienz</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	 F11.3 	Psychische und Verhaltensstörungen durch Opioide, Entzugssyndrom</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	 Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Komplikationen durch Arzneimittel oder Drogen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	 F45.40 	Anhaltende somatoforme Schmerzstörung</span></p>
-<p class="Beispiel-Titel">Beispiel <span class="Fett _idGenCharOverride-1">4</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin mit unstillbarem Nasenbluten unter Antikoagulation bei ordnungsgemäss eingenommenem Cumarinpräparat erhält eine Nasentamponade, die Antikoagulation wird vorübergehend pausiert, ein Vitamin-K-Präparat wird verabreicht.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	R04.0	Epistaxis</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Komplikationen durch Arzneimittel oder Drogen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	D68.33	Hämorrhagische Diathese durch Cumarine (Vitamin-K-Antagonisten)</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">U69.1</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">2</span></span><span class="Kursiv _idGenCharOverride-2">!</span> <span class="Kursiv _idGenCharOverride-2">Temporäre Blutgerinnungsstörung</span></p>
-<p class="Beispiel-Titel">Beispiel <span class="Fett _idGenCharOverride-1">5</span></p>
-<p class="Beispiel-Titel"><span class="Kursiv _idGenCharOverride-2">Ein Patient unter indikationsgerecht eingestellter Antikoagulation bei ordnungsgemäss eingenommenem Cumarinpräparat wird mit Schlaganfallsymptomatik stationär aufgenommen. Ein Trauma ist nicht bekannt. Im Schädel-CT zeigt sich ein grosses, komprimierendes Subduralhämatom.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Die Antikoagulation wird pausiert, ein Vitamin-K-Präparat verabreicht.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Die zerebrale Symptomatik verschlechtert sich trotz beschriebener Massnahmen.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Es erfolgt die intravenöse Gabe von Gerinnungsfaktoren, Ausräumung des Hämatoms durch Bohrlochtrepanation und Anlage einer subduralen Drainage.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD	</span><span class="Light CharOverride-5">I62.00</span> <span class="Kursiv _idGenCharOverride-2">Nichttraumatische subdurale Blutung, akut</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">L</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!	Komplikationen durch Arzneimittel oder Drogen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	D68.33	Hämorrhagische Diathese durch Cumarine (Vitamin-K-Antagonisten)</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">U69.1</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">2</span></span><span class="Kursiv _idGenCharOverride-2">!</span> <span class="Kursiv _idGenCharOverride-2">Temporäre Blutgerinnungsstörung</span></p>
-<p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-1">Beispiel 6</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient mit Status nach künstlichem Aortenklappenersatz und mit Vorhofflimmern, unter indikationsgerecht eingestellter Antikoagulation, wird nach Kontrolluntersuchung beim Hausarzt wegen starker Überschreitung der therapeutischen INR-Zielwerte bei hoher Blutungsgefahr stationär eingewiesen. Aufnahme zur Stabilisierung der Gerinnungssituation, u.a. erfolgt die sofortige Verabreichung von Gerinnungsfaktoren.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="Kursiv _idGenCharOverride-2">D68.33</span> <span class="Kursiv _idGenCharOverride-2">Hämorrhagische Diathese durch Cumarine (Vitamin-K-Antagonisten)</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">U69.1</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">2</span></span><span class="Kursiv _idGenCharOverride-2">!</span> <span class="Kursiv _idGenCharOverride-2">Temporäre Blutgerinnungsstörung</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">I48.9</span> <span class="Kursiv _idGenCharOverride-2">Vorhofflimmern und Vorhofflattern, n.n.bez.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">Z95.2</span> <span class="Kursiv _idGenCharOverride-2">Vorhandensein einer künstlichen Herzklappe</span></p>
-<p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-1">Beispiel 7</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Eine Patientin mit Vorhofflimmern unter indikationsgerechter und ordnungsgemäss eingestellter Antikoagulation wird zur geplanten endovaskulären Gefässintervention bei pAVK Fontaine-Stadium 2b aufgenommen.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Die Antikoagulation wurde präoperativ umgestellt.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Am Eintrittstag erhält sie ein Vitamin-K-Präparat zur Prophylaxe. Der INR im präoperativen Labor liegt bei 2.4.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv CharOverride-4">HD</span> <span class="Kursiv CharOverride-4">I70.22</span> <span class="Kursiv CharOverride-4">Atherosklerose vom Becken-Bein-Typ, mit belastungsinduziertem Ischämieschmerz, Gehstrecke weniger als 200 m </span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND	I48.9	Vorhofflimmern und Vorhofflattern, n.n.bez.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">Z92.1</span> <span class="Kursiv _idGenCharOverride-2">Dauertherapie (gegenwärtig) mit Antikoagulanzien in der Eigenanamnese</span></p>
-<div aria-label="205" epub:type="pagebreak" id="page207-1" role="doc-pagebreak"></div>
-<p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-1">Beispiel 8</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Ein Patient steht dauerhaft unter einer prophylaktischen Therapie mit Thrombozytenaggregationshemmern bei arterieller Hypertension und Aortenklappeninsuffizienz.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Er tritt nach Hämatemesis über den Notfall ein.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Es folgt eine Endoskopie mit der Diagnose eines kleinen Ulcus ventriculi mit Blutungsstigmata (bedingt durch Einnahme oben angegebener Medikamente), </span><span class="Light _idGenCharOverride-2">das</span><span class="Kursiv _idGenCharOverride-2"> geklippt wird.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">Der orale Thrombozytenaggregationshemmer wird pausiert und durch ein Heparin-Präparat für die Dauer des stationären Aufenthaltes ersetzt.</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">K</span></span><span class="Kursiv _idGenCharOverride-2">25.4</span> <span class="Kursiv _idGenCharOverride-2">Ulcus ventriculi, chronisch oder nicht näher bezeichnet, mit Blutung</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">9</span></span><span class="Kursiv _idGenCharOverride-2">!</span> <span class="Kursiv _idGenCharOverride-2">Komplikationen durch Arzneimittel oder Drogen</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">D69.80</span> <span class="Kursiv _idGenCharOverride-2">Hämorrhagische Diathese durch Thrombozytenaggregationshemmer</span></p>
-<p class="Beispiel-Text"><span class="Kursiv _idGenCharOverride-2">ND</span> <span class="Kursiv _idGenCharOverride-2">U69.1</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-2">2</span></span><span class="Kursiv _idGenCharOverride-2">!</span> <span class="Kursiv _idGenCharOverride-2">Temporäre Blutgerinnungsstörung</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Beacht</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span> <span class="Light _idGenCharOverride-2">Unter der Kodierregel SD1909 wird ausschliesslich die Gerinnungsstörung «Hämorrhagische Diathese (mit oder ohne Blutung) durch indikationsgerecht angewendete Medikamente» geregelt.</span></p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Hinweis</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">e</span></span><span class="Fett _idGenCharOverride-1">:</span></p>
-<ul>
-<li class="Grundtext-D- ParaOverride-15"><span class="Light _idGenCharOverride-2">Hämorrhagische Diathesen sind allgemein definiert als angeborene (hereditäre) oder erworbene Gerinnungsstörungen mit erhöhter Blutungsneigung. Hämorrhagische Diathese bedeutet eine (pathologisch) erhöhte Blutungsneigung </span><span class="Fett _idGenCharOverride-1">und/oder </span><span class="Light _idGenCharOverride-2">Blutung.</span></li>
-<li class="Grundtext-D- ParaOverride-15"><span class="Light _idGenCharOverride-2">Die mit einer hämorrhagischen Diathese verbundenen Blutungen können sich als zu lang, zu stark </span><span class="Fett _idGenCharOverride-1">und/oder </span><span class="Light _idGenCharOverride-2">aus inadäquatem Anlass (z.B. Bagatelltrauma) entstanden zeigen.</span></li>
-<li class="Grundtext-D- ParaOverride-15"><span class="Light _idGenCharOverride-2">Die einmalige Gabe eines Vitamin-K-Antagonisten oder eines Vitamin-K-Präparates erlaubt nicht die Kodierung des Kodes </span><span class="Kursiv _idGenCharOverride-2">D68.4 Erworbener Mangel an Gerinnungsfaktoren</span><span class="Light _idGenCharOverride-2">.</span></li>
-<li class="Grundtext-D- ParaOverride-15"><span class="Light _idGenCharOverride-2">Die prophylaktische Gabe eines Vitamin-K-Präparates erlaubt nicht die Kodierung der Kodes </span><span class="Kursiv _idGenCharOverride-2">D68.33 Hämorrhagische Diathese durch Cumarine (Vitamin-K-Antagonisten)</span><span class="Light _idGenCharOverride-2"> oder </span><span class="Kursiv _idGenCharOverride-2">D68.8 Sonstige näher bezeichnete Koagulopathien,</span><span class="Light _idGenCharOverride-2"> auch wenn die Intensität der oralen Antikoagulation die gemessenen Grenzwerte (z.B. INR) der jeweiligen erkrankungsbezogenen Thromboembolieprophylaxe übersteigt.</span></li>
-<li class="Grundtext-D- ParaOverride-15"><span class="Light _idGenCharOverride-2">Die übliche postpartale prophylaktische Gabe eines Vitamin-K-Präparates bei einem termingeborenen Neugeborenen erlaubt nicht die Kodierung des Kodes </span><span class="Kursiv _idGenCharOverride-2">P53 Hämorrhagische Krankheit bei Fetus und Neugeborenen.</span></li>
-<li class="Grundtext-D- ParaOverride-32"><span class="Light _idGenCharOverride-2">Antikoagulierter Patient </span><span class="Fett _idGenCharOverride-1">ohne Blutun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">g</span></span><span class="Fett _idGenCharOverride-1">:</span><span class="Light _idGenCharOverride-2"> <br/>Bei Aufwand &gt; 0 (z.B. prophylaktische Verabreichung von Vitamin K und/oder Heparin) <br/>Die Anpassung oder das Absetzen von Antikoagulanzien wird mit ND</span><span class="Kursiv _idGenCharOverride-2"> Z92.1 </span><span class="Kursiv _idGenCharOverride-2">Dauertherapie (gegenwärtig) mit Antikoagulanzien in der Eigenanamnese </span><span class="Light _idGenCharOverride-2">erfasst</span><span class="Kursiv _idGenCharOverride-2">.</span></li>
-<li class="Grundtext-D- ParaOverride-32"><span class="Light _idGenCharOverride-2">Antikoagulierter Patient </span><span class="Fett _idGenCharOverride-1">(mit oder ohne Blutung) </span><span class="Light _idGenCharOverride-2">mit der Notwendigkeit der Verabreichung von Gerinnungsfaktoren und/oder anderen Blutersatzprodukten (z.B. Thrombozytenkonzentrate, Fresh Frozen Plasma etc.)<br/>und/oder notwendiger stationärer Stabilisierung der Gerinnungssituatio</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">n</span></span><span class="Light _idGenCharOverride-2">:<br/></span><span class="Kursiv _idGenCharOverride-2">D68.-</span> <span class="Kursiv _idGenCharOverride-2">Sonstige Koagulopathien, D69.- Purpura und sonstige hämorrhagische Diathesen</span><span class="Light _idGenCharOverride-2"> (HD oder ND gemäss Kodierregel </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-2">G</span></span><span class="Light _idGenCharOverride-2">52)</span></li>
-</ul>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Hinwei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-1">s</span></span><span class="Fett _idGenCharOverride-1">:</span><span class="Light _idGenCharOverride-2"> Alle aufgeführten Beispiele dienen der Orientierung und sind nicht als vollständig zu betrachten.</span></p>
-<h4 class="Untertitel-2-fett" id="_idParaDest-285"><a id="_idTextAnchor307"></a>S<span class="Fett _idGenCharOverride-1">D</span>1910b	Unerwünschte Nebenwirkungen/Vergiftung von zwei oder mehr in Verbindung eingenommenen Substanzen (<a id="_idIndexMarker542"></a>bei Einnahme entgegen einer Verordnung)</h4>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-286"><a id="_idTextAnchor308"></a>Vergiftung <a id="_idIndexMarker543"></a>durch Arzneimittel in Kombination mit Alkohol</h5>
-<p class="Grundtext-D-">Eine Nebenwirkung eines Medikamentes, das in <span class="Fett _idGenCharOverride-1">Verbindung mit Alkohol</span> eingenommen wurde, ist als</p>
-<p class="Grundtext-D-"><span class="Fett _idGenCharOverride-1">Vergiftung durch beide (Wirk-) Stoffe</span> zu kodieren.</p>
-<h5 class="Untertitel-3-kursiv" id="_idParaDest-287"><a id="_idTextAnchor309"></a>Vergiftung <a id="_idIndexMarker544"></a>durch verordnete Medikamente, die in Verbindung mit nicht verordneten Medikamenten eingenommen werden</h5>
-<p class="Grundtext-D-">Eine Nebenwirkung, die wegen der Verbindung eines <span class="Fett _idGenCharOverride-1">verordneten und </span>eines <span class="Fett _idGenCharOverride-1">nicht verordneten</span> Medikamentes auftritt, ist als <span class="Fett _idGenCharOverride-1">Vergiftung durch beide (Wirk-)Stoffe</span> zu kodieren.</p>
-<p class="Grundtext-D-">Beac<a id="_idTextAnchor310"></a>hte auch S<span class="Light _idGenCharOverride-2">D</span>1908.</p>
-</div><div aria-label="206" epub:type="pagebreak" id="page208" role="doc-pagebreak"></div></article>
-    <nav class="pager"><a class="pager-prev" href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html">‹ SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a><a class="pager-next" href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität ›</a></nav>
+    <article><h3 class="Untertitel-1-farbig" id="_idParaDest-260"><a id="_idTextAnchor282"></a>SD1900	<a id="_idIndexMarker498"></a>Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</h3><p class="Grundtext-D-">Sofern es in den Kodierrichtlinien nicht anders geregelt ist, folgen die Kodes der äusseren Ursachen (<span class="Kursiv _idGenCharOverride-2">V01 - Y84</span>) zwingend den Kodes <span class="Kursiv _idGenCharOverride-2">S</span> und <span class="Kursiv _idGenCharOverride-2">T</span>.</p></article>
+    <nav class="pager"><a class="pager-prev" href="sd1807lschock.html">‹ SD1807lSchock</a><a class="pager-next" href="sd1901aoberflaechliche-verletzungen.html">SD1901aOberflächliche Verletzungen ›</a></nav>
   </main>
   </div>
   <script src="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/assets/nav.js"></script>
