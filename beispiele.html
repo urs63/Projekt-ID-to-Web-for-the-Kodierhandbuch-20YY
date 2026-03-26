@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beispiele – V2027D_Teil1</title>
+  <link rel="stylesheet" href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/assets/style.css">
+  <style>
+/* ── BFS Site-Header ── */
+body { flex-direction: column; }
+#site-header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 3px solid #c00;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+#site-topbar {
+  background: #e8e8e8;
+  padding: 0.25rem 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.topbar-sep { opacity: .4; }
+.topbar-office { font-weight: 600; color: #333; }
+.lang-switcher { margin-left: auto; display: flex; gap: 0.5rem; }
+.lang-switcher a {
+  font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600;
+  color: #555; text-decoration: none; padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+.lang-switcher a:hover, .lang-switcher a.active {
+  background: #c00; color: #fff;
+}
+#site-brand {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+  gap: 1rem;
+}
+#site-logo-link { text-decoration: none; flex: 1; }
+.site-logo-dept {
+  display: block;
+  font-family: var(--font-ui); font-size: 0.72rem;
+  color: #888; letter-spacing: .03em;
+}
+.site-logo-title {
+  display: block;
+  font-family: var(--font-ui); font-size: 1.1rem;
+  font-weight: 700; color: #c00;
+}
+#site-search-wrap input {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  width: 220px;
+  outline: none;
+  background: #f8f8f8;
+}
+#site-search-wrap input:focus {
+  border-color: #c00;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(200,0,0,.1);
+}
+#site-nav {
+  display: flex;
+  gap: 0;
+  padding: 0 1.5rem;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+#site-nav a {
+  font-family: var(--font-ui); font-size: 0.85rem;
+  color: #444; text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+#site-nav a:hover { color: #c00; border-bottom-color: #c00; }
+#site-nav a.nav-active { color: #c00; border-bottom-color: #c00; font-weight: 600; }
+
+/* Layout anpassen wenn Header vorhanden */
+.with-header #wrapper {
+  display: flex;
+  flex: 1;
+}
+.with-header #sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  /* Header-Hoehe abziehen – wird per JS gesetzt */
+}
+.with-header #content { padding-top: 1.5rem; }
+
+/* Sidebar-Header ausblenden wenn BFS-Header aktiv */
+.with-header #sidebar-header { display: none; }
+.with-header #search-box { display: none; }
+</style>
+</head>
+<body class="with-header">
+  
+  <header id="site-header">
+    <div id="site-topbar">
+      <span class="topbar-dept">Eidgen&#246;ssisches Departement des Innern EDI</span>
+      <span class="topbar-sep">|</span>
+      <span class="topbar-office">Bundesamt f&#252;r Statistik</span>
+      <nav class="lang-switcher" aria-label="Sprache">
+        <a href="https://rundschreiben-kodierer.github.io/handbuch/de/" class="active">DE</a>
+        <a href="https://rundschreiben-kodierer.github.io/handbuch/fr/">FR</a>
+        <a href="https://rundschreiben-kodierer.github.io/handbuch/it/">IT</a>
+      </nav>
+    </div>
+    <div id="site-brand">
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/" id="site-logo-link">
+        <span class="site-logo-dept">Rundschreiben Kodierer</span>
+        <span class="site-logo-title">V2027D_Teil1</span>
+      </a>
+      <div id="site-search-wrap">
+        <input type="search" id="site-search-input" placeholder="&#128269; Suchen &#8230;"
+          onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='search.html?q='+encodeURIComponent(this.value.trim());}"
+          aria-label="Suche" />
+      </div>
+    </div>
+    <nav id="site-nav" aria-label="Hauptnavigation">
+      <a href="https://rundschreiben-kodierer.github.io/handbuch/de/">Kodierhandbuch BFS</a>
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/index.html">V2027D_Teil1</a>
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/search.html">Suche</a>
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/download.zip" download>&#11015; Download Offline Variante</a>
+      <a href="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/V2027D_Teil1.pdf" target="_blank">&#128196; PDF Version</a>
+    </nav>
+  </header>
+  <div id="wrapper">
+  <nav id="sidebar">
+    <div id="sidebar-header"><a href="toc.html" id="book-title">V2027D_Teil1</a></div>
+    <div id="search-box"><input type="search" placeholder="🔍 Suchen …" onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='search.html?q='+encodeURIComponent(this.value.trim());}" /></div>
+    <div id="nav-toggle-wrap"><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=true)">▼ Alle aufklappen</button><button onclick="document.querySelectorAll('#nav-tree details').forEach(d=>d.open=false)">▶ Alle zuklappen</button></div>
+    <div id="nav-tree"><ul>
+<li><a href="seite-1.html">Seite 1</a></li>
+<li><a href="seite-2.html">Seite 2</a></li>
+<li><a href="seite-3.html">Seite 3</a></li>
+<li><a href="danksagung.html">Danksagung</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="einleitung-version2027.html" onclick="event.stopPropagation()">Einleitung Version2027</a></summary>
+<ul>
+<li><a href="abkuerzungen-des-kodierungshandbuches.html">Abkürzungen des Kodierungshandbuches</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="grundlagen-g00-g55.html" onclick="event.stopPropagation()">Grundlagen G00 –G55</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi.html" onclick="event.stopPropagation()">G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung</a></summary>
+<ul>
+<li><a href="g01ngeschichte.html">G01nGeschichte</a></li>
+<li><a href="g02morganisation.html">G02mOrganisation</a></li>
+<li><a href="g03m-gesetzliche-grundlagen.html">G03m	Gesetzliche Grundlagen</a></li>
+<li><a href="g04mziele-der-erhebung-spitalstationaere-gesundheitsversorgung-spiges.html">G04mZiele der Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes)</a></li>
+<li><a href="g05manonymisierung-der-daten.html">G05mAnonymisierung der Daten</a></li>
+<li><a href="g06mder-medizinische-datensatz-definitionen-und-variablen.html">G06mDer medizinische Datensatz,Definitionen und Variablen</a></li>
+</ul>
+</details>
+</li>
+<li><a href="g10p-erhebung-spitalstationaere-gesundheitsversorgung-spiges-die-patientenklassi.html">G10p	Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes), die Patientenklassifikationssysteme SwissDRG, TARPSY und ST Reha</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g20-die-klassifikationen-icd-10-gm-und-chop.html" onclick="event.stopPropagation()">G20	Die Klassifikationen (ICD-10-GM und CHOP)</a></summary>
+<ul>
+<li><a href="g21p-icd-10-gm.html">G21p	ICD-10-GM</a></li>
+<li><a href="g22o-schweizerische-operationsklassifikation-chop.html">G22o	Schweizerische Operationsklassifikation (CHOP)</a></li>
+</ul>
+</details>
+</li>
+<li><a href="g30a-derweg-zur-korrekten-kodierung.html">G30a	DerWeg zur korrekten Kodierung</a></li>
+<li><a href="g40odokumentationder-diagnosen-undder-prozeduren.html">G40oDokumentationder Diagnosen undder Prozeduren</a></li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="g50definitionen.html" onclick="event.stopPropagation()">G50Definitionen</a></summary>
+<ul>
+<li><a href="g51o-derbehandlungsfall.html">G51o	DerBehandlungsfall</a></li>
+<li><a href="g52h-diehauptdiagnose.html">G52h	DieHauptdiagnose</a></li>
+<li><a href="g53m-derzusatz-zur-hauptdiagnose.html">G53m	DerZusatz zur Hauptdiagnose</a></li>
+<li><a href="g54p-dienebendiagnosen.html">G54p	DieNebendiagnosen</a></li>
+<li><a href="g55mdiebehandlung.html">G55mDieBehandlung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16.html" onclick="event.stopPropagation()">Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16</a></summary>
+<ul>
+<li><a href="d00mabnormebefunde.html">D00mAbnormeBefunde</a></li>
+<li><a href="d01gsymptome.html">D01gSymptome</a></li>
+<li><a href="d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen.html">D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen</a></li>
+<li><a href="d03mkreuz-stern-kodes.html">D03mKreuz †-Stern*-Kodes</a></li>
+<li><a href="d04ckodes-mitausrufezeichen.html">D04cKodes mitAusrufezeichen («!»)</a></li>
+<li><a href="d05pstatus-nach-vorhandensein-von-fehlen-von.html">D05pStatus nach /Vorhandensein von /Fehlen von</a></li>
+<li><a href="d06c-folgezustaende.html">D06c	Folgezustände</a></li>
+<li><a href="d07ngeplante-folgeeingriffe.html">D07nGeplante Folgeeingriffe</a></li>
+<li><a href="d08a-sich-anbahnende-oderdrohende-krankheit.html">D08a	Sich anbahnende oderdrohende Krankheit</a></li>
+<li><a href="d09lverdachtsdiagnosen.html">D09lVerdachtsdiagnosen</a></li>
+<li><a href="d10gchronische-krankheiten-mit-akutem-schub.html">D10gChronische Krankheiten mit akutem Schub</a></li>
+<li><a href="d11nkombinationskodes.html">D11nKombinationskodes</a></li>
+<li><a href="d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen.html">D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)</a></li>
+<li><a href="d13asyndrome.html">D13aSyndrome</a></li>
+<li><a href="d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt.html">D14g	Aufnahme zur Operation/Prozedurnicht durchgeführt</a></li>
+<li><a href="d15o-verlegungen.html">D15o	Verlegungen</a></li>
+<li><a href="d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener.html">D16i	Wahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="allgemeine-kodierrichtlinienfuerprozeduren-p00-p11.html" onclick="event.stopPropagation()">Allgemeine KodierrichtlinienfürProzeduren P00 – P11</a></summary>
+<ul>
+<li><a href="p00n-erfassung-der-prozedur-im-medizinischen-datensatz.html">P00n	Erfassung der Prozedur im medizinischen Datensatz</a></li>
+<li><a href="p01p-prozeduren-die-kodiert-werden-muessen.html">P01p	Prozeduren,die kodiert werden müssen</a></li>
+<li><a href="p02o-prozeduren-die-nicht-kodiert-werden.html">P02o	Prozeduren,die nicht kodiert werden</a></li>
+<li><a href="p03cendoskopie-und-endoskopische-eingriffe.html">P03cEndoskopie und endoskopische Eingriffe</a></li>
+<li><a href="p04nkombinationseingriffe-komplexeoperationen.html">P04nKombinationseingriffe/KomplexeOperationen</a></li>
+<li><a href="p05aunvollstaendig-durchgefuehrte-eingriffe.html">P05aUnvollständig durchgeführte Eingriffe</a></li>
+<li><a href="p06omehrfach-durchgefuehrte-prozeduren.html">P06oMehrfach durchgeführte Prozeduren</a></li>
+<li><a href="p07obilaterale-operationen.html">P07oBilaterale Operationen</a></li>
+<li><a href="p08o-revisioneneines-operationsgebietes-reoperationen.html">P08o	Revisioneneines Operationsgebietes/Reoperationen</a></li>
+<li><a href="p09oorganentnahme-undtransplantation.html">P09oOrganentnahme undTransplantation</a></li>
+<li><a href="p10nadhaesiolyse.html">P10nAdhäsiolyse</a></li>
+<li><a href="p11hserosaverletzung-mit-uebernaehung.html">P11hSerosaverletzung mit Übernähung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0100-bestimmteinfektioese-und-parasitaere-krankheiten.html" onclick="event.stopPropagation()">SD0100	Bestimmteinfektiöse und parasitäre Krankheiten</a></summary>
+<ul>
+<li><a href="sd0101abakteriaemie.html">SD0101aBakteriämie</a></li>
+<li><a href="sd0102psepsis.html">SD0102pSepsis</a></li>
+<li><a href="sd0103lsirs.html">SD0103lSIRS</a></li>
+<li><a href="sd0104nhiv-aids.html">SD0104nHIV/AIDS</a></li>
+<li><a href="u61-laborkategorie-im-aktuellen-aufenthaltu61-1-kategorie-1500-und-mehr-cd4-t-he.html">U61.–! Laborkategorie im aktuellen AufenthaltU61.1!	Kategorie 1500 und mehr CD4+-T-Helferzellen pro Mikroliter Blut</a></li>
+<li><a href="sd0105aechter-krupp-pseudokrupp-kruppsyndrom.html">SD0105aEchter Krupp – Pseudokrupp –Kruppsyndrom</a></li>
+<li><a href="sd0106ncovid-19.html">SD0106nCOVID-19</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0200nneubildungen.html" onclick="event.stopPropagation()">SD0200nNeubildungen</a></summary>
+<ul>
+<li><a href="sd0202mauswahl-und-reihenfolge-der-diagnosen.html">SD0202mAuswahl und Reihenfolge der Diagnosen</a></li>
+<li><a href="sd0203nnachresektion-im-tumorgebiet.html">SD0203nNachresektion im Tumorgebiet</a></li>
+<li><a href="sd0204ktumornachweis-nur-in-der-biopsie.html">SD0204kTumornachweis nur in der Biopsie</a></li>
+<li><a href="sd0205n-akute-chronische-erkrankungen-stoerungen-nach-und-oder-folgen-von-medizi.html">SD0205n(Akute, chronische) Erkrankungen, Störungen nach und/oder Folgen von medizinischen Massnahmen im Kontext von Behandlungen maligner Neubildungen (solide, hämatologisch)</a></li>
+<li><a href="sd0206averdacht-auf-tumor-oder-metastasen.html">SD0206aVerdacht auf Tumor oder Metastasen</a></li>
+<li><a href="sd0207a-nachuntersuchung.html">SD0207a	Nachuntersuchung</a></li>
+<li><a href="sd0208nrezidive.html">SD0208nRezidive</a></li>
+<li><a href="sd0209a-tumoremit-endokriner-aktivitaet.html">SD0209a	Tumoremit endokriner Aktivität</a></li>
+<li><a href="sd0210n-multiple-lokalisationen.html">SD0210n	Multiple Lokalisationen</a></li>
+<li><a href="sd0211aueberlappende-lokalisation.html">SD0211aÜberlappende Lokalisation</a></li>
+<li><a href="sd0212aremission-bei-malignen-immunoproliferativen-erkrankungen-undleukaemie.html">SD0212aRemission bei malignen immunoproliferativen Erkrankungen undLeukämie</a></li>
+<li><a href="sd0213a-lymphangiosis-carcinomatosa.html">SD0213a 	Lymphangiosis carcinomatosa</a></li>
+<li><a href="sd0214nlymphom.html">SD0214nLymphom</a></li>
+<li><a href="sd0215achemo-undradiotherapie.html">SD0215aChemo- undRadiotherapie</a></li>
+<li><a href="sd0216nprophylaktische-operationen-wegen-risikofaktoren.html">SD0216nProphylaktische Operationen wegen Risikofaktoren</a></li>
+<li><a href="sd0217opalliativbehandlung.html">SD0217oPalliativbehandlung</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten.html" onclick="event.stopPropagation()">SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten</a></summary>
+<ul>
+<li><a href="sd0401nallgemeines.html">SD0401nAllgemeines</a></li>
+<li><a href="sd0402nregeln-zur-kodierung-des-diabetes-mellitus.html">SD0402nRegeln zur Kodierung des Diabetes mellitus</a></li>
+<li><a href="sd0403nspezifische-komplikationen-des-diabetes-mellitus.html">SD0403nSpezifische Komplikationen des Diabetes mellitus</a></li>
+<li><a href="sd0404a-metabolisches-syndrom.html">SD0404a	Metabolisches Syndrom</a></li>
+<li><a href="sd0405nstoerungender-inneren-sekretion-des-pankreas.html">SD0405nStörungender inneren Sekretion des Pankreas</a></li>
+<li><a href="sd0406azystische-fibrose.html">SD0406aZystische Fibrose</a></li>
+<li><a href="sd0407nmangelernaehrungbei-erwachsenen.html">SD0407nMangelernährungbei Erwachsenen</a></li>
+<li><a href="sd0408nmangelernaehrungbei-kindern.html">SD0408nMangelernährungbei Kindern</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0500-psychische-und-verhaltensstoerungen.html" onclick="event.stopPropagation()">SD0500	Psychische und Verhaltensstörungen</a></summary>
+<ul>
+<li><a href="sd0501o-psychische-und-verhaltensstoerungendurch-psychotrope-substanzen-alkohol-.html">SD0501o	Psychische und Verhaltensstörungendurch psychotrope Substanzen(Alkohol, Drogen, Medikamente, Nikotin)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0600-krankheitendesnervensystems.html" onclick="event.stopPropagation()">SD0600	KrankheitendesNervensystems</a></summary>
+<ul>
+<li><a href="sd0601p-akuter-schlaganfall-etc-subarachnoidalblutung-und-sonstige-intrakraniell.html">SD0601p	Akuter «Schlaganfall etc.», Subarachnoidalblutung und sonstige intrakranielle Blutungen traumatischer und nichttraumatischer Genese</a></li>
+<li><a href="sd0602nfolgen-eines-status-nach-schlaganfall-etc-einer-nichttraumatischen-subara.html">SD0602nFolgen eines/Status nach: «Schlaganfall etc.», einer nichttraumatischen Subarachnoidalblutung oder sonstigen nichttraumatischen intrakraniellen Blutung</a></li>
+<li><a href="sd0603oparaplegie-und-tetraplegie-nicht-traumatisch.html">SD0603oParaplegie und Tetraplegie, nicht traumatisch</a></li>
+<li><a href="sd0604mbewusstseinsstoerungen.html">SD0604mBewusstseinsstörungen</a></li>
+<li><a href="sd0605e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden.html">SD0605e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden</a></li>
+<li><a href="sd0606e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden.html">SD0606e 	Aufnahme zurEntfernung eines Neurostimulators /(Test) Elektroden</a></li>
+<li><a href="sd0607o-kodierung-derparkinsonstadien-g20.html">SD0607o 	Kodierung derParkinsonstadien (G20.-)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0800-krankheitendesohres-und-des-warzenfortsatzes.html" onclick="event.stopPropagation()">SD0800	KrankheitendesOhres und des Warzenfortsatzes</a></summary>
+<ul>
+<li><a href="sd0801aschwerhoerigkeit-undtaubheit.html">SD0801aSchwerhörigkeit undTaubheit</a></li>
+<li><a href="sd0802danpassung-handhabung-eines-implantiertenhoergeraetes.html">SD0802dAnpassung/Handhabung eines implantiertenHörgerätes</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd0900-krankheitendeskreislaufsystems.html" onclick="event.stopPropagation()">SD0900	KrankheitendesKreislaufsystems</a></summary>
+<ul>
+<li><a href="sd0901a-hypertonie-und-krankheiten-bei-hypertonie.html">SD0901a 	Hypertonie und Krankheiten bei Hypertonie</a></li>
+<li><a href="sd0902eischaemische-herzkrankheit.html">SD0902eIschämische Herzkrankheit</a></li>
+<li><a href="sd0903n-thrombose-resp-verschlussvon-koronarem-stent-resp-bypass.html">SD0903n	Thrombose resp. Verschlussvon koronarem Stent resp. Bypass</a></li>
+<li><a href="sd0904d-erkrankungenderherzklappen.html">SD0904d 	ErkrankungenderHerzklappen</a></li>
+<li><a href="sd0905aschrittmacher-defibrillator.html">SD0905aSchrittmacher/Defibrillator</a></li>
+<li><a href="sd0906anachuntersuchung-nachherztransplantation.html">SD0906aNachuntersuchung nachHerztransplantation</a></li>
+<li><a href="sd0907a-akutes-lungenoedem.html">SD0907a	Akutes Lungenödem</a></li>
+<li><a href="sd0908kherzstillstand.html">SD0908kHerzstillstand</a></li>
+<li><a href="sd0910o-erfassung-derbehandlungsdauer-mit-einem-herzunterstuetzungssystem-oder-e.html">SD0910o	Erfassung derBehandlungsdauer mit einem Herzunterstützungssystem oder einem herzkreislauf- und lungenunterstützenden System</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1000-krankheitendesatmungssystems.html" onclick="event.stopPropagation()">SD1000	KrankheitendesAtmungssystems</a></summary>
+<ul>
+<li><a href="sd1001p-maschinelle-beatmung.html">SD1001p	Maschinelle Beatmung</a></li>
+<li><a href="sd1002orespiratorische-insuffizienz.html">SD1002oRespiratorische Insuffizienz</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1100-krankheitendesverdauungssystems.html" onclick="event.stopPropagation()">SD1100	KrankheitendesVerdauungssystems</a></summary>
+<ul>
+<li><a href="sd1101jappendizitis-als-klinische-diagnose.html">SD1101jAppendizitis als klinische Diagnose</a></li>
+<li><a href="sd1103a-magenulkusmitgastritis.html">SD1103a	MagenulkusmitGastritis</a></li>
+<li><a href="sd1104igastrointestinale-blutung.html">SD1104iGastrointestinale Blutung</a></li>
+<li><a href="sd1105a-dehydratationbei-gastroenteritis.html">SD1105a 	Dehydratationbei Gastroenteritis</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1200-krankheitenderhaut-und-der-unterhaut.html" onclick="event.stopPropagation()">SD1200	KrankheitenderHaut und der Unterhaut</a></summary>
+<ul>
+<li><a href="sd1201gplastische-chirurgie.html">SD1201gPlastische Chirurgie</a></li>
+<li><a href="sd1202jspannungsblasen.html">SD1202jSpannungsblasen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1400-krankheitendesurogenitalsystems.html" onclick="event.stopPropagation()">SD1400	KrankheitendesUrogenitalsystems</a></summary>
+<ul>
+<li><a href="sd1401o-dialyse.html">SD1401o	Dialyse</a></li>
+<li><a href="sd1402manogenitale-warzen-anogenitaler-herpes.html">SD1402mAnogenitale Warzen/anogenitaler Herpes</a></li>
+<li><a href="sd1404oniereninsuffizienz.html">SD1404oNiereninsuffizienz</a></li>
+<li><a href="sd1405l-aufnahme-zuranlage-einesperitonealkatheters-zur-dialyse.html">SD1405l	Aufnahme zurAnlage einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1406d-aufnahme-zurentfernung-einesperitonealkatheters-zur-dialyse.html">SD1406d 	Aufnahme zurEntfernung einesPeritonealkatheters zur Dialyse</a></li>
+<li><a href="sd1407l-aufnahme-zur-anlage-einerav-fistel-oder-einesav-shunts-zur-dialyse.html">SD1407l 	Aufnahme zur Anlage einerAV-Fistel oder einesAV-Shunts zur Dialyse</a></li>
+<li><a href="sd1408a-aufnahme-zum-verschluss-einerav-fistel-oder-zumentfernen-eines-av-shunts.html">SD1408a 	Aufnahme zum Verschluss einerAV-Fistel oder zumEntfernen eines AV-Shunts</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1500geburtshilfe.html" onclick="event.stopPropagation()">SD1500Geburtshilfe</a></summary>
+<ul>
+<li><a href="sd1501ndefinitionen.html">SD1501nDefinitionen</a></li>
+<li><a href="sd1502pvorzeitige-beendigung-einer-schwangerschaft.html">SD1502pVorzeitige Beendigung einer Schwangerschaft</a></li>
+<li><a href="sd1503p-krankheitenin-der-schwangerschaft.html">SD1503p	Krankheitenin der Schwangerschaft</a></li>
+<li><a href="sd1504pkomplikationen-der-schwangerschaft-mutter-oder-kind-betreffend.html">SD1504pKomplikationen der Schwangerschaft, Mutter oder Kind betreffend</a></li>
+<li><a href="sd1505pspezielle-kodierregeln-fuer-die-geburt.html">SD1505pSpezielle Kodierregeln für die Geburt</a></li>
+<li><a href="sd1506p-krankheiten-im-wochenbett-puerperium.html">SD1506p	Krankheiten im Wochenbett (Puerperium)</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben.html" onclick="event.stopPropagation()">SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben</a></summary>
+<ul>
+<li><a href="sd1601nmedizinischer-datensatz.html">SD1601nMedizinischer Datensatz</a></li>
+<li><a href="sd1602adefinitionen.html">SD1602aDefinitionen</a></li>
+<li><a href="sd1603ineugeborene.html">SD1603iNeugeborene</a></li>
+<li><a href="sd1604gzustaende-die-ihren-ursprung-in-der-perinatalperiode-haben.html">SD1604gZustände, die ihren Ursprung in der Perinatalperiode haben</a></li>
+<li><a href="sd1605atotgeborene.html">SD1605aTotgeborene</a></li>
+<li><a href="sd1606j-besondere-massnahmen-fuer-das-kranke-neugeborene.html">SD1606j 	Besondere Massnahmen für das (kranke) Neugeborene</a></li>
+<li><a href="sd1607c-atemnotsyndrombeihyaliner-membranenkrankheit-surfactantmangel.html">SD1607c 	Atemnotsyndrombeihyaliner Membranenkrankheit/Surfactantmangel</a></li>
+<li><a href="sd1608c-atemnotsyndrombeimassivemaspirationssyndrom-wet-lung-odertransitorische-.html">SD1608c 	AtemnotsyndrombeimassivemAspirationssyndrom,Wet lung odertransitorische Tachypnoe beim Neugeborenen</a></li>
+<li><a href="sd1609jhypoxisch-ischaemische-enzephalopathie-hie.html">SD1609jHypoxisch-ischämische Enzephalopathie (HIE)</a></li>
+<li><a href="sd1610h-asphyxie-unter-der-geburt.html">SD1610h	Asphyxie unter der Geburt</a></li>
+<li><a href="sd1611orespiratorisches-versagenbeim-neugeborenen.html">SD1611oRespiratorisches Versagenbeim Neugeborenen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas.html" onclick="event.stopPropagation()">SD1800	Symptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind</a></summary>
+<ul>
+<li><a href="sd1801ainkontinenz.html">SD1801aInkontinenz</a></li>
+<li><a href="sd1802mdysphagie.html">SD1802mDysphagie</a></li>
+<li><a href="sd1803afieberkraempfe.html">SD1803aFieberkrämpfe</a></li>
+<li><a href="sd1804o-schmerzdiagnosen-undschmerzbehandlungsverfahren.html">SD1804o	Schmerzdiagnosen undSchmerzbehandlungsverfahren</a></li>
+<li><a href="sd1805e-aufnahme-zurimplantation-eines-neurostimulators-test-elektroden-bei-schm.html">SD1805e 	Aufnahme zurImplantation eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1806e-aufnahme-zurentfernung-eines-neurostimulators-test-elektroden-bei-schmer.html">SD1806e 	Aufnahme zurEntfernung eines Neurostimulators/(Test) Elektroden bei Schmerzbehandlung</a></li>
+<li><a href="sd1807lschock.html">SD1807lSchock</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen.html" onclick="event.stopPropagation()">SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen</a></summary>
+<ul>
+<li><a href="sd1901aoberflaechliche-verletzungen.html">SD1901aOberflächliche Verletzungen</a></li>
+<li><a href="sd1902nfraktur-und-luxation.html">SD1902nFraktur und Luxation</a></li>
+<li><a href="sd1903poffene-wunden-verletzungen.html">SD1903pOffene Wunden/Verletzungen</a></li>
+<li><a href="sd1905cverletzung-desrueckenmarks-mit-traumatischer-paraplegie-und-tetraplegie.html">SD1905cVerletzung desRückenmarks (mit traumatischer Paraplegie und Tetraplegie)</a></li>
+<li><a href="sd1906nmehrfachverletzungen.html">SD1906nMehrfachverletzungen</a></li>
+<li><a href="sd1907jverbrennungen-undveraetzungen.html">SD1907jVerbrennungen undVerätzungen</a></li>
+<li><a href="sd1908nvergiftungdurch-arzneimittel-drogen-und-biologisch-aktive-substanzen.html">SD1908nVergiftungdurch Arzneimittel, Drogen und biologisch aktive Substanzen</a></li>
+<li><a href="sd1909o-unerwuenschte-nebenwirkungen-von-arzneimitteln-bei-einnahme-gemaess-vero.html">SD1909o 	Unerwünschte Nebenwirkungen von Arzneimitteln (bei Einnahme gemäss Verordnung)</a></li>
+<li><a href="sd1910b-unerwuenschte-nebenwirkungen-vergiftung-von-zwei-oder-mehr-in-verbindung.html">SD1910b	Unerwünschte Nebenwirkungen/Vergiftung von zwei oder mehr in Verbindung eingenommenen Substanzen (bei Einnahme entgegen einer Verordnung)</a></li>
+</ul>
+</details>
+</li>
+<li><a href="sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet.html">SD2000Äussere Ursachen von Morbidität und Mortalität</a></li>
+<li><a href="sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed.html">SD2100	Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen</a></li>
+<li><a href="sd2200oschluesselnummern-fuer-besondere-zwecke.html">SD2200oSchlüsselnummern für besondere Zwecke</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400.html" onclick="event.stopPropagation()">Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400</a></summary>
+<ul>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0200fruehrehabilitation-paraplegiologische-rehabilitation-akutrehabilitation.html" onclick="event.stopPropagation()">SP0200Frührehabilitation, paraplegiologische Rehabilitation, Akutrehabilitation</a></summary>
+<ul>
+<li><a href="sp0201nfruehrehabilitation.html">SP0201nFrührehabilitation</a></li>
+<li><a href="sp0202pparaplegiologische-rehabilitation.html">SP0202pParaplegiologische Rehabilitation</a></li>
+<li><a href="sp0203oakutrehabilitation.html">SP0203oAkutrehabilitation</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0300-kodierrichtlinien-zu-chop-kapitel-9-operationen-am-verdauungstrakt.html" onclick="event.stopPropagation()">SP0300	Kodierrichtlinien zu CHOP Kapitel 9 «Operationen am Verdauungstrakt»</a></summary>
+<ul>
+<li><a href="sp0301khiatushernie-fundoplicatio.html">SP0301kHiatushernie – Fundoplicatio:</a></li>
+<li><a href="zusaetzliche-erfassung-chop-kode-44-92-intraoperative-manipulation-am-magen.html">Zusätzliche Erfassung CHOP-Kode 44.92 Intraoperative Manipulation am Magen</a></li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details>
+<summary class="nav-summary"><a href="sp0400-kodierrichtlinien-zu-chop-kapitel-11-operationen-an-den-maennlichen-gesch.html" onclick="event.stopPropagation()">SP0400	Kodierrichtlinien zu CHOP Kapitel 11«Operationen an den männlichen Geschlechtsorganen»</a></summary>
+<ul>
+<li><a href="sp0401mgeschlechtsangleichung.html">SP0401mGeschlechtsangleichung</a></li>
+</ul>
+</details>
+</li>
+</ul>
+</details>
+</li>
+<li class="has-children">
+<details open>
+<summary class="nav-summary"><a href="kodierrichtlinienrehabilitation.html" onclick="event.stopPropagation()">KodierrichtlinienRehabilitation</a></summary>
+<ul>
+<li><a href="allgemeine-informationen.html">Allgemeine Informationen</a></li>
+<li><a href="diagnosen-icd-10-gm.html">Diagnosen - ICD-10-GM</a></li>
+<li><a href="prozeduren.html">Prozeduren</a></li>
+<li><a href="beispiele-und-erlaeuterungen.html">Beispiele und Erläuterungen</a></li>
+<li><a href="beispiele.html" class="active">Beispiele</a></li>
+</ul>
+</details>
+</li>
+<li><a href="alphabetisches-verzeichnis.html">Alphabetisches Verzeichnis</a></li>
+<li><a href="a.html">A</a></li>
+<li><a href="b.html">B</a></li>
+<li><a href="c.html">C</a></li>
+<li><a href="d.html">D</a></li>
+<li><a href="e.html">E</a></li>
+<li><a href="f.html">F</a></li>
+<li><a href="g.html">G</a></li>
+<li><a href="h.html">H</a></li>
+<li><a href="i.html">I</a></li>
+<li><a href="k.html">K</a></li>
+<li><a href="l.html">L</a></li>
+<li><a href="m.html">M</a></li>
+<li><a href="n.html">N</a></li>
+<li><a href="o.html">O</a></li>
+<li><a href="p.html">P</a></li>
+<li><a href="r.html">R</a></li>
+<li><a href="s.html">S</a></li>
+<li><a href="t.html">T</a></li>
+<li><a href="u.html">U</a></li>
+<li><a href="v.html">V</a></li>
+<li><a href="w.html">W</a></li>
+<li><a href="z.html">Z</a></li>
+<li><a href="seite-214.html">Seite 214</a></li>
+<li><a href="seite-215.html">Seite 215</a></li>
+</ul>
+</div>
+  </nav>
+  <main id="content">
+    <nav class="breadcrumb"><a class="crumb" href="kodierrichtlinienrehabilitation.html">KodierrichtlinienRehabilitation</a><span class="sep">›</span><span class="crumb current">Beispiele</span></nav>
+    <article><h4 class="Untertitel-2-fett" id="_idParaDest-306"><span class="Fett _idGenCharOverride-2"><a id="_idTextAnchor331"></a>Beispiele</span></h4><p class="Beispiel-Titel ParaOverride-1"><span class="Fett _idGenCharOverride-2">Beispiele zur Kodierung der Hauptdiagnose</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 1 Kardiovaskuläre Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ein Patient tritt nach akutem Myokardinfarkt zur Rehabilitation ein. Ein postinterventioneller Wundinfekt wird mittels VAC-Behandlung therapiert.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">I21.0</span> <span class="Kursiv _idGenCharOverride-1">Akuter transmuraler Myokardinfarkt der Vorderwand</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 2</span><span class="Light _idGenCharOverride-1"> </span><span class="Fett _idGenCharOverride-2">Muskuloskelettale Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ein Patient tritt nach Implantation einer Hüftendoprothese bei primärer Koxarthrose zur Rehabilitation ein. Problemloser Verlauf.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD	M16.1	</span><span class="Kursiv _idGenCharOverride-1">Sonstige primäre Koxarthrose</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L</span></p><div aria-label="227" epub:type="pagebreak" id="page229" role="doc-pagebreak"></div><p class="Beispiel-Titel ParaOverride-1"><span class="Fett _idGenCharOverride-2">Beispiele zur Kodierung der Nebendiagnosen</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 1 Kardiovaskulär</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ein Patient tritt nach Herztransplantation wegen dilatativer Kardiomyopathie zur Rehabilitation ein. Der Barthel-Index beträgt bei Eintritt 68 Punkte, der MMSE 29 Punkte.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">I42.0</span> <span class="Kursiv _idGenCharOverride-1">Dilatative Kardiomyopathie</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">Z94.1</span> <span class="Kursiv _idGenCharOverride-1">Zustand nach Herztransplantation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.20</span> <span class="Kursiv _idGenCharOverride-1">Mittlere motorische Funktionseinschränkung Barthel-Inde</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">x</span></span><span class="Kursiv _idGenCharOverride-1">: 60-75 Punkte</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.02</span> <span class="Kursiv _idGenCharOverride-1">Keine oder leichte kognitive Funktionseinschränkung MMS</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">E</span></span><span class="Kursiv _idGenCharOverride-1">: 24-30 Punkte</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 2</span><span class="Light _idGenCharOverride-1"> </span><span class="Fett _idGenCharOverride-2">Neurologisch</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ein Patient tritt nach akutstationär behandeltem embolischem Stroke des Mediastromgebietes mit neurologischen Defiziten (schlaffe Hemiplegie mit Sprach- und Schluckstörung) zur Rehabilitation ein. Bei Eintritt wird ein Barthel-Index von 27 Punkten erhoben. Es werden nur leichte kognitive Defizite festgestellt, MMSE 28 Punkte.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">I63.4</span> <span class="Kursiv _idGenCharOverride-1">Hirninfarkt durch Embolie zerebraler Arterien</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L </span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">R47.0</span> <span class="Kursiv _idGenCharOverride-1">Dysphasie und Aphasie</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">G</span></span><span class="Kursiv _idGenCharOverride-1">81.0</span> <span class="Kursiv _idGenCharOverride-1">Schlaffe Hemiparese und Hemiplegie</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.40</span> <span class="Kursiv _idGenCharOverride-1">Schwere motorische Funktionseinschränkung. Barthel-Inde</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">x</span></span><span class="Kursiv _idGenCharOverride-1">: 20-35 Punkte</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.02</span> <span class="Kursiv _idGenCharOverride-1">Keine oder leichte kognitive Funktionseinschränkung MMS</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">E</span></span><span class="Kursiv _idGenCharOverride-1">: 24-30 Punkte</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 3 Pneumologisch</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ein Patient mit zystischer Fibrose wird vom Hausarzt wegen Verschlechterung bei bekannter und dokumentierter chronischer respiratorischer Insuffizienz in die pneumologische Rehabilitation eingewiesen. Es wird eine Heimbeatmung eingeleitet. Bei Eintritt dokumentierter Barthel-Index von 80 Punkten, MMSE unauffällig.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">E84.0</span> <span class="Kursiv _idGenCharOverride-1">Zystische Fibrose mit Lungenmanifestationen</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">J96.1-</span> <span class="Kursiv _idGenCharOverride-1">Chronisch respiratorische Insuffizienz, andernorts nicht klassifiziert</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.10</span> <span class="Kursiv _idGenCharOverride-1">Leichte motorische Funktionseinschränkung Barthel-Inde</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">x</span></span><span class="Kursiv _idGenCharOverride-1">: 80-95 Punkte</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.02</span> <span class="Kursiv _idGenCharOverride-1">Keine oder leichte kognitive Funktionseinschränkung MMS</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">E</span></span><span class="Kursiv _idGenCharOverride-1">: 24-30 Punkte</span></p><p class="Beispiel-Titel ParaOverride-1"><span class="Fett _idGenCharOverride-2">Beispiele je Rehabilitationsart</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 1 Neurologische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ein Patient wird zur stationären Rehabilitation verlegt mit Status nach Hirninfarkt im Mediastromgebiet und mit schlaffer Halbseitenlähmung. Nebendiagnostisch besteht eine koronare Herzkrankheit zweier Gefässe, die medikamentös behandelt wird. Pflegerisch</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">benötigt der Patient einen über die Basisleistung hinausgehenden dokumentierten Zusatzaufwand von 73 Aufwandspunkten. Zusätzlich erhält er über 4 Wochen durchschnittlich 700 Minuten pro Woche Logopädie und Ergotherapie. Ausserdem erfolgt während der Rehabilitation ein Hausbesuch zur Abklärung der häuslichen Situation sowie der weiteren Rehabilitationsziele und Massnahmen.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">I63.4</span> <span class="Kursiv _idGenCharOverride-1">Hirninfarkt nach Embolie zerebraler Arterien</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">G</span></span><span class="Kursiv _idGenCharOverride-1">81.0</span> <span class="Kursiv _idGenCharOverride-1">Schlaffe Hemiparese und Hemiplegie</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">I25.12</span> <span class="Kursiv _idGenCharOverride-1">Atherosklerotische Herzkrankhei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">t</span></span><span class="Kursiv _idGenCharOverride-1">: Zwei-Gefäss-Erkrankung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.-</span> <span class="Kursiv _idGenCharOverride-1">Motorische Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.-</span> <span class="Kursiv _idGenCharOverride-1">Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.1</span> <span class="Kursiv _idGenCharOverride-1">Neurologische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">AA.1-</span> <span class="Kursiv _idGenCharOverride-1">Messung der Activity of Daily Living [ADL]</span></p><div aria-label="228" epub:type="pagebreak" id="page230" role="doc-pagebreak"></div><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 2 Psychosomatische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ein Patient tritt wegen im ambulanten Setting nicht kontrollierbarer, persistierender Rückenschmerzen ohne eindeutige Ursache in die stationäre Rehabilitation ein. Ein übermässiger Gebrauch von Schmerz- und Schlafmedikamenten sowie eine im Verlauf der Rehabilitation diagnostizierte depressive Episode werden gemäss ärztlicher Dokumentation behandelt.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">F45.0</span> <span class="Kursiv _idGenCharOverride-1">Somatisierungsstörung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">M54.5</span> <span class="Kursiv _idGenCharOverride-1">Kreuzschmerz</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">F32.9</span> <span class="Kursiv _idGenCharOverride-1">Depressive Episode, nicht näher bezeichnet</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">F13.1</span> <span class="Kursiv _idGenCharOverride-1">Psychische und Verhaltensstörungen durch Sedativa oder Hypnotika, schädlicher Gebrauch</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND	Y57.</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">9</span></span><span class="Kursiv _idGenCharOverride-1">!	Unerwünschte Nebenwirkungen bei therapeutischer Anwendung von Arzneimitteln und Drogen</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.-</span> <span class="Kursiv _idGenCharOverride-1">Motorische Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.-</span> <span class="Kursiv _idGenCharOverride-1">Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.2</span> <span class="Kursiv _idGenCharOverride-1">Psychosomatische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">AA.1-</span> <span class="Kursiv _idGenCharOverride-1">Messung der Activity of Daily Living [ADL]</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 3 Pulmonale Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Übertritt eines Patienten in die Rehabilitation mit chronisch obstruktiver Lungenkrankheit Gold-Stadium III, als Folge von jahrelangem, persistierendem Nikotinabusus und aktuell akut entzündlicher unterer Atemwegserkrankung. Weitere Nebendiagnosen gemäss medizinischer Dokumentation, z.B. arterielle Hypertonie, die medikamentös behandelt und überwacht wird.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Bei protrahiertem Verlauf unter antibiotischer Therapie und gelegentlichem Erstickungsempfinden wird eine Bronchoskopie mit bronchoalveolärer Lavage durchgeführt. Zur Atemunterstützung wird bei durch Blutgasanalyse bestätigter, akuter hypoxischer respiratorischer Insuffizienz eine unterstützende CPAP-Beatmung für 3 Tage durchgeführt. Durch dafür ausgebildetes (medizinisches) Personal erhält der Patient Rauchstopp- und Atemtherapieschulungen und tägliche intensive Atemtherapie durch Physiotherapeuten.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Die Gesamtsumme dieser dokumentierten Therapien beträgt durchschnittlich 820 min pro Woche.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">J44.01</span> <span class="Kursiv _idGenCharOverride-1">Chronische obstruktive Lungenkrankheit mit akuter Infektion der unteren Atemwege FEV 1 &gt;=35%</span></p><p class="Beispiel-Titel ParaOverride-3"> <span class="Kursiv _idGenCharOverride-1">und &lt;50% des Sollwertes</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">F17.1</span> <span class="Kursiv _idGenCharOverride-1">Psychische und Verhaltensstörungen durch Taba</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">k</span></span><span class="Kursiv _idGenCharOverride-1">: Schädlicher Gebrauch</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">J96.00</span> <span class="Kursiv _idGenCharOverride-1">Akute respiratorische Insuffizienz, andernorts nicht klassifiziert, Typ I [hypoxisch]</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">I10.90</span> <span class="Kursiv _idGenCharOverride-1">Essentielle Hypertonie, nicht näher bezeichne</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">t</span></span><span class="Kursiv _idGenCharOverride-1">: ohne Angabe einer hypertensiven Krise</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.-</span> <span class="Kursiv _idGenCharOverride-1">Motorische Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.-</span> <span class="Kursiv _idGenCharOverride-1">Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.3</span> <span class="Kursiv _idGenCharOverride-1">Pulmonale Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">AA.1-</span> <span class="Kursiv _idGenCharOverride-1">Messung der Activity of Daily Living [ADL]</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">T</span><span class="Fett _idGenCharOverride-2"> </span><span class="Kursiv _idGenCharOverride-1">AA.31.-</span><span class="Fett _idGenCharOverride-2"> </span><span class="Kursiv _idGenCharOverride-1">6-Minuten-Gehtest (bei Eintritt)</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">T</span><span class="Fett _idGenCharOverride-2"> </span><span class="Kursiv _idGenCharOverride-1">AA.31.-</span><span class="Fett _idGenCharOverride-2"> </span><span class="Kursiv _idGenCharOverride-1">6-Minuten-Gehtest (bei Austritt)</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">33.24.11</span> <span class="Kursiv _idGenCharOverride-1">Tracheobronchoskopie (flexible) (starr) mit bronchoalveolärer Lavage</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">93.9G.11</span> <span class="Kursiv _idGenCharOverride-1">Maskenüberdrucktherapie, CPAP, Ersteinstellung, innerhalb von 3 Tagen</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">99.22.1-</span> <span class="Kursiv _idGenCharOverride-1">Injektion einer antiinfektiösen Substanz, nach Anzahl Behandlungstage.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 4 Kardiale Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Verlegung eines Patienten aus der Akutklinik nach subendokardialem Herzinfarkt bei koronarer 2-Gefäss-Krankheit. Er leidet an behandlungsrelevanter, ernährungsbedingter morbider Adipositas mit einem BMI von 43.5.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">I21.40</span> <span class="Kursiv _idGenCharOverride-1">Akuter subendokardialer Myokardinfarkt, Typ-1-Infarkt</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">I25.12</span> <span class="Kursiv _idGenCharOverride-1">Atherosklerotische Herzkrankhei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">t</span></span><span class="Kursiv _idGenCharOverride-1">: Zwei-Gefäss-Erkrankung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">E66.02</span> <span class="Kursiv _idGenCharOverride-1">Adipositas durch übermässige Kalorienzufuhr, Adipositas Grad III (WHO) bei Patienten von 18 Jahren und älter</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.-</span> <span class="Kursiv _idGenCharOverride-1">Motorische Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.-</span> <span class="Kursiv _idGenCharOverride-1">Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.4</span> <span class="Kursiv _idGenCharOverride-1">Kardiale Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">AA.1-</span> <span class="Kursiv _idGenCharOverride-1">Messung der Activity of Daily Living [ADL]</span></p><div aria-label="229" epub:type="pagebreak" id="page231" role="doc-pagebreak"></div><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 5 Muskuloskelettale Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ein Patient wird vom Hausarzt zur stationären Rehabilitation zugewiesen. Er leidet an posttraumatischer Kniearthrose und in Folge an entlastungsbedingten Kreuzschmerzen. In die stationäre Behandlung fliesst die Abklärung und Behandlung eines Diabetes mellitus ein. Im Zentrum der rehabilitativen Massnahmen stehen die analgetische Behandlung und muskuläre Rekonditionierung/Kräftigung durch Physiotherapie.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">M17.3</span> <span class="Kursiv _idGenCharOverride-1">Sonstige posttraumatische Gonarthrose</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">M54.5</span> <span class="Kursiv _idGenCharOverride-1">Kreuzschmerz</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">E11.90</span> <span class="Kursiv _idGenCharOverride-1">Diabetes mellitus, Typ </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">2</span></span><span class="Kursiv _idGenCharOverride-1">: ohne Komplikatione</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">n</span></span><span class="Kursiv _idGenCharOverride-1">: nicht als entgleist bezeichnet</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.-</span> <span class="Kursiv _idGenCharOverride-1">Motorische Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.-</span> <span class="Kursiv _idGenCharOverride-1">Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.5</span> <span class="Kursiv _idGenCharOverride-1">Muskuloskelettale Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">AA.1-</span> <span class="Kursiv _idGenCharOverride-1">Messung der Activity of Daily Living [ADL]</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 6 Internistische und onkologische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Eine Patientin mit metastasiertem (Lymphknoten mehrerer Regionen) Bronchus-Karzinom des linken Oberlappens tritt zur stationären Rehabilitation im Anschluss an die akutstationäre Hospitalisation ein. Die im Akutspital begonnene Verabreichung einer niedrigkomplexen Chemotherapie und die notwendige Gabe von nicht modifizierten Antikörpern im Rahmen einer Immuntherapie werden während der Rehabilitation einmal ambulant (im Akutspital) weitergeführt.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ziel der rehabilitativen Behandlung ist eine Verbesserung des Allgemeinbefindens im Sinne einer Rekonditionierung.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Die Kodierung erfolgt in diesem Fall unter Berücksichtigung der Kodierregel</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">P00n	</span> <span class="Kursiv _idGenCharOverride-1">externe ambulante Leistungen</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Daher sind die nicht komplexe Chemotherapie und die Immuntherapie nicht im stationären Fall zu kodieren.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">C</span></span><span class="Kursiv _idGenCharOverride-1">34.1</span> <span class="Kursiv _idGenCharOverride-1">Bösartige Neubildun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">g</span></span><span class="Kursiv _idGenCharOverride-1">: Oberlappen (-Bronchus)</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L</span> <span class="Kursiv _idGenCharOverride-1">2</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">C</span></span><span class="Kursiv _idGenCharOverride-1">77.8</span> <span class="Kursiv _idGenCharOverride-1">Sekundäre bösartige Neubildung von Lymphknoten mehrerer Regionen</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.-</span> <span class="Kursiv _idGenCharOverride-1">Motorische Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.-</span> <span class="Kursiv _idGenCharOverride-1">Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.6</span> <span class="Kursiv _idGenCharOverride-1">Internistische und onkologische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">AA.1-</span> <span class="Kursiv _idGenCharOverride-1">Messung der Activity of Daily Living [ADL]</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 7 Pädiatrische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Übertritt eines Kindes aus Akutspital zur Rehabilitation mit Status nach Enzephalomyelitis und persistierenden krankheitsbedingten hirnorganischen Dysfunktionen, Funktionsdefiziten und rezidivierenden epileptischen Anfällen.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Alle Kriterien für eine pädiatrische Rehabilitation sind erfüllt.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Zur Rehabilitationssteuerung werden periodisch diagnostische Massnahmen erbracht.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">G04.9</span> <span class="Kursiv _idGenCharOverride-1">Enzephalitis, Myelitis und Enzephalomyelitis, nicht näher bezeichnet</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">G</span></span><span class="Kursiv _idGenCharOverride-1">40.8</span> <span class="Kursiv _idGenCharOverride-1">Sonstige Epilepsien</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">F06.8</span> <span class="Kursiv _idGenCharOverride-1">Sonstige näher bezeichnete organische psychische Störungen aufgrund einer Schädigung oder Funktionsstörung</span></p><p class="Beispiel-Titel ParaOverride-3"> <span class="Kursiv _idGenCharOverride-1">des Gehirns oder einer körperlichen Krankheit</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.-</span> <span class="Kursiv _idGenCharOverride-1">Motorische Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.-</span> <span class="Kursiv _idGenCharOverride-1">Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.7</span> <span class="Kursiv _idGenCharOverride-1">Pädiatrische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">AA.1-</span> <span class="Kursiv _idGenCharOverride-1">Messung der Activity of Daily Living [ADL]</span></p><div aria-label="230" epub:type="pagebreak" id="page232" role="doc-pagebreak"></div><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Beispiel 8 Geriatrische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Ein multimorbider Patient tritt im Anschluss an die Behandlung im Akutspital zur Rehabilitation ein. Er leidet an Rückenschmerzen aufgrund Spinalkanalstenose begleitet von radikulären schmerzhaften Ausstrahlungen und Lähmungserscheinungen.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Alle im Beispiel aufgeführten akutsomatischen Diagnosen liegen gemäss ärztlicher Dokumentation weiterhin vor und benötigen für die Kodierung einen Aufwand &gt; 0 gemäss Kodierregel G 54. Andere Kodierregeln und Hinweise im Medizinischen Kodierungshandbuch sind zu beachten.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Während der Rehabilitation erfolgt ein diagnostischer und therapeutischer Hausbesuch zur Abklärung der häuslichen Situation und zum Festlegen von weiteren Rehabilitationszielen und notwendigen Massnahmen.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">M48.06</span> <span class="Kursiv _idGenCharOverride-1">Spinal(kanal)stenos</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">e</span></span><span class="Kursiv _idGenCharOverride-1">: Lumbalbereich</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">G</span></span><span class="Kursiv _idGenCharOverride-1">55.3*</span> <span class="Kursiv _idGenCharOverride-1">Kompression von Nervenwurzeln und Nervenplexus bei sonstigen Krankheiten der Wirbelsäule und des Rückens </span></p><p class="Beispiel-Titel ParaOverride-3"> <span class="Kursiv _idGenCharOverride-1">(M45 - M46†, M48.-†, M53 - M54†)</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">E03.9</span> <span class="Kursiv _idGenCharOverride-1">Hypothyreose, nicht näher bezeichnet</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">I50.13</span> <span class="Kursiv _idGenCharOverride-1">Linksherzinsuffizienz mit Beschwerden bei leichterer Belastung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">E11.72†</span> <span class="Kursiv _idGenCharOverride-1">Diabetes mellitus Typ 2, mit sonstigen multiplen Komplikationen, nicht als entgleist bezeichnet</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">G</span></span><span class="Kursiv _idGenCharOverride-1">63.2*</span> <span class="Kursiv _idGenCharOverride-1">Diabetische Polyneuropathie</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">N08.3*</span> <span class="Kursiv _idGenCharOverride-1">Glomeruläre Krankheiten bei Diabetes mellitus</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">N18.3</span> <span class="Kursiv _idGenCharOverride-1">Chronische Nierenkrankheit, Stadium 3</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">I10.00</span> <span class="Kursiv _idGenCharOverride-1">Benigne essentielle Hypertoni</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">e</span></span><span class="Kursiv _idGenCharOverride-1">: ohne Angabe einer hypertensiven Krise</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">E44.1</span> <span class="Kursiv _idGenCharOverride-1">Leichte Energie- und Eiweissmangelernährung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">E55.9</span> <span class="Kursiv _idGenCharOverride-1">Vitamin-D-Mangel, nicht näher bezeichnet</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.-</span> <span class="Kursiv _idGenCharOverride-1">Motorische Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.-</span> <span class="Kursiv _idGenCharOverride-1">Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.8</span> <span class="Kursiv _idGenCharOverride-1">Geriatrische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">AA.1-</span> <span class="Kursiv _idGenCharOverride-1">Messung der Activity of Daily Living [ADL]</span></p><p class="Beispiel-Titel ParaOverride-1"><span class="Fett _idGenCharOverride-2">Beispiele für BA.9 Kodes</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 1</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Eine 70-jährige Patientin wird nach Implantation einer Totalendoprothese links aus dem akutsomatischen Setting zur muskuloskelettalen Rehabilitation in die Rehabilitationsklinik verlegt. Bei der Patientin ist eine langjährige chronisch obstruktive Lungenerkrankung (COPD) bekannt. Postoperativ und in den ersten Tagen der Rehabilitation kam es zu einer Exazerbation von Dyspnoe-Episoden (FEV1 60%), die mit einem Bronchodilatator erfolgreich behandelt werden konnte.</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Der stationäre Rehabilitationsaufenthalt betrug 8 Tage. Die Anzahl der durchschnittlichen Therapieminuten pro Woche lag bei 280. </span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Alle anderen Kriterien für die muskuloskelettale Rehabilitation waren erfüllt.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Kodierung</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2"> </span></span><span class="Fett _idGenCharOverride-2">: </span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">M16.1</span> <span class="Kursiv _idGenCharOverride-1">Sonstige primäre Koxarthrose, einseitig</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L</span> <span class="Kursiv _idGenCharOverride-1">2</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">J44.12</span> <span class="Kursiv _idGenCharOverride-1">Chronische obstruktive Lungenkrankheit mit akuter Exazerbation, nicht näher bezeichnet, FEV1 &gt;=50 % und &lt;70 % des </span></p><p class="Beispiel-Titel ParaOverride-3"> <span class="Kursiv _idGenCharOverride-1">Sollwertes</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.-</span> <span class="Kursiv _idGenCharOverride-1">Motorische Funktionseinschränkung </span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.-</span> <span class="Kursiv _idGenCharOverride-1">Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.9</span> <span class="Kursiv _idGenCharOverride-1">Rehabilitation, sonstige</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">AA.13-</span> <span class="Kursiv _idGenCharOverride-1">Messung der Activity of Daily Living [ADL] </span></p><div aria-label="231" epub:type="pagebreak" id="page233" role="doc-pagebreak"></div><p class="Beispiel-Titel ParaOverride-3"><span class="Fett _idGenCharOverride-2">Beispiel 2</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Ein Patient, mit Status nach Hirninfarkt im Mediastromgebiet und schlaffer Halbseitenlähmung, wird zur stationären neurologischen Rehabilitation verlegt. Nebendiagnostisch besteht eine koronare 2- Gefässerkrankung, die medikamentös behandelt wird. </span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">Die Anzahl der durchschnittlichen Therapieminuten pro Woche lag bei 560. Während des vierwöchigen stationären Rehabilitationsaufenthalts erfolgten sechs Besuche des Facharztes .</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">I63.4</span> <span class="Kursiv _idGenCharOverride-1">Hirninfarkt nach Embolie zerebraler Arterien</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND	</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">G</span></span><span class="Kursiv _idGenCharOverride-1">81.0	Schlaffe Hemiparese und Hemiplegie</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">L</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND	I25.12	Atherosklerotische Herzkrankhei</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">t</span></span><span class="Kursiv _idGenCharOverride-1">: Zwei-Gefäss-Erkrankung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND	U50.-	Motorische Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">ND	U51.-	Kognitive Funktionseinschränkung</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B	BA.9	Rehabilitation, sonstige</span></p><p class="Beispiel-Titel ParaOverride-3"><span class="Kursiv _idGenCharOverride-1">B	AA.13-	Messung der Activity of Daily Living [ADL]</span></p><p class="Beispiel-Titel"><span class="Light _idGenCharOverride-1"> </span></p><p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-2">Beispiele für BB.3-Kodes</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Beispiel 1</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Eine Patientin mit bekannter Anorexia nervosa vom aktiven Typ, erhält eine psychosomatische Rehabilitation, weil sie unter Angstzuständen leidet und trotz ihres Wunsches, wieder zu arbeiten, Schwierigkeiten hat, die vorgeschlagenen Anpassungen ihrer Tagesabläufe und ihrer Ernährung zu akzeptieren. Um die schrittweise Wiedereingliederung an ihrem Arbeitsplatz zu fördern, muss der Verlust an Muskelmasse berücksichtigt werden. Sie erhielt während des psychosomatischen Rehabilitationsaufenthalts, aufgrund von Selbstgefährdung, an zwei Tagen, je drei stundenlang eine </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">1</span></span><span class="Kursiv _idGenCharOverride-1">:1-Betreuung.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">F50.01</span> <span class="Kursiv _idGenCharOverride-1">Anorexia nervosa, mit Massnahmen zur Gewichtsreduktion</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.2</span> <span class="Kursiv _idGenCharOverride-1">Psychosomatische Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BB.31.11</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">1</span></span><span class="Kursiv _idGenCharOverride-1">:1 Betreuung in der Rehabilitation, mindestens 2 Stunden bis 8 Stunden pro Tag</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BB.31.11</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">1</span></span><span class="Kursiv _idGenCharOverride-1">:1 Betreuung in der Rehabilitation, mindestens 2 Stunden bis 8 Stunden pro Tag</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Beispiel 2</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Ein Patient tritt nach akutem Myokardinfarkt zur Rehabilitation ein. Ein postinterventioneller Wundinfekt wird therapiert.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Die Wundpflege an zwei Tagen des Rehabilitationsaufenthalts erfordert eine Gesamtminutenzahl von mehr als 60 Minuten für jeden der beiden Tage. Alle Kriterien für eine kardiale Rehabilitation sind erfüllt.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">I21.0</span> <span class="Kursiv _idGenCharOverride-1">Akuter transmuraler Myokardinfarkt der Vorderwand.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">L08.8</span> <span class="Kursiv _idGenCharOverride-1">Sonstige näher bezeichnete lokale Infektionen der Haut und der Unterhaut</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.4</span> <span class="Kursiv _idGenCharOverride-1">Kardiale Rehabilitation</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BB.32</span> <span class="Kursiv _idGenCharOverride-1">Wundmanagement in der Rehabilitation, mindestens 60 Min. pro Tag</span></p><p class="Beispiel-Titel ParaOverride-6"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BB.32</span> <span class="Kursiv _idGenCharOverride-1">Wundmanagement in der Rehabilitation, mindestens 60 Min. pro Tag</span></p><div aria-label="232" epub:type="pagebreak" id="page234" role="doc-pagebreak"></div><p class="Beispiel-Titel"><span class="Fett _idGenCharOverride-2">Beispiele für BB.4-Kodes</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Beispiel 1</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Ein Patient wird zur muskuloskelettalen Rehabilitation in eine Rehabilitationsabteilung verlegt, nachdem er zwei Wochen lang auf einer akutsomatischen Station betreut worden war, weil er eine Fraktur des rechten Oberschenkelhalses mit Verletzung der Oberschenkelarterie erlitten hatte.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Der Patient weist weiterhin Schwankungen der Vitalparameter (Atemfrequenz, Blutdruck) und Schwankungen des Bewusstseinszustands auf. In diesem Fall sind alle drei der möglichen Funktionsstörungen gegeben. </span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Die Eintrittsabklärung ergab einen Barthel-Index von 50 Punkten. Die Bewertung des erweiterten Barthel-Index (EBI) ergibt eine Punktzahl von 30 Punkten. </span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Während des Aufenthalts zur muskuloskelettalen Rehabilitation benötigte der Patient in der ersten Woche (7 Tage) eine Überwachung mit Arztvisiten an 5 Tagen.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Alle Kriterien der muskuloskelettale Rehabilitation sind bezogen auf den ganzen Fall erfüllt. Die durchschnittlichen Therapieminuten pro Woche betragen 560 Minuten. Dies entspricht dem Kode BA.52. </span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">In Verbindung mit den funktionellen Einschränkungen, die zu einem Stimmungstief führten, erhielt der Patient eine </span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">1</span></span><span class="Kursiv _idGenCharOverride-1">:1-Betreuung, die einmal für zwei Stunden durchgeführt wurde. </span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">S72.00</span> <span class="Kursiv _idGenCharOverride-1">Fraktur des Femurs, Teil nicht näher bezeichnet </span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">L</span> <span class="Kursiv _idGenCharOverride-1">1</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U50.30</span> <span class="Kursiv _idGenCharOverride-1">Mittelschwere motorische Funktionseinschränkung, Barthel-Inde</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">x</span></span><span class="Kursiv _idGenCharOverride-1">: 40 - 55 Punkte </span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U51.10</span> <span class="Kursiv _idGenCharOverride-1">Mittlere kognitive Funktionseinschränkung, Erweiterter Barthel-Inde</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">x</span></span><span class="Kursiv _idGenCharOverride-1">: 20 - 65 Punkte</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.52</span> <span class="Kursiv _idGenCharOverride-1">Muskuloskelettale Rehabilitation, mit durchschnittlich 450 bis weniger als 565 Therapieminuten pro Woche</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BB.41.12</span> <span class="Kursiv _idGenCharOverride-1">Überwachungsrehabilitation, mindestens 7 bis 13 Behandlungstage</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BB.31.11</span> <span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">1</span></span><span class="Kursiv _idGenCharOverride-1">:1-Betreuung in der Rehabilitation, mindestens 2 Stunden bis 8 Stunden pro Tag</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Beispiel 2</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Während eines neurologischen Rehabilitationsaufenthalts nach einem Hirninfarkt zeigt der Patient in der zweiten Woche des Krankenhausaufenthalts eine lebensbedrohliche Fluktuation der Vitalparameter (Blutdruck, Herzfrequenz, Temperatur und Sauerstoffsättigung) aufgrund einer Aspirationspneumonie beidseitig.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Die Überwachung erfolgte kontinuierlich über drei Tage, abgesehen von einer 60-minütigen Unterbrechung am ersten Tag, um eine Röntgenaufnahme des Thorax durchzuführen. Am ersten Tag fanden vier Arztbesuche statt, am zweiten Tag drei und am dritten Tag zwei.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">Der Rest des stationären Aufenthalts zur neurologischen Rehabilitation verlief bei stabilen Vitalparametern. Die durchschnittlichen Therapieminuten pro Woche bezogen auf den ganzen Fall betragen 680 Minuten. Dies entspricht dem Kode BA.13.</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Fett _idGenCharOverride-2">Kodierun</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Fett _idGenCharOverride-2">g</span></span><span class="Fett _idGenCharOverride-2">:</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">HD</span> <span class="Kursiv _idGenCharOverride-1">I63.5</span> <span class="Kursiv _idGenCharOverride-1">Hirninfarkt durch nicht näher bezeichneten Verschluss oder Stenose zerebraler Arterien</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">L</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">J69.0</span> <span class="Kursiv _idGenCharOverride-1">Aspirationsbronchopneumonie</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">L</span> <span class="Kursiv _idGenCharOverride-1">0</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">ND</span> <span class="Kursiv _idGenCharOverride-1">U69.0</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Kursiv _idGenCharOverride-1">1</span></span><span class="Kursiv _idGenCharOverride-1">!</span> <span class="Kursiv _idGenCharOverride-1">Anderenorts klassifizierte Pneumonie, die mehr als 48 Stunden nach Krankenhausaufnahme auftritt</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BA.13</span> <span class="Kursiv _idGenCharOverride-1">Neurologische Rehabilitation, mit durchschnittlich 675 bis weniger als 845 Therapieminuten pro Woche</span></p><p class="Beispiel-Titel ParaOverride-4"><span class="Kursiv _idGenCharOverride-1">B</span> <span class="Kursiv _idGenCharOverride-1">BB.42.14</span> <span class="Kursiv _idGenCharOverride-1">Intensive Überwachung in der Rehabilitation, von mehr als 48 Stunden bis 72 Stunden</span></p><hr class="HorizontalRule-1"/><section class="_idFootnotes" epub:type="endnotes" role="doc-endnotes">
+<ol class="_listStyleNone">
+<li class="_idFootnote" id="footnote-010"><p class="Fussnote"><span class="Light"><a class="_idFootnoteAnchor" href="U10_Rehabilitation_Kodierungshandbuch_2027.xhtml#footnote-010-backlink" role="doc-backlink">1</a></span><span class="Light _idGenCharOverride-1">1	http</span><span class="GREP--Kl--Abstand-100-Einh--1-8-Geviert"><span class="Light _idGenCharOverride-1">s</span></span><span class="Light _idGenCharOverride-1">://www.anq.ch/wp-content/uploads/2024/11/ANQ_Reha_CHOP_Codes_2021_Ueberleitungstabelle-ADL-Score_2021.pdf</span></p></li>
+</ol>
+</section><div class="_idGenObjectLayout-1">
+<div class="Einfacher-Textrahmen" id="_idContainer245">
+</div>
+</div></article>
+    <nav class="pager"><a class="pager-prev" href="beispiele-und-erlaeuterungen.html">‹ Beispiele und Erläuterungen</a><a class="pager-next" href="alphabetisches-verzeichnis.html">Alphabetisches Verzeichnis ›</a></nav>
+  </main>
+  </div>
+  <script src="https://urs63.github.io/Projekt-ID-to-Web-for-the-Kodierhandbuch-20YY/assets/nav.js"></script>
+  <script>
+// Sidebar-Hoehe an Header anpassen
+(function() {
+  function adjustSidebar() {
+    var header = document.getElementById('site-header');
+    var sidebar = document.getElementById('sidebar');
+    if (header && sidebar) {
+      var h = header.offsetHeight;
+      sidebar.style.top = h + 'px';
+      sidebar.style.height = 'calc(100vh - ' + h + 'px)';
+    }
+  }
+  adjustSidebar();
+  window.addEventListener('resize', adjustSidebar);
+})();
+</script>
+</body>
+</html>
