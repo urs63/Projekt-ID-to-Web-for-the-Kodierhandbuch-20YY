@@ -43,14 +43,6 @@
   --sidebar-bg: #f8fafc;
   --font-body: 'Roboto', sans-serif;
   --font-ui: 'Roboto', sans-serif;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { display: flex; min-height: 100vh; font-family: var(--font-body); color: var(--text); background: var(--bg); }
-#sidebar { width: var(--sidebar-width); min-height: 100vh; background: var(--sidebar-bg); border-right: 1px solid var(--border); position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; padding-bottom: 2rem; }
-#sidebar-header { padding: 1.25rem 1rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--sidebar-bg); z-index: 10; }
-#book-title { font-family: var(--font-ui); font-weight: 700; font-size: 0.9rem; color: var(--text); text-decoration: none; line-height: 1.3; display: block; }
-/* ── Akkordeon-Navigation ── */
-:root {
   --nav-h2-bg: #1a3a5c;
   --nav-h2-bg-open: #15304d;
   --nav-h2-color: #ffffff;
@@ -62,6 +54,12 @@ body { display: flex; min-height: 100vh; font-family: var(--font-body); color: v
   --nav-active-accent: #c00;
 }
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { display: flex; min-height: 100vh; font-family: var(--font-body); color: var(--text); background: var(--bg); }
+#sidebar { width: var(--sidebar-width); min-height: 100vh; background: var(--sidebar-bg); border-right: 1px solid var(--border); position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; padding-bottom: 2rem; }
+#sidebar-header { padding: 1.25rem 1rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--sidebar-bg); z-index: 10; }
+#book-title { font-family: var(--font-ui); font-weight: 700; font-size: 0.9rem; color: var(--text); text-decoration: none; line-height: 1.3; display: block; }
+/* ── Akkordeon-Navigation ── */
 /* Expand/Collapse Button */
 #nav-toggle-wrap {
   padding: 0.5rem 0.75rem;
