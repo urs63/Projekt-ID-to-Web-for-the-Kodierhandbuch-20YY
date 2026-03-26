@@ -1,0 +1,682 @@
+{
+  "title": "V2027D_Teil1",
+  "pages": [
+    {
+      "slug": "seite-1",
+      "title": "Seite 1",
+      "level": 2
+    },
+    {
+      "slug": "seite-2",
+      "title": "Seite 2",
+      "level": 2
+    },
+    {
+      "slug": "seite-3",
+      "title": "Seite 3",
+      "level": 2
+    },
+    {
+      "slug": "danksagung",
+      "title": "Danksagung",
+      "level": 2
+    },
+    {
+      "slug": "einleitung-version2027",
+      "title": "Einleitung Version2027",
+      "level": 2
+    },
+    {
+      "slug": "grundlagen-g00-g55",
+      "title": "Grundlagen G00 –G55",
+      "level": 2
+    },
+    {
+      "slug": "g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi",
+      "title": "G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung",
+      "level": 3
+    },
+    {
+      "slug": "g20-die-klassifikationen-icd-10-gm-und-chop",
+      "title": "G20\tDie Klassifikationen (ICD-10-GM und CHOP)",
+      "level": 3
+    },
+    {
+      "slug": "g30a-derweg-zur-korrekten-kodierung",
+      "title": "G30a\tDerWeg zur korrekten Kodierung",
+      "level": 3
+    },
+    {
+      "slug": "g40odokumentationder-diagnosen-undder-prozeduren",
+      "title": "G40oDokumentationder Diagnosen undder Prozeduren",
+      "level": 3
+    },
+    {
+      "slug": "g50definitionen",
+      "title": "G50Definitionen",
+      "level": 3
+    },
+    {
+      "slug": "allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16",
+      "title": "Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16",
+      "level": 2
+    },
+    {
+      "slug": "d01gsymptome",
+      "title": "D01gSymptome",
+      "level": 3
+    },
+    {
+      "slug": "d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen",
+      "title": "D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen",
+      "level": 3
+    },
+    {
+      "slug": "d03mkreuz-stern-kodes",
+      "title": "D03mKreuz †-Stern*-Kodes",
+      "level": 3
+    },
+    {
+      "slug": "d04ckodes-mitausrufezeichen",
+      "title": "D04cKodes mitAusrufezeichen («!»)",
+      "level": 3
+    },
+    {
+      "slug": "d05pstatus-nach-vorhandensein-von-fehlen-von",
+      "title": "D05pStatus nach /Vorhandensein von /Fehlen von",
+      "level": 3
+    },
+    {
+      "slug": "d06c-folgezustaende",
+      "title": "D06c\tFolgezustände",
+      "level": 3
+    },
+    {
+      "slug": "d07ngeplante-folgeeingriffe",
+      "title": "D07nGeplante Folgeeingriffe",
+      "level": 3
+    },
+    {
+      "slug": "d08a-sich-anbahnende-oderdrohende-krankheit",
+      "title": "D08a\tSich anbahnende oderdrohende Krankheit",
+      "level": 3
+    },
+    {
+      "slug": "d09lverdachtsdiagnosen",
+      "title": "D09lVerdachtsdiagnosen",
+      "level": 3
+    },
+    {
+      "slug": "d11nkombinationskodes",
+      "title": "D11nKombinationskodes",
+      "level": 3
+    },
+    {
+      "slug": "d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen",
+      "title": "D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)",
+      "level": 3
+    },
+    {
+      "slug": "d13asyndrome",
+      "title": "D13aSyndrome",
+      "level": 3
+    },
+    {
+      "slug": "d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt",
+      "title": "D14g\tAufnahme zur Operation/Prozedurnicht durchgeführt",
+      "level": 3
+    },
+    {
+      "slug": "d15o-verlegungen",
+      "title": "D15o\tVerlegungen",
+      "level": 3
+    },
+    {
+      "slug": "d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener",
+      "title": "D16i\tWahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen",
+      "level": 3
+    },
+    {
+      "slug": "allgemeine-kodierrichtlinienfuerprozeduren-p00-p11",
+      "title": "Allgemeine KodierrichtlinienfürProzeduren P00 – P11",
+      "level": 2
+    },
+    {
+      "slug": "p01p-prozeduren-die-kodiert-werden-muessen",
+      "title": "P01p\tProzeduren,die kodiert werden müssen",
+      "level": 3
+    },
+    {
+      "slug": "p02o-prozeduren-die-nicht-kodiert-werden",
+      "title": "P02o\tProzeduren,die nicht kodiert werden",
+      "level": 3
+    },
+    {
+      "slug": "p03cendoskopie-und-endoskopische-eingriffe",
+      "title": "P03cEndoskopie und endoskopische Eingriffe",
+      "level": 3
+    },
+    {
+      "slug": "p04nkombinationseingriffe-komplexeoperationen",
+      "title": "P04nKombinationseingriffe/KomplexeOperationen",
+      "level": 3
+    },
+    {
+      "slug": "p05aunvollstaendig-durchgefuehrte-eingriffe",
+      "title": "P05aUnvollständig durchgeführte Eingriffe",
+      "level": 3
+    },
+    {
+      "slug": "p06omehrfach-durchgefuehrte-prozeduren",
+      "title": "P06oMehrfach durchgeführte Prozeduren",
+      "level": 3
+    },
+    {
+      "slug": "p08o-revisioneneines-operationsgebietes-reoperationen",
+      "title": "P08o\tRevisioneneines Operationsgebietes/Reoperationen",
+      "level": 3
+    },
+    {
+      "slug": "p09oorganentnahme-undtransplantation",
+      "title": "P09oOrganentnahme undTransplantation",
+      "level": 3
+    },
+    {
+      "slug": "p10nadhaesiolyse",
+      "title": "P10nAdhäsiolyse",
+      "level": 3
+    },
+    {
+      "slug": "p11hserosaverletzung-mit-uebernaehung",
+      "title": "P11hSerosaverletzung mit Übernähung",
+      "level": 3
+    },
+    {
+      "slug": "spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200",
+      "title": "Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200",
+      "level": 2
+    },
+    {
+      "slug": "sd0106ncovid-19",
+      "title": "SD0106nCOVID-19",
+      "level": 4
+    },
+    {
+      "slug": "sd0200nneubildungen",
+      "title": "SD0200nNeubildungen",
+      "level": 3
+    },
+    {
+      "slug": "sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten",
+      "title": "SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten",
+      "level": 3
+    },
+    {
+      "slug": "sd0500-psychische-und-verhaltensstoerungen",
+      "title": "SD0500\tPsychische und Verhaltensstörungen",
+      "level": 3
+    },
+    {
+      "slug": "sd0600-krankheitendesnervensystems",
+      "title": "SD0600\tKrankheitendesNervensystems",
+      "level": 3
+    },
+    {
+      "slug": "sd0800-krankheitendesohres-und-des-warzenfortsatzes",
+      "title": "SD0800\tKrankheitendesOhres und des Warzenfortsatzes",
+      "level": 3
+    },
+    {
+      "slug": "sd0900-krankheitendeskreislaufsystems",
+      "title": "SD0900\tKrankheitendesKreislaufsystems",
+      "level": 3
+    },
+    {
+      "slug": "sd1000-krankheitendesatmungssystems",
+      "title": "SD1000\tKrankheitendesAtmungssystems",
+      "level": 3
+    },
+    {
+      "slug": "sd1100-krankheitendesverdauungssystems",
+      "title": "SD1100\tKrankheitendesVerdauungssystems",
+      "level": 3
+    },
+    {
+      "slug": "sd1200-krankheitenderhaut-und-der-unterhaut",
+      "title": "SD1200\tKrankheitenderHaut und der Unterhaut",
+      "level": 3
+    },
+    {
+      "slug": "sd1400-krankheitendesurogenitalsystems",
+      "title": "SD1400\tKrankheitendesUrogenitalsystems",
+      "level": 3
+    },
+    {
+      "slug": "sd1500geburtshilfe",
+      "title": "SD1500Geburtshilfe",
+      "level": 3
+    },
+    {
+      "slug": "sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben",
+      "title": "SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben",
+      "level": 3
+    },
+    {
+      "slug": "sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas",
+      "title": "SD1800\tSymptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind",
+      "level": 3
+    },
+    {
+      "slug": "sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen",
+      "title": "SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen",
+      "level": 3
+    },
+    {
+      "slug": "sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet",
+      "title": "SD2000Äussere Ursachen von Morbidität und Mortalität",
+      "level": 3
+    },
+    {
+      "slug": "sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed",
+      "title": "SD2100\tFaktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen",
+      "level": 3
+    },
+    {
+      "slug": "spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400",
+      "title": "Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400",
+      "level": 2
+    },
+    {
+      "slug": "kodierrichtlinienrehabilitation",
+      "title": "KodierrichtlinienRehabilitation",
+      "level": 2
+    },
+    {
+      "slug": "seite-59",
+      "title": "Seite 59",
+      "level": 2
+    },
+    {
+      "slug": "seite-60",
+      "title": "Seite 60",
+      "level": 2
+    },
+    {
+      "slug": "seite-61",
+      "title": "Seite 61",
+      "level": 2
+    }
+  ],
+  "nav": [
+    {
+      "slug": "seite-1",
+      "title": "Seite 1",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "seite-2",
+      "title": "Seite 2",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "seite-3",
+      "title": "Seite 3",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "danksagung",
+      "title": "Danksagung",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "einleitung-version2027",
+      "title": "Einleitung Version2027",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "grundlagen-g00-g55",
+      "title": "Grundlagen G00 –G55",
+      "level": 1,
+      "children": [
+        {
+          "slug": "g00erhebung-spitalstationaere-gesundheitsversorgung-spiges-und-medizinische-kodi",
+          "title": "G00Erhebung Spitalstationäre Gesundheitsversorgung (SpiGes) und medizinische Kodierung",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "g20-die-klassifikationen-icd-10-gm-und-chop",
+          "title": "G20\tDie Klassifikationen (ICD-10-GM und CHOP)",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "g30a-derweg-zur-korrekten-kodierung",
+          "title": "G30a\tDerWeg zur korrekten Kodierung",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "g40odokumentationder-diagnosen-undder-prozeduren",
+          "title": "G40oDokumentationder Diagnosen undder Prozeduren",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "g50definitionen",
+          "title": "G50Definitionen",
+          "level": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "slug": "allgemeine-kodierrichtlinienfuer-krankheiten-diagnosen-d00-d16",
+      "title": "Allgemeine Kodierrichtlinienfür Krankheiten/Diagnosen D00 – D16",
+      "level": 1,
+      "children": [
+        {
+          "slug": "d01gsymptome",
+          "title": "D01gSymptome",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d02munilaterale-undbilaterale-diagnosendiagnosen-multipler-lokalisationen",
+          "title": "D02mUnilaterale undbilaterale DiagnosenDiagnosen multipler Lokalisationen",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d03mkreuz-stern-kodes",
+          "title": "D03mKreuz †-Stern*-Kodes",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d04ckodes-mitausrufezeichen",
+          "title": "D04cKodes mitAusrufezeichen («!»)",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d05pstatus-nach-vorhandensein-von-fehlen-von",
+          "title": "D05pStatus nach /Vorhandensein von /Fehlen von",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d06c-folgezustaende",
+          "title": "D06c\tFolgezustände",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d07ngeplante-folgeeingriffe",
+          "title": "D07nGeplante Folgeeingriffe",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d08a-sich-anbahnende-oderdrohende-krankheit",
+          "title": "D08a\tSich anbahnende oderdrohende Krankheit",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d09lverdachtsdiagnosen",
+          "title": "D09lVerdachtsdiagnosen",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d11nkombinationskodes",
+          "title": "D11nKombinationskodes",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d12nerkrankungen-bzw-stoerungennach-medizinischen-massnahmen-komplikationen",
+          "title": "D12nErkrankungen bzw. Störungennach medizinischen Massnahmen (Komplikationen)",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d13asyndrome",
+          "title": "D13aSyndrome",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d14g-aufnahme-zur-operation-prozedurnicht-durchgefuehrt",
+          "title": "D14g\tAufnahme zur Operation/Prozedurnicht durchgeführt",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d15o-verlegungen",
+          "title": "D15o\tVerlegungen",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "d16i-wahl-der-hauptdiagnosebei-rehospitalisationeninnerhalb-von-18-tagen-wegener",
+          "title": "D16i\tWahl der Hauptdiagnosebei Rehospitalisationeninnerhalb von 18 Tagen wegenErkrankungen bzw. Störungen nach medizinischen Massnahmen",
+          "level": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "slug": "allgemeine-kodierrichtlinienfuerprozeduren-p00-p11",
+      "title": "Allgemeine KodierrichtlinienfürProzeduren P00 – P11",
+      "level": 1,
+      "children": [
+        {
+          "slug": "p01p-prozeduren-die-kodiert-werden-muessen",
+          "title": "P01p\tProzeduren,die kodiert werden müssen",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "p02o-prozeduren-die-nicht-kodiert-werden",
+          "title": "P02o\tProzeduren,die nicht kodiert werden",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "p03cendoskopie-und-endoskopische-eingriffe",
+          "title": "P03cEndoskopie und endoskopische Eingriffe",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "p04nkombinationseingriffe-komplexeoperationen",
+          "title": "P04nKombinationseingriffe/KomplexeOperationen",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "p05aunvollstaendig-durchgefuehrte-eingriffe",
+          "title": "P05aUnvollständig durchgeführte Eingriffe",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "p06omehrfach-durchgefuehrte-prozeduren",
+          "title": "P06oMehrfach durchgeführte Prozeduren",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "p08o-revisioneneines-operationsgebietes-reoperationen",
+          "title": "P08o\tRevisioneneines Operationsgebietes/Reoperationen",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "p09oorganentnahme-undtransplantation",
+          "title": "P09oOrganentnahme undTransplantation",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "p10nadhaesiolyse",
+          "title": "P10nAdhäsiolyse",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "p11hserosaverletzung-mit-uebernaehung",
+          "title": "P11hSerosaverletzung mit Übernähung",
+          "level": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "slug": "spezielle-kodierrichtlinien-fuer-diagnosen-sd0100-sd2200",
+      "title": "Spezielle Kodierrichtlinien für Diagnosen SD0100 – SD2200",
+      "level": 1,
+      "children": [
+        {
+          "slug": "sd0106ncovid-19",
+          "title": "SD0106nCOVID-19",
+          "level": 3,
+          "children": []
+        },
+        {
+          "slug": "sd0200nneubildungen",
+          "title": "SD0200nNeubildungen",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd0400endokrine-ernaehrungs-und-stoffwechselkrankheiten",
+          "title": "SD0400Endokrine, Ernährungs- und Stoffwechselkrankheiten",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd0500-psychische-und-verhaltensstoerungen",
+          "title": "SD0500\tPsychische und Verhaltensstörungen",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd0600-krankheitendesnervensystems",
+          "title": "SD0600\tKrankheitendesNervensystems",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd0800-krankheitendesohres-und-des-warzenfortsatzes",
+          "title": "SD0800\tKrankheitendesOhres und des Warzenfortsatzes",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd0900-krankheitendeskreislaufsystems",
+          "title": "SD0900\tKrankheitendesKreislaufsystems",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd1000-krankheitendesatmungssystems",
+          "title": "SD1000\tKrankheitendesAtmungssystems",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd1100-krankheitendesverdauungssystems",
+          "title": "SD1100\tKrankheitendesVerdauungssystems",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd1200-krankheitenderhaut-und-der-unterhaut",
+          "title": "SD1200\tKrankheitenderHaut und der Unterhaut",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd1400-krankheitendesurogenitalsystems",
+          "title": "SD1400\tKrankheitendesUrogenitalsystems",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd1500geburtshilfe",
+          "title": "SD1500Geburtshilfe",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd1600bestimmte-zustaende-die-ihren-ursprung-in-derperinatalperiode-haben",
+          "title": "SD1600Bestimmte Zustände, die ihren Ursprung in derPerinatalperiode haben",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd1800-symptome-undabnorme-klinische-und-laborbefunde-die-anderenorts-nicht-klas",
+          "title": "SD1800\tSymptome undabnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd1900verletzungen-vergiftungen-und-bestimmte-andere-folgen-aeusserer-ursachen",
+          "title": "SD1900Verletzungen, Vergiftungen und bestimmte andere Folgen äusserer Ursachen",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd2000aeussere-ursachen-von-morbiditaet-und-mortalitaet",
+          "title": "SD2000Äussere Ursachen von Morbidität und Mortalität",
+          "level": 2,
+          "children": []
+        },
+        {
+          "slug": "sd2100-faktoren-die-den-gesundheitszustand-beeinflussen-und-zur-inanspruchnahmed",
+          "title": "SD2100\tFaktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahmedes Gesundheitswesens führen",
+          "level": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "slug": "spezielle-kodierrichtlinien-fuer-prozeduren-und-behandlungen-sp0100-sp0400",
+      "title": "Spezielle Kodierrichtlinien für Prozeduren und Behandlungen SP0100 – SP0400",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "kodierrichtlinienrehabilitation",
+      "title": "KodierrichtlinienRehabilitation",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "seite-59",
+      "title": "Seite 59",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "seite-60",
+      "title": "Seite 60",
+      "level": 1,
+      "children": []
+    },
+    {
+      "slug": "seite-61",
+      "title": "Seite 61",
+      "level": 1,
+      "children": []
+    }
+  ]
+}
