@@ -49,13 +49,172 @@ body { display: flex; min-height: 100vh; font-family: var(--font-body); color: v
 #sidebar { width: var(--sidebar-width); min-height: 100vh; background: var(--sidebar-bg); border-right: 1px solid var(--border); position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; padding-bottom: 2rem; }
 #sidebar-header { padding: 1.25rem 1rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--sidebar-bg); z-index: 10; }
 #book-title { font-family: var(--font-ui); font-weight: 700; font-size: 0.9rem; color: var(--text); text-decoration: none; line-height: 1.3; display: block; }
-#nav-tree ul, #nav-tree { list-style: none; padding: 0; }
-#nav-tree { padding: 0.5rem 0; }
-#nav-tree li a { display: block; padding: 0.3rem 1rem; font-family: var(--font-ui); font-size: 0.82rem; color: var(--text-muted); text-decoration: none; line-height: 1.4; transition: color 0.15s, background 0.15s; }
-#nav-tree li a:hover { color: var(--accent); background: var(--accent-light); }
-#nav-tree li a.active { color: var(--accent); font-weight: 600; background: var(--accent-light); border-left: 3px solid var(--accent); }
-#nav-tree ul { padding-left: 1rem; }
-#nav-tree > ul > li > a { font-weight: 600; color: var(--text); font-size: 0.85rem; }
+/* ── Akkordeon-Navigation ── */
+:root {
+  --nav-h2-bg: #1a3a5c;
+  --nav-h2-bg-open: #15304d;
+  --nav-h2-color: #ffffff;
+  --nav-h3-bg: #d6e8f7;
+  --nav-h3-bg-open: #c2ddf2;
+  --nav-h3-color: #000000;
+  --nav-h4-bg: #ffffff;
+  --nav-h4-color: #222222;
+  --nav-active-accent: #c00;
+}
+
+/* Expand/Collapse Button */
+#nav-toggle-wrap {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 0.4rem;
+}
+#nav-toggle-wrap button {
+  flex: 1;
+  padding: 0.3rem 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--sidebar-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+#nav-toggle-wrap button:hover { background: var(--nav-h2-bg); color: #fff; }
+
+#nav-tree, #nav-tree ul { list-style: none; padding: 0; margin: 0; }
+#nav-tree { padding: 0; }
+
+/* Blatt-Links H4 (unterste Ebene, kein Akkordeon) */
+#nav-tree li > a {
+  display: block;
+  padding: 0.28rem 0.75rem 0.28rem 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.79rem;
+  color: var(--nav-h4-color);
+  background: var(--nav-h4-bg);
+  text-decoration: none;
+  line-height: 1.4;
+  border-left: 3px solid transparent;
+  transition: background 0.12s, color 0.12s;
+}
+#nav-tree li > a:hover { background: #f0f0f0; color: var(--nav-active-accent); }
+#nav-tree li > a.active {
+  color: var(--nav-active-accent);
+  font-weight: 700;
+  background: #fff0f0;
+  border-left: 3px solid var(--nav-active-accent);
+}
+
+/* details/summary Basis */
+#nav-tree details { border: none; }
+#nav-tree details > ul { padding-left: 0; }
+#nav-tree summary.nav-summary {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+  cursor: default;
+  padding: 0;
+  border-left: 3px solid transparent;
+}
+#nav-tree summary.nav-summary::-webkit-details-marker { display: none; }
+#nav-tree summary.nav-summary::marker { display: none; }
+
+/* Pfeil */
+#nav-tree summary.nav-summary::before {
+  content: "›";
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.28rem 0.35rem 0.28rem 0.5rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#nav-tree details[open] > summary.nav-summary::before {
+  transform: rotate(90deg);
+}
+
+/* Link in summary */
+#nav-tree summary.nav-summary a {
+  flex: 1;
+  padding: 0.28rem 0.5rem 0.28rem 0.1rem;
+  text-decoration: none;
+  line-height: 1.4;
+  font-family: var(--font-ui);
+  transition: opacity 0.12s;
+}
+#nav-tree summary.nav-summary a:hover { opacity: 0.8; }
+#nav-tree summary.nav-summary.active {
+  border-left: 3px solid var(--nav-active-accent) !important;
+}
+
+/* ── H2: Weiss auf Dunkelblau ── */
+#nav-tree > ul > li.has-children > details > summary.nav-summary {
+  background: var(--nav-h2-bg);
+  border-bottom: 1px solid #0f2740;
+}
+#nav-tree > ul > li.has-children > details > summary.nav-summary::before {
+  color: rgba(255,255,255,0.7);
+}
+#nav-tree > ul > li.has-children > details[open] > summary.nav-summary {
+  background: var(--nav-h2-bg-open);
+}
+#nav-tree > ul > li.has-children > details > summary.nav-summary a {
+  font-weight: 700;
+  font-size: 0.87rem;
+  color: var(--nav-h2-color);
+}
+#nav-tree > ul > li.has-children > details > summary.nav-summary.active {
+  background: #0f2740;
+  border-left-color: #fff !important;
+}
+#nav-tree > ul > li.has-children > details > summary.nav-summary.active a {
+  color: #fff;
+}
+
+/* ── H3: Schwarz auf Hellblau ── */
+#nav-tree > ul > li > details > ul > li.has-children > details > summary.nav-summary {
+  background: var(--nav-h3-bg);
+  border-bottom: 1px solid #b0cfe8;
+}
+#nav-tree > ul > li > details > ul > li.has-children > details > summary.nav-summary::before {
+  color: #336;
+}
+#nav-tree > ul > li > details > ul > li.has-children > details[open] > summary.nav-summary {
+  background: var(--nav-h3-bg-open);
+}
+#nav-tree > ul > li > details > ul > li.has-children > details > summary.nav-summary a {
+  font-weight: 600;
+  font-size: 0.83rem;
+  color: var(--nav-h3-color);
+}
+#nav-tree > ul > li > details > ul > li.has-children > details > summary.nav-summary.active {
+  border-left-color: var(--nav-active-accent) !important;
+  background: #b0cfe8;
+}
+
+/* ── H4: Schwarz auf Weiss (aufklappbar) ── */
+#nav-tree details details details summary.nav-summary {
+  background: var(--nav-h4-bg);
+  border-bottom: 1px solid #eee;
+}
+#nav-tree details details details summary.nav-summary a {
+  font-weight: 500;
+  font-size: 0.80rem;
+  color: var(--nav-h4-color);
+}
+#nav-tree details details details summary.nav-summary::before {
+  color: #aaa;
+}
+
+/* Einrückung */
+#nav-tree details > ul { padding-left: 0; }
+#nav-tree details details > ul { padding-left: 0.5rem; }
+#nav-tree details details details > ul { padding-left: 0.75rem; }
 #content { margin-left: var(--sidebar-width); flex: 1; max-width: 780px; padding: 2.5rem 3rem; }
 .breadcrumb { display: flex; align-items: center; gap: 0.4rem; font-family: var(--font-ui); font-size: 0.78rem; color: var(--text-muted); margin-bottom: 2rem; }
 .breadcrumb .crumb { text-decoration: none; color: var(--text-muted); }
