@@ -213,7 +213,11 @@ body { display: flex; min-height: 100vh; font-family: var(--font-body); color: v
 #nav-tree details > ul { padding-left: 0; }
 #nav-tree details details > ul { padding-left: 0.5rem; }
 #nav-tree details details details > ul { padding-left: 0.75rem; }
-#content { margin-left: var(--sidebar-width); flex: 1; max-width: 780px; padding: 2.5rem 3rem; }
+#content { 
+  /* margin-left: var(--sidebar-width); */
+  flex: 1; 
+  max-width: 780px; 
+  padding: 2.5rem 3rem; }
 .breadcrumb { display: flex; align-items: center; gap: 0.4rem; font-family: var(--font-ui); font-size: 0.78rem; color: var(--text-muted); margin-bottom: 2rem; }
 .breadcrumb .crumb { text-decoration: none; color: var(--text-muted); }
 .breadcrumb .crumb:hover { color: var(--accent); }
